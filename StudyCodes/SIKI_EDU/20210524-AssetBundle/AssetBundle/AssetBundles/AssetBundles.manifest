@@ -1,0 +1,11 @@
+ManifestFileVersion: 0
+CRC: 1281932147
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: env.unity3d
+      Dependencies:
+        Dependency_0: mat.unity3d
+    Info_1:
+      Name: mat.unity3d
+      Dependencies: {}
