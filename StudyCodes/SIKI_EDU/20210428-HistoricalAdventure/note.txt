@@ -1,0 +1,39 @@
+建立地形
+1.Terrain建立
+2.贴图+法线选择
+3.笔刷刷地形
+4.摆放一些物件
+
+particle system - startsize 改材质大小
+texture sheet animation 改图动画，生命周期，播放模式
+
+5.光源以及light运用，烘培
+
+6.自动寻路导航烘培 AI-Navigation。
+一.先将所有可以走的GameObject，比如地形或者路坡，Inspector面板里，选择static navi勾选上。
+二.对于不可以行走的GameObject，选中，点击Navigation面板的Object ，设置Not Walkable
+三.对于可行走的但是被判定为不能走的，比如草丛，将static里navi取消勾选
+四.最后，给人物添加nav mesh agent，用来判定是否可以通过导航生成的网格。
+
+7.动画状态机
+一.先做一个Animator Controller（状态机），然后放参数到parameters里面，对不同的动画状态进行切换条件设置。
+二.完成状态机后，拖入animator组件的avatar里，链接上。
+三.进行调用：脚本里声明一个Animator对象，拖拽拿到之后，Update里写：
+ani.SetFloat("speed", agent.velocity.magnitude);
+类似的代码。
+四.有个坑要注意，如果是立即切换的动画（比如从走到跑），在状态机里把“Has Exit Time”去掉，或者自己调整动画切换间隔。
+
+8.射线导航
+一.要求烘培好地形navi，且使用AI包，并声明拿到 NavMeshAgent。
+二.Update里放类似的代码：
+if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit))
+            {
+                print(hit.point);
+                agent.SetDestination(hit.point);
+            }
+        }
+三.原理是做一条射线进行判断，是否在烘培过的可移动地形上点击的，如果是就把射线放射到地形可移动位置的Vector赋给NavMeshAgent（导航）的终点。
