@@ -8,12 +8,13 @@ public class FishMaker : MonoBehaviour
     public Transform[] genPositions;
     public GameObject[] fishPrefabs;
 
+    public float waveWaitTime = 0.3f;
 
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
+		InvokeRepeating("MakeFishes", 0, waveWaitTime);
+	}
 
     // Update is called once per frame
     void Update()
@@ -36,10 +37,27 @@ public class FishMaker : MonoBehaviour
 
 	    if (moveType == 0)
 	    {
-            
+		    angOffset = Random.Range(-22,22);
+		    GenStraightFish(posIndex, preIndex, num, speed, angOffset);
 	    }
 	    else
 	    {
+
+	    }
+
+
+    }
+
+    void GenStraightFish(int posIndex,int preIndex,int num,int speed,int angOffset)
+    {
+	    for (int i = 0; i < num; i++)
+	    {
+			GameObject fish = Instantiate(fishPrefabs[preIndex]);
+			fish.transform.SetParent(fishHolder,false);
+			fish.transform.localPosition = genPositions[posIndex].localPosition;
+			fish.transform.localRotation = genPositions[posIndex].localRotation;
+			fish.transform.Rotate(0,0,angOffset);
+
 
 	    }
     }
