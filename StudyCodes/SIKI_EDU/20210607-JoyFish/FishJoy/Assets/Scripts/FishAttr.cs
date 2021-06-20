@@ -6,4 +6,13 @@ public class FishAttr : MonoBehaviour
 {
 	public int maxNum;
 	public int maxSpeed;
+
+	void OnTriggerEnter2D(Collider2D collision)
+	{
+		if (collision.tag == "Border")
+		{
+			Debug.Log(collision);
+			GameObject.Destroy(this.gameObject);
+		}
+	}
 }

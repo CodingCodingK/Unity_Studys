@@ -58,8 +58,10 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Effects\EF_Waterwave.cs" />
     <Compile Include="Assets\Scripts\GunFollow.cs" />
-    <Compile Include="Assets\Scripts\FishMaker.cs" />
     <Compile Include="Assets\Scripts\FishAttr.cs" />
+    <Compile Include="Assets\Scripts\FishMaker.cs" />
+    <Compile Include="Assets\Scripts\Effects\EF_AutoMove.cs" />
+    <Compile Include="Assets\Scripts\Effects\EF_AutoRotate.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
