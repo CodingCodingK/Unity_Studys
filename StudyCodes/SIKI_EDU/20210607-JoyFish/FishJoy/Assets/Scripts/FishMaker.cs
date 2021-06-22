@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FishMaker : MonoBehaviour
 {
+
     public Transform fishHolder;
     public Transform[] genPositions;
     public GameObject[] fishPrefabs;
