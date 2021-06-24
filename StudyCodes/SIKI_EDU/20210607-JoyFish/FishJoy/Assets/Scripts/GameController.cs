@@ -4,9 +4,27 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
-    public Text oneShootCostText;
+    private static GameController _instance;
 
-    public int lv;
+    public static GameController Instance
+    {
+        get
+        {
+            if (_instance == null) _instance = GameObject.Find("ScriptsHolder").GetComponent<GameController>();
+            return _instance;
+        }
+    }
+
+    public Text oneShootCostText;
+    public Text goldText;
+    public Text lvText;
+    public Text lvNameText;
+    public Text smallCountdownText;
+    public Text bigCountdownText;
+    public Button bigCountdownButton;
+    public Button backButton;
+    public Button settingButton;
+    public Slider expSlider;
 
     public Transform bulletHolder;
     public GameObject[] gunGos;
@@ -20,6 +38,20 @@ public class GameController : MonoBehaviour
     private const int costBlock = 4;
 
     private int[] oneShootCosts = { 5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000 };
+    private string[] lvNames = {"新手", "青铜", "白银", "黄金", "白金", "钻石", "大师", "宗师", "王者", "荣耀王者"};
+
+    public int lv = 0;
+    public int exp = 0;
+    public int gold = 500;
+    public const int bigCountdown = 240;
+    public const int smallCountdown = 60;
+    public float bigTimer = bigCountdown;
+    public float smallTimer = smallCountdown;
+
+    private void Awake()
+    {
+        
+    }
 
 
     // Start is called before the first frame update
@@ -38,6 +70,9 @@ public class GameController : MonoBehaviour
     {
         ChangeBulletCost();
         Fire();
+
+        UpdateDatas();
+        UpdateUI();
     }
 
     void Fire()
@@ -85,7 +120,7 @@ public class GameController : MonoBehaviour
         }
     }
 
-    #region change gun
+    #region Click Event
     public void OnButtonPDown()
     {
         gunGos[costIndex++ / costBlock].SetActive(false);
@@ -101,6 +136,64 @@ public class GameController : MonoBehaviour
         gunGos[costIndex / costBlock].SetActive(true);
         oneShootCostText.text = $"$ {oneShootCosts[costIndex]}";
     }
+
+    /// <summary>
+    /// 点击“奖金”按钮
+    /// </summary>
+    public void OnBigCountdownButtonDown()
+    {
+        gold += 500;
+        bigTimer = bigCountdown;
+        bigCountdownText.gameObject.SetActive(true);
+        bigCountdownButton.gameObject.SetActive(false);
+    }
     #endregion
 
+
+
+
+    void UpdateUI()
+    {
+        goldText.text = "$" + gold;
+        lvText.text = lv.ToString();
+        if (lv / 10 <= 9)
+        {
+            lvNameText.text = lvNames[lv / 10];
+        }
+        else
+        {
+            lvNameText.text = lvNames[9];
+        }
+
+        smallCountdownText.text = (int) smallTimer / 10 + "  " + (int) smallTimer % 10;
+        bigCountdownText.text = (int) bigTimer + "s";
+        expSlider.value = (float)exp / (1000 + 200 * lv);
+    }
+
+    void UpdateDatas()
+    {
+        // Lv and Exp
+        while (exp >= 1000 + 200 * lv)
+        {
+            lv++;
+            exp -= (1000 + 200 * lv);
+        }
+
+        //time
+        bigTimer -= Time.deltaTime;
+        smallTimer -= Time.deltaTime;
+
+        if (smallTimer <= 0)
+        {
+            smallTimer = smallCountdown;
+            gold += 50;
+        }
+
+        if (bigTimer <= 0 && bigCountdownText.gameObject.activeSelf)
+        {
+            bigCountdownText.gameObject.SetActive(false);
+            bigCountdownButton.gameObject.SetActive(true);
+        }
+
+    }
 }

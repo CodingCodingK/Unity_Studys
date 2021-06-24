@@ -119,6 +119,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxNum: 7
   maxSpeed: 6
+  hp: 50
+  exp: 50
+  gold: 50
+  diePrefab: {fileID: 1485922047583306, guid: f945f15176291d346acd918079f52295, type: 3}
 --- !u!61 &6060815840968170005
 BoxCollider2D:
   m_ObjectHideFlags: 0

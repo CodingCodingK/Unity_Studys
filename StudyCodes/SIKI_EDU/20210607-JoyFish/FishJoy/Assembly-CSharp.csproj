@@ -56,15 +56,16 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\WebAttr.cs" />
     <Compile Include="Assets\Scripts\Effects\EF_AutoRotate.cs" />
     <Compile Include="Assets\Scripts\FishAttr.cs" />
     <Compile Include="Assets\Scripts\FishMaker.cs" />
     <Compile Include="Assets\Scripts\Effects\EF_Waterwave.cs" />
     <Compile Include="Assets\Scripts\GunFollow.cs" />
+    <Compile Include="Assets\Scripts\BulletAttr.cs" />
     <Compile Include="Assets\Scripts\Effects\EF_AutoMove.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
-    <Compile Include="Assets\Scripts\BulletAttr.cs" />
-    <Compile Include="Assets\Scripts\WebAttr.cs" />
+    <Compile Include="Assets\Scripts\Effects\Ef_DestroySelf.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
