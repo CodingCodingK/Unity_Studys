@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2504685608033773996}
   - component: {fileID: 4614408915116310183}
   - component: {fileID: 2632678846439710393}
+  - component: {fileID: -3713600211041297705}
   m_Layer: 0
   m_Name: "\u94F6\u9CA8"
   m_TagString: Fish
@@ -123,6 +124,7 @@ MonoBehaviour:
   exp: 800
   gold: 800
   diePrefab: {fileID: 1034666253058994, guid: 2364968f8f8d25d489c96fcf5baffee7, type: 3}
+  goldPrefab: {fileID: 4979849873050066367, guid: f5badb5f84f284d418a118099b071b24, type: 3}
 --- !u!61 &4614408915116310183
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -170,3 +172,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-3713600211041297705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714755652220200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3b7eedd39df7bf4cb33afb99caf68e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effects:
+  - {fileID: 100002, guid: b7d55ddc18bf5dd4fb81c71aa88cd113, type: 3}
+  - {fileID: 100002, guid: b7d55ddc18bf5dd4fb81c71aa88cd113, type: 3}

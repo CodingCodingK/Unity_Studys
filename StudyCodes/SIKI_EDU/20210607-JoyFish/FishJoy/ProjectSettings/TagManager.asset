@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Border
   - Fish
+  - Gold
   layers:
   - Default
   - TransparentFX

@@ -123,6 +123,7 @@ MonoBehaviour:
   exp: 200
   gold: 200
   diePrefab: {fileID: 1469631790298940, guid: 674a541f8d637e44d8069fc926660bd6, type: 3}
+  goldPrefab: {fileID: 4221979333934209355, guid: 454e4783ed584264f8dc96f023a35bbf, type: 3}
 --- !u!61 &-2798670847673291068
 BoxCollider2D:
   m_ObjectHideFlags: 0

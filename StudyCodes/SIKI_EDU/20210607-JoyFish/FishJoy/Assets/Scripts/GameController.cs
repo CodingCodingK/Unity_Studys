@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using System.Collections;
 
 public class GameController : MonoBehaviour
 {
@@ -15,6 +16,12 @@ public class GameController : MonoBehaviour
         }
     }
 
+    public GameObject lvUpTips;
+    public GameObject fireEffect;
+    public GameObject changeEffect;
+    public GameObject lvEffect;
+    public GameObject goldEffect;
+
     public Text oneShootCostText;
     public Text goldText;
     public Text lvText;
@@ -25,6 +32,7 @@ public class GameController : MonoBehaviour
     public Button backButton;
     public Button settingButton;
     public Slider expSlider;
+    public Color goldTxtColor;
 
     public Transform bulletHolder;
     public GameObject[] gunGos;
@@ -50,7 +58,7 @@ public class GameController : MonoBehaviour
 
     private void Awake()
     {
-        
+        goldTxtColor = goldText.color;
     }
 
 
@@ -79,6 +87,7 @@ public class GameController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+
             GameObject[] selecteBulletGos;
 
             switch (costIndex / costBlock) 
@@ -94,6 +103,16 @@ public class GameController : MonoBehaviour
             // IsPointerOverGameObject会检测是否点击到了UGUI上
             if (selecteBulletGos != null && !EventSystem.current.IsPointerOverGameObject())
             {
+                // 检测钱是否够发射炮弹
+                if (gold - oneShootCosts[costIndex] < 0)
+                {
+                    StartCoroutine(GoldNotEnough());
+                    return;
+                }
+
+                gold -= oneShootCosts[costIndex];
+                Instantiate(fireEffect);
+
                 GameObject bullet = GameObject.Instantiate(selecteBulletGos[lv % selecteBulletGos.Length]);
                 bullet.transform.SetParent(bulletHolder, false);
                 bullet.transform.position = gunGos[costIndex / costBlock].transform.Find("FirePos").position;
@@ -123,6 +142,7 @@ public class GameController : MonoBehaviour
     #region Click Event
     public void OnButtonPDown()
     {
+        Instantiate(changeEffect);
         gunGos[costIndex++ / costBlock].SetActive(false);
         costIndex = costIndex >= oneShootCosts.Length ? 0 : costIndex;
         gunGos[costIndex / costBlock].SetActive(true);
@@ -131,6 +151,7 @@ public class GameController : MonoBehaviour
 
     public void OnButtonMDown()
     {
+        Instantiate(changeEffect);
         gunGos[costIndex-- / costBlock].SetActive(false);
         costIndex = costIndex >= 0 ? costIndex : oneShootCosts.Length - 1;
         gunGos[costIndex / costBlock].SetActive(true);
@@ -143,13 +164,12 @@ public class GameController : MonoBehaviour
     public void OnBigCountdownButtonDown()
     {
         gold += 500;
+        Instantiate(goldEffect);
         bigTimer = bigCountdown;
         bigCountdownText.gameObject.SetActive(true);
         bigCountdownButton.gameObject.SetActive(false);
     }
     #endregion
-
-
 
 
     void UpdateUI()
@@ -176,6 +196,10 @@ public class GameController : MonoBehaviour
         while (exp >= 1000 + 200 * lv)
         {
             lv++;
+            lvUpTips.SetActive(true);
+            lvUpTips.transform.Find("Lv").GetComponent<Text>().text = lv.ToString();
+            StartCoroutine(lvUpTips.GetComponent<EF_HideSelf>().HideSelf(0.6f));
+            Instantiate(lvEffect);
             exp -= (1000 + 200 * lv);
         }
 
@@ -195,5 +219,12 @@ public class GameController : MonoBehaviour
             bigCountdownButton.gameObject.SetActive(true);
         }
 
+    }
+
+    IEnumerator GoldNotEnough()
+    {
+        goldText.color = Color.red;
+        yield return new WaitForSeconds(0.5f);
+        goldText.color = goldTxtColor;
     }
 }
