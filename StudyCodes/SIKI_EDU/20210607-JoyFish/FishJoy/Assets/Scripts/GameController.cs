@@ -11,7 +11,7 @@ public class GameController : MonoBehaviour
     {
         get
         {
-            if (_instance == null) _instance = GameObject.Find("ScriptsHolder").GetComponent<GameController>();
+            //if (_instance == null) _instance = GameObject.Find("ScriptsHolder").GetComponent<GameController>();
             return _instance;
         }
     }
@@ -56,8 +56,15 @@ public class GameController : MonoBehaviour
     public float bigTimer = bigCountdown;
     public float smallTimer = smallCountdown;
 
+    private int bgIndex = 0;
+    public Sprite[] bgSprites;
+    public Image bgImage;
+
+    public GameObject seaWaveEffect;
+
     private void Awake()
     {
+        _instance = this;
         goldTxtColor = goldText.color;
     }
 
@@ -71,6 +78,14 @@ public class GameController : MonoBehaviour
         gunGos[costIndex].SetActive(true);
         oneShootCostText.text = $"$ {oneShootCosts[costIndex]}";
 
+        gold = PlayerPrefs.GetInt("gold", gold);
+        lv = PlayerPrefs.GetInt("lv", lv);
+        smallTimer = PlayerPrefs.GetFloat("scd", smallTimer);
+        bigTimer = PlayerPrefs.GetFloat("bcd", bigTimer);
+        exp = PlayerPrefs.GetInt("exp", exp);
+        UpdateDatas();
+        UpdateUI();
+
     }
 
     // Update is called once per frame
@@ -81,6 +96,8 @@ public class GameController : MonoBehaviour
 
         UpdateDatas();
         UpdateUI();
+
+        ChangeBg();
     }
 
     void Fire()
@@ -110,6 +127,7 @@ public class GameController : MonoBehaviour
                     return;
                 }
 
+                AudioManager.Instance.PlayEffectSound(AudioManager.Instance.fireClip);
                 gold -= oneShootCosts[costIndex];
                 Instantiate(fireEffect);
 
@@ -131,10 +149,12 @@ public class GameController : MonoBehaviour
     {
         if(Input.GetAxis("Mouse ScrollWheel") < 0)
         {
+            AudioManager.Instance.PlayEffectSound(AudioManager.Instance.changeClip);
             OnButtonMDown();
         }
         else if (Input.GetAxis("Mouse ScrollWheel") > 0)
         {
+            AudioManager.Instance.PlayEffectSound(AudioManager.Instance.changeClip);
             OnButtonPDown();
         }
     }
@@ -163,6 +183,7 @@ public class GameController : MonoBehaviour
     /// </summary>
     public void OnBigCountdownButtonDown()
     {
+        AudioManager.Instance.PlayEffectSound(AudioManager.Instance.rewardClip);
         gold += 500;
         Instantiate(goldEffect);
         bigTimer = bigCountdown;
@@ -195,7 +216,9 @@ public class GameController : MonoBehaviour
         // Lv and Exp
         while (exp >= 1000 + 200 * lv)
         {
+            AudioManager.Instance.PlayEffectSound(AudioManager.Instance.lvUpClip);
             lv++;
+
             lvUpTips.SetActive(true);
             lvUpTips.transform.Find("Lv").GetComponent<Text>().text = lv.ToString();
             StartCoroutine(lvUpTips.GetComponent<EF_HideSelf>().HideSelf(0.6f));
@@ -226,5 +249,19 @@ public class GameController : MonoBehaviour
         goldText.color = Color.red;
         yield return new WaitForSeconds(0.5f);
         goldText.color = goldTxtColor;
+    }
+
+    void ChangeBg()
+    {
+        if (bgIndex != lv / 20)
+        {
+            bgIndex = lv / 20;
+            Instantiate(seaWaveEffect);
+            AudioManager.Instance.PlayEffectSound(AudioManager.Instance.seaWaveClip);
+            if (bgIndex <= 3)
+            {
+                bgImage.sprite = bgSprites[bgIndex];
+            }
+        }
     }
 }
