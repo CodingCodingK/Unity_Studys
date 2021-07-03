@@ -1,1 +1,44 @@
-print('from lua')
+local UnityEngine = CS.UnityEngine
+---@type UnityEngine.GameObject
+local go
+
+
+--1.1.1 点击宝箱领取的金币钻石太拥挤，分散一点。
+xlua.hotfix(CS.Treasour, 'CreatePrize', function(self)
+    for i = 0, 4, 1 do
+        local go = UnityEngine.GameObject.Instantiate(self.gold, self.transform.position + UnityEngine.Vector3(-10 + i * 40, 0, 0), self.transform.rotation)
+        go.transform.SetParent(go.transform, self.cavas)
+        local go1 = UnityEngine.GameObject.Instantiate(self.diamands, self.transform.position + UnityEngine.Vector3(0, 40, 0) + UnityEngine.Vector3(-10 + i * 40, 0, 0), self.transform.rotation)
+        go1.transform.SetParent(go1.transform, self.cavas)
+    end
+end)
+
+
+--1.1.2 玩家金币钻石不够时没有相应处理。
+xlua.private_accessible(CS.Gun)
+xlua.hotfix(CS.Gun, 'Attack', function(self)
+    --1.2.1.与UI交互时不能发射子弹。
+    if UnityEngine.EventSystems.EventSystem.current:IsPointerOverGameObject() then
+        return
+    end
+
+    --if UnityEngine.Input.GetMouseButtonDown(0) then
+        --计算钱，不够就结束委托
+        if self.gold < 1 + (self.gunLevel - 1) * 2 or gold == 0 then
+            return
+        end
+
+        self.bullectAudio.clip = self.bullectAudio[self.gunLevel - 1]
+        self.bullectAudio:Play()
+        if self.Butterfly then
+            UnityEngine.GameObject.Instantiate(self.Bullects[self.gunLevel - 1], self.attackPos.position, self.attackPos.rotation * UnityEngine.Quaternion.Euler(0, 0, 20))
+            UnityEngine.GameObject.Instantiate(self.Bullects[self.gunLevel - 1], self.attackPos.position, self.attackPos.rotation * UnityEngine.Quaternion.Euler(0, 0, -20))
+        end
+        UnityEngine.GameObject.Instantiate(self.Bullects[self.gunLevel - 1], self.attackPos.position, self.attackPos.rotation)
+
+        if self.canShootForFree == false then
+            self:GoldChange(-1 - (self.gunLevel - 1) * 2)
+        end
+        self.attackCD = 0
+        self.attack = false
+    end)

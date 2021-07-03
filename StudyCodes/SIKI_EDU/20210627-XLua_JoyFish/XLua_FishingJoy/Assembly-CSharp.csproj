@@ -2,18 +2,29 @@
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <LangVersion>4</LangVersion>
+    <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <NoConfig>true</NoConfig>
+    <NoStdLib>true</NoStdLib>
+    <AddAdditionalExplicitAssemblyReferences>false</AddAdditionalExplicitAssemblyReferences>
+    <ImplicitlyExpandNETStandardFacades>false</ImplicitlyExpandNETStandardFacades>
+    <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
+    <_TargetFrameworkDirectories>non_empty_path_generated_by_rider_editor_plugin</_TargetFrameworkDirectories>
+    <_FullFrameworkReferenceAssemblyPaths>non_empty_path_generated_by_rider_editor_plugin</_FullFrameworkReferenceAssemblyPaths>
+    <DisableHandlePackageFileConflicts>true</DisableHandlePackageFileConflicts>
+    <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <ProjectGuid>{89D79A2F-CBD1-E429-00FC-046089496FCB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>Assets</BaseDirectory>
   </PropertyGroup>
@@ -38,215 +49,360 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.XML" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="UnityEngine">
-      <HintPath>C:/Program Files/Unity/Hub/Editor/2017.2.0f3/Editor/Data/Managed\UnityEngine.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2017.2.0f3\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2017.2.0f3/Editor/Data/Managed/UnityEditor.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2017.2.0f3\Editor\Data\Managed\UnityEngine\UnityEngine.AccessibilityModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2017.2.0f3\Editor\Data\Managed\UnityEngine\UnityEngine.AIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2017.2.0f3\Editor\Data\Managed\UnityEngine\UnityEngine.AnimationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2017.2.0f3\Editor\Data\Managed\UnityEngine\UnityEngine.ARModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2017.2.0f3\Editor\Data\Managed\UnityEngine\UnityEngine.AudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2017.2.0f3\Editor\Data\Managed\UnityEngine\UnityEngine.ClothModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2017.2.0f3\Editor\Data\Managed\UnityEngine\UnityEngine.ClusterInputModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2017.2.0f3\Editor\Data\Managed\UnityEngine\UnityEngine.ClusterRendererModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2017.2.0f3\Editor\Data\Managed\UnityEngine\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2017.2.0f3\Editor\Data\Managed\UnityEngine\UnityEngine.CrashReportingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2017.2.0f3\Editor\Data\Managed\UnityEngine\UnityEngine.DirectorModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2017.2.0f3\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2017.2.0f3\Editor\Data\Managed\UnityEngine\UnityEngine.GameCenterModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2017.2.0f3\Editor\Data\Managed\UnityEngine\UnityEngine.GridModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2017.2.0f3\Editor\Data\Managed\UnityEngine\UnityEngine.ImageConversionModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2017.2.0f3\Editor\Data\Managed\UnityEngine\UnityEngine.IMGUIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2017.2.0f3\Editor\Data\Managed\UnityEngine\UnityEngine.InputModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2017.2.0f3\Editor\Data\Managed\UnityEngine\UnityEngine.JSONSerializeModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2017.2.0f3\Editor\Data\Managed\UnityEngine\UnityEngine.ParticlesLegacyModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2017.2.0f3\Editor\Data\Managed\UnityEngine\UnityEngine.ParticleSystemModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2017.2.0f3\Editor\Data\Managed\UnityEngine\UnityEngine.PerformanceReportingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2017.2.0f3\Editor\Data\Managed\UnityEngine\UnityEngine.Physics2DModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2017.2.0f3\Editor\Data\Managed\UnityEngine\UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2017.2.0f3\Editor\Data\Managed\UnityEngine\UnityEngine.ScreenCaptureModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2017.2.0f3\Editor\Data\Managed\UnityEngine\UnityEngine.SpriteMaskModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2017.2.0f3\Editor\Data\Managed\UnityEngine\UnityEngine.StyleSheetsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2017.2.0f3\Editor\Data\Managed\UnityEngine\UnityEngine.TerrainModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2017.2.0f3\Editor\Data\Managed\UnityEngine\UnityEngine.TerrainPhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2017.2.0f3\Editor\Data\Managed\UnityEngine\UnityEngine.TextRenderingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2017.2.0f3\Editor\Data\Managed\UnityEngine\UnityEngine.TilemapModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2017.2.0f3\Editor\Data\Managed\UnityEngine\UnityEngine.UIElementsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2017.2.0f3\Editor\Data\Managed\UnityEngine\UnityEngine.UIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2017.2.0f3\Editor\Data\Managed\UnityEngine\UnityEngine.UNETModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2017.2.0f3\Editor\Data\Managed\UnityEngine\UnityEngine.UnityAnalyticsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2017.2.0f3\Editor\Data\Managed\UnityEngine\UnityEngine.UnityConnectModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2017.2.0f3\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2017.2.0f3\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2017.2.0f3\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2017.2.0f3\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2017.2.0f3\Editor\Data\Managed\UnityEngine\UnityEngine.VehiclesModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2017.2.0f3\Editor\Data\Managed\UnityEngine\UnityEngine.VideoModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2017.2.0f3\Editor\Data\Managed\UnityEngine\UnityEngine.VRModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2017.2.0f3\Editor\Data\Managed\UnityEngine\UnityEngine.WebModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2017.2.0f3\Editor\Data\Managed\UnityEngine\UnityEngine.WindModule.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2017.2.0f3\Editor\Data\MonoBleedingEdge\lib\mono\unity\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2017.2.0f3\Editor\Data\MonoBleedingEdge\lib\mono\unity\System.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2017.2.0f3\Editor\Data\MonoBleedingEdge\lib\mono\unity\System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2017.2.0f3\Editor\Data\MonoBleedingEdge\lib\mono\unity\System.Runtime.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2017.2.0f3\Editor\Data\MonoBleedingEdge\lib\mono\unity\System.Xml.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2017.2.0f3\Editor\Data\MonoBleedingEdge\lib\mono\unity\mscorlib.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Effect\Explosion.cs" />
-     <Compile Include="Assets\Scripts\Effect\Pao.cs" />
-     <Compile Include="Assets\Scripts\Effect\Shake.cs" />
-     <Compile Include="Assets\Scripts\Effect\Shine.cs" />
-     <Compile Include="Assets\Scripts\Effect\ShineHide.cs" />
-     <Compile Include="Assets\Scripts\Effect\Water.cs" />
-     <Compile Include="Assets\Scripts\Enemy\Boss.cs" />
-     <Compile Include="Assets\Scripts\Enemy\CreateFish.cs" />
-     <Compile Include="Assets\Scripts\Enemy\DeffendBoss.cs" />
-     <Compile Include="Assets\Scripts\Enemy\Fish.cs" />
-     <Compile Include="Assets\Scripts\Enemy\InvisibleBoss.cs" />
-     <Compile Include="Assets\Scripts\Enemy\Qipao.cs" />
-     <Compile Include="Assets\Scripts\HotfixScript.cs" />
-     <Compile Include="Assets\Scripts\Item\Card.cs" />
-     <Compile Include="Assets\Scripts\Item\FishNet.cs" />
-     <Compile Include="Assets\Scripts\Item\Gold.cs" />
-     <Compile Include="Assets\Scripts\Item\Missile.cs" />
-     <Compile Include="Assets\Scripts\Item\Shell.cs" />
-     <Compile Include="Assets\Scripts\Player\Bullect.cs" />
-     <Compile Include="Assets\Scripts\Player\Gun.cs" />
-     <Compile Include="Assets\Scripts\Player\GunChange.cs" />
-     <Compile Include="Assets\Scripts\Player\PlayerUI\ButterFly.cs" />
-     <Compile Include="Assets\Scripts\Player\PlayerUI\Fire.cs" />
-     <Compile Include="Assets\Scripts\Player\PlayerUI\GunImage.cs" />
-     <Compile Include="Assets\Scripts\Player\PlayerUI\Ice.cs" />
-     <Compile Include="Assets\Scripts\Player\UI\CreatePao.cs" />
-     <Compile Include="Assets\Scripts\Player\UI\Ground.cs" />
-     <Compile Include="Assets\Scripts\Player\UI\LoadGame.cs" />
-     <Compile Include="Assets\Scripts\Player\UI\Mylight.cs" />
-     <Compile Include="Assets\Scripts\Player\UI\ReturnMain.cs" />
-     <Compile Include="Assets\Scripts\Player\UI\Star.cs" />
-     <Compile Include="Assets\Scripts\Player\UI\StartGame.cs" />
-     <Compile Include="Assets\Scripts\Player\UI\Treasour.cs" />
-     <Compile Include="Assets\XLua\Examples\01_Helloworld\Helloworld.cs" />
-     <Compile Include="Assets\XLua\Examples\02_U3DScripting\LuaBehaviour.cs" />
-     <Compile Include="Assets\XLua\Examples\04_LuaObjectOrented\InvokeLua.cs" />
-     <Compile Include="Assets\XLua\Examples\05_NoGc\NoGc.cs" />
-     <Compile Include="Assets\XLua\Examples\06_Coroutine\Coroutine_Runner.cs" />
-     <Compile Include="Assets\XLua\Examples\06_Coroutine\CoroutineTest.cs" />
-     <Compile Include="Assets\XLua\Examples\07_AsyncTest\AsyncTest.cs" />
-     <Compile Include="Assets\XLua\Examples\07_AsyncTest\MessageBox.cs" />
-     <Compile Include="Assets\XLua\Examples\08_Hotfix\HotfixTest.cs" />
-     <Compile Include="Assets\XLua\Examples\08_Hotfix\HotfixTest2.cs" />
-     <Compile Include="Assets\XLua\Examples\08_Hotfix\StatefullTest.cs" />
-     <Compile Include="Assets\XLua\Examples\09_GenericMethod\Foo.cs" />
-     <Compile Include="Assets\XLua\Examples\09_GenericMethod\GenericMethodExample.cs" />
-     <Compile Include="Assets\XLua\Examples\10_SignatureLoader\SignatureLoaderTest.cs" />
-     <Compile Include="Assets\XLua\Examples\11_RawObject\RawObjectTest.cs" />
-     <Compile Include="Assets\XLua\Examples\12_ReImplementInLua\ReImplementInLua.cs" />
-     <Compile Include="Assets\XLua\Examples\ExampleGenConfig.cs" />
-     <Compile Include="Assets\XLua\Gen\BaseTestWrap.cs" />
-     <Compile Include="Assets\XLua\Gen\Coroutine_RunnerWrap.cs" />
-     <Compile Include="Assets\XLua\Gen\CSCallLuaItfDBridge.cs" />
-     <Compile Include="Assets\XLua\Gen\DelegatesGensBridge.cs" />
-     <Compile Include="Assets\XLua\Gen\EnumWrap.cs" />
-     <Compile Include="Assets\XLua\Gen\Foo1ChildWrap.cs" />
-     <Compile Include="Assets\XLua\Gen\Foo1ParentWrap.cs" />
-     <Compile Include="Assets\XLua\Gen\Foo2ChildWrap.cs" />
-     <Compile Include="Assets\XLua\Gen\Foo2ParentWrap.cs" />
-     <Compile Include="Assets\XLua\Gen\FooExtensionWrap.cs" />
-     <Compile Include="Assets\XLua\Gen\FooWrap.cs" />
-     <Compile Include="Assets\XLua\Gen\InvokeLuaICalcBridge.cs" />
-     <Compile Include="Assets\XLua\Gen\LuaBehaviourWrap.cs" />
-     <Compile Include="Assets\XLua\Gen\PackUnpack.cs" />
-     <Compile Include="Assets\XLua\Gen\SystemCollectionsGenericList1SystemInt32Wrap.cs" />
-     <Compile Include="Assets\XLua\Gen\SystemCollectionsIEnumeratorBridge.cs" />
-     <Compile Include="Assets\XLua\Gen\SystemObjectWrap.cs" />
-     <Compile Include="Assets\XLua\Gen\TutorialBaseClassWrap.cs" />
-     <Compile Include="Assets\XLua\Gen\TutorialDrivenClassExtensionsWrap.cs" />
-     <Compile Include="Assets\XLua\Gen\TutorialDrivenClassWrap.cs" />
-     <Compile Include="Assets\XLua\Gen\TutorialICalcWrap.cs" />
-     <Compile Include="Assets\XLua\Gen\UnityEngineAnimationClipWrap.cs" />
-     <Compile Include="Assets\XLua\Gen\UnityEngineAnimationCurveWrap.cs" />
-     <Compile Include="Assets\XLua\Gen\UnityEngineBehaviourWrap.cs" />
-     <Compile Include="Assets\XLua\Gen\UnityEngineBoundsWrap.cs" />
-     <Compile Include="Assets\XLua\Gen\UnityEngineColorWrap.cs" />
-     <Compile Include="Assets\XLua\Gen\UnityEngineComponentWrap.cs" />
-     <Compile Include="Assets\XLua\Gen\UnityEngineDebugWrap.cs" />
-     <Compile Include="Assets\XLua\Gen\UnityEngineGameObjectWrap.cs" />
-     <Compile Include="Assets\XLua\Gen\UnityEngineKeyframeWrap.cs" />
-     <Compile Include="Assets\XLua\Gen\UnityEngineLightWrap.cs" />
-     <Compile Include="Assets\XLua\Gen\UnityEngineMathfWrap.cs" />
-     <Compile Include="Assets\XLua\Gen\UnityEngineMonoBehaviourWrap.cs" />
-     <Compile Include="Assets\XLua\Gen\UnityEngineObjectWrap.cs" />
-     <Compile Include="Assets\XLua\Gen\UnityEngineParticleSystemWrap.cs" />
-     <Compile Include="Assets\XLua\Gen\UnityEngineQuaternionWrap.cs" />
-     <Compile Include="Assets\XLua\Gen\UnityEngineRay2DWrap.cs" />
-     <Compile Include="Assets\XLua\Gen\UnityEngineRayWrap.cs" />
-     <Compile Include="Assets\XLua\Gen\UnityEngineRendererWrap.cs" />
-     <Compile Include="Assets\XLua\Gen\UnityEngineResourcesWrap.cs" />
-     <Compile Include="Assets\XLua\Gen\UnityEngineSkinnedMeshRendererWrap.cs" />
-     <Compile Include="Assets\XLua\Gen\UnityEngineTextAssetWrap.cs" />
-     <Compile Include="Assets\XLua\Gen\UnityEngineTimeWrap.cs" />
-     <Compile Include="Assets\XLua\Gen\UnityEngineTransformWrap.cs" />
-     <Compile Include="Assets\XLua\Gen\UnityEngineVector2Wrap.cs" />
-     <Compile Include="Assets\XLua\Gen\UnityEngineVector3Wrap.cs" />
-     <Compile Include="Assets\XLua\Gen\UnityEngineVector4Wrap.cs" />
-     <Compile Include="Assets\XLua\Gen\UnityEngineWaitForSecondsWrap.cs" />
-     <Compile Include="Assets\XLua\Gen\UnityEngineWWWWrap.cs" />
-     <Compile Include="Assets\XLua\Gen\WrapPusher.cs" />
-     <Compile Include="Assets\XLua\Gen\XLuaGenAutoRegister.cs" />
-     <Compile Include="Assets\XLua\Gen\XLuaTestIExchangerBridge.cs" />
-     <Compile Include="Assets\XLua\Gen\XLuaTestMyStructWrap.cs" />
-     <Compile Include="Assets\XLua\Gen\XLuaTestNoGcWrap.cs" />
-     <Compile Include="Assets\XLua\Gen\XLuaTestPeddingWrap.cs" />
-     <Compile Include="Assets\XLua\Src\CodeEmit.cs" />
-     <Compile Include="Assets\XLua\Src\CopyByValue.cs" />
-     <Compile Include="Assets\XLua\Src\DelegateBridge.cs" />
-     <Compile Include="Assets\XLua\Src\GenAttributes.cs" />
-     <Compile Include="Assets\XLua\Src\InternalGlobals.cs" />
-     <Compile Include="Assets\XLua\Src\LuaBase.cs" />
-     <Compile Include="Assets\XLua\Src\LuaDLL.cs" />
-     <Compile Include="Assets\XLua\Src\LuaEnv.cs" />
-     <Compile Include="Assets\XLua\Src\LuaException.cs" />
-     <Compile Include="Assets\XLua\Src\LuaFunction.cs" />
-     <Compile Include="Assets\XLua\Src\LuaTable.cs" />
-     <Compile Include="Assets\XLua\Src\MethodWarpsCache.cs" />
-     <Compile Include="Assets\XLua\Src\ObjectCasters.cs" />
-     <Compile Include="Assets\XLua\Src\ObjectPool.cs" />
-     <Compile Include="Assets\XLua\Src\ObjectTranslator.cs" />
-     <Compile Include="Assets\XLua\Src\ObjectTranslatorPool.cs" />
-     <Compile Include="Assets\XLua\Src\RawObject.cs" />
-     <Compile Include="Assets\XLua\Src\SignatureLoader.cs" />
-     <Compile Include="Assets\XLua\Src\StaticLuaCallbacks.cs" />
-     <Compile Include="Assets\XLua\Src\TemplateEngine\TemplateEngine.cs" />
-     <Compile Include="Assets\XLua\Src\TypeExtensions.cs" />
-     <Compile Include="Assets\XLua\Src\Utils.cs" />
-     <Compile Include="Assets\XLua\Tutorial\CSharpCallLua\CSCallLua.cs" />
-     <Compile Include="Assets\XLua\Tutorial\LoadLuaScript\ByFile\ByFile.cs" />
-     <Compile Include="Assets\XLua\Tutorial\LoadLuaScript\ByString\ByString.cs" />
-     <Compile Include="Assets\XLua\Tutorial\LoadLuaScript\Loader\CustomLoader.cs" />
-     <Compile Include="Assets\XLua\Tutorial\LuaCallCSharp\LuaCallCs.cs" />
-     <None Include="Assets\XLua\Examples\07_AsyncTest\Resources\message_box.lua.txt" />
-     <None Include="Assets\XLua\Examples\06_Coroutine\Resources\cs_coroutine.lua.txt" />
-     <None Include="Assets\XLua\Src\Editor\LinkXmlGen\LinkXmlGen.tpl.txt" />
-     <None Include="Assets\XLua\Examples\02_U3DScripting\LuaTestScript.lua.txt" />
-     <None Include="Assets\XLua\Examples\07_AsyncTest\Resources\async_test.lua.txt" />
-     <None Include="Assets\XLua\Tutorial\LoadLuaScript\ByFile\Resources\byfile.lua.txt" />
-     <None Include="Assets\PlayerGamePackage\fish.lua.txt" />
-     <None Include="Assets\XLua\Src\Editor\Template\LuaClassWrapGCM.tpl.txt" />
-     <None Include="Assets\XLua\Examples\06_Coroutine\Resources\coruntine_test.lua.txt" />
-     <None Include="Assets\XLua\Src\Editor\Template\LuaWrapPusher.tpl.txt" />
-     <None Include="Assets\XLua\Src\Editor\Template\LuaDelegateBridge.tpl.txt" />
-     <None Include="Assets\XLua\Resources\xlua\util.lua.txt" />
-     <None Include="Assets\XLua\Examples\03_UIEvent\ButtonInteraction.lua.txt" />
-     <None Include="Assets\XLua\Gen\Resources\hotfix_id_map.lua.txt" />
-     <None Include="Assets\XLua\Src\Editor\Template\TemplateCommon.lua.txt" />
-     <None Include="Assets\XLua\Src\Editor\Template\LuaEnumWrap.tpl.txt" />
-     <None Include="Assets\XLua\Gen\link.xml" />
-     <None Include="Assets\XLua\Resources\perf\profiler.lua.txt" />
-     <None Include="Assets\XLua\Src\Editor\Template\LuaDelegateWrap.tpl.txt" />
-     <None Include="Assets\XLua\Resources\perf\memory.lua.txt" />
-     <None Include="Assets\XLua\Src\Editor\Template\LuaRegisterGCM.tpl.txt" />
-     <None Include="Assets\XLua\Src\Editor\Template\LuaRegister.tpl.txt" />
-     <None Include="Assets\XLua\Src\Editor\Template\LuaInterfaceBridge.tpl.txt" />
-     <None Include="Assets\XLua\Src\Editor\Template\LuaClassWrap.tpl.txt" />
-     <None Include="Assets\XLua\CHANGELOG.txt" />
-     <None Include="Assets\XLua\Src\Editor\Template\LuaEnumWrapGCM.tpl.txt" />
-     <None Include="Assets\XLua\Resources\tdr\tdr.lua.txt" />
-     <None Include="Assets\XLua\Src\Editor\Template\PackUnpack.tpl.txt" />
- <Reference Include="UnityEngine.UI">
- <HintPath>C:/Program Files/Unity/Hub/Editor/2017.2.0f3/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Networking">
- <HintPath>C:/Program Files/Unity/Hub/Editor/2017.2.0f3/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.PerformanceTesting">
- <HintPath>C:/Program Files/Unity/Hub/Editor/2017.2.0f3/Editor/Data/UnityExtensions/Unity/PerformanceTesting/UnityEngine.PerformanceTesting.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.TestRunner">
- <HintPath>C:/Program Files/Unity/Hub/Editor/2017.2.0f3/Editor/Data/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll</HintPath>
- </Reference>
- <Reference Include="nunit.framework">
- <HintPath>C:/Program Files/Unity/Hub/Editor/2017.2.0f3/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Timeline">
- <HintPath>C:/Program Files/Unity/Hub/Editor/2017.2.0f3/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.UIAutomation">
- <HintPath>C:/Program Files/Unity/Hub/Editor/2017.2.0f3/Editor/Data/UnityExtensions/Unity/UIAutomation/UnityEngine.UIAutomation.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.GoogleAudioSpatializer">
- <HintPath>C:/Program Files/Unity/Hub/Editor/2017.2.0f3/Editor/Data/UnityExtensions/Unity/UnityGoogleAudioSpatializer/RuntimeEditor/UnityEngine.GoogleAudioSpatializer.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.HoloLens">
- <HintPath>C:/Program Files/Unity/Hub/Editor/2017.2.0f3/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.SpatialTracking">
- <HintPath>C:/Program Files/Unity/Hub/Editor/2017.2.0f3/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Analytics">
- <HintPath>C:/Users/YAN/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.analytics@1.0.1/UnityEngine.Analytics.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Purchasing">
- <HintPath>C:/Users/YAN/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.purchasing@1.0.1/UnityEngine.Purchasing.dll</HintPath>
- </Reference>
+    <Compile Include="Assets\Scripts\Effect\Explosion.cs" />
+    <Compile Include="Assets\Scripts\Effect\Pao.cs" />
+    <Compile Include="Assets\Scripts\Effect\Shake.cs" />
+    <Compile Include="Assets\Scripts\Effect\Shine.cs" />
+    <Compile Include="Assets\Scripts\Effect\ShineHide.cs" />
+    <Compile Include="Assets\Scripts\Effect\Water.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Boss.cs" />
+    <Compile Include="Assets\Scripts\Enemy\CreateFish.cs" />
+    <Compile Include="Assets\Scripts\Enemy\DeffendBoss.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Fish.cs" />
+    <Compile Include="Assets\Scripts\Enemy\InvisibleBoss.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Qipao.cs" />
+    <Compile Include="Assets\Scripts\HotfixScript.cs" />
+    <Compile Include="Assets\Scripts\Item\Card.cs" />
+    <Compile Include="Assets\Scripts\Item\FishNet.cs" />
+    <Compile Include="Assets\Scripts\Item\Gold.cs" />
+    <Compile Include="Assets\Scripts\Item\Missile.cs" />
+    <Compile Include="Assets\Scripts\Item\Shell.cs" />
+    <Compile Include="Assets\Scripts\Player\Bullect.cs" />
+    <Compile Include="Assets\Scripts\Player\Gun.cs" />
+    <Compile Include="Assets\Scripts\Player\GunChange.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerUI\ButterFly.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerUI\Fire.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerUI\GunImage.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerUI\Ice.cs" />
+    <Compile Include="Assets\Scripts\Player\UI\CreatePao.cs" />
+    <Compile Include="Assets\Scripts\Player\UI\Ground.cs" />
+    <Compile Include="Assets\Scripts\Player\UI\LoadGame.cs" />
+    <Compile Include="Assets\Scripts\Player\UI\Mylight.cs" />
+    <Compile Include="Assets\Scripts\Player\UI\ReturnMain.cs" />
+    <Compile Include="Assets\Scripts\Player\UI\Star.cs" />
+    <Compile Include="Assets\Scripts\Player\UI\StartGame.cs" />
+    <Compile Include="Assets\Scripts\Player\UI\Treasour.cs" />
+    <Compile Include="Assets\XLua\Examples\01_Helloworld\Helloworld.cs" />
+    <Compile Include="Assets\XLua\Examples\02_U3DScripting\LuaBehaviour.cs" />
+    <Compile Include="Assets\XLua\Examples\04_LuaObjectOrented\InvokeLua.cs" />
+    <Compile Include="Assets\XLua\Examples\05_NoGc\NoGc.cs" />
+    <Compile Include="Assets\XLua\Examples\06_Coroutine\Coroutine_Runner.cs" />
+    <Compile Include="Assets\XLua\Examples\06_Coroutine\CoroutineTest.cs" />
+    <Compile Include="Assets\XLua\Examples\07_AsyncTest\AsyncTest.cs" />
+    <Compile Include="Assets\XLua\Examples\07_AsyncTest\MessageBox.cs" />
+    <Compile Include="Assets\XLua\Examples\08_Hotfix\HotfixTest.cs" />
+    <Compile Include="Assets\XLua\Examples\08_Hotfix\HotfixTest2.cs" />
+    <Compile Include="Assets\XLua\Examples\08_Hotfix\StatefullTest.cs" />
+    <Compile Include="Assets\XLua\Examples\09_GenericMethod\Foo.cs" />
+    <Compile Include="Assets\XLua\Examples\09_GenericMethod\GenericMethodExample.cs" />
+    <Compile Include="Assets\XLua\Examples\10_SignatureLoader\SignatureLoaderTest.cs" />
+    <Compile Include="Assets\XLua\Examples\11_RawObject\RawObjectTest.cs" />
+    <Compile Include="Assets\XLua\Examples\12_ReImplementInLua\ReImplementInLua.cs" />
+    <Compile Include="Assets\XLua\Examples\ExampleGenConfig.cs" />
+    <Compile Include="Assets\XLua\Gen\BaseTestWrap.cs" />
+    <Compile Include="Assets\XLua\Gen\Coroutine_RunnerWrap.cs" />
+    <Compile Include="Assets\XLua\Gen\CSCallLuaItfDBridge.cs" />
+    <Compile Include="Assets\XLua\Gen\DelegatesGensBridge.cs" />
+    <Compile Include="Assets\XLua\Gen\EnumWrap.cs" />
+    <Compile Include="Assets\XLua\Gen\Foo1ChildWrap.cs" />
+    <Compile Include="Assets\XLua\Gen\Foo1ParentWrap.cs" />
+    <Compile Include="Assets\XLua\Gen\Foo2ChildWrap.cs" />
+    <Compile Include="Assets\XLua\Gen\Foo2ParentWrap.cs" />
+    <Compile Include="Assets\XLua\Gen\FooExtensionWrap.cs" />
+    <Compile Include="Assets\XLua\Gen\FooWrap.cs" />
+    <Compile Include="Assets\XLua\Gen\InvokeLuaICalcBridge.cs" />
+    <Compile Include="Assets\XLua\Gen\LuaBehaviourWrap.cs" />
+    <Compile Include="Assets\XLua\Gen\PackUnpack.cs" />
+    <Compile Include="Assets\XLua\Gen\SystemCollectionsGenericList1SystemInt32Wrap.cs" />
+    <Compile Include="Assets\XLua\Gen\SystemCollectionsIEnumeratorBridge.cs" />
+    <Compile Include="Assets\XLua\Gen\SystemObjectWrap.cs" />
+    <Compile Include="Assets\XLua\Gen\TutorialBaseClassWrap.cs" />
+    <Compile Include="Assets\XLua\Gen\TutorialDrivenClassExtensionsWrap.cs" />
+    <Compile Include="Assets\XLua\Gen\TutorialDrivenClassWrap.cs" />
+    <Compile Include="Assets\XLua\Gen\TutorialICalcWrap.cs" />
+    <Compile Include="Assets\XLua\Gen\UnityEngineAnimationClipWrap.cs" />
+    <Compile Include="Assets\XLua\Gen\UnityEngineAnimationCurveWrap.cs" />
+    <Compile Include="Assets\XLua\Gen\UnityEngineBehaviourWrap.cs" />
+    <Compile Include="Assets\XLua\Gen\UnityEngineBoundsWrap.cs" />
+    <Compile Include="Assets\XLua\Gen\UnityEngineColorWrap.cs" />
+    <Compile Include="Assets\XLua\Gen\UnityEngineComponentWrap.cs" />
+    <Compile Include="Assets\XLua\Gen\UnityEngineDebugWrap.cs" />
+    <Compile Include="Assets\XLua\Gen\UnityEngineGameObjectWrap.cs" />
+    <Compile Include="Assets\XLua\Gen\UnityEngineKeyframeWrap.cs" />
+    <Compile Include="Assets\XLua\Gen\UnityEngineLightWrap.cs" />
+    <Compile Include="Assets\XLua\Gen\UnityEngineMathfWrap.cs" />
+    <Compile Include="Assets\XLua\Gen\UnityEngineMonoBehaviourWrap.cs" />
+    <Compile Include="Assets\XLua\Gen\UnityEngineObjectWrap.cs" />
+    <Compile Include="Assets\XLua\Gen\UnityEngineParticleSystemWrap.cs" />
+    <Compile Include="Assets\XLua\Gen\UnityEngineQuaternionWrap.cs" />
+    <Compile Include="Assets\XLua\Gen\UnityEngineRay2DWrap.cs" />
+    <Compile Include="Assets\XLua\Gen\UnityEngineRayWrap.cs" />
+    <Compile Include="Assets\XLua\Gen\UnityEngineRendererWrap.cs" />
+    <Compile Include="Assets\XLua\Gen\UnityEngineResourcesWrap.cs" />
+    <Compile Include="Assets\XLua\Gen\UnityEngineSkinnedMeshRendererWrap.cs" />
+    <Compile Include="Assets\XLua\Gen\UnityEngineTextAssetWrap.cs" />
+    <Compile Include="Assets\XLua\Gen\UnityEngineTimeWrap.cs" />
+    <Compile Include="Assets\XLua\Gen\UnityEngineTransformWrap.cs" />
+    <Compile Include="Assets\XLua\Gen\UnityEngineVector2Wrap.cs" />
+    <Compile Include="Assets\XLua\Gen\UnityEngineVector3Wrap.cs" />
+    <Compile Include="Assets\XLua\Gen\UnityEngineVector4Wrap.cs" />
+    <Compile Include="Assets\XLua\Gen\UnityEngineWaitForSecondsWrap.cs" />
+    <Compile Include="Assets\XLua\Gen\UnityEngineWWWWrap.cs" />
+    <Compile Include="Assets\XLua\Gen\WrapPusher.cs" />
+    <Compile Include="Assets\XLua\Gen\XLuaGenAutoRegister.cs" />
+    <Compile Include="Assets\XLua\Gen\XLuaTestIExchangerBridge.cs" />
+    <Compile Include="Assets\XLua\Gen\XLuaTestMyStructWrap.cs" />
+    <Compile Include="Assets\XLua\Gen\XLuaTestNoGcWrap.cs" />
+    <Compile Include="Assets\XLua\Gen\XLuaTestPeddingWrap.cs" />
+    <Compile Include="Assets\XLua\Src\CodeEmit.cs" />
+    <Compile Include="Assets\XLua\Src\CopyByValue.cs" />
+    <Compile Include="Assets\XLua\Src\DelegateBridge.cs" />
+    <Compile Include="Assets\XLua\Src\GenAttributes.cs" />
+    <Compile Include="Assets\XLua\Src\InternalGlobals.cs" />
+    <Compile Include="Assets\XLua\Src\LuaBase.cs" />
+    <Compile Include="Assets\XLua\Src\LuaDLL.cs" />
+    <Compile Include="Assets\XLua\Src\LuaEnv.cs" />
+    <Compile Include="Assets\XLua\Src\LuaException.cs" />
+    <Compile Include="Assets\XLua\Src\LuaFunction.cs" />
+    <Compile Include="Assets\XLua\Src\LuaTable.cs" />
+    <Compile Include="Assets\XLua\Src\MethodWarpsCache.cs" />
+    <Compile Include="Assets\XLua\Src\ObjectCasters.cs" />
+    <Compile Include="Assets\XLua\Src\ObjectPool.cs" />
+    <Compile Include="Assets\XLua\Src\ObjectTranslator.cs" />
+    <Compile Include="Assets\XLua\Src\ObjectTranslatorPool.cs" />
+    <Compile Include="Assets\XLua\Src\RawObject.cs" />
+    <Compile Include="Assets\XLua\Src\SignatureLoader.cs" />
+    <Compile Include="Assets\XLua\Src\StaticLuaCallbacks.cs" />
+    <Compile Include="Assets\XLua\Src\TemplateEngine\TemplateEngine.cs" />
+    <Compile Include="Assets\XLua\Src\TypeExtensions.cs" />
+    <Compile Include="Assets\XLua\Src\Utils.cs" />
+    <Compile Include="Assets\XLua\Tutorial\CSharpCallLua\CSCallLua.cs" />
+    <Compile Include="Assets\XLua\Tutorial\LoadLuaScript\ByFile\ByFile.cs" />
+    <Compile Include="Assets\XLua\Tutorial\LoadLuaScript\ByString\ByString.cs" />
+    <Compile Include="Assets\XLua\Tutorial\LoadLuaScript\Loader\CustomLoader.cs" />
+    <Compile Include="Assets\XLua\Tutorial\LuaCallCSharp\LuaCallCs.cs" />
+    <None Include="Assets\XLua\Examples\07_AsyncTest\Resources\message_box.lua.txt" />
+    <None Include="Assets\XLua\Examples\06_Coroutine\Resources\cs_coroutine.lua.txt" />
+    <None Include="Assets\XLua\Src\Editor\LinkXmlGen\LinkXmlGen.tpl.txt" />
+    <None Include="Assets\XLua\Examples\02_U3DScripting\LuaTestScript.lua.txt" />
+    <None Include="Assets\XLua\Examples\07_AsyncTest\Resources\async_test.lua.txt" />
+    <None Include="Assets\XLua\Tutorial\LoadLuaScript\ByFile\Resources\byfile.lua.txt" />
+    <None Include="Assets\PlayerGamePackage\fish.lua.txt" />
+    <None Include="Assets\XLua\Src\Editor\Template\LuaClassWrapGCM.tpl.txt" />
+    <None Include="Assets\XLua\Examples\06_Coroutine\Resources\coruntine_test.lua.txt" />
+    <None Include="Assets\XLua\Src\Editor\Template\LuaWrapPusher.tpl.txt" />
+    <None Include="Assets\XLua\Src\Editor\Template\LuaDelegateBridge.tpl.txt" />
+    <None Include="Assets\XLua\Resources\xlua\util.lua.txt" />
+    <None Include="Assets\XLua\Gen\link.xml" />
+    <None Include="Assets\XLua\Gen\Resources\hotfix_id_map.lua.txt" />
+    <None Include="Assets\XLua\Examples\03_UIEvent\ButtonInteraction.lua.txt" />
+    <None Include="Assets\XLua\Src\Editor\Template\TemplateCommon.lua.txt" />
+    <None Include="Assets\XLua\Src\Editor\Template\LuaEnumWrap.tpl.txt" />
+    <None Include="Assets\XLua\Resources\perf\profiler.lua.txt" />
+    <None Include="Assets\XLua\Src\Editor\Template\LuaDelegateWrap.tpl.txt" />
+    <None Include="Assets\XLua\Resources\perf\memory.lua.txt" />
+    <None Include="Assets\XLua\Src\Editor\Template\LuaRegisterGCM.tpl.txt" />
+    <None Include="Assets\XLua\Src\Editor\Template\LuaRegister.tpl.txt" />
+    <None Include="Assets\XLua\Src\Editor\Template\LuaInterfaceBridge.tpl.txt" />
+    <None Include="Assets\XLua\Src\Editor\Template\LuaClassWrap.tpl.txt" />
+    <None Include="Assets\XLua\CHANGELOG.txt" />
+    <None Include="Assets\XLua\Src\Editor\Template\LuaEnumWrapGCM.tpl.txt" />
+    <None Include="Assets\XLua\Resources\tdr\tdr.lua.txt" />
+    <None Include="Assets\XLua\Src\Editor\Template\PackUnpack.tpl.txt" />
+    <Reference Include="UnityEngine.UI">
+      <HintPath>C:/Program Files/Unity/Hub/Editor/2017.2.0f3/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Networking">
+      <HintPath>C:/Program Files/Unity/Hub/Editor/2017.2.0f3/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PerformanceTesting">
+      <HintPath>C:/Program Files/Unity/Hub/Editor/2017.2.0f3/Editor/Data/UnityExtensions/Unity/PerformanceTesting/UnityEngine.PerformanceTesting.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TestRunner">
+      <HintPath>C:/Program Files/Unity/Hub/Editor/2017.2.0f3/Editor/Data/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>C:/Program Files/Unity/Hub/Editor/2017.2.0f3/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Timeline">
+      <HintPath>C:/Program Files/Unity/Hub/Editor/2017.2.0f3/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIAutomation">
+      <HintPath>C:/Program Files/Unity/Hub/Editor/2017.2.0f3/Editor/Data/UnityExtensions/Unity/UIAutomation/UnityEngine.UIAutomation.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GoogleAudioSpatializer">
+      <HintPath>C:/Program Files/Unity/Hub/Editor/2017.2.0f3/Editor/Data/UnityExtensions/Unity/UnityGoogleAudioSpatializer/RuntimeEditor/UnityEngine.GoogleAudioSpatializer.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.HoloLens">
+      <HintPath>C:/Program Files/Unity/Hub/Editor/2017.2.0f3/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpatialTracking">
+      <HintPath>C:/Program Files/Unity/Hub/Editor/2017.2.0f3/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Analytics">
+      <HintPath>C:/Users/YAN/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.analytics@1.0.1/UnityEngine.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Purchasing">
+      <HintPath>C:/Users/YAN/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.purchasing@1.0.1/UnityEngine.Purchasing.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -256,5 +412,4 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-  
 </Project>

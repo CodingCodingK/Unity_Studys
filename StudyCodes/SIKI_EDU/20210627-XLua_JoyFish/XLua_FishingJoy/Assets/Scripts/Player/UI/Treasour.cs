@@ -2,9 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using XLua;
+
 /// <summary>
 /// 宝藏
 /// </summary>
+
+[Hotfix]
 public class Treasour : MonoBehaviour
 {
 
@@ -38,6 +42,8 @@ public class Treasour : MonoBehaviour
         CreatePrize();
         isDrease = true;
     }
+    
+    [LuaCallCSharp()]
     private void CreatePrize()
     {
         for (int i = 0; i < 5; i++)

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e30b0e37-ac16-4e9d-bb15-423295bdae28" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../../../../Notes/Mindmaps/JoyFish/XLua改写_JoyFish.xmind" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../../Notes/Mindmaps/JoyFish/XLua改写_JoyFish.xmind" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/.idea.XLua_FishingJoy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/.idea.XLua_FishingJoy/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assembly-CSharp-Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../../Assembly-CSharp-Editor.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../../Assembly-CSharp.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PlayerGamePackage/fish.lua.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../PlayerGamePackage/fish.lua.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Scripts/Player/Gun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Scripts/Player/Gun.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Scripts/Player/UI/Treasour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Scripts/Player/UI/Treasour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gen/DelegatesGensBridge.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Gen/DelegatesGensBridge.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Library/CurrentLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/CurrentLayout.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Library/ScriptAssemblies/Assembly-CSharp-Editor.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/ScriptAssemblies/Assembly-CSharp-Editor.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Library/ScriptAssemblies/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/ScriptAssemblies/Assembly-CSharp.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Library/ScriptAssemblies/Assembly-CSharp.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/ScriptAssemblies/Assembly-CSharp.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Library/assetDatabase3" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/assetDatabase3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Library/metadata/00/00000000000000005100000000000000" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/metadata/00/00000000000000005100000000000000" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Library/metadata/00/00000000000000008000000000000000" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/metadata/00/00000000000000008000000000000000" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Library/metadata/00/0000000000000000c000000000000000" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/metadata/00/0000000000000000c000000000000000" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Library/metadata/09/09b9ce602db02f8478e970dad4c3445e" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/metadata/09/09b9ce602db02f8478e970dad4c3445e" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Library/metadata/4b/4b2e18945525fdb49b445cc463ec066f" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/metadata/4b/4b2e18945525fdb49b445cc463ec066f" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Library/metadata/b2/b2ac4b95977810448800e4d4967646b6" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/metadata/b2/b2ac4b95977810448800e4d4967646b6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Library/metadata/c9/c986bd00f700b0e42a3899da6f2824e5" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/metadata/c9/c986bd00f700b0e42a3899da6f2824e5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjectSettings/EditorSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../../ProjectSettings/EditorSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../XLua_FishingJoy.sln" beforeDir="false" afterPath="$PROJECT_DIR$/../../XLua_FishingJoy.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../obj/Debug/Assembly-CSharp-Editor.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../obj/Debug/Assembly-CSharp-Editor.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../obj/Debug/Assembly-CSharp.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../obj/Debug/Assembly-CSharp.csproj.AssemblyReference.cache" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../../.." />
+  </component>
+  <component name="ProjectId" id="1unURD4NYZhH83ly3tQc1fivkXd" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e30b0e37-ac16-4e9d-bb15-423295bdae28" name="Default Changelist" comment="" />
+      <created>1625300835537</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1625300835537</updated>
+      <workItem from="1625300836727" duration="8000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

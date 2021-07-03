@@ -1,9 +1,8 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XLua_FishingJoy", "Assembly-CSharp.csproj", "{89D79A2F-CBD1-E429-00FC-046089496FCB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{89D79A2F-CBD1-E429-00FC-046089496FCB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XLua_FishingJoy", "Assembly-CSharp-Editor.csproj", "{2274A441-E51B-3AE0-EFB5-064AF0841140}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{2274A441-E51B-3AE0-EFB5-064AF0841140}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

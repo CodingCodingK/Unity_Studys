@@ -2,17 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using XLua;
 
 /// <summary>
 /// 枪
 /// </summary>
-
+[Hotfix]
 public class Gun : MonoBehaviour
 {
-
-
-
-
     //属性
     public int gold = 100;
     public int diamands = 50;
@@ -58,17 +55,12 @@ public class Gun : MonoBehaviour
 
 
     private static Gun instance;
+
     public static Gun Instance
     {
-        get
-        {
-            return instance;
-        }
+        get { return instance; }
 
-        set
-        {
-            instance = value;
-        }
+        set { instance = value; }
     }
 
     private void Awake()
@@ -83,15 +75,11 @@ public class Gun : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
     }
 
     // Update is called once per frame
     void Update()
     {
-
-
-
         goldText.text = gold.ToString();
         diamandsText.text = diamands.ToString();
 
@@ -101,20 +89,15 @@ public class Gun : MonoBehaviour
         RotateGun();
 
 
-
-
-
         if (GunCD <= 0)
         {
             canChangeGun = true;
             GunCD = 4;
-
         }
         else
         {
             GunCD -= Time.deltaTime;
         }
-
 
 
         //攻击的方法
@@ -141,21 +124,14 @@ public class Gun : MonoBehaviour
     /// 以下是方法的定义
     /// </summary>
 
-
-
-
     //旋转枪
-
     private void RotateGun()
     {
-
         float h = Input.GetAxisRaw("Mouse Y");
         float v = Input.GetAxisRaw("Mouse X");
 
         transform.Rotate(-Vector3.forward * v * rotateSpeed);
         transform.Rotate(Vector3.forward * h * rotateSpeed);
-
-
 
 
         ClampAngle();
@@ -171,6 +147,7 @@ public class Gun : MonoBehaviour
         {
             gunLevel = 1;
         }
+
         gunChange[0].ToGray();
         gunChange[1].ToGray();
         canChangeGun = false;
@@ -183,6 +160,7 @@ public class Gun : MonoBehaviour
         {
             gunLevel = 3;
         }
+
         gunChange[0].ToGray();
         gunChange[1].ToGray();
         canChangeGun = false;
@@ -206,20 +184,20 @@ public class Gun : MonoBehaviour
     }
 
     //攻击方法
-
+    [LuaCallCSharp()]
     private void Attack()
     {
-
         if (Input.GetMouseButtonDown(0))
         {
-
             bullectAudio.clip = bullectAudios[gunLevel - 1];
             bullectAudio.Play();
 
             if (Butterfly)
             {
-                Instantiate(Bullects[gunLevel - 1], attackPos.position, attackPos.rotation * Quaternion.Euler(0, 0, 20));
-                Instantiate(Bullects[gunLevel - 1], attackPos.position, attackPos.rotation * Quaternion.Euler(0, 0, -20));
+                Instantiate(Bullects[gunLevel - 1], attackPos.position,
+                    attackPos.rotation * Quaternion.Euler(0, 0, 20));
+                Instantiate(Bullects[gunLevel - 1], attackPos.position,
+                    attackPos.rotation * Quaternion.Euler(0, 0, -20));
             }
 
             Instantiate(Bullects[gunLevel - 1], attackPos.position, attackPos.rotation);
@@ -228,12 +206,11 @@ public class Gun : MonoBehaviour
             if (!canShootForFree)
             {
                 GoldChange(-1 - (gunLevel - 1) * 2);
-
             }
+
             attackCD = 0;
             attack = false;
         }
-
     }
 
     //增减金钱
@@ -256,16 +233,12 @@ public class Gun : MonoBehaviour
 
     public void DiamandsChange(int number)
     {
-
-
         diamands += number;
     }
 
     /// <summary>
     /// 贝壳触发的一些效果方法
     /// </summary>
-
-
     public void CanShootForFree()
     {
         canShootForFree = true;
