@@ -66,8 +66,8 @@ public class Gun : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        gold = 1000;
-        diamands = 1000;
+        gold = 30;
+        diamands = 100;
         level = 2;
         bullectAudio = GetComponent<AudioSource>();
     }
@@ -125,6 +125,7 @@ public class Gun : MonoBehaviour
     /// </summary>
 
     //旋转枪
+    [LuaCallCSharp]
     private void RotateGun()
     {
         float h = Input.GetAxisRaw("Mouse Y");

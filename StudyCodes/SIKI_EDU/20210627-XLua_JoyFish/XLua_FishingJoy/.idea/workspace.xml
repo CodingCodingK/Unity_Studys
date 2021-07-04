@@ -27,10 +27,6 @@
       <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/LuaBehaviourWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/LuaBehaviourWrap.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/PackUnpack.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/PackUnpack.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/Resources.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/Resources.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/Resources/hotfix_id_map.lua.txt.20210630185051274" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/Resources/hotfix_id_map.lua.txt.20210630185051274.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/Resources/hotfix_id_map.lua.txt.20210701234421196" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/Resources/hotfix_id_map.lua.txt.20210701234421196.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/Resources/hotfix_id_map.lua.txt.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/Resources/hotfix_id_map.lua.txt.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/SystemCollectionsGenericList1SystemInt32Wrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/SystemCollectionsGenericList1SystemInt32Wrap.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/SystemCollectionsIEnumeratorBridge.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/SystemCollectionsIEnumeratorBridge.cs.meta" afterDir="false" />
@@ -74,8 +70,6 @@
       <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/XLuaTestNoGcWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/XLuaTestNoGcWrap.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/XLuaTestPeddingWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/XLuaTestPeddingWrap.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/link.xml.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/link.xml.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Src/LuaEnv.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Src/LuaEnv.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/CurrentLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/Library/CurrentLayout.dwlt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll.mdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" afterDir="false" />
@@ -83,15 +77,9 @@
       <change beforePath="$PROJECT_DIR$/Library/assetDatabase3" beforeDir="false" afterPath="$PROJECT_DIR$/Library/assetDatabase3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/metadata/00/00000000000000005100000000000000" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/00/00000000000000005100000000000000" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/metadata/00/00000000000000008000000000000000" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/00/00000000000000008000000000000000" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/00/0000000000000000c000000000000000" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/00/0000000000000000c000000000000000" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/09/09b9ce602db02f8478e970dad4c3445e" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/metadata/4b/4b2e18945525fdb49b445cc463ec066f" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/4b/4b2e18945525fdb49b445cc463ec066f" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/metadata/b2/b2ac4b95977810448800e4d4967646b6" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/b2/b2ac4b95977810448800e4d4967646b6" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/metadata/c9/c986bd00f700b0e42a3899da6f2824e5" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/c9/c986bd00f700b0e42a3899da6f2824e5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/XLua_FishingJoy.sln" beforeDir="false" afterPath="$PROJECT_DIR$/XLua_FishingJoy.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp-Editor.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp-Editor.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.csproj.AssemblyReference.cache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,39 +101,14 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../../software/lua/UnityLuaAPI(tolua).zip" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../../software/lua/UnityLuaAPI.zip" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.18527919" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="XLua_FishingJoy" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="XLua_FishingJoy" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Unnamed" type="lua.emmy.debugger" factoryName="Emmy Debugger(NEW)" nameIsGenerated="true">
       <option name="TYPE" value="0" />
       <option name="HOST" value="localhost" />
@@ -179,6 +142,7 @@
       <workItem from="1625300294882" duration="459000" />
       <workItem from="1625300768840" duration="20000" />
       <workItem from="1625300970129" duration="1896000" />
+      <workItem from="1625369570900" duration="18393000" />
     </task>
     <servers />
   </component>

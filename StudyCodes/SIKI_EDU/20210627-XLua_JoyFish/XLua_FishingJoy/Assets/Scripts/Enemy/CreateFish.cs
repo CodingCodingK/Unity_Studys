@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using XLua;
 
 /// <summary>
 /// 产鱼器
 /// </summary>
-
+[Hotfix]
 public class CreateFish : MonoBehaviour
 {
 
@@ -43,6 +44,7 @@ public class CreateFish : MonoBehaviour
 
     }
 
+    [LuaCallCSharp]
     void Update()
     {
 
@@ -59,7 +61,6 @@ public class CreateFish : MonoBehaviour
             num = Random.Range(0, 4);
             //游戏物体随机数
             ItemNum = Random.Range(1, 101);
-
 
             //产生气泡
             if (ItemNum < 20)

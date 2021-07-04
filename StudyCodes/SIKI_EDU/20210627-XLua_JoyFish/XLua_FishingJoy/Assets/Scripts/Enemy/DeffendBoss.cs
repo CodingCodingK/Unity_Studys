@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using XLua;
+
 /// <summary>
 /// 有护盾的boss
 /// </summary>
+[Hotfix]
 public class DeffendBoss : Boss
 {
 

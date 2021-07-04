@@ -72,6 +72,7 @@ public static class ExampleGenConfig
                 new List<string>(){"UnityEngine.CanvasRenderer", "onRequestRebuild"},
                 new List<string>(){"UnityEngine.Light", "areaSize"},
                 new List<string>(){"UnityEngine.AnimatorOverrideController", "PerformOverrideClipListCleanup"},
+                new List<string>(){"UnityEngine.Light", "lightmapBakeType"},
     #if !UNITY_WEBPLAYER
                 new List<string>(){"UnityEngine.Application", "ExternalEval"},
     #endif

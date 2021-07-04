@@ -21,7 +21,7 @@ namespace XLua.CSObjectWrap
         {
 			ObjectTranslator translator = ObjectTranslatorPool.Instance.Find(L);
 			System.Type type = typeof(UnityEngine.Light);
-			Utils.BeginObjectRegister(type, L, translator, 0, 5, 23, 21);
+			Utils.BeginObjectRegister(type, L, translator, 0, 5, 22, 20);
 			
 			Utils.RegisterFunc(L, Utils.METHOD_IDX, "AddCommandBuffer", _m_AddCommandBuffer);
 			Utils.RegisterFunc(L, Utils.METHOD_IDX, "RemoveCommandBuffer", _m_RemoveCommandBuffer);
@@ -51,7 +51,6 @@ namespace XLua.CSObjectWrap
             Utils.RegisterFunc(L, Utils.GETTER_IDX, "alreadyLightmapped", _g_get_alreadyLightmapped);
             Utils.RegisterFunc(L, Utils.GETTER_IDX, "isBaked", _g_get_isBaked);
             Utils.RegisterFunc(L, Utils.GETTER_IDX, "cullingMask", _g_get_cullingMask);
-            Utils.RegisterFunc(L, Utils.GETTER_IDX, "lightmapBakeType", _g_get_lightmapBakeType);
             Utils.RegisterFunc(L, Utils.GETTER_IDX, "commandBufferCount", _g_get_commandBufferCount);
             
 			Utils.RegisterFunc(L, Utils.SETTER_IDX, "type", _s_set_type);
@@ -74,7 +73,6 @@ namespace XLua.CSObjectWrap
             Utils.RegisterFunc(L, Utils.SETTER_IDX, "renderMode", _s_set_renderMode);
             Utils.RegisterFunc(L, Utils.SETTER_IDX, "alreadyLightmapped", _s_set_alreadyLightmapped);
             Utils.RegisterFunc(L, Utils.SETTER_IDX, "cullingMask", _s_set_cullingMask);
-            Utils.RegisterFunc(L, Utils.SETTER_IDX, "lightmapBakeType", _s_set_lightmapBakeType);
             
 			
 			Utils.EndObjectRegister(type, L, translator, null, null,
@@ -605,20 +603,6 @@ namespace XLua.CSObjectWrap
         }
         
         [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-        static int _g_get_lightmapBakeType(RealStatePtr L)
-        {
-		    try {
-                ObjectTranslator translator = ObjectTranslatorPool.Instance.Find(L);
-			
-                UnityEngine.Light __cl_gen_to_be_invoked = (UnityEngine.Light)translator.FastGetCSObj(L, 1);
-                translator.Push(L, __cl_gen_to_be_invoked.lightmapBakeType);
-            } catch(System.Exception __gen_e) {
-                return LuaAPI.luaL_error(L, "c# exception:" + __gen_e);
-            }
-            return 1;
-        }
-        
-        [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
         static int _g_get_commandBufferCount(RealStatePtr L)
         {
 		    try {
@@ -932,22 +916,6 @@ namespace XLua.CSObjectWrap
 			
                 UnityEngine.Light __cl_gen_to_be_invoked = (UnityEngine.Light)translator.FastGetCSObj(L, 1);
                 __cl_gen_to_be_invoked.cullingMask = LuaAPI.xlua_tointeger(L, 2);
-            
-            } catch(System.Exception __gen_e) {
-                return LuaAPI.luaL_error(L, "c# exception:" + __gen_e);
-            }
-            return 0;
-        }
-        
-        [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-        static int _s_set_lightmapBakeType(RealStatePtr L)
-        {
-		    try {
-                ObjectTranslator translator = ObjectTranslatorPool.Instance.Find(L);
-			
-                UnityEngine.Light __cl_gen_to_be_invoked = (UnityEngine.Light)translator.FastGetCSObj(L, 1);
-                UnityEngine.LightmapBakeType __cl_gen_value;translator.Get(L, 2, out __cl_gen_value);
-				__cl_gen_to_be_invoked.lightmapBakeType = __cl_gen_value;
             
             } catch(System.Exception __gen_e) {
                 return LuaAPI.luaL_error(L, "c# exception:" + __gen_e);

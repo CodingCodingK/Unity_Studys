@@ -1,29 +1,41 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using XLua;
 using System.IO;
 using System.Text;
 
-public class HotfixScript : MonoBehaviour {
+public class HotfixScript : MonoBehaviour
+{
+    private LuaEnv luaenv;
 
-	private LuaEnv luaenv;
+    private static Dictionary<string, GameObject> prefabDict = new Dictionary<string, GameObject>();
 
-	// Use this for initialization
-	void Start () {
-		luaenv = new LuaEnv();
+    private void Awake()
+    {
+        luaenv = new LuaEnv();
         luaenv.AddLoader(MyLoader);
         luaenv.DoString("require 'fish'");
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
-
-    void OnDestory()
+    // Use this for initialization
+    void Start()
     {
+        // luaenv = new LuaEnv();
+        //       luaenv.AddLoader(MyLoader);
+        //       luaenv.DoString("require 'fish'");
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+    }
+
+
+    void OnDestroy()
+    {
+        luaenv.DoString("require 'fishDispose'");
         luaenv.Dispose();
     }
 
@@ -36,5 +48,18 @@ public class HotfixScript : MonoBehaviour {
         return Encoding.UTF8.GetBytes(File.ReadAllText(path));
     }
 
-    
+    [LuaCallCSharp]
+    public static void LoadResource(string resName, string filePath)
+    {
+        AssetBundle ab = AssetBundle.LoadFromFile(
+            @"D:\github\Unity\StudyCodes\SIKI_EDU\20210627-XLua_JoyFish\XLua_FishingJoy\AssetBundles\" + filePath);
+        GameObject go = ab.LoadAsset<GameObject>(resName);
+        prefabDict.Add(resName,go);
+    }
+
+    [LuaCallCSharp]
+    public static GameObject GetGameObject(string goName)
+    {
+        return prefabDict[goName];
+    }
 }
