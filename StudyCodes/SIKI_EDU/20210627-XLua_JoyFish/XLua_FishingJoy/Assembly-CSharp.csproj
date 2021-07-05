@@ -219,6 +219,7 @@
     <Compile Include="Assets\Scripts\Enemy\Fish.cs" />
     <Compile Include="Assets\Scripts\Enemy\InvisibleBoss.cs" />
     <Compile Include="Assets\Scripts\Enemy\Qipao.cs" />
+    <Compile Include="Assets\Scripts\HotfixEmpty.cs" />
     <Compile Include="Assets\Scripts\HotfixScript.cs" />
     <Compile Include="Assets\Scripts\Item\Card.cs" />
     <Compile Include="Assets\Scripts\Item\FishNet.cs" />

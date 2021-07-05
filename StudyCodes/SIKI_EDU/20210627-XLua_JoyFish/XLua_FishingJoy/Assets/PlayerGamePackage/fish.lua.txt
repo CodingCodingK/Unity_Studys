@@ -133,11 +133,26 @@ xlua.private_accessible(CS.CreateFish)
 -- 2.0.1 增加新鱼。
 xlua.hotfix(CS.CreateFish,'Start',function(self)
     CS.HotfixScript.LoadResource('level3fish3','gameobject\\enemy.ab')
-    print('success')
+    CS.HotfixScript.LoadResource('SeaWave','gameobject\\wave.ab')
 end)
 
+local canCreateNewFish = true
+local changeMapTimeval = 0
 
 xlua.hotfix(CS.CreateFish, 'Update', function(self)
+    -- 有海浪的情况下暂停生成新鱼
+    if canCreateNewFish then
+        if changeMapTimeval>=3 then
+            sw = CS.HotfixScript.GetGameObject('SeaWave')
+            UnityEngine.GameObject.Instantiate(sw)
+            canCreateNewFish = false
+            changeMapTimeval = 0
+        else
+            changeMapTimeval = changeMapTimeval + UnityEngine.Time.deltaTime
+        end
+    else
+        return
+    end
     self:CreateALotOfFish()
     --单种鱼的生成
     if self.ItemtimeVal >= 0.5 then
@@ -258,4 +273,36 @@ xlua.hotfix(CS.GunImage,'RotateGun',function(self)
         self.transform:Rotate(-UnityEngine.Vector3.forward * self.rotateSpeed)
     end
     self:ClampAngle()
+end)
+
+-- 2.0 海浪
+
+xlua.private_accessible(CS.HotfixEmpty)
+xlua.hotfix(CS.HotfixEmpty,'Start',function(self)
+    print('zzxczxczxczxczcx')
+    self:Invoke("BehaviourMethod",8)
+end)
+
+xlua.hotfix(CS.HotfixEmpty,'Update',function(self)
+    self.transform:Translate(-self.transform.right*4*UnityEngine.Time.deltaTime,UnityEngine.Space.World)
+end)
+
+
+xlua.hotfix(CS.HotfixEmpty,'OnTriggerEnter',function(self,other)
+    if other.tag~="Untagged" and other.tag~="Wall" then
+        UnityEngine.Object.Destroy(other.gameObject)
+    end
+end)
+
+
+
+xlua.hotfix(CS.HotfixEmpty,'BehaviourMethod',function(self)
+    CS.Gun.Instance.level=CS.Gun.Instance.level+1
+    if CS.Gun.Instance.level==4 then
+        CS.Gun.Instance.level=1
+    end
+    canCreateNewFish=true
+    CS.Gun.Instance.changeAudio=true
+    UnityEngine.Object.Destroy(self.gameObject)
+
 end)

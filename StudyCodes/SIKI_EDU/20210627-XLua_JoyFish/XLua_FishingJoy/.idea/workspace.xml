@@ -2,19 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="494dd134-0f08-4aa6-97b2-5840bee2151f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../../Notes/Mindmaps/JoyFish/XLua改写_JoyFish.xmind" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Notes/Mindmaps/JoyFish/XLua改写_JoyFish.xmind" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Notes/Mindmaps/Assetbundle.xmind" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Notes/Mindmaps/Assetbundle.xmind" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.XLua_FishingJoy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.XLua_FishingJoy/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/PlayerGamePackage/fish.lua.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayerGamePackage/fish.lua.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Gun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Gun.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/UI/Treasour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/UI/Treasour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayerGamePackage/fishDispose.lua.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayerGamePackage/fishDispose.lua.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/BaseTestWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/BaseTestWrap.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/CSCallLuaItfDBridge.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/CSCallLuaItfDBridge.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/Coroutine_RunnerWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/Coroutine_RunnerWrap.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/DelegatesGensBridge.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/DelegatesGensBridge.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/DelegatesGensBridge.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/DelegatesGensBridge.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/EnumWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/EnumWrap.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/Foo1ChildWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/Foo1ChildWrap.cs.meta" afterDir="false" />
@@ -70,16 +67,12 @@
       <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/XLuaTestNoGcWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/XLuaTestNoGcWrap.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/XLuaTestPeddingWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/XLuaTestPeddingWrap.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/link.xml.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/link.xml.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll.mdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll.mdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/assetDatabase3" beforeDir="false" afterPath="$PROJECT_DIR$/Library/assetDatabase3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/metadata/00/00000000000000005100000000000000" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/00/00000000000000005100000000000000" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/metadata/00/00000000000000008000000000000000" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/00/00000000000000008000000000000000" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/metadata/4b/4b2e18945525fdb49b445cc463ec066f" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/4b/4b2e18945525fdb49b445cc463ec066f" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/b2/b2ac4b95977810448800e4d4967646b6" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/b2/b2ac4b95977810448800e4d4967646b6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/c9/c986bd00f700b0e42a3899da6f2824e5" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/c9/c986bd00f700b0e42a3899da6f2824e5" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,6 +81,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1uiekxfgTqFgkIg5qpDyAA7hEV9" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -143,6 +144,7 @@
       <workItem from="1625300768840" duration="20000" />
       <workItem from="1625300970129" duration="1896000" />
       <workItem from="1625369570900" duration="18393000" />
+      <workItem from="1625490512361" duration="4573000" />
     </task>
     <servers />
   </component>
