@@ -1,79 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="494dd134-0f08-4aa6-97b2-5840bee2151f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../../Notes/Mindmaps/Assetbundle.xmind" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Notes/Mindmaps/Assetbundle.xmind" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.XLua_FishingJoy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.XLua_FishingJoy/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayerGamePackage/fish.lua.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayerGamePackage/fish.lua.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayerGamePackage/fishDispose.lua.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayerGamePackage/fishDispose.lua.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/BaseTestWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/BaseTestWrap.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/CSCallLuaItfDBridge.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/CSCallLuaItfDBridge.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/Coroutine_RunnerWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/Coroutine_RunnerWrap.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/DelegatesGensBridge.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/DelegatesGensBridge.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/EnumWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/EnumWrap.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/Foo1ChildWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/Foo1ChildWrap.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/Foo1ParentWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/Foo1ParentWrap.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/Foo2ChildWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/Foo2ChildWrap.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/Foo2ParentWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/Foo2ParentWrap.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/FooExtensionWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/FooExtensionWrap.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/FooWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/FooWrap.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/InvokeLuaICalcBridge.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/InvokeLuaICalcBridge.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/LuaBehaviourWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/LuaBehaviourWrap.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/PackUnpack.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/PackUnpack.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/Resources.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/Resources.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/Resources/hotfix_id_map.lua.txt.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/Resources/hotfix_id_map.lua.txt.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/SystemCollectionsGenericList1SystemInt32Wrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/SystemCollectionsGenericList1SystemInt32Wrap.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/SystemCollectionsIEnumeratorBridge.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/SystemCollectionsIEnumeratorBridge.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/SystemObjectWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/SystemObjectWrap.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/TutorialBaseClassWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/TutorialBaseClassWrap.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/TutorialDrivenClassExtensionsWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/TutorialDrivenClassExtensionsWrap.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/TutorialDrivenClassWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/TutorialDrivenClassWrap.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/TutorialICalcWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/TutorialICalcWrap.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineAnimationClipWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineAnimationClipWrap.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineAnimationCurveWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineAnimationCurveWrap.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineBehaviourWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineBehaviourWrap.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineBoundsWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineBoundsWrap.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineColorWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineColorWrap.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineComponentWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineComponentWrap.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineDebugWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineDebugWrap.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineGameObjectWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineGameObjectWrap.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineKeyframeWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineKeyframeWrap.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineLightWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineLightWrap.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineMathfWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineMathfWrap.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineMonoBehaviourWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineMonoBehaviourWrap.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineObjectWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineObjectWrap.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineParticleSystemWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineParticleSystemWrap.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineQuaternionWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineQuaternionWrap.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineRay2DWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineRay2DWrap.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineRayWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineRayWrap.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineRendererWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineRendererWrap.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineResourcesWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineResourcesWrap.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineSkinnedMeshRendererWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineSkinnedMeshRendererWrap.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineTextAssetWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineTextAssetWrap.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineTimeWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineTimeWrap.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineTransformWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineTransformWrap.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineVector2Wrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineVector2Wrap.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineVector3Wrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineVector3Wrap.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineVector4Wrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineVector4Wrap.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineWWWWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineWWWWrap.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineWaitForSecondsWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineWaitForSecondsWrap.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/WrapPusher.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/WrapPusher.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/XLuaGenAutoRegister.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/XLuaGenAutoRegister.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/XLuaTestIExchangerBridge.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/XLuaTestIExchangerBridge.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/XLuaTestMyStructWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/XLuaTestMyStructWrap.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/XLuaTestNoGcWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/XLuaTestNoGcWrap.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/XLuaTestPeddingWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/XLuaTestPeddingWrap.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/link.xml.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/link.xml.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll.mdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/assetDatabase3" beforeDir="false" afterPath="$PROJECT_DIR$/Library/assetDatabase3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/00/00000000000000005100000000000000" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/00/00000000000000005100000000000000" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/00/00000000000000008000000000000000" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/00/00000000000000008000000000000000" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/4b/4b2e18945525fdb49b445cc463ec066f" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/4b/4b2e18945525fdb49b445cc463ec066f" afterDir="false" />
-    </list>
+    <list default="true" id="494dd134-0f08-4aa6-97b2-5840bee2151f" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -145,6 +73,7 @@
       <workItem from="1625300970129" duration="1896000" />
       <workItem from="1625369570900" duration="18393000" />
       <workItem from="1625490512361" duration="4573000" />
+      <workItem from="1625581532504" duration="599000" />
     </task>
     <servers />
   </component>
