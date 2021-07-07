@@ -3,10 +3,515 @@
   <component name="ChangeListManager">
     <list default="true" id="af775008-549e-4b28-bae8-fc0eb6d43c4f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.XLua_FishingJoy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.XLua_FishingJoy/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/CurrentLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/Library/CurrentLayout.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefebs/Player.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefebs/Player/Bullect1.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefebs/Player/Bullect1.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefebs/Player/Bullect2.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefebs/Player/Bullect2.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefebs/Player/Bullect3.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefebs/Player/Bullect3.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/UI/LoadGame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/UI/LoadGame.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/01_Helloworld.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/01_Helloworld/Helloworld.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/01_Helloworld/Helloworld.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/01_Helloworld/Helloworld.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/01_Helloworld/Helloworld.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/02_U3DScripting.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/02_U3DScripting/LuaBehaviour.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/02_U3DScripting/LuaBehaviour.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/02_U3DScripting/LuaTestScript.lua.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/02_U3DScripting/LuaTestScript.lua.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/02_U3DScripting/U3DScripting.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/02_U3DScripting/U3DScripting.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/03_UIEvent.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/03_UIEvent/ButtonInteraction.lua.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/03_UIEvent/ButtonInteraction.lua.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/03_UIEvent/UI.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/03_UIEvent/UI.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/04_LuaObjectOrented.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/04_LuaObjectOrented/InvokeLua.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/04_LuaObjectOrented/InvokeLua.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/04_LuaObjectOrented/InvokeLua.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/04_LuaObjectOrented/InvokeLua.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/05_NoGc.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/05_NoGc/NoGc.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/05_NoGc/NoGc.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/05_NoGc/NoGc.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/05_NoGc/NoGc.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/06_Coroutine.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/06_Coroutine/Coroutine.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/06_Coroutine/Coroutine.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/06_Coroutine/CoroutineTest.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/06_Coroutine/CoroutineTest.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/06_Coroutine/Coroutine_Runner.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/06_Coroutine/Coroutine_Runner.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/06_Coroutine/Resources.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/06_Coroutine/Resources/coruntine_test.lua.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/06_Coroutine/Resources/coruntine_test.lua.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/06_Coroutine/Resources/cs_coroutine.lua.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/06_Coroutine/Resources/cs_coroutine.lua.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/07_AsyncTest.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/07_AsyncTest/AsyncTest.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/07_AsyncTest/AsyncTest.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/07_AsyncTest/AsyncTest.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/07_AsyncTest/AsyncTest.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/07_AsyncTest/MessageBox.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/07_AsyncTest/MessageBox.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/07_AsyncTest/Resources.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/07_AsyncTest/Resources/AlertBox.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/07_AsyncTest/Resources/AlertBox.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/07_AsyncTest/Resources/ConfirmBox.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/07_AsyncTest/Resources/ConfirmBox.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/07_AsyncTest/Resources/async_test.lua.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/07_AsyncTest/Resources/async_test.lua.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/07_AsyncTest/Resources/message_box.lua.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/07_AsyncTest/Resources/message_box.lua.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/08_Hotfix.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/08_Hotfix/HotfixTest.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/08_Hotfix/HotfixTest.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/08_Hotfix/HotfixTest.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/08_Hotfix/HotfixTest.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/08_Hotfix/HotfixTest2.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/08_Hotfix/HotfixTest2.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/08_Hotfix/HotfixTest2.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/08_Hotfix/HotfixTest2.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/08_Hotfix/StatefullTest.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/08_Hotfix/StatefullTest.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/09_GenericMethod.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/09_GenericMethod/Foo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/09_GenericMethod/Foo.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/09_GenericMethod/GenericMethod.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/09_GenericMethod/GenericMethod.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/09_GenericMethod/GenericMethodExample.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/09_GenericMethod/GenericMethodExample.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/10_SignatureLoader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/10_SignatureLoader/Resources.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/10_SignatureLoader/Resources/signatured1.lua.bytes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/10_SignatureLoader/Resources/signatured1.lua.bytes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/10_SignatureLoader/Resources/signatured2.lua.bytes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/10_SignatureLoader/Resources/signatured2.lua.bytes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/10_SignatureLoader/Resources/signatured3.lua.bytes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/10_SignatureLoader/Resources/signatured3.lua.bytes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/10_SignatureLoader/SignatureLoaderTest.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/10_SignatureLoader/SignatureLoaderTest.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/10_SignatureLoader/SignatureLoaderTest.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/10_SignatureLoader/SignatureLoaderTest.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/10_SignatureLoader/otherfiles.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/10_SignatureLoader/otherfiles/key_ras" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/10_SignatureLoader/otherfiles/key_ras.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/10_SignatureLoader/otherfiles/key_ras.pub" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/10_SignatureLoader/otherfiles/key_ras.pub.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/10_SignatureLoader/otherfiles/signatured1.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/10_SignatureLoader/otherfiles/signatured1.lua.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/10_SignatureLoader/otherfiles/signatured2.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/10_SignatureLoader/otherfiles/signatured2.lua.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/10_SignatureLoader/otherfiles/signatured3.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/10_SignatureLoader/otherfiles/signatured3.lua.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/10_SignatureLoader/signatured1.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/10_SignatureLoader/signatured1.lua.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/10_SignatureLoader/signatured2.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/10_SignatureLoader/signatured2.lua.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/10_SignatureLoader/signatured3.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/10_SignatureLoader/signatured3.lua.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/11_RawObject.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/11_RawObject/RawObject.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/11_RawObject/RawObject.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/11_RawObject/RawObjectTest.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/11_RawObject/RawObjectTest.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/12_ReImplementInLua.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/12_ReImplementInLua/ReImplementInLua.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/12_ReImplementInLua/ReImplementInLua.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/12_ReImplementInLua/ReImplementInLua.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/12_ReImplementInLua/ReImplementInLua.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/ExampleGenConfig.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Examples/ExampleGenConfig.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/BaseTestWrap.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/BaseTestWrap.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/CSCallLuaItfDBridge.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/CSCallLuaItfDBridge.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/Coroutine_RunnerWrap.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/Coroutine_RunnerWrap.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/DelegatesGensBridge.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/DelegatesGensBridge.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/DelegatesGensBridge.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/DelegatesGensBridge.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/EnumWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/EnumWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/EnumWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/EnumWrap.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/Foo1ChildWrap.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/Foo1ChildWrap.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/Foo1ParentWrap.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/Foo1ParentWrap.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/Foo2ChildWrap.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/Foo2ChildWrap.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/Foo2ParentWrap.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/Foo2ParentWrap.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/FooExtensionWrap.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/FooExtensionWrap.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/FooWrap.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/FooWrap.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/InvokeLuaICalcBridge.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/InvokeLuaICalcBridge.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/LuaBehaviourWrap.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/LuaBehaviourWrap.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/PackUnpack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/PackUnpack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/PackUnpack.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/PackUnpack.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/Resources.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/Resources.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/Resources/hotfix_id_map.lua.txt.20210705230253911" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/Resources/hotfix_id_map.lua.txt.20210705230253911.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/Resources/hotfix_id_map.lua.txt.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/Resources/hotfix_id_map.lua.txt.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/SystemCollectionsGenericList1SystemInt32Wrap.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/SystemCollectionsGenericList1SystemInt32Wrap.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/SystemCollectionsIEnumeratorBridge.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/SystemCollectionsIEnumeratorBridge.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/SystemObjectWrap.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/SystemObjectWrap.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/TutorialBaseClassWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/TutorialBaseClassWrap.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/TutorialDrivenClassExtensionsWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/TutorialDrivenClassExtensionsWrap.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/TutorialDrivenClassWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/TutorialDrivenClassWrap.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/TutorialICalcWrap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/TutorialICalcWrap.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineAnimationClipWrap.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineAnimationClipWrap.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineAnimationCurveWrap.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineAnimationCurveWrap.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineBehaviourWrap.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineBehaviourWrap.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineBoundsWrap.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineBoundsWrap.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineColorWrap.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineColorWrap.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineComponentWrap.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineComponentWrap.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineDebugWrap.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineDebugWrap.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineGameObjectWrap.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineGameObjectWrap.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineKeyframeWrap.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineKeyframeWrap.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineLightWrap.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineLightWrap.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineMathfWrap.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineMathfWrap.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineMonoBehaviourWrap.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineMonoBehaviourWrap.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineObjectWrap.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineObjectWrap.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineParticleSystemWrap.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineParticleSystemWrap.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineQuaternionWrap.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineQuaternionWrap.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineRay2DWrap.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineRay2DWrap.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineRayWrap.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineRayWrap.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineRendererWrap.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineRendererWrap.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineResourcesWrap.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineResourcesWrap.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineSkinnedMeshRendererWrap.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineSkinnedMeshRendererWrap.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineTextAssetWrap.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineTextAssetWrap.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineTimeWrap.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineTimeWrap.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineTransformWrap.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineTransformWrap.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineVector2Wrap.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineVector2Wrap.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineVector3Wrap.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineVector3Wrap.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineVector4Wrap.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineVector4Wrap.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineWWWWrap.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineWWWWrap.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineWaitForSecondsWrap.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/UnityEngineWaitForSecondsWrap.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/WrapPusher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/WrapPusher.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/WrapPusher.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/WrapPusher.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/XLuaGenAutoRegister.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/XLuaGenAutoRegister.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/XLuaGenAutoRegister.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/XLuaGenAutoRegister.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/XLuaTestIExchangerBridge.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/XLuaTestIExchangerBridge.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/XLuaTestMyStructWrap.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/XLuaTestMyStructWrap.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/XLuaTestNoGcWrap.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/XLuaTestNoGcWrap.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/XLuaTestPeddingWrap.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/XLuaTestPeddingWrap.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/link.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/link.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Gen/link.xml.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Gen/link.xml.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/EditorUserBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/EditorUserBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/LastBuild.buildreport" beforeDir="false" afterPath="$PROJECT_DIR$/Library/LastBuild.buildreport" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Data/Managed/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Data/Managed/Assembly-CSharp.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Data/globalgamemanagers" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Data/globalgamemanagers" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Data/globalgamemanagers.assets" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Data/globalgamemanagers.assets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Data/level0" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Data/level0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Data/level0.resS" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Data/level0.resS" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Data/level1" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Data/level1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Data/level2" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Data/level2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Data/level2.resS" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Data/level2.resS" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Data/sharedassets0.assets" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Data/sharedassets0.assets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Data/sharedassets1.assets" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Data/sharedassets1.assets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Data/sharedassets2.assets" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Data/sharedassets2.assets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/ScriptLayoutHashes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/ScriptLayoutHashes.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll.mdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/assetDatabase3" beforeDir="false" afterPath="$PROJECT_DIR$/Library/assetDatabase3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/00/00000000000000004000000000000000" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/00/00000000000000004000000000000000" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/metadata/00/00000000000000005100000000000000" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/00/00000000000000005100000000000000" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/metadata/00/00000000000000008000000000000000" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/00/00000000000000008000000000000000" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/03/03b0387395702154a93ca5f6cfded79f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/03/03b0387395702154a93ca5f6cfded79f.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/05/059b7b0b901925a49a1aab1169c15dee" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/05/059b7b0b901925a49a1aab1169c15dee.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/07/07b1a6730b144ab479c11ab079e2eb68" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/07/07b1a6730b144ab479c11ab079e2eb68.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/08/08227e7d0eccf384aab65fb19928d3ef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/08/08227e7d0eccf384aab65fb19928d3ef.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/08/08ebe6e4959b8c34aad49a439411e429" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/08/08ebe6e4959b8c34aad49a439411e429.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/0b/0bb810d8b05d20e41b2e2af1490c8f42" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/0b/0bb810d8b05d20e41b2e2af1490c8f42.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/0c/0c2493fccdb6a2141933ed2ec5d4786b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/0c/0c2493fccdb6a2141933ed2ec5d4786b.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/0d/0d55ba4bccadb26409da5c32557e6e84" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/0d/0d55ba4bccadb26409da5c32557e6e84" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/0e/0e5d514a64180f2478e66cb902015a82" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/0e/0e5d514a64180f2478e66cb902015a82.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/10/10ee9de8c27d8d143a6b87416d1457ab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/10/10ee9de8c27d8d143a6b87416d1457ab.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/13/137216111a1b77e4b92b63364639aff0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/13/137216111a1b77e4b92b63364639aff0.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/13/13b04a36211388b45849c1fb7dd7b956" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/13/13b04a36211388b45849c1fb7dd7b956.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/14/149099fbc26ea9945a7cc7f304c8cbed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/14/149099fbc26ea9945a7cc7f304c8cbed.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/15/15727d4119afc7a47b7d3284ca6990db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/15/15727d4119afc7a47b7d3284ca6990db.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/17/17a1970b80c131e4180da566b21d6a88" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/17/17a1970b80c131e4180da566b21d6a88.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/18/18c683fc899b71146b50b40d8d5fe57a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/18/18c683fc899b71146b50b40d8d5fe57a.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/19/19477d725133da049be476cb4caedf7d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/19/19477d725133da049be476cb4caedf7d.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/1e/1e2eb0ecfd63eea4f820ff8575288639" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/1e/1e2eb0ecfd63eea4f820ff8575288639.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/1f/1feab61bf70ce6a4d951cbf76ea6c32f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/1f/1feab61bf70ce6a4d951cbf76ea6c32f.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/20/20d92fd634185584eb982e0ad93a13a9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/20/20d92fd634185584eb982e0ad93a13a9.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/21/213d1592ca01d9a4fba0477875fcd2ef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/21/213d1592ca01d9a4fba0477875fcd2ef.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/25/25beaf0816ae33a43b715f68010bbfdd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/25/25beaf0816ae33a43b715f68010bbfdd.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/27/272e73aae70b00e4cb2fd770a73b7f2e" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/27/272e73aae70b00e4cb2fd770a73b7f2e" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/28/283fbcc48cb764e40a2a12acc2f30805" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/28/283fbcc48cb764e40a2a12acc2f30805.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/2b/2b6faddb8029cfa4288c93585e9c21ae" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/2b/2b6faddb8029cfa4288c93585e9c21ae.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/2b/2beb160fb7e68ef479070828f40a67db" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/2b/2beb160fb7e68ef479070828f40a67db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/2c/2c8b580b530c3604bb4f5ac351159c61" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/2c/2c8b580b530c3604bb4f5ac351159c61.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/2c/2cfa287f39f938c479a653daea1f737f" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/2c/2cfa287f39f938c479a653daea1f737f" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/2e/2e190b5ef59b7a84dbb262cfd11f9107" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/2e/2e190b5ef59b7a84dbb262cfd11f9107.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/2e/2e7d0896355998b4fa5efcfa1b9f1f84" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/2e/2e7d0896355998b4fa5efcfa1b9f1f84.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/33/338b384cc2d92bf42b28fbe2f172c4ec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/33/338b384cc2d92bf42b28fbe2f172c4ec.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/36/36e37eb86d68a614d8a23092176d487f" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/36/36e37eb86d68a614d8a23092176d487f" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/37/3728bcc9b9a90d54f9ee9bc84016727c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/37/3728bcc9b9a90d54f9ee9bc84016727c.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/38/384893ab7180e0c448d6521421f1859f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/38/384893ab7180e0c448d6521421f1859f.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/38/3894dbe73b280d44e9c58b8e33c93995" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/38/3894dbe73b280d44e9c58b8e33c93995.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/3c/3ce52ffdcd2098945bc0e9530d3f1fb1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/3c/3ce52ffdcd2098945bc0e9530d3f1fb1.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/40/40d0922483b73c8408f163088c9adc26" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/40/40d0922483b73c8408f163088c9adc26.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/41/41c79b0f7edf32d48a7a81664f1e96ec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/41/41c79b0f7edf32d48a7a81664f1e96ec.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/44/44928e4c9a6ef3542b8dc8f3fed4c9d8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/44/44928e4c9a6ef3542b8dc8f3fed4c9d8.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/45/45e1a4c2ea5a3f64592c53d949401105" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/45/45e1a4c2ea5a3f64592c53d949401105.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/48/480b23bd4e378f2499f8b31ae84b1c05" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/48/480b23bd4e378f2499f8b31ae84b1c05.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/49/496cbe3b76e0a8649b6b6e429a322a9a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/49/496cbe3b76e0a8649b6b6e429a322a9a.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/4a/4a950b64c05579e46a424862e2aeaf3b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/4a/4a950b64c05579e46a424862e2aeaf3b.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/4b/4b7565e4b0d9ed643b74dc02a951c665" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/4b/4b7565e4b0d9ed643b74dc02a951c665.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/4e/4ee183ed57618894dab4d3b9a68790cf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/4e/4ee183ed57618894dab4d3b9a68790cf.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/4f/4f3d9471c4ae0aa47957ff35c0df972e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/4f/4f3d9471c4ae0aa47957ff35c0df972e.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/50/50ee330b40bfcc54cbdfb1c7c79a02d9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/50/50ee330b40bfcc54cbdfb1c7c79a02d9.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/55/552b1f9f9174fe446907357379f128b2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/55/552b1f9f9174fe446907357379f128b2.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/55/554d570d8b369434ba8a099ebafee542" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/55/554d570d8b369434ba8a099ebafee542.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/56/5682d87b287c3bc49960c7aad1e3b299" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/56/5682d87b287c3bc49960c7aad1e3b299.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/57/577a670e2d7ad5e4691e30c9249edf3e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/57/577a670e2d7ad5e4691e30c9249edf3e.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/58/58695f06576335e46bf1769637db2255" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/58/58695f06576335e46bf1769637db2255.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/58/58a3157c461e118418a58af85afbae6d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/58/58a3157c461e118418a58af85afbae6d.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/58/58e2eda480b0c6e41a793391a9fb9a72" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/58/58e2eda480b0c6e41a793391a9fb9a72.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/5c/5c9d37dc5ac4e44448bd8858d68604e5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/5c/5c9d37dc5ac4e44448bd8858d68604e5.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/5c/5cfcbcc41b8e24b40b620ea0ac8c2c59" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/5c/5cfcbcc41b8e24b40b620ea0ac8c2c59.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/62/62b5ea137539ed340960b98292cf6871" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/62/62b5ea137539ed340960b98292cf6871.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/62/62b967797782a6d46a759bf0693f7351" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/62/62b967797782a6d46a759bf0693f7351.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/69/69464b350fc603b458e6a528d2ccfa0f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/69/69464b350fc603b458e6a528d2ccfa0f.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/6a/6a4f6da9af53d384d8228950f82ae562" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/6a/6a4f6da9af53d384d8228950f82ae562.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/6a/6a7f1caa41031554ea8434e0d7fb3476" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/6a/6a7f1caa41031554ea8434e0d7fb3476.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/6d/6d9b7cd8ac592564796c9c24b3636677" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/6d/6d9b7cd8ac592564796c9c24b3636677.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/6f/6f0f504ddc434fe4597227c253e25d8f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/6f/6f0f504ddc434fe4597227c253e25d8f.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/71/71b8de6dc619ca64da460a7200f00b9c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/71/71b8de6dc619ca64da460a7200f00b9c.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/77/779e709f28b019b469812dcfd09dec14" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/77/779e709f28b019b469812dcfd09dec14.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/7b/7bf24e9d2076ecd4ba65687e9d238c34" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/7b/7bf24e9d2076ecd4ba65687e9d238c34.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/7c/7cfed86298c2da543b693ffd8436367a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/7c/7cfed86298c2da543b693ffd8436367a.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/7e/7e8c24c5719ad6b4b8b2d9ecf19cfec7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/7e/7e8c24c5719ad6b4b8b2d9ecf19cfec7.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/81/81a6b49547e676c4ea6fcda5bc5ecd7a" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/81/81a6b49547e676c4ea6fcda5bc5ecd7a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/82/825307d6016f2934d8654aa613d9c0e8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/82/825307d6016f2934d8654aa613d9c0e8.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/84/8404abf33290bd54da13c44c2452e00f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/84/8404abf33290bd54da13c44c2452e00f.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/84/84d8d90e18450d244801a880aacaf19d" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/84/84d8d90e18450d244801a880aacaf19d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/84/84ee72c8d63878442a95623f7001ca98" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/84/84ee72c8d63878442a95623f7001ca98.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/85/8558bbbb0620ac94c8c22de9a7ac041a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/85/8558bbbb0620ac94c8c22de9a7ac041a.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/87/8771a42e51c869743bd8cbf0511b8afd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/87/8771a42e51c869743bd8cbf0511b8afd.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/88/88855a83b9ae28749a505faf19d1ef68" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/88/88855a83b9ae28749a505faf19d1ef68" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/89/89ee1d49eba0b394e9b82a60d586c650" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/89/89ee1d49eba0b394e9b82a60d586c650.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/8a/8ae2d9e7978520843816fa80ed6f29ea" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/8a/8ae2d9e7978520843816fa80ed6f29ea.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/8c/8cdad601850bd814c9a22efaff55928f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/8c/8cdad601850bd814c9a22efaff55928f.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/8d/8d8101efdb236b04b9b7cfa592bee593" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/8d/8d8101efdb236b04b9b7cfa592bee593.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/8f/8fbb6296acf16d74cb211664f0361c75" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/8f/8fbb6296acf16d74cb211664f0361c75.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/94/94a6b747fcf907a488b3d59bacf857e6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/94/94a6b747fcf907a488b3d59bacf857e6.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/95/9503b887ac9d7cb408fd1d7f34aae427" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/95/9503b887ac9d7cb408fd1d7f34aae427.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/9a/9abe5e754f1c63247a254d53e34d1e40" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/9a/9abe5e754f1c63247a254d53e34d1e40.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/9b/9b998ff8754d165438f1f34adb4f3d7e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/9b/9b998ff8754d165438f1f34adb4f3d7e.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/9c/9c07f66d94f59e944b4b4e50357847c2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/9c/9c07f66d94f59e944b4b4e50357847c2.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/a6/a629171e99617e54d94f1a86f4015c93" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/a6/a629171e99617e54d94f1a86f4015c93.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/a9/a9ecadb297bd5c342bbee314f0b36aaf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/a9/a9ecadb297bd5c342bbee314f0b36aaf.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/aa/aaed4876d886a20498ddc407895da8a3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/aa/aaed4876d886a20498ddc407895da8a3.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/af/afd3fcbd8a9d48945b874adff2c0aa6d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/af/afd3fcbd8a9d48945b874adff2c0aa6d.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/b0/b093a617e1bf7984c8824ba9d40afbe0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/b0/b093a617e1bf7984c8824ba9d40afbe0.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/b1/b1a0f00f2feb5c84d83df8291ae608bc" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/b1/b1a0f00f2feb5c84d83df8291ae608bc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/b5/b5b2cbe03aa30c446ab56ae6f520277b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/b5/b5b2cbe03aa30c446ab56ae6f520277b.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/b6/b60a63e77d20ab14bb0fd80f56e2beb2" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/b6/b60a63e77d20ab14bb0fd80f56e2beb2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/b9/b9173d38911503c4a9a371b0760bdd15" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/b9/b9173d38911503c4a9a371b0760bdd15.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/b9/b925b6b6d1f37a94a95b542ac5a8bcc5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/b9/b925b6b6d1f37a94a95b542ac5a8bcc5.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/bb/bb97375d27a300c47b76160e312e72bd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/bb/bb97375d27a300c47b76160e312e72bd.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/bb/bbc31cdca5d561e4cb9c83880c0e26a3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/bb/bbc31cdca5d561e4cb9c83880c0e26a3.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/bc/bcb15931401aa544d9760a93767b7489" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/bc/bcb15931401aa544d9760a93767b7489.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/be/beae9af8e5f127546a20bde154f9a580" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/be/beae9af8e5f127546a20bde154f9a580.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/bf/bf7e4682a398f4243b4b200c3a8a1e35" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/bf/bf7e4682a398f4243b4b200c3a8a1e35.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/c1/c1ec53dca0d0a05438615a21ac4c15b3" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/c1/c1ec53dca0d0a05438615a21ac4c15b3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/c4/c4695949a6b369345a5ecdcc82c946c1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/c4/c4695949a6b369345a5ecdcc82c946c1.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/c4/c472bebad8a97054eb7187aca5b55b61" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/c4/c472bebad8a97054eb7187aca5b55b61" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/c8/c8bc2909cdb146c41ad8f85346cc4128" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/c8/c8bc2909cdb146c41ad8f85346cc4128.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/c8/c8fbb1a01533805479599cd3e19a5e4c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/c8/c8fbb1a01533805479599cd3e19a5e4c.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/c9/c91c5604efec9954b85970057e91b759" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/c9/c91c5604efec9954b85970057e91b759.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/c9/c9d3a7e24d889a7418ad19a390178f88" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/c9/c9d3a7e24d889a7418ad19a390178f88.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/cc/ccd4f9e35fcee3b439e31a15449a1765" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/cc/ccd4f9e35fcee3b439e31a15449a1765.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/ce/ce2273764a5e4424c939cbe9621aa205" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/ce/ce2273764a5e4424c939cbe9621aa205" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/ce/ce77e35c083e6fe4c88cb64a97466161" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/ce/ce77e35c083e6fe4c88cb64a97466161.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/cf/cffb50bfe4f87494c8a4851450dfb340" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/cf/cffb50bfe4f87494c8a4851450dfb340.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/d1/d1f15a7c6e62ab64ca9b5321661dfbf3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/d1/d1f15a7c6e62ab64ca9b5321661dfbf3.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/d4/d42067109b200424094c1baaed873fa7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/d4/d42067109b200424094c1baaed873fa7.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/d5/d5fa0ac5e79a3c343a56e45cae086cbb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/d5/d5fa0ac5e79a3c343a56e45cae086cbb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/d8/d8fd5dc71b13ac74da8fc41bf4ad10ea" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/d8/d8fd5dc71b13ac74da8fc41bf4ad10ea" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/d9/d906d19844714804b8e8200ddc528a5e" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/d9/d906d19844714804b8e8200ddc528a5e" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/db/dbfc57f47cf3853418df75ee656fdf90" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/db/dbfc57f47cf3853418df75ee656fdf90.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/dc/dc061f25f1a2387458189f67d065d204" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/dc/dc061f25f1a2387458189f67d065d204.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/dc/dceaef6c0e4f511489f2a9d6d198afa7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/dc/dceaef6c0e4f511489f2a9d6d198afa7.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/dc/dcfc5cfc1568d7a4fad81889226a4afe" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/dc/dcfc5cfc1568d7a4fad81889226a4afe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/dd/dd7809baa50b1bc48baf826c3a2a5788" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/dd/dd7809baa50b1bc48baf826c3a2a5788.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/de/ded4301ec5a5681428f133aea7c134f7" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/de/ded4301ec5a5681428f133aea7c134f7" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/df/dfe267f4b0fe1a349a23184f840622bd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/df/dfe267f4b0fe1a349a23184f840622bd.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/e2/e2c6c8cdddb782648a4f51dc289b24b2" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/e2/e2c6c8cdddb782648a4f51dc289b24b2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/e3/e3c7951d0ed806043b37ea6ef5af4549" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/e3/e3c7951d0ed806043b37ea6ef5af4549.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/e4/e4adea5640e39ca43a54b81b93ea2f32" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/e4/e4adea5640e39ca43a54b81b93ea2f32.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/eb/eb945840f7055384cbf1a3fb17903afe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/eb/eb945840f7055384cbf1a3fb17903afe.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/f8/f835eeddd75e9f74d95c957aa7ca44b2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/f8/f835eeddd75e9f74d95c957aa7ca44b2.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/fa/fa308fa7f40ec0348addeff1475bb164" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/fa/fa308fa7f40ec0348addeff1475bb164.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/fb/fbdbc5fdf25cdba43b47484920e17111" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/fb/fbdbc5fdf25cdba43b47484920e17111.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe1.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe1.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe2.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe2.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe3.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe3.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe4.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe4.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe5.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe5.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe6.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe6.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe7.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe7.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp-Editor.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp-Editor.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.csproj.AssemblyReference.cache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,6 +560,7 @@
       <option value="$PROJECT_DIR$/Assets/XLua/Examples/ExampleGenConfig.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/HotfixScript.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/HotfixEmpty.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/UI/LoadGame.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1uiZvTXExR7uDk4bxg9Cf9AbM3b" />
@@ -74,6 +580,14 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/../../../../../../release/xluaFishingJoy/fishing.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="D:\release\xluaFishingJoy" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
@@ -112,6 +626,7 @@
       <workItem from="1625370119305" duration="20195000" />
       <workItem from="1625490528338" duration="3260000" />
       <workItem from="1625581553238" duration="595000" />
+      <workItem from="1625657175623" duration="3698000" />
     </task>
     <servers />
   </component>

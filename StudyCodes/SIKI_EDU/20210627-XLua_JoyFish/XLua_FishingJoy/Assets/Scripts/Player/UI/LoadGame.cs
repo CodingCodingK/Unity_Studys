@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class LoadGame : MonoBehaviour {
@@ -21,6 +23,7 @@ public class LoadGame : MonoBehaviour {
     }
     public void LoadGameMethod()
     {
+        StartCoroutine(LoadResourceCoroutine());
         StartCoroutine(StartLoading_4(2));
     }
 
@@ -52,6 +55,18 @@ public class LoadGame : MonoBehaviour {
             yield return new WaitForEndOfFrame();
         }
         op.allowSceneActivation = true;
+    }
+
+    IEnumerator LoadResourceCoroutine()
+    {
+        UnityWebRequest request1 = UnityWebRequest.Get(@"http://localhost/fish.lua.txt");
+        yield return request1.SendWebRequest();
+        var str1 = request1.downloadHandler.text;
+        File.WriteAllText(@"D:\github\Unity\StudyCodes\SIKI_EDU\20210627-XLua_JoyFish\XLua_FishingJoy\Assets\PlayerGamePackage\fish.lua.txt",str1);
+        UnityWebRequest request2 = UnityWebRequest.Get(@"http://localhost/fishDispose.lua.txt");
+        yield return request2.SendWebRequest();
+        var str2 = request2.downloadHandler.text;
+        File.WriteAllText(@"D:\github\Unity\StudyCodes\SIKI_EDU\20210627-XLua_JoyFish\XLua_FishingJoy\Assets\PlayerGamePackage\fishDispose.lua.txt",str2);
     }
 
     private void SetLoadingPercentage(float v)

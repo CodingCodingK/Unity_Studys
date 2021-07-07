@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="494dd134-0f08-4aa6-97b2-5840bee2151f" name="Default Changelist" comment="" />
+    <list default="true" id="494dd134-0f08-4aa6-97b2-5840bee2151f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayerGamePackage/fish.lua.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayerGamePackage/fish.lua.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -74,6 +79,7 @@
       <workItem from="1625369570900" duration="18393000" />
       <workItem from="1625490512361" duration="4573000" />
       <workItem from="1625581532504" duration="599000" />
+      <workItem from="1625657177129" duration="3105000" />
     </task>
     <servers />
   </component>
