@@ -2,10 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="494dd134-0f08-4aa6-97b2-5840bee2151f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../../Notes/Mindmaps/MVC+UGUI俄罗斯方块.xmind" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Notes/Mindmaps/MVC+UGUI俄罗斯方块.xmind" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayerGamePackage/fish.lua.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayerGamePackage/fish.lua.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../20210707-MVCTetris/Tetris/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../../20210707-MVCTetris/Tetris/Assembly-CSharp.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../20210707-MVCTetris/Tetris/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/../../20210707-MVCTetris/Tetris/Assets/Scenes/Main.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../20210707-MVCTetris/Tetris/Assets/Scripts/Ctrl/Ctrl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../20210707-MVCTetris/Tetris/Assets/Scripts/Ctrl/Ctrl.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../20210707-MVCTetris/Tetris/Assets/Scripts/View/View.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../20210707-MVCTetris/Tetris/Assets/Scripts/View/View.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../20210707-MVCTetris/Tetris/Library/APIUpdater/project-dependencies.graph" beforeDir="false" afterPath="$PROJECT_DIR$/../../20210707-MVCTetris/Tetris/Library/APIUpdater/project-dependencies.graph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../20210707-MVCTetris/Tetris/Library/ArtifactDB" beforeDir="false" afterPath="$PROJECT_DIR$/../../20210707-MVCTetris/Tetris/Library/ArtifactDB" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../20210707-MVCTetris/Tetris/Library/Artifacts/0b/0b1637b19f0ee0d082ed52bff2985155" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../20210707-MVCTetris/Tetris/Library/Artifacts/36/3643bea06213ad5b83ba42624727d64d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../20210707-MVCTetris/Tetris/Library/Artifacts/7b/7bfeb4fe9235d741957931d4c31b01dc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../20210707-MVCTetris/Tetris/Library/Artifacts/b1/b182953e89ccc63ed2c53900b408c753" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../20210707-MVCTetris/Tetris/Library/Artifacts/e3/e3db9be430677e00bc9518d0a300d8e6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../20210707-MVCTetris/Tetris/Library/Artifacts/fa/fa54c1170ac4c31f45f2fd7708f94a16" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../20210707-MVCTetris/Tetris/Library/CurrentLayout-default.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/../../20210707-MVCTetris/Tetris/Library/CurrentLayout-default.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../20210707-MVCTetris/Tetris/Library/SceneVisibilityState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../../20210707-MVCTetris/Tetris/Library/SceneVisibilityState.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../20210707-MVCTetris/Tetris/Library/ScriptAssemblies/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../20210707-MVCTetris/Tetris/Library/ScriptAssemblies/Assembly-CSharp.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../20210707-MVCTetris/Tetris/Library/ScriptAssemblies/Assembly-CSharp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../20210707-MVCTetris/Tetris/Library/ScriptAssemblies/Assembly-CSharp.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../20210707-MVCTetris/Tetris/Library/SourceAssetDB" beforeDir="false" afterPath="$PROJECT_DIR$/../../20210707-MVCTetris/Tetris/Library/SourceAssetDB" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../20210707-MVCTetris/Tetris/Library/StateCache/SceneView/a0/a0062447047098c71a23bcc2293e22a9.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../20210707-MVCTetris/Tetris/Library/StateCache/SceneView/a0/a0062447047098c71a23bcc2293e22a9.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../20210707-MVCTetris/Tetris/Library/expandedItems" beforeDir="false" afterPath="$PROJECT_DIR$/../../20210707-MVCTetris/Tetris/Library/expandedItems" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../20210707-MVCTetris/Tetris/Logs/AssetImportWorker0.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../20210707-MVCTetris/Tetris/Logs/AssetImportWorker0.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../20210707-MVCTetris/Tetris/Logs/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../20210707-MVCTetris/Tetris/Logs/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../20210707-MVCTetris/Tetris/Logs/shadercompiler-UnityShaderCompiler.exe1.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../20210707-MVCTetris/Tetris/Logs/shadercompiler-UnityShaderCompiler.exe2.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../20210707-MVCTetris/Tetris/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../../20210707-MVCTetris/Tetris/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../20210707-MVCTetris/Tetris/Tetris.sln" beforeDir="false" afterPath="$PROJECT_DIR$/../../20210707-MVCTetris/Tetris/Tetris.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../20210707-MVCTetris/Tetris/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../../20210707-MVCTetris/Tetris/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../20210707-MVCTetris/Tetris/obj/Debug/Assembly-CSharp.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../20210707-MVCTetris/Tetris/obj/Debug/Assembly-CSharp.csproj.AssemblyReference.cache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,6 +105,8 @@
       <workItem from="1625490512361" duration="4573000" />
       <workItem from="1625581532504" duration="599000" />
       <workItem from="1625657177129" duration="3699000" />
+      <workItem from="1625978718954" duration="595000" />
+      <workItem from="1626011819170" duration="108000" />
     </task>
     <servers />
   </component>

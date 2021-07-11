@@ -6,6 +6,7 @@ TagManager:
   tags:
   - View
   - Model
+  - Block
   layers:
   - Default
   - TransparentFX
