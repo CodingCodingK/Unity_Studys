@@ -13,6 +13,8 @@ public class Ctrl : MonoBehaviour
     public CameraManager cameraManager;
     [HideInInspector]
     public GameManager gameManager;
+    [HideInInspector]
+    public AudioManager audioManager;
     
     private FSMSystem fsm;
     // Start is called before the first frame update
@@ -22,6 +24,7 @@ public class Ctrl : MonoBehaviour
         view = GameObject.FindGameObjectWithTag("View").GetComponent<View>();
         cameraManager = GetComponent<CameraManager>();
         gameManager = GetComponent<GameManager>();
+        audioManager = GetComponent<AudioManager>();
     }
 
     private void Start()

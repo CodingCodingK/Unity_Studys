@@ -24,6 +24,7 @@ public class MenuState : FSMState
 
   public void OnStartButtonClick()
   {
+    ctrl.audioManager.PlayAudio("cursor");
     fsm.PerformTransition(Transition.StartButtonClick);
   }
 }

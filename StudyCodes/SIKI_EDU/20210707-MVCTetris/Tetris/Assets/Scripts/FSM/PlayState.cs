@@ -28,6 +28,7 @@ public class PlayState : FSMState
 
     public void OnPauseButtonClick()
     {
+        ctrl.audioManager.PlayAudio("cursor");
         fsm.PerformTransition(Transition.PauseButtonClick);
     }
 }
