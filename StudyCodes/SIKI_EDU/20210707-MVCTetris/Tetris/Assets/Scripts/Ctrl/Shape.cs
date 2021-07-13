@@ -73,7 +73,12 @@ public class Shape : MonoBehaviour
             transform.position = pos;
             isPause = true;
             gameManager.CurrentShapeComplete();
-            ctrl.model.PlaceShape(transform);
+            var isLineClear = ctrl.model.PlaceShape(transform);
+            if (isLineClear)
+            {
+                ctrl.audioManager.PlayAudio("lineClear");
+                ctrl.UpdateGameUI();
+            }
             return;
         }
         ctrl.audioManager.PlayAudio("drop");

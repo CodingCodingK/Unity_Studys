@@ -51,4 +51,14 @@ public class Ctrl : MonoBehaviour
         var menuState = GetComponentInChildren<MenuState>();
         fsm.SetCurrentState(menuState);
     }
+
+    public void ShowGameUI()
+    {
+        view.ShowGameUI(model.Score,model.HighScore);
+    }
+    
+    public void UpdateGameUI()
+    {
+        view.UpdateGameUI(model.Score,model.HighScore);
+    }
 }

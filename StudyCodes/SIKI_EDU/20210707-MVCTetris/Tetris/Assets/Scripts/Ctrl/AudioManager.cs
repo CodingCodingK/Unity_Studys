@@ -8,6 +8,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip cursor;
     public AudioClip drop;
     public AudioClip move;
+    public AudioClip lineClear;
+    
     private AudioSource audioSource;
     private bool isMute = false;
 
@@ -40,7 +42,7 @@ public class AudioManager : MonoBehaviour
             Debug.LogError(clip);
         }
     }
-    
+
     private void PlayClip(AudioClip clip)
     {
         //if (isMute) return;

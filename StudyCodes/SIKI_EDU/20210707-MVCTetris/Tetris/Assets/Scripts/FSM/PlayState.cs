@@ -12,7 +12,7 @@ public class PlayState : FSMState
 
     public override void DoBeforeEntering()
     {
-        ctrl.view.ShowGameUI();
+        ctrl.ShowGameUI();
         ctrl.cameraManager.ZoomIn();
         
         ctrl.gameManager.StartGame();

@@ -919,7 +919,7 @@ GameObject:
   - component: {fileID: 143538500}
   - component: {fileID: 143538499}
   m_Layer: 5
-  m_Name: Text (1)
+  m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5827,7 +5827,7 @@ GameObject:
   - component: {fileID: 803053245}
   - component: {fileID: 803053244}
   m_Layer: 5
-  m_Name: Text (1)
+  m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9796,6 +9796,7 @@ MonoBehaviour:
   cursor: {fileID: 8300000, guid: ef714803c9fd0c14bbc1ddff6743785e, type: 3}
   drop: {fileID: 8300000, guid: df98ec090b11487438b996d58e9342aa, type: 3}
   move: {fileID: 8300000, guid: 792f86c16893c4e4ea54613089483a52, type: 3}
+  lineClear: {fileID: 8300000, guid: d14745772c2930b4b9f8e459b066cab8, type: 3}
 --- !u!1001 &1284033983
 PrefabInstance:
   m_ObjectHideFlags: 0
