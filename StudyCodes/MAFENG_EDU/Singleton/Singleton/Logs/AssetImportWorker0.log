@@ -1,0 +1,152 @@
+Using pre-set license
+Built from '2020.3/china_unity/release' branch; Version is '2020.3.12f1c1 (5887f62ce680) revision 5801974'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Home China; OS build 19042.1083; Version 2009; 64bit' Language: 'zh' Physical Memory: 14188 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2020.3.12f1c1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+D:/github/Unity/StudyCodes/MAFENG_EDU/Singleton/Singleton
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+52638
+Successfully changed project path to: D:/github/Unity/StudyCodes/MAFENG_EDU/Singleton/Singleton
+D:/github/Unity/StudyCodes/MAFENG_EDU/Singleton/Singleton
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 23.17 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.12f1c1 (5887f62ce680)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.12f1c1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/github/Unity/StudyCodes/MAFENG_EDU/Singleton/Singleton/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 3050 Ti Laptop GPU (ID=0x25e0)
+    Vendor:   
+    VRAM:     3990 MB
+    Driver:   27.21.14.6173
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.12f1c1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.12f1c1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.12f1c1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56556
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.12f1c1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.003398 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 19.95 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.077 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.002488 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.31 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.789 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 0.29 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1389 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 69.8 MB.
+System memory in use after: 69.9 MB.
+
+Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 1823.
+Total: 1.570200 ms (FindLiveObjects: 0.120900 ms CreateObjectMapping: 0.033800 ms MarkObjects: 1.355300 ms  DeleteObjects: 0.059300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  path: Assets/SingletonLibrary/Scenes
+  artifactKey: Guid(b632597738634994b9da308845fff280) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SingletonLibrary/Scenes using Guid(b632597738634994b9da308845fff280) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fbeb94cbbf2409f681091b7d5c252cfa') in 0.007804 seconds 
+  Import took 0.009683 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000155 seconds.
+  path: Assets/SingletonLibrary/Scripts
+  artifactKey: Guid(8218d7ed9aa393d4390bbc9705680435) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SingletonLibrary/Scripts using Guid(8218d7ed9aa393d4390bbc9705680435) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a18f1890a91f321e339404842c12e4bd') in 0.006241 seconds 
+  Import took 0.007999 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000151 seconds.
+  path: Assets/SingletonLibrary
+  artifactKey: Guid(fde92036b3612e14a9cf17c0aab731b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SingletonLibrary using Guid(fde92036b3612e14a9cf17c0aab731b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad4c6dfde5f2204ee28dbd4c2c0bf13d') in 0.006684 seconds 
+  Import took 0.008952 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 30.407827 seconds.
+  path: Assets/SingletonLibrary/Scripts/Singleton.cs
+  artifactKey: Guid(2b86da7697203564e865732fda4a3803) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SingletonLibrary/Scripts/Singleton.cs using Guid(2b86da7697203564e865732fda4a3803) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05b0c36d6a942888a7d776f414e0c641') in 0.020598 seconds 
+  Import took 0.022909 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002440 seconds.
+  path: Assets/SingletonLibrary/Scripts/MonoSingleton.cs
+  artifactKey: Guid(9ea2039450c7c284f954bc6c3b50aad2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SingletonLibrary/Scripts/MonoSingleton.cs using Guid(9ea2039450c7c284f954bc6c3b50aad2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4a7c7ab7e7c0b86c4c35e512409ac46') in 0.005312 seconds 
+  Import took 0.007267 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003307 seconds.
+  path: Assets/SingletonLibrary/Scenes/02.unity
+  artifactKey: Guid(b1d08c60f617e014c81896360987caa1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SingletonLibrary/Scenes/02.unity using Guid(b1d08c60f617e014c81896360987caa1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '71d80d537744aa93cf55a4dd6cdbbd06') in 0.012329 seconds 
+  Import took 0.014439 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001956 seconds.
+  path: Assets/SingletonLibrary/Test/Test.cs
+  artifactKey: Guid(fc324067a4bf7744f9054cc4331ee731) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SingletonLibrary/Test/Test.cs using Guid(fc324067a4bf7744f9054cc4331ee731) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e96181c25ace3520e838cf9fbb5003d1') in 0.006013 seconds 
+  Import took 0.008125 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002874 seconds.
+  path: Assets/SingletonLibrary/Test
+  artifactKey: Guid(4370de33ca7ed114a8b9200497059dd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SingletonLibrary/Test using Guid(4370de33ca7ed114a8b9200497059dd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa043f3da52ed4895b85436a76584030') in 0.001522 seconds 
+  Import took 0.003530 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002052 seconds.
+  path: Assets/SingletonLibrary/Scenes/01.unity
+  artifactKey: Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SingletonLibrary/Scenes/01.unity using Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7826e986a34a4d7272d0586a6f472471') in 0.005743 seconds 
+  Import took 0.007628 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
