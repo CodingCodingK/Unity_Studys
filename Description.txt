@@ -1,1 +1,2 @@
-Just stores Unity codes less than 100M
+Just stores Unity codes less than 100M.
+仅个人学习用！
