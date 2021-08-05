@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Resources/ResScenes/SceneLogin.unity
+- path: Assets/Resources/ResScenes/GameRoot.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
