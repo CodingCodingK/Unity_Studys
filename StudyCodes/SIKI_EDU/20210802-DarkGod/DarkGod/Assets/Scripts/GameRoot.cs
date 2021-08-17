@@ -21,6 +21,8 @@ public class GameRoot : GameRootMonoSingleton<GameRoot>
 
     private void Init()
     {
+        DontDestroyOnLoad(this.gameObject);
+        
         //服务模块初始化
         ResSvc res = GetComponent<ResSvc>();
         res.InitSvc();
@@ -31,6 +33,6 @@ public class GameRoot : GameRootMonoSingleton<GameRoot>
         
         //进入登陆场景并加载相应UI
         login.EnterLogin();
-
+ 
     }
 }

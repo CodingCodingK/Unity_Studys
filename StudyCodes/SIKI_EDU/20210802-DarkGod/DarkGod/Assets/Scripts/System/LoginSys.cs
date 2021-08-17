@@ -10,7 +10,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LoginSys : MonoBehaviour
+public class LoginSys : GameRootMonoSingleton<LoginSys>
 {
     public void InitLogin()
     {
@@ -22,7 +22,12 @@ public class LoginSys : MonoBehaviour
     /// </summary>
     public void EnterLogin()
     {
-        GameRootResources.Instance().loadingWindow.gameObject.SetActive(true);
-        ResSvc.Instance().AsyncLoadScene(Constants.SceneLogin);
+        ResSvc.Instance().AsyncLoadScene(Constants.SceneLogin,OpenLoginWindow);
+    }
+    
+    public void OpenLoginWindow()
+    {
+        var loginWindow = GameRootResources.Instance().loginWindow;
+        loginWindow.SetWindowState(true);
     }
 }
