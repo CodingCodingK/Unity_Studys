@@ -23,6 +23,7 @@ public class LoginSys : GameRootMonoSingleton<LoginSys>
     public void EnterLogin()
     {
         ResSvc.Instance().AsyncLoadScene(Constants.SceneLogin,OpenLoginWindow);
+        AudioSvc.Instance().PlayBGMusic(Constants.BGLogin);
     }
     
     public void OpenLoginWindow()

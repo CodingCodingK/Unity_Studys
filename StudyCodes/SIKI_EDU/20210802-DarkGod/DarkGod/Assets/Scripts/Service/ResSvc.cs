@@ -15,6 +15,11 @@ using UnityEngine.SceneManagement;
 public class ResSvc : GameRootMonoSingleton<ResSvc>
 {
     // private Action prgCallBack = null;
+
+    /// <summary>
+    /// Audio暂存池
+    /// </summary>
+    private Dictionary<string, AudioClip> audioDic = new Dictionary<string, AudioClip>();
     
     public void InitSvc()
     {
@@ -93,6 +98,25 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
             afterAll();
         }
     }
-    
-    
+
+    /// <summary>
+    /// 加载Audio
+    /// </summary>
+    /// <param name="path"></param>
+    /// <param name="isCache">是否需要放进缓存字典中</param>
+    /// <returns></returns>
+    public AudioClip LoadAudio(string path, bool isCache = true)
+    {
+        AudioClip au = null;
+        if (!audioDic.TryGetValue(path,out au))
+        {
+            au = Resources.Load<AudioClip>(path);
+            if (isCache)
+            {
+                audioDic[path] = au;
+            }
+        }
+        
+        return au;
+    }
 }
