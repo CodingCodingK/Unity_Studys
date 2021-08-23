@@ -18,4 +18,11 @@ public class GameRootResources : GameRootMonoSingleton<GameRootResources>
     public LoadingWindow loadingWindow;
 
     public LoginWindow loginWindow;
+
+    public DynamicWindow dynamicWindow;
+    
+    public void ShowTips(string tip)
+    {
+       dynamicWindow.AddTips(tip);
+    }
 }

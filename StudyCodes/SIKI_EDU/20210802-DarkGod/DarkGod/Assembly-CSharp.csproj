@@ -53,15 +53,18 @@
      <Compile Include="Assets\Scripts\Common\WindowBase.cs" />
      <Compile Include="Assets\Scenes\aaa.cs" />
      <Compile Include="Assets\Scripts\UIWindow\LoadingWindow.cs" />
+     <Compile Include="Assets\Scripts\Service\AudioSvc.cs" />
      <Compile Include="Assets\MyLibrary\SingletonLibrary\Scripts\MonoSingleton.cs" />
      <Compile Include="Assets\Scripts\GameRootResources.cs" />
      <Compile Include="Assets\MyLibrary\SingletonLibrary\Scripts\Singleton.cs" />
      <Compile Include="Assets\Scripts\GameRoot.cs" />
      <Compile Include="Assets\Scripts\Common\Constants.cs" />
+     <Compile Include="Assets\Scripts\Common\LoopDragonAni.cs" />
      <Compile Include="Assets\Scripts\System\LoginSys.cs" />
+     <Compile Include="Assets\Scripts\Common\SystemBase.cs" />
      <Compile Include="Assets\Scripts\Service\ResSvc.cs" />
      <Compile Include="Assets\Scripts\UIWindow\LoginWindow.cs" />
-     <Compile Include="Assets\Scripts\Service\AudioSvc.cs" />
+     <Compile Include="Assets\Scripts\UIWindow\DynamicWindow.cs" />
      <None Include="Assets\Compond\Shader\MogoSkybox.shader" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>D:/github/Unity/StudyCodes/SIKI_EDU/20210802-DarkGod/DarkGod/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

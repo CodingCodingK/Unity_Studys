@@ -8,12 +8,18 @@
 
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+using System.Diagnostics;
+using Debug = UnityEngine.Debug;
 
-public class LoginSys : GameRootMonoSingleton<LoginSys>
+public class LoginSys : SystemBase//GameRootMonoSingleton<LoginSys>
 {
-    public void InitLogin()
+    public static LoginSys Instance;
+
+    public override void InitSys()
     {
+        base.InitSys();
+
+        Instance = this;
         Debug.Log("Init LoginSys.");
     }
 
@@ -22,13 +28,16 @@ public class LoginSys : GameRootMonoSingleton<LoginSys>
     /// </summary>
     public void EnterLogin()
     {
-        ResSvc.Instance().AsyncLoadScene(Constants.SceneLogin,OpenLoginWindow);
-        AudioSvc.Instance().PlayBGMusic(Constants.BGLogin);
+        resSvc.AsyncLoadScene(Constants.SceneLogin,OpenLoginWindow);
+        audioSvc.PlayBGMusic(Constants.BGLogin);
+        gameRootResources.ShowTips("进入登陆界面成功1");
+        gameRootResources.ShowTips("进入登陆界面成功2");
+        gameRootResources.ShowTips("进入登陆界面成功3");
     }
     
     public void OpenLoginWindow()
     {
-        var loginWindow = GameRootResources.Instance().loginWindow;
+        var loginWindow = gameRootResources.loginWindow;
         loginWindow.SetWindowState(true);
     }
 }

@@ -16,9 +16,28 @@ public class GameRoot : GameRootMonoSingleton<GameRoot>
     private void Start()
     {
         Debug.Log("Game Start.");
+
+        ClearUIRoot();
         Init();
     }
 
+    /// <summary>
+    /// 初始化所有窗口，隐藏他们，除了显示Tips的DynamicWindow
+    /// </summary>
+    private void ClearUIRoot()
+    {
+        Transform canvas = transform.Find("Canvas");
+        for (int i = 0; i < canvas.childCount; i++)
+        {
+            canvas.GetChild(i).gameObject.SetActive(false);
+        }
+        
+        GameRootResources.Instance().dynamicWindow.SetWindowState(true);
+    }
+
+    /// <summary>
+    /// GameRoot的流程
+    /// </summary>
     private void Init()
     {
         DontDestroyOnLoad(this.gameObject);
@@ -29,10 +48,14 @@ public class GameRoot : GameRootMonoSingleton<GameRoot>
 
         //业务系统初始化
         LoginSys login = GetComponent<LoginSys>();
-        login.InitLogin();
+        login.InitSys();
         
         //进入登陆场景并加载相应UI
         login.EnterLogin();
  
+        // GameRootResources.Instance().dynamicWindow.AddTips("这是第一条Tip");
+        // GameRootResources.Instance().dynamicWindow.AddTips("这是第二条Tip");
     }
+
+   
 }

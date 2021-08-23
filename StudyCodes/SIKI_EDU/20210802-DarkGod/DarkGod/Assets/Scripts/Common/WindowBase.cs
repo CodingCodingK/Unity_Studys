@@ -13,7 +13,8 @@ using UnityEngine.UI;
 
 public class WindowBase : MonoBehaviour
 {
-    public ResSvc resSvc = null;
+    protected ResSvc resSvc = null;
+    protected AudioSvc audioSvc = null;
 
     public void SetWindowState(bool isActive = true)
     {
@@ -35,11 +36,13 @@ public class WindowBase : MonoBehaviour
     protected virtual void InitWindow()
     {
         resSvc = ResSvc.Instance();
+        audioSvc = AudioSvc.Instance();
     }
     
     protected virtual void ClearWindow()
     {
         resSvc = null;
+        audioSvc = null;
     }
 
     #region Tool Functions
