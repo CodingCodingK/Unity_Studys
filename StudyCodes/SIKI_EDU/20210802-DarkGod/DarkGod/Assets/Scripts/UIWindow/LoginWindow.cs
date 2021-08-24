@@ -33,6 +33,43 @@ public class LoginWindow : WindowBase
             inputPassword.text = string.Empty;
         }
     }
+
+    /// <summary>
+    /// 点击Login画面登录按钮
+    /// </summary>
+    public void ClickEnterBtn()
+    {
+        audioSvc.PlayUIAudio(Constants.UILoginBtn);
+
+        string account = inputAccount.text;
+        string password = inputPassword.text;
+
+        if (!string.IsNullOrEmpty(account) && !string.IsNullOrEmpty(password))
+        {
+            PlayerPrefs.SetString("Account",account);
+            PlayerPrefs.SetString("Password",password);
+            
+            //TODO 发送网络请求，验证登录
+            
+            //根据返回值，登录成功执行
+            LoginSys.Instance.RspLogin();
+        }
+        else
+        {
+            GameRootResources.Instance().ShowTips("账号或密码为空");
+            
+        }
+    }
+    
+    /// <summary>
+    /// 点击Login画面通知按钮
+    /// </summary>
+    public void ClickNoticeBtn()
+    {
+        audioSvc.PlayUIAudio(Constants.UIClickBtn);
+        GameRootResources.Instance().ShowTips("通知系统开发中");
+    }
+    
     
     
 }

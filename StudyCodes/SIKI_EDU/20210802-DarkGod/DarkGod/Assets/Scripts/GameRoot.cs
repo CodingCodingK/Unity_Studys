@@ -40,7 +40,9 @@ public class GameRoot : GameRootMonoSingleton<GameRoot>
     /// </summary>
     private void Init()
     {
+        // 设置不销毁
         DontDestroyOnLoad(this.gameObject);
+        DontDestroyOnLoad(GameObject.Find("EventSystem"));
         
         //服务模块初始化
         ResSvc res = GetComponent<ResSvc>();
@@ -52,9 +54,8 @@ public class GameRoot : GameRootMonoSingleton<GameRoot>
         
         //进入登陆场景并加载相应UI
         login.EnterLogin();
- 
-        // GameRootResources.Instance().dynamicWindow.AddTips("这是第一条Tip");
-        // GameRootResources.Instance().dynamicWindow.AddTips("这是第二条Tip");
+        
+        
     }
 
    

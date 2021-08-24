@@ -30,14 +30,24 @@ public class LoginSys : SystemBase//GameRootMonoSingleton<LoginSys>
     {
         resSvc.AsyncLoadScene(Constants.SceneLogin,OpenLoginWindow);
         audioSvc.PlayBGMusic(Constants.BGLogin);
-        gameRootResources.ShowTips("进入登陆界面成功1");
-        gameRootResources.ShowTips("进入登陆界面成功2");
-        gameRootResources.ShowTips("进入登陆界面成功3");
+        gameRootResources.ShowTips("加载音乐资源...成功");
+        gameRootResources.ShowTips("加载动画资源...成功");
     }
     
     public void OpenLoginWindow()
     {
         var loginWindow = gameRootResources.loginWindow;
         loginWindow.SetWindowState(true);
+    }
+
+    /// <summary>
+    /// 登录成功后执行，进入创建人物界面
+    /// </summary>
+    public void RspLogin()
+    {
+        gameRootResources.ShowTips("登陆成功");
+        
+        gameRootResources.createWindow.SetWindowState(true);
+        gameRootResources.loginWindow.SetWindowState(false);
     }
 }

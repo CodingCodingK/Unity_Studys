@@ -20,7 +20,12 @@ public class GameRootResources : GameRootMonoSingleton<GameRootResources>
     public LoginWindow loginWindow;
 
     public DynamicWindow dynamicWindow;
-    
+
+    public CreateWindow createWindow;
+        
+        
+        
+        
     public void ShowTips(string tip)
     {
        dynamicWindow.AddTips(tip);
