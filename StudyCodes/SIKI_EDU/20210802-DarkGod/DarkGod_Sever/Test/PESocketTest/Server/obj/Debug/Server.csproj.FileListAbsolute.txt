@@ -1,0 +1,11 @@
+D:\github\Unity\StudyCodes\SIKI_EDU\20210802-DarkGod\DarkGod_Sever\Test\PESocketTest\Server\bin\Debug\Server.exe.config
+D:\github\Unity\StudyCodes\SIKI_EDU\20210802-DarkGod\DarkGod_Sever\Test\PESocketTest\Server\bin\Debug\Server.exe
+D:\github\Unity\StudyCodes\SIKI_EDU\20210802-DarkGod\DarkGod_Sever\Test\PESocketTest\Server\bin\Debug\Server.pdb
+D:\github\Unity\StudyCodes\SIKI_EDU\20210802-DarkGod\DarkGod_Sever\Test\PESocketTest\Server\bin\Debug\PESocket.dll
+D:\github\Unity\StudyCodes\SIKI_EDU\20210802-DarkGod\DarkGod_Sever\Test\PESocketTest\Server\obj\Debug\Server.csproj.AssemblyReference.cache
+D:\github\Unity\StudyCodes\SIKI_EDU\20210802-DarkGod\DarkGod_Sever\Test\PESocketTest\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
+D:\github\Unity\StudyCodes\SIKI_EDU\20210802-DarkGod\DarkGod_Sever\Test\PESocketTest\Server\obj\Debug\Server.csproj.CopyComplete
+D:\github\Unity\StudyCodes\SIKI_EDU\20210802-DarkGod\DarkGod_Sever\Test\PESocketTest\Server\obj\Debug\Server.exe
+D:\github\Unity\StudyCodes\SIKI_EDU\20210802-DarkGod\DarkGod_Sever\Test\PESocketTest\Server\obj\Debug\Server.pdb
+D:\github\Unity\StudyCodes\SIKI_EDU\20210802-DarkGod\DarkGod_Sever\Test\PESocketTest\Server\bin\Debug\Protocol.dll
+D:\github\Unity\StudyCodes\SIKI_EDU\20210802-DarkGod\DarkGod_Sever\Test\PESocketTest\Server\bin\Debug\Protocol.pdb
