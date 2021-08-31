@@ -51,6 +51,8 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Common\WindowBase.cs" />
+     <Compile Include="Assets\Scripts\Common\PathDefine.cs" />
+     <Compile Include="Assets\Scripts\Common\PETools.cs" />
      <Compile Include="Assets\Scenes\aaa.cs" />
      <Compile Include="Assets\Scripts\UIWindow\CreateWindow.cs" />
      <Compile Include="Assets\Scripts\UIWindow\LoadingWindow.cs" />
@@ -66,8 +68,8 @@
      <Compile Include="Assets\Scripts\Common\SystemBase.cs" />
      <Compile Include="Assets\Scripts\Service\ResSvc.cs" />
      <Compile Include="Assets\Scripts\UIWindow\LoginWindow.cs" />
-     <Compile Include="Assets\Scripts\Common\PathDefine.cs" />
-     <Compile Include="Assets\Scripts\Common\PETools.cs" />
+     <Compile Include="Assets\Scripts\Service\NetSvc.cs" />
+     <Compile Include="Assets\Scripts\Net\ClientSession.cs" />
      <None Include="Assets\Compond\Shader\MogoSkybox.shader" />
      <None Include="Assets\Resources\ResCfgs\rdname.xml" />
  <Reference Include="Unity.Timeline.Editor">
@@ -288,6 +290,12 @@
  </Reference>
  <Reference Include="UnityEditor">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.14f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
+ </Reference>
+ <Reference Include="PEProtocol">
+ <HintPath>D:/github/Unity/StudyCodes/SIKI_EDU/20210802-DarkGod/DarkGod/Assets/Scripts/Net/PEProtocol.dll</HintPath>
+ </Reference>
+ <Reference Include="PESocket">
+ <HintPath>D:/github/Unity/StudyCodes/SIKI_EDU/20210802-DarkGod/DarkGod/Assets/Scripts/Net/PESocket.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.14f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>

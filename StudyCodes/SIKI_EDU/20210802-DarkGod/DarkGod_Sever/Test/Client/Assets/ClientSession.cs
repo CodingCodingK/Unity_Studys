@@ -9,21 +9,22 @@
 
 using PENet;
 using Protocol;
+using UnityEngine;
 
 public class ClientSession : PENet.PESession<NetMsg>
 {
     protected override void OnConnected()
     {
-        PETool.LogMsg("Server Connected !!!");
+        Debug.Log("Server Connected !!!");
     }
 
     protected override void OnDisConnected()
     {
-        PETool.LogMsg("Server DisConnect !!!");
+        Debug.Log("Server DisConnect !!!");
     }
 
     protected override void OnReciveMsg(NetMsg msg)
     {
-        PETool.LogMsg("Client Req:" + msg.text);
+        Debug.Log("Client Req:" + msg.text);
     }
 }

@@ -45,6 +45,8 @@ public class GameRoot : GameRootMonoSingleton<GameRoot>
         DontDestroyOnLoad(GameObject.Find("EventSystem"));
         
         //服务模块初始化
+        NetSvc net = GetComponent<NetSvc>();
+        net.InitSvc();
         ResSvc res = GetComponent<ResSvc>();
         res.InitSvc();
 

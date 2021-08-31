@@ -283,6 +283,12 @@
  <Reference Include="UnityEditor.WindowsStandalone.Extensions">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.14f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
  </Reference>
+ <Reference Include="PEProtocol">
+ <HintPath>D:/github/Unity/StudyCodes/SIKI_EDU/20210802-DarkGod/DarkGod/Assets/Scripts/Net/PEProtocol.dll</HintPath>
+ </Reference>
+ <Reference Include="PESocket">
+ <HintPath>D:/github/Unity/StudyCodes/SIKI_EDU/20210802-DarkGod/DarkGod/Assets/Scripts/Net/PESocket.dll</HintPath>
+ </Reference>
  <Reference Include="nunit.framework">
  <HintPath>D:/github/Unity/StudyCodes/SIKI_EDU/20210802-DarkGod/DarkGod/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
  </Reference>

@@ -24,7 +24,7 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
     
     public void InitSvc()
     {
-        Debug.Log("Init ResSvc.");
+        Debug.Log("ResSvc Init Completed.");
         InitRDNameConfig();
     }
 

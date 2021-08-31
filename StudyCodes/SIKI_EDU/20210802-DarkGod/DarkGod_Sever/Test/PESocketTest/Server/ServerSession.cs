@@ -7,7 +7,11 @@ namespace Server
     {
         protected override void OnConnected()
         {
-            PETool.LogMsg("Client Connected !!!");
+            PETool.LogMsg("Client Connected !");
+            SendMsg(new NetMsg
+            {
+                text = "Welcome to connect !"
+            });
         }
 
         protected override void OnDisConnected()
@@ -18,6 +22,11 @@ namespace Server
         protected override void OnReciveMsg(NetMsg msg)
         {
             PETool.LogMsg("Client Req:" + msg.text);
+            SendMsg(new NetMsg
+            {
+                text = "Sever Rsp:"+ msg.text
+            });
         }
+
     }
 }

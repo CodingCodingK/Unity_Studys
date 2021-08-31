@@ -21,6 +21,30 @@ public class GameStart : MonoBehaviour
     {
         client = new PESocket<ClientSession, NetMsg>();
         client.StartAsClient(IPCfg.srvIP,IPCfg.srvPort);
+        
+        // 设置log打印
+        client.SetLog(true, (string msg, int lv) =>
+        {
+            switch (lv)
+            {
+                case 0:
+                    msg = "Log:" + msg;
+                    Debug.Log(msg);
+                    break;
+                case 1:
+                    msg = "Warning:" + msg;
+                    Debug.LogWarning(msg);
+                    break;
+                case 2:
+                    msg = "Error:" + msg;
+                    Debug.LogError(msg);
+                    break;
+                case 3:
+                    msg = "Info:" + msg;
+                    Debug.Log(msg);
+                    break;
+            }
+        });
         Debug.Log("Start");
     }
 

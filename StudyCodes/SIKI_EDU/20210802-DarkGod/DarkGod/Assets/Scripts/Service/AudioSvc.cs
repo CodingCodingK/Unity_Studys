@@ -17,7 +17,7 @@ public class AudioSvc : GameRootMonoSingleton<AudioSvc>
 
     public void InitSvc()
     {
-        Debug.Log("Init AudioSvc");
+        Debug.Log("AudioSvc Init Completed.");
     }
 
     public void PlayBGMusic(string name, bool isLoop = true)
