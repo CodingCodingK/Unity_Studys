@@ -22,7 +22,7 @@ public class ClientSession : PESession<GameMsg>
 
     protected override void OnReciveMsg(GameMsg msg)
     {
-        Debug.Log("Server Rsp:" + msg.text);
+        Debug.Log("Server Rsp:" + ((CMD)msg.cmd).ToString());
     }
 
     protected override void OnDisConnected()

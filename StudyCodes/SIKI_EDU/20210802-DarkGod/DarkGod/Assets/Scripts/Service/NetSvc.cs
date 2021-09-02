@@ -48,4 +48,18 @@ public class NetSvc : GameRootMonoSingleton<NetSvc>
 
         Debug.Log("NetSvc Init Completed.");
     }
+
+    public void SendMsg(GameMsg msg)
+    {
+        if (client.session != null)
+        {
+            client.session.SendMsg(msg);
+        }
+        else
+        {
+            GameRootResources.Instance().ShowTips("服务器未连接");
+            InitSvc();
+        }
+    }
+    
 }

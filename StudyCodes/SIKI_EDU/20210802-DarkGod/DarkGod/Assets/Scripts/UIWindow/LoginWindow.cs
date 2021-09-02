@@ -8,6 +8,8 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using PEProtocol;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -50,6 +52,16 @@ public class LoginWindow : WindowBase
             PlayerPrefs.SetString("Password",password);
             
             //TODO 发送网络请求，验证登录
+            GameMsg msg = new GameMsg()
+            {
+                cmd = (int) CMD.ReqLogin,
+                reqLogin = new ReqLogin
+                {
+                    acct = account,
+                    pass = password
+                }
+            };
+            netSvc.SendMsg(msg);
             
             //根据返回值，登录成功执行
             LoginSys.Instance.RspLogin();

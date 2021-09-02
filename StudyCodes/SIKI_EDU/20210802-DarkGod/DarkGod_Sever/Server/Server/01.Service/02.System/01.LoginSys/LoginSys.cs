@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PENet;
+using PEProtocol;
 
 /// <summary>
 /// 登陆业务系统
@@ -14,6 +15,6 @@ public class LoginSys : Singleton<LoginSys>
 
     public void Init()
     {
-        PETool.LogMsg("LoginSys Init Done.");
+        PECommon.Log("LoginSys Init Done.");
     }
 }

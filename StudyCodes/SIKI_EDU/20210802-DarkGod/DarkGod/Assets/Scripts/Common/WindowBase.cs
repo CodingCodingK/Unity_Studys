@@ -15,6 +15,7 @@ public class WindowBase : MonoBehaviour
 {
     protected ResSvc resSvc = null;
     protected AudioSvc audioSvc = null;
+    protected NetSvc netSvc = null;
 
     public void SetWindowState(bool isActive = true)
     {
@@ -37,12 +38,14 @@ public class WindowBase : MonoBehaviour
     {
         resSvc = ResSvc.Instance();
         audioSvc = AudioSvc.Instance();
+        netSvc = NetSvc.Instance();
     }
     
     protected virtual void ClearWindow()
     {
         resSvc = null;
         audioSvc = null;
+        netSvc = null;
     }
 
     #region Tool Functions

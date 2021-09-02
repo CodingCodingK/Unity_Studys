@@ -14,12 +14,14 @@ public class SystemBase : MonoBehaviour
 {
     protected ResSvc resSvc;
     protected AudioSvc audioSvc;
+    protected NetSvc netSvc;
     protected GameRootResources gameRootResources;
 
     public virtual void InitSys()
     {
         resSvc = ResSvc.Instance();
         audioSvc = AudioSvc.Instance();
+        netSvc = NetSvc.Instance();
         gameRootResources = GameRootResources.Instance();
     }
 }

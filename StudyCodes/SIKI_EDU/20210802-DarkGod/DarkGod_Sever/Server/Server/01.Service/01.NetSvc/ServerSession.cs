@@ -14,24 +14,24 @@ public class ServerSession : PESession<GameMsg>
 
     protected override void OnConnected()
     {
-        PETool.LogMsg("Client Connect");
-        SendMsg(new GameMsg
-        {
-            text = "Welcome to connect"
-        });
+        PECommon.Log("Client Connect");
+        //SendMsg(new GameMsg
+        //{
+        //    text = "Welcome to connect"
+        //});
     }
 
     protected override void OnReciveMsg(GameMsg msg)
     {
-        PETool.LogMsg("Client Req:" + msg.text);
-        SendMsg(new GameMsg
-        {
-            text = "Server Rsp:" + msg.text
-        });
+        PECommon.Log("RcvPack CMD:" + ((CMD)msg.cmd).ToString());
+        //SendMsg(new GameMsg
+        //{
+        //    text = "Server Rsp:" + msg.text
+        //});
     }
 
     protected override void OnDisConnected()
     {
-        PETool.LogMsg("Client DisConnect");
+        PECommon.Log("Client DisConnect");
     }
 }

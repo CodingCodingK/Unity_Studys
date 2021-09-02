@@ -67,9 +67,9 @@
      <Compile Include="Assets\Scripts\System\LoginSys.cs" />
      <Compile Include="Assets\Scripts\Common\SystemBase.cs" />
      <Compile Include="Assets\Scripts\Service\ResSvc.cs" />
-     <Compile Include="Assets\Scripts\UIWindow\LoginWindow.cs" />
-     <Compile Include="Assets\Scripts\Service\NetSvc.cs" />
      <Compile Include="Assets\Scripts\Net\ClientSession.cs" />
+     <Compile Include="Assets\Scripts\Service\NetSvc.cs" />
+     <Compile Include="Assets\Scripts\UIWindow\LoginWindow.cs" />
      <None Include="Assets\Compond\Shader\MogoSkybox.shader" />
      <None Include="Assets\Resources\ResCfgs\rdname.xml" />
  <Reference Include="Unity.Timeline.Editor">

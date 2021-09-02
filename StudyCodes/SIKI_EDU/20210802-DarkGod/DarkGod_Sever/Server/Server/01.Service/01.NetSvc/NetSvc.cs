@@ -18,6 +18,7 @@ public class NetSvc : Singleton<NetSvc>
         PESocket<ServerSession, GameMsg> server = new PESocket<ServerSession, GameMsg>();
         server.StartAsServer(ServerConfig.srvIP, ServerConfig.srvPort);
 
-        PETool.LogMsg("NetSvc Init Done.");
+        
+        PECommon.Log("NetSvc Init Done.");
     }
 }

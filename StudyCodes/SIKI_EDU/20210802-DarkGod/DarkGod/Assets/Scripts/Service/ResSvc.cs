@@ -10,8 +10,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Xml;
+using PEProtocol;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using LogType = PEProtocol.LogType;
 
 public class ResSvc : GameRootMonoSingleton<ResSvc>
 {
@@ -136,7 +138,7 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
         TextAsset xml = Resources.Load<TextAsset>(PathDefine.RDNameConfig);
         if (!xml)
         {
-            Debug.LogError("xml file:"+PathDefine.RDNameConfig + "not exist");
+            PECommon.Log("xml file:"+PathDefine.RDNameConfig + "not exist",LogType.Error);
         }
         else
         {
