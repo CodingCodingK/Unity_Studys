@@ -9,10 +9,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using PEProtocol;
 using UnityEngine;
 
 public class GameRoot : GameRootMonoSingleton<GameRoot>
 {
+    
     private void Start()
     {
         Debug.Log("Game Start.");
@@ -57,8 +59,28 @@ public class GameRoot : GameRootMonoSingleton<GameRoot>
         //进入登陆场景并加载相应UI
         login.EnterLogin();
         
-        
     }
 
-   
+    #region PlayerData
+    
+    /// <summary>
+    /// 用户数据
+    /// </summary>
+    public PlayerData PlayerData
+    {
+        get;
+        private set;
+    }
+
+    public void SetPlayerData(PlayerData pd)
+    {
+        PlayerData = pd;
+    }
+
+    #endregion
+    
+    
+    
+    
+    
 }

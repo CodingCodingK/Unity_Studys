@@ -13,13 +13,19 @@ public class ServerRoot : Singleton<ServerRoot>
     
     public void Init()
     {
-        //TODO 数据层
+        // 数据层
+        CacheSvc.Instance().Init();
 
         // 服务层
         NetSvc.Instance().Init();
 
         // 业务系统层
         LoginSys.Instance().Init();
+    }
+
+    public void Update()
+    {
+        NetSvc.Instance().Update();
     }
 
 }

@@ -48,9 +48,11 @@
   <ItemGroup>
     <Compile Include="00.Common\ServerRoot.cs" />
     <Compile Include="00.Common\ServerStart.cs" />
+    <Compile Include="01.Service\01.NetSvc\MsgPack.cs" />
     <Compile Include="01.Service\01.NetSvc\NetSvc.cs" />
     <Compile Include="01.Service\01.NetSvc\ServerSession.cs" />
     <Compile Include="01.Service\02.System\01.LoginSys\LoginSys.cs" />
+    <Compile Include="03.Cache\CacheSvc.cs" />
     <Compile Include="99.Utils\Singleton.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -63,5 +65,6 @@
       <Name>PEProtocol</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

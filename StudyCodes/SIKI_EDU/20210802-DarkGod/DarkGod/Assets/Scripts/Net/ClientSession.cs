@@ -17,16 +17,19 @@ public class ClientSession : PESession<GameMsg>
 
     protected override void OnConnected()
     {
-        Debug.Log("Server Connect");
+        GameRootResources.Instance().ShowTips("服务器连接成功");
+        Debug.Log("Connect To Server");
     }
 
     protected override void OnReciveMsg(GameMsg msg)
     {
-        Debug.Log("Server Rsp:" + ((CMD)msg.cmd).ToString());
+        Debug.Log("RcvPack CMD:" + ((CMD)msg.cmd).ToString());
+        NetSvc.Instance().AddNetMsg(msg);
     }
 
     protected override void OnDisConnected()
     {
-        Debug.Log("Server DisConnect");
+        GameRootResources.Instance().ShowTips("服务器已断开连接");
+        Debug.Log("DisConnect To Server");
     }
 }

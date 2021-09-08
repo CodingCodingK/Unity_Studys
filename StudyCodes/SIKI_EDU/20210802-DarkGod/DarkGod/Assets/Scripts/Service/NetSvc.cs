@@ -15,9 +15,18 @@ using UnityEngine;
 public class NetSvc : GameRootMonoSingleton<NetSvc>
 {
     private PESocket<ClientSession, GameMsg> client = null;
+    
+    /// <summary>
+    /// 客户端向服务端发送消息的队列
+    /// </summary>
+    private Queue<GameMsg> msgQue = null;
+    
+    public static readonly string obj = "lock";
+    
     public void InitSvc()
     {
         client = new PESocket<ClientSession, GameMsg>();
+        msgQue = new Queue<GameMsg>();
         
         // 设置log打印
         client.SetLog(true, (string msg, int lv) =>
@@ -61,5 +70,55 @@ public class NetSvc : GameRootMonoSingleton<NetSvc>
             InitSvc();
         }
     }
+
+    /// <summary>
+    /// 向客户端发送请求
+    /// </summary>
+    public void AddNetMsg(GameMsg msg)
+    {
+        lock (obj)
+        {
+            msgQue.Enqueue(msg);
+        }
+    }
+
+    void Update()
+    {
+        if (msgQue?.Count > 0)
+        {
+            lock (obj)
+            {
+                var msg = msgQue.Dequeue();
+                HandOutMsg(msg);
+            }
+        }
+    }
     
+    /// <summary>
+    /// 分发处理 消息
+    /// </summary>
+    private void HandOutMsg(GameMsg msg)
+    {
+        if (msg.err != (int)ErrorCode.None)
+        {
+            switch ((ErrorCode)msg.err)
+            {
+                case ErrorCode.AccountIsOnline :
+                    GameRootResources.Instance().ShowTips("当前账号已在线！");
+                    break;
+                case ErrorCode.WrongPass :
+                    GameRootResources.Instance().ShowTips("输入账户名或密码错误！");
+                    break;
+            }
+            
+            return;
+        }
+        
+        switch ((CMD)msg.cmd)
+        {
+            case CMD.RspLogin:
+                LoginSys.Instance.RspLogin(msg);
+                break;
+        }
+    }
 }

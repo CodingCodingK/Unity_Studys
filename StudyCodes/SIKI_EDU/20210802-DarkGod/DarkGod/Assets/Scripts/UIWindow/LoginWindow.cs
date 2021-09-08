@@ -64,7 +64,7 @@ public class LoginWindow : WindowBase
             netSvc.SendMsg(msg);
             
             //根据返回值，登录成功执行
-            LoginSys.Instance.RspLogin();
+            //LoginSys.Instance.RspLogin();
         }
         else
         {

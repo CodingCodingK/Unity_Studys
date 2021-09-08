@@ -9,6 +9,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using PEProtocol;
 using Debug = UnityEngine.Debug;
 
 public class LoginSys : SystemBase//GameRootMonoSingleton<LoginSys>
@@ -43,11 +44,21 @@ public class LoginSys : SystemBase//GameRootMonoSingleton<LoginSys>
     /// <summary>
     /// 登录成功后执行，进入创建人物界面
     /// </summary>
-    public void RspLogin()
+    public void RspLogin(GameMsg msg)
     {
         gameRootResources.ShowTips("登陆成功");
-        
-        gameRootResources.createWindow.SetWindowState(true);
+        GameRoot.Instance().SetPlayerData(msg.rspLogin.playerData);
+
+        if (string.IsNullOrEmpty(msg.rspLogin.playerData.name))
+        {
+            // 打开角色创建页面
+            gameRootResources.createWindow.SetWindowState(true);}
+        else
+        {
+            // TODO 进入主城
+        }
+
+        // 关闭登录页面
         gameRootResources.loginWindow.SetWindowState(false);
     }
 }

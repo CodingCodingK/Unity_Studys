@@ -18,6 +18,9 @@ public class ServerStart
 
 
 
-        while (true) {}
+        while (true)
+        {
+            ServerRoot.Instance().Update();
+        }
     }
 }

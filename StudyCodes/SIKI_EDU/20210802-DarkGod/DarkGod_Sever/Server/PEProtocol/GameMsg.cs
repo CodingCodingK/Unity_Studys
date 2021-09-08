@@ -13,17 +13,72 @@ namespace PEProtocol
     [Serializable]
     public class GameMsg : PEMsg
     {
+
+
+
+        /// <summary>
+        /// 登录请求（客户端服务端共用）
+        /// </summary>
         public ReqLogin reqLogin;
+
+        /// <summary>
+        /// 登录回应（客户端服务端共用）
+        /// </summary>
+        public RspLogin rspLogin;
     }
 
     /// <summary>
-    /// 登录信息（客户端服务端共用）
+    /// 登录请求（客户端服务端共用）
     /// </summary>
     [Serializable]
     public class ReqLogin
     {
         public string acct;
         public string pass;
+    }
+
+    /// <summary>
+    /// 登录回应（客户端服务端共用）
+    /// </summary>
+    [Serializable]
+    public class RspLogin
+    {
+        public PlayerData playerData;
+    }
+
+    /// <summary>
+    /// 用户信息
+    /// </summary>
+    [Serializable]
+    public class PlayerData
+    {
+        public int id;
+        public string name;
+        public int lv;
+        public int exp;
+        public int health;
+        public int coin;
+        public int diamond;
+    }
+
+    /// <summary>
+    /// Command协议常数
+    /// </summary>
+    public enum ErrorCode
+    {
+        None = 0,
+        // 登录相关
+
+        /// <summary>
+        /// 账号已登陆
+        /// </summary>
+        AccountIsOnline,
+
+        /// <summary>
+        /// 密码错误
+        /// </summary>
+        WrongPass,
+
     }
 
     /// <summary>
