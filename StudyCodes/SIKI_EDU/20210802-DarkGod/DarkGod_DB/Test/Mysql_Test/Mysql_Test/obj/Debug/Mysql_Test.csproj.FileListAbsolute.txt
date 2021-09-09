@@ -1,0 +1,9 @@
+D:\github\Unity\StudyCodes\SIKI_EDU\20210802-DarkGod\DarkGod_DB\Test\Mysql_Test\Mysql_Test\bin\Debug\Mysql_Test.exe.config
+D:\github\Unity\StudyCodes\SIKI_EDU\20210802-DarkGod\DarkGod_DB\Test\Mysql_Test\Mysql_Test\bin\Debug\Mysql_Test.exe
+D:\github\Unity\StudyCodes\SIKI_EDU\20210802-DarkGod\DarkGod_DB\Test\Mysql_Test\Mysql_Test\bin\Debug\Mysql_Test.pdb
+D:\github\Unity\StudyCodes\SIKI_EDU\20210802-DarkGod\DarkGod_DB\Test\Mysql_Test\Mysql_Test\bin\Debug\MySql.Data.dll
+D:\github\Unity\StudyCodes\SIKI_EDU\20210802-DarkGod\DarkGod_DB\Test\Mysql_Test\Mysql_Test\obj\Debug\Mysql_Test.csproj.AssemblyReference.cache
+D:\github\Unity\StudyCodes\SIKI_EDU\20210802-DarkGod\DarkGod_DB\Test\Mysql_Test\Mysql_Test\obj\Debug\Mysql_Test.csproj.CoreCompileInputs.cache
+D:\github\Unity\StudyCodes\SIKI_EDU\20210802-DarkGod\DarkGod_DB\Test\Mysql_Test\Mysql_Test\obj\Debug\Mysql_Test.csproj.CopyComplete
+D:\github\Unity\StudyCodes\SIKI_EDU\20210802-DarkGod\DarkGod_DB\Test\Mysql_Test\Mysql_Test\obj\Debug\Mysql_Test.exe
+D:\github\Unity\StudyCodes\SIKI_EDU\20210802-DarkGod\DarkGod_DB\Test\Mysql_Test\Mysql_Test\obj\Debug\Mysql_Test.pdb
