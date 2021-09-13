@@ -68,8 +68,11 @@ namespace DBHelper
 			foreach (var propertyInfo in dto.GetType().GetProperties())
 			{
 				// 数据Mapper
-				cmd.Parameters.AddWithValue(propertyInfo.Name.ToLower(), propertyInfo.GetValue(dto));
-			}
+                if (propertyInfo.GetValue(dto) != null)
+                {
+                    cmd.Parameters.AddWithValue(propertyInfo.Name.ToLower(), propertyInfo.GetValue(dto));
+				}
+            }
 		}
 
 	}

@@ -12,15 +12,17 @@ public class CacheSvc : Singleton<CacheSvc>
 {
     protected CacheSvc(){}
 
+    #region Login、PlayerData相关
+
     /// <summary>
     /// 账号在线字典
     /// </summary>
     private Dictionary<string, ServerSession> onlineAcctDic;
 
-	/// <summary>
-	/// 在线账号信息字典
-	/// </summary>
-	private Dictionary<ServerSession, PlayerData> onlineSessionDic;
+    /// <summary>
+    /// 在线账号信息字典
+    /// </summary>
+    private Dictionary<ServerSession, PlayerData> onlineSessionDic;
 
     public void Init()
     {
@@ -38,19 +40,53 @@ public class CacheSvc : Singleton<CacheSvc>
     }
 
     /// <summary>
-    /// 根据账号密码返回 PlayerData 账号数据，否则返回null
+    /// 根据账号密码返回 PlayerData 账号数据，密码错误返回null，账号不存在则创建默认账号
     /// </summary>
     public PlayerData GetPlayerData(string acct, string pass)
     {
-	    return DBMgr.Instance().QueryPlayerData(acct, pass);
+        return DBMgr.Instance().QueryPlayerData(acct, pass);
+    }
+
+    /// <summary>
+    /// 根据 Session 获取已登陆的 PlayerData 账号数据
+    /// </summary>
+    public PlayerData GetPlayerDataBySession(ServerSession session)
+    {
+        return onlineSessionDic.TryGetValue(session, out PlayerData pd) ? pd : null;
     }
 
     /// <summary>
     /// 帐号上线，缓存数据
     /// </summary>
-    public void AcctOnline(string acct,ServerSession session,PlayerData playerData)
+    public void AcctOnline(string acct, ServerSession session, PlayerData playerData)
     {
         onlineAcctDic.Add(acct, session);
         onlineSessionDic.Add(session, playerData);
     }
+
+    /// <summary>
+    /// 判断用户名是否存在
+    /// </summary>
+    /// <returns></returns>
+    public bool IsNameExisted(string name)
+    {
+        return DBMgr.Instance().QueryPlayerDataByName(name) != null;
+    }
+
+    public bool UpdatePlayerData(PlayerData player)
+    {
+        try
+        {
+            DBMgr.Instance().UpdatePlayerData(player);
+            return true;
+        }
+        catch
+        {
+            return false;
+        }
+    }
+
+    #endregion
+
+
 }

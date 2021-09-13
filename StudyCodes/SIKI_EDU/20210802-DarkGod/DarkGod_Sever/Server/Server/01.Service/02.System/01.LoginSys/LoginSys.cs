@@ -26,7 +26,7 @@ public class LoginSys : Singleton<LoginSys>
     /// <param name="msg"></param>
     public void ReqLogin(MsgPack msgPack)
     {
-        // TODO 当前帐号是否已上线，若未上线账号是否存在，若账号密码是否正确，否则皆返回失败
+        // 当前帐号是否已上线，若未上线账号是否存在，若账号密码是否正确，否则皆返回失败
         ReqLogin data = msgPack.msg.reqLogin;
 
         GameMsg msg = new GameMsg
@@ -62,4 +62,45 @@ public class LoginSys : Singleton<LoginSys>
 
         msgPack.session.SendMsg(msg);
     }
+
+    /// <summary>
+    /// 处理 登录请求消息
+    /// </summary>
+    /// <param name="msg"></param>
+    public void ReqRename(MsgPack msgPack)
+    {
+        ReqRename data = msgPack.msg.reqRename;
+
+        GameMsg msg = new GameMsg
+        {
+            cmd = (int)CMD.RspRename,
+        };
+
+        // 名字是否已存在
+        if (cacheSvc.IsNameExisted(data.name))
+        {
+            msg.err = (int)ErrorCode.NameExisted;
+        }
+        else
+        {
+            // 不存在重名，就更新缓存+DB，并返回客户端
+            PlayerData pd = cacheSvc.GetPlayerDataBySession(msgPack.session);
+
+            // 已登录
+            if (pd != null)
+            {
+                pd.name = data.name;
+                cacheSvc.UpdatePlayerData(pd);
+                msg.rspRename = new RspRename{ name = pd.name };
+
+            }
+            else
+            {
+                msg.err = (int)ErrorCode.UpdateDBError;
+            }
+        }
+
+        msgPack.session.SendMsg(msg);
+    }
+
 }

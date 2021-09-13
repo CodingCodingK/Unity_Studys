@@ -8,6 +8,7 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using PEProtocol;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = System.Random;
@@ -35,11 +36,20 @@ public class CreateWindow : WindowBase
 
         if (inputName.text != null)
         {
-            //TODO 发送网络请求
-            
-            
+            // 发送网络请求
+            GameMsg msg = new GameMsg
+            {
+                cmd = (int) CMD.ReqRename,
+                reqRename = new ReqRename() {name = inputName.text}
+            };
+            netSvc.SendMsg(msg);
             
             GameRootResources.Instance().ShowTips("创建成功");
+            
+            // TODO 跳转场景到主城
+            
+            // 关闭窗口
+            SetWindowState(false);
         }
         else
         {

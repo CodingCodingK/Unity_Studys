@@ -61,4 +61,13 @@ public class LoginSys : SystemBase//GameRootMonoSingleton<LoginSys>
         // 关闭登录页面
         gameRootResources.loginWindow.SetWindowState(false);
     }
+
+    /// <summary>
+    /// 重命名成功后执行，更新游戏内文本 
+    /// </summary>
+    public void RspRename(GameMsg msg)
+    {
+        GameRoot.Instance().SetPlayerName(msg.rspRename.name);
+        
+    }
 }

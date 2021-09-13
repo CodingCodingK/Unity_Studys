@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using PEProtocol;
 using PENet;
 using UnityEngine;
+using LogType = PEProtocol.LogType;
 
 public class NetSvc : GameRootMonoSingleton<NetSvc>
 {
@@ -89,7 +90,7 @@ public class NetSvc : GameRootMonoSingleton<NetSvc>
             lock (obj)
             {
                 var msg = msgQue.Dequeue();
-                HandOutMsg(msg);
+                HandleRsp(msg);
             }
         }
     }
@@ -97,7 +98,7 @@ public class NetSvc : GameRootMonoSingleton<NetSvc>
     /// <summary>
     /// 分发处理 消息
     /// </summary>
-    private void HandOutMsg(GameMsg msg)
+    private void HandleRsp(GameMsg msg)
     {
         if (msg.err != (int)ErrorCode.None)
         {
@@ -109,6 +110,10 @@ public class NetSvc : GameRootMonoSingleton<NetSvc>
                 case ErrorCode.WrongPass :
                     GameRootResources.Instance().ShowTips("输入账户名或密码错误！");
                     break;
+                case ErrorCode.UpdateDBError :
+                    PECommon.Log("数据库更新异常",LogType.Error);
+                    GameRootResources.Instance().ShowTips("网络不稳定！");
+                    break;
             }
             
             return;
@@ -118,6 +123,9 @@ public class NetSvc : GameRootMonoSingleton<NetSvc>
         {
             case CMD.RspLogin:
                 LoginSys.Instance.RspLogin(msg);
+                break;
+            case CMD.RspRename:
+                LoginSys.Instance.RspRename(msg);
                 break;
         }
     }

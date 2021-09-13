@@ -14,32 +14,29 @@ namespace PEProtocol
     [Serializable]
     public class GameMsg : PEMsg
     {
-
-
-
-        /// <summary>
-        /// 登录请求（客户端服务端共用）
-        /// </summary>
+        #region 登陆相关
         public ReqLogin reqLogin;
-
-        /// <summary>
-        /// 登录回应（客户端服务端共用）
-        /// </summary>
         public RspLogin rspLogin;
+        public ReqRename reqRename;
+        public RspRename rspRename;
+        #endregion
+
     }
 
+    #region 登陆相关
+
     /// <summary>
-    /// 登录请求（客户端服务端共用）
+    /// 登录请求
     /// </summary>
     [Serializable]
     public class ReqLogin
     {
-        public string acct;
-        public string pass;
+        public string acct { get; set; }
+        public string pass { get; set; }
     }
 
     /// <summary>
-    /// 登录回应（客户端服务端共用）
+    /// 登录回应
     /// </summary>
     [Serializable]
     public class RspLogin
@@ -48,15 +45,33 @@ namespace PEProtocol
     }
 
     /// <summary>
+    /// 重命名请求
+    /// </summary>
+    [Serializable]
+    public class ReqRename
+    {
+        public string name { get; set; }
+    }
+
+    /// <summary>
+    /// 重命名回应
+    /// </summary>
+    [Serializable]
+    public class RspRename
+    {
+        public string name { get; set; }
+    }
+    #endregion
+
+
+    /// <summary>
     /// 用户信息
     /// </summary>
     [Serializable]
     public class PlayerData
     {
         public int id { get; set; }
-		public string acct { get; set; }
-		public string pass { get; set; }
-		public string name { get; set; }
+        public string name { get; set; }
 		public int level { get; set; }
 		public int exp { get; set; }
 		public int power { get; set; }
@@ -70,6 +85,12 @@ namespace PEProtocol
     public enum ErrorCode
     {
         None = 0,
+
+        /// <summary>
+        /// 更新数据库出错
+        /// </summary>
+        UpdateDBError,
+
         // 登录相关
 
         /// <summary>
@@ -82,6 +103,11 @@ namespace PEProtocol
         /// </summary>
         WrongPass,
 
+        /// <summary>
+        /// 名字已存在
+        /// </summary>
+        NameExisted,
+
     }
 
     /// <summary>
@@ -93,6 +119,8 @@ namespace PEProtocol
         // 登录相关
         ReqLogin=101,
         RspLogin=102,
+        ReqRename=103,
+        RspRename=104,
     }
 
     /// <summary>

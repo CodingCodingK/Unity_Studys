@@ -23,9 +23,11 @@ public class DBMgr : Singleton<DBMgr>
 	{
 		conn = new MySqlConnection("server=localhost;User Id = root;password=;Database=darkgod;Charset = utf8");
 		conn.Open();
-		QueryPlayerData("test1","test");
+		//QueryPlayerData("test1","test");
 		PECommon.Log("DBMgr Init Done.");
 	}
+
+	#region 账号相关
 
 	public PlayerData QueryPlayerData(string acct, string pass)
 	{
@@ -34,18 +36,19 @@ public class DBMgr : Singleton<DBMgr>
 		MySqlCommand cmd = new MySqlCommand("select * from account where acct = @acct", conn);
 		cmd.Parameters.AddWithValue("acct", acct);
 
-		playerData = cmd.Query<PlayerData>()?.FirstOrDefault();
 
-		
-		if (playerData != null && pass.Equals(playerData.pass))
+		ReqLogin acctAndPass = cmd.Query<ReqLogin>()?.FirstOrDefault();
+
+
+
+		if (acctAndPass != null && pass.Equals(acctAndPass.pass))
 		{
-			// 帐号密码正确
-
+			// 帐号密码正确，查询填充具体数据
+			playerData = cmd.Query<PlayerData>()?.FirstOrDefault();
 		}
-		else if (playerData != null && !pass.Equals(playerData.pass))
+		else if (acctAndPass != null && !pass.Equals(acctAndPass.pass))
 		{
-			// 帐号存在、密码不正确
-			playerData = null;
+			// 帐号存在、密码不正确           
 		}
 		else
 		{
@@ -53,8 +56,6 @@ public class DBMgr : Singleton<DBMgr>
 			playerData = new PlayerData
 			{
 				id = -1,
-				acct = acct,
-				pass = pass,
 				name = "",
 				level = 1,
 				exp = 0,
@@ -62,18 +63,18 @@ public class DBMgr : Singleton<DBMgr>
 				coin = 5000,
 				diamond = 500,
 			};
-			playerData.id = InsertNewAcctData(playerData);
+			playerData.id = InsertNewAcctData(acct, pass, playerData);
 		}
 
 		return playerData;
 	}
 
-	private int InsertNewAcctData(PlayerData pd)
+	private int InsertNewAcctData(string acct, string pass, PlayerData pd)
 	{
 		MySqlCommand cmd = new MySqlCommand(
 			"insert into account set acct = @acct,pass = @pass,name = @name,level = @level,exp = @exp,power = @power,coin = @coin,diamond = @diamond", conn);
-		cmd.Parameters.AddWithValue("acct", pd.acct);
-		cmd.Parameters.AddWithValue("pass", pd.pass);
+		cmd.Parameters.AddWithValue("acct", acct);
+		cmd.Parameters.AddWithValue("pass", pass);
 		cmd.Parameters.AddWithValue("name", pd.name);
 		cmd.Parameters.AddWithValue("level", pd.level);
 		cmd.Parameters.AddWithValue("exp", pd.exp);
@@ -84,6 +85,27 @@ public class DBMgr : Singleton<DBMgr>
 		cmd.ExecuteNonQuery();
 		return (int)cmd.LastInsertedId;
 	}
+
+    public PlayerData QueryPlayerDataByName(string name)
+    {
+        PlayerData playerData = null;
+
+        MySqlCommand cmd = new MySqlCommand("select * from account where name = @name", conn);
+        cmd.Parameters.AddWithValue("name",name);
+
+        return cmd.Query<PlayerData>()?.FirstOrDefault();
+	}
+
+    public void UpdatePlayerData(PlayerData pd)
+    {
+		MySqlCommand cmd = new MySqlCommand(
+            "update account set name = @name,level = @level,exp = @exp,power = @power,coin = @coin,diamond = @diamond where id = @id", conn);
+        cmd.SetAllParameters(pd);
+        cmd.ExecuteNonQuery();
+    }
+
+	#endregion
+
 
 }
 

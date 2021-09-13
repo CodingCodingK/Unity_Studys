@@ -77,6 +77,11 @@ public class GameRoot : GameRootMonoSingleton<GameRoot>
         PlayerData = pd;
     }
 
+    public void SetPlayerName(string name)
+    {
+        PlayerData.name = name;
+    }
+    
     #endregion
     
     
