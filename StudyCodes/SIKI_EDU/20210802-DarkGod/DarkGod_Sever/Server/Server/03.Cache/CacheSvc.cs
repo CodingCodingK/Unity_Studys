@@ -17,7 +17,10 @@ public class CacheSvc : Singleton<CacheSvc>
     /// </summary>
     private Dictionary<string, ServerSession> onlineAcctDic;
 
-    private Dictionary<ServerSession, PlayerData> onlineSessionDic;
+	/// <summary>
+	/// 在线账号信息字典
+	/// </summary>
+	private Dictionary<ServerSession, PlayerData> onlineSessionDic;
 
     public void Init()
     {
@@ -39,8 +42,7 @@ public class CacheSvc : Singleton<CacheSvc>
     /// </summary>
     public PlayerData GetPlayerData(string acct, string pass)
     {
-        // TODO 从数据库查找
-        return null;
+	    return DBMgr.Instance().QueryPlayerData(acct, pass);
     }
 
     /// <summary>

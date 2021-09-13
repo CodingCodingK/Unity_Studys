@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\library\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="PESocket">
       <HintPath>..\..\library\PESocket.dll</HintPath>
     </Reference>
@@ -53,6 +56,8 @@
     <Compile Include="01.Service\01.NetSvc\ServerSession.cs" />
     <Compile Include="01.Service\02.System\01.LoginSys\LoginSys.cs" />
     <Compile Include="03.Cache\CacheSvc.cs" />
+    <Compile Include="04.DB\DBMapperHelper.cs" />
+    <Compile Include="04.DB\DBMgr.cs" />
     <Compile Include="99.Utils\Singleton.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

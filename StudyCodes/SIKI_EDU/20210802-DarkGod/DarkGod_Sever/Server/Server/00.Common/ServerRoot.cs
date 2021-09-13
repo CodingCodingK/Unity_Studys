@@ -15,9 +15,10 @@ public class ServerRoot : Singleton<ServerRoot>
     {
         // 数据层
         CacheSvc.Instance().Init();
+        DBMgr.Instance().Init();
 
-        // 服务层
-        NetSvc.Instance().Init();
+		// 服务层
+		NetSvc.Instance().Init();
 
         // 业务系统层
         LoginSys.Instance().Init();

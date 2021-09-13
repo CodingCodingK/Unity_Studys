@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using PENet;
@@ -52,14 +53,16 @@ namespace PEProtocol
     [Serializable]
     public class PlayerData
     {
-        public int id;
-        public string name;
-        public int lv;
-        public int exp;
-        public int health;
-        public int coin;
-        public int diamond;
-    }
+        public int id { get; set; }
+		public string acct { get; set; }
+		public string pass { get; set; }
+		public string name { get; set; }
+		public int level { get; set; }
+		public int exp { get; set; }
+		public int power { get; set; }
+		public int coin { get; set; }
+		public int diamond { get; set; }
+	}
 
     /// <summary>
     /// Command协议常数
