@@ -23,7 +23,7 @@ public class GameRootResources : GameRootMonoSingleton<GameRootResources>
 
     public CreateWindow createWindow;
         
-        
+    public MainCityWindow mainCityWindow;
         
         
     public void ShowTips(string tip)

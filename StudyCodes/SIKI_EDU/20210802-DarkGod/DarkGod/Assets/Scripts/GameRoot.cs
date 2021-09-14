@@ -55,6 +55,8 @@ public class GameRoot : GameRootMonoSingleton<GameRoot>
         //业务系统初始化
         LoginSys login = GetComponent<LoginSys>();
         login.InitSys();
+        MainCitySys mainCity = GetComponent<MainCitySys>();
+        mainCity.InitSys();
         
         //进入登陆场景并加载相应UI
         login.EnterLogin();

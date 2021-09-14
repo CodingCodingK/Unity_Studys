@@ -77,7 +77,28 @@ namespace PEProtocol
 		public int power { get; set; }
 		public int coin { get; set; }
 		public int diamond { get; set; }
-	}
+        public int hp { get; set; }
+        public int ad { get; set; }
+        public int ap { get; set; }
+        public int addef { get; set; }
+        public int apdef { get; set; }
+
+        /// <summary>
+        /// 闪避概率
+        /// </summary>
+        public int dodge { get; set; }
+
+        /// <summary>
+        /// 穿透比率
+        /// </summary>
+        public int pierce { get; set; }
+
+        /// <summary>
+        /// 暴击概率
+        /// </summary>
+        public int critical { get; set; }
+
+    }
 
     /// <summary>
     /// Command协议常数

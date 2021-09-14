@@ -62,7 +62,15 @@ public class DBMgr : Singleton<DBMgr>
 				power = 150,
 				coin = 5000,
 				diamond = 500,
-			};
+                hp = 2000,
+                ad = 275,
+                ap = 265,
+                addef = 67,
+                apdef = 43,
+                dodge = 7,
+                pierce = 5,
+                critical = 2,
+            };
 			playerData.id = InsertNewAcctData(acct, pass, playerData);
 		}
 
@@ -72,7 +80,7 @@ public class DBMgr : Singleton<DBMgr>
 	private int InsertNewAcctData(string acct, string pass, PlayerData pd)
 	{
 		MySqlCommand cmd = new MySqlCommand(
-			"insert into account set acct = @acct,pass = @pass,name = @name,level = @level,exp = @exp,power = @power,coin = @coin,diamond = @diamond", conn);
+            "insert into account set acct = @acct,pass = @pass,name = @name,level = @level,exp = @exp,power = @power,coin = @coin,diamond = @diamond,hp=@hp,ad=@ad,ap=@ap,addef=@addef,apdef=@apdef,dodge=@dodge,pierce=@pierce,critical=@critical", conn);
 		cmd.Parameters.AddWithValue("acct", acct);
 		cmd.Parameters.AddWithValue("pass", pass);
 		cmd.Parameters.AddWithValue("name", pd.name);
@@ -81,8 +89,16 @@ public class DBMgr : Singleton<DBMgr>
 		cmd.Parameters.AddWithValue("power", pd.power);
 		cmd.Parameters.AddWithValue("coin", pd.coin);
 		cmd.Parameters.AddWithValue("diamond", pd.diamond);
+        cmd.Parameters.AddWithValue("hp", pd.hp);
+        cmd.Parameters.AddWithValue("ad", pd.ad);
+        cmd.Parameters.AddWithValue("ap", pd.ap);
+        cmd.Parameters.AddWithValue("addef", pd.addef);
+        cmd.Parameters.AddWithValue("apdef", pd.apdef);
+        cmd.Parameters.AddWithValue("dodge", pd.dodge);
+        cmd.Parameters.AddWithValue("pierce", pd.pierce);
+        cmd.Parameters.AddWithValue("critical", pd.critical);
 
-		cmd.ExecuteNonQuery();
+        cmd.ExecuteNonQuery();
 		return (int)cmd.LastInsertedId;
 	}
 
@@ -99,7 +115,7 @@ public class DBMgr : Singleton<DBMgr>
     public void UpdatePlayerData(PlayerData pd)
     {
 		MySqlCommand cmd = new MySqlCommand(
-            "update account set name = @name,level = @level,exp = @exp,power = @power,coin = @coin,diamond = @diamond where id = @id", conn);
+            "update account set name = @name,level = @level,exp = @exp,power = @power,coin = @coin,diamond = @diamond where id = @id,hp=@hp,ad=@ad,ap=@ap,addef=@addef,apdef=@apdef,dodge=@dodge,pierce=@pierce,critical=@critical", conn);
         cmd.SetAllParameters(pd);
         cmd.ExecuteNonQuery();
     }

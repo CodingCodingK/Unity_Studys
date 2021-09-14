@@ -4,7 +4,6 @@ D:\github\Unity\StudyCodes\SIKI_EDU\20210802-DarkGod\DarkGod_Sever\Server\Server
 D:\github\Unity\StudyCodes\SIKI_EDU\20210802-DarkGod\DarkGod_Sever\Server\Server\bin\Debug\PEProtocol.dll
 D:\github\Unity\StudyCodes\SIKI_EDU\20210802-DarkGod\DarkGod_Sever\Server\Server\bin\Debug\PESocket.dll
 D:\github\Unity\StudyCodes\SIKI_EDU\20210802-DarkGod\DarkGod_Sever\Server\Server\bin\Debug\PEProtocol.pdb
-D:\github\Unity\StudyCodes\SIKI_EDU\20210802-DarkGod\DarkGod_Sever\Server\Server\obj\Debug\Server.csproj.AssemblyReference.cache
 D:\github\Unity\StudyCodes\SIKI_EDU\20210802-DarkGod\DarkGod_Sever\Server\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
 D:\github\Unity\StudyCodes\SIKI_EDU\20210802-DarkGod\DarkGod_Sever\Server\Server\obj\Debug\Server.csproj.CopyComplete
 D:\github\Unity\StudyCodes\SIKI_EDU\20210802-DarkGod\DarkGod_Sever\Server\Server\obj\Debug\Server.exe
@@ -22,3 +21,4 @@ E:\My Github\Unity\StudyCodes\SIKI_EDU\20210802-DarkGod\DarkGod_Sever\Server\Ser
 E:\My Github\Unity\StudyCodes\SIKI_EDU\20210802-DarkGod\DarkGod_Sever\Server\Server\obj\Debug\Server.pdb
 E:\My Github\Unity\StudyCodes\SIKI_EDU\20210802-DarkGod\DarkGod_Sever\Server\Server\bin\Debug\MySql.Data.dll
 D:\github\Unity\StudyCodes\SIKI_EDU\20210802-DarkGod\DarkGod_Sever\Server\Server\bin\Debug\MySql.Data.dll
+D:\github\Unity\StudyCodes\SIKI_EDU\20210802-DarkGod\DarkGod_Sever\Server\Server\obj\Debug\Server.csprojAssemblyReference.cache

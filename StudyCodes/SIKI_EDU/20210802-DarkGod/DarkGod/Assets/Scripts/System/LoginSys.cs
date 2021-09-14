@@ -35,7 +35,7 @@ public class LoginSys : SystemBase//GameRootMonoSingleton<LoginSys>
         gameRootResources.ShowTips("加载动画资源...成功");
     }
     
-    public void OpenLoginWindow()
+    private void OpenLoginWindow()
     {
         var loginWindow = gameRootResources.loginWindow;
         loginWindow.SetWindowState(true);
@@ -56,6 +56,7 @@ public class LoginSys : SystemBase//GameRootMonoSingleton<LoginSys>
         else
         {
             // TODO 进入主城
+            MainCitySys.Instance.EnterMainCity();
         }
 
         // 关闭登录页面

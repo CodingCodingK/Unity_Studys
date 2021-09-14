@@ -15,6 +15,8 @@ public static class Constants
     #region 场景名称
 
     public const string SceneLogin = "SceneLogin";
+    
+    public const string SceneMainCity = "SceneMainCity";
 
     #endregion
 
@@ -22,6 +24,9 @@ public static class Constants
 
     // 登录bgm
     public const string BGLogin = "bgLogin";
+    
+    // 主城bgm
+    public const string BGMainCity = "bgMainCity";
     
     // 登录按钮音效
     public const string UILoginBtn = "uiLoginBtn";
