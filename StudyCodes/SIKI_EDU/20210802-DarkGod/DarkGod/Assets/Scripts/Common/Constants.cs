@@ -33,6 +33,7 @@ public static class Constants
     
     // 常规UI点击音效
     public const string UIClickBtn = "uiClickBtn";
+    public const string UIExtenBtn = "uiExtenBtn";
     
     #endregion
 
@@ -41,10 +42,15 @@ public static class Constants
     public const int ScreenStandardWidth = 1334;
     public const int ScreenStandardHeight = 750;
 
-    // TODO 20210915
-    public const int ScreenOPDis = 90;
+    // 摇杆点标准操作最大距离
+    public const int ScreenOPDis = 70;
 
     #endregion
 
+    #region 角色属性类
 
+    public const int PlayerMoveSpeed = 8;
+    public const int MonsterMoveSpeed = 4;
+
+    #endregion
 }

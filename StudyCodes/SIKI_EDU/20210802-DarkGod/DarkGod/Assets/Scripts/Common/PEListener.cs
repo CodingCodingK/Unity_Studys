@@ -12,12 +12,19 @@ namespace Common
         
         public void OnPointerDown(PointerEventData eventData)
         {
-            onClickDown?.Invoke(eventData);
+            if (eventData!=null)
+            {
+                onClickDown(eventData);
+            }
         }
 
         public void OnPointerUp(PointerEventData eventData)
         {
-            onClickUp?.Invoke(eventData);
+            if (eventData!=null)
+            {
+                onClickUp(eventData);
+            }
+            
         }
 
         public void OnDrag(PointerEventData eventData)

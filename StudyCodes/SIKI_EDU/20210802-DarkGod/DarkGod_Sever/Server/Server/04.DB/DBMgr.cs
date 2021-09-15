@@ -115,7 +115,7 @@ public class DBMgr : Singleton<DBMgr>
     public void UpdatePlayerData(PlayerData pd)
     {
 		MySqlCommand cmd = new MySqlCommand(
-            "update account set name = @name,level = @level,exp = @exp,power = @power,coin = @coin,diamond = @diamond where id = @id,hp=@hp,ad=@ad,ap=@ap,addef=@addef,apdef=@apdef,dodge=@dodge,pierce=@pierce,critical=@critical", conn);
+            "update account set name = @name,level = @level,exp = @exp,power = @power,coin = @coin,diamond = @diamond,hp=@hp,ad=@ad,ap=@ap,addef=@addef,apdef=@apdef,dodge=@dodge,pierce=@pierce,critical=@critical where id = @id", conn);
         cmd.SetAllParameters(pd);
         cmd.ExecuteNonQuery();
     }

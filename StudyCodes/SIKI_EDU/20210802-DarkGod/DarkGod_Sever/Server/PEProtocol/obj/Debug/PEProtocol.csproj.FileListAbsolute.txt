@@ -16,3 +16,4 @@ E:\My Github\Unity\StudyCodes\SIKI_EDU\20210802-DarkGod\DarkGod_Sever\Server\PEP
 E:\My Github\Unity\StudyCodes\SIKI_EDU\20210802-DarkGod\DarkGod_Sever\Server\PEProtocol\obj\Debug\PEProtocol.csproj.CopyComplete
 E:\My Github\Unity\StudyCodes\SIKI_EDU\20210802-DarkGod\DarkGod_Sever\Server\PEProtocol\obj\Debug\PEProtocol.dll
 E:\My Github\Unity\StudyCodes\SIKI_EDU\20210802-DarkGod\DarkGod_Sever\Server\PEProtocol\obj\Debug\PEProtocol.pdb
+D:\github\Unity\StudyCodes\SIKI_EDU\20210802-DarkGod\DarkGod_Sever\Server\PEProtocol\obj\Debug\PEProtocol.csprojAssemblyReference.cache

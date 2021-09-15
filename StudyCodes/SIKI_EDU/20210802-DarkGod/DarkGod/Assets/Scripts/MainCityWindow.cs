@@ -19,6 +19,11 @@ public class MainCityWindow : WindowBase
 {
     #region UI define
 
+    public Animation menuAni;
+    public Button btnMenu;
+    private bool menuState = false;
+    
+    
     // 拖拽范围
     public Image imgTouch;
     // 拖拽背景盘
@@ -43,8 +48,17 @@ public class MainCityWindow : WindowBase
     /// </summary>
     private Vector2 startPos = Vector2.zero;
     
+    /// <summary>
+    /// 摇杆用 操控盘归零位置
+    /// </summary>
     private Vector2 defaultPos = Vector2.zero;
-        
+
+    /// <summary>
+    /// 摇杆范围 自适应用
+    /// </summary>
+    private float pointDis;
+    
+    
     #endregion
 
     #region Main Func
@@ -54,6 +68,7 @@ public class MainCityWindow : WindowBase
         base.InitWindow();
 
         defaultPos = imgDirBg.transform.position;
+        pointDis = Screen.height * 1.0f / Constants.ScreenStandardHeight * Constants.ScreenOPDis;
         
         RegisterTouchEvents();
         SetActive(imgDirPoint,false);
@@ -112,7 +127,19 @@ public class MainCityWindow : WindowBase
     
     public void ClickMenuButton()
     {
-        // TODO
+        audioSvc.PlayUIAudio(Constants.UIExtenBtn);
+        menuState = !menuState;
+        AnimationClip clip;
+        if (menuState)
+        {
+            clip = menuAni.GetClip("OpenMCMenu");
+        }
+        else
+        {
+            clip = menuAni.GetClip("CloseMCMenu");
+        }
+
+        menuAni.Play(clip.name);
     }
     
     /// <summary>
@@ -120,25 +147,36 @@ public class MainCityWindow : WindowBase
     /// </summary>
     public void RegisterTouchEvents()
     {
-        OnClickDown(imgDirBg.gameObject,data =>
+        OnClickDown(imgDirBg.gameObject,(PointerEventData data) =>
         {
             startPos = data.position;
             SetActive(imgDirPoint);
             imgDirBg.transform.position = data.position;
         });
         
-        OnClickUp(imgDirBg.gameObject,data =>
+        OnClickUp(imgDirBg.gameObject,(PointerEventData data) =>
         {
             imgDirBg.transform.position = defaultPos;
-            SetActive(imgDirBg,false);
+            SetActive(imgDirPoint,false);
             imgDirPoint.transform.localPosition = Vector3.zero;
             // TODO 方向信息传递
         });
         
-        OnDrag(imgDirBg.gameObject,data =>
+        OnDrag(imgDirBg.gameObject,(PointerEventData data) =>
         {
             Vector2 dir = data.position - startPos;
-            
+            float len = dir.magnitude;
+            if (len > pointDis)
+            {
+                // 把方向向量限制到maxLength的长度
+                Vector2 clampDir = Vector2.ClampMagnitude(dir,pointDis);
+                imgDirPoint.transform.position = startPos + clampDir;
+            }
+            else
+            {
+                imgDirPoint.transform.position = data.position;
+            }
+            // TODO 方向信息传递
         });
     }
 

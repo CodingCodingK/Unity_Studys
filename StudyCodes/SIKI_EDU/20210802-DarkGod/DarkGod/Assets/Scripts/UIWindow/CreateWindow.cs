@@ -46,7 +46,7 @@ public class CreateWindow : WindowBase
             
             GameRootResources.Instance().ShowTips("创建成功");
             
-            // TODO 跳转场景到主城
+            // 跳转场景到主城
             MainCitySys.Instance.EnterMainCity();
             
             // 关闭窗口
