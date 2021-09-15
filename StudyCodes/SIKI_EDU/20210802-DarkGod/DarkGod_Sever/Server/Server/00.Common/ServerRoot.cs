@@ -11,6 +11,8 @@ public class ServerRoot : Singleton<ServerRoot>
 {
     private ServerRoot(){}
     
+	private int sessionId = 0;
+
     public void Init()
     {
         // 数据层
@@ -27,6 +29,14 @@ public class ServerRoot : Singleton<ServerRoot>
     public void Update()
     {
         NetSvc.Instance().Update();
+    }
+
+	/// <summary>
+	/// 分配新的SessionId给客户端
+	/// </summary>
+	public int GetSessionId()
+    {
+	    return sessionId == int.MaxValue ? 0 : sessionId++;
     }
 
 }

@@ -86,7 +86,28 @@ public class CacheSvc : Singleton<CacheSvc>
         }
     }
 
+	/// <summary>
+	/// 帐号登出时，清空本地缓存中该账号记录 
+	/// </summary>
+	internal void AcctOffline(ServerSession session)
+    {
+	    foreach (var item in onlineAcctDic)
+	    {
+		    if (item.Value == session)
+		    {
+			    onlineAcctDic.Remove(item.Key);
+			    break;
+		    }
+	    }
+
+	    string succ = onlineSessionDic.Remove(session) ? "successed" : "failed";
+	    PECommon.Log("Offline Result SessionId:"+ session.sessionId + " " + succ);
+    }
+
     #endregion
+
+
+
 
 
 }

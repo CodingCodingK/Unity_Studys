@@ -44,5 +44,13 @@ namespace PEProtocol
         {
             return ((lv - 1) / 10) * 150 + 150;
         }
-    }
+
+        /// <summary>
+        /// 体力上限计算
+        /// </summary>
+        public static int GetExpMaxValByLv(int lv)
+        {
+	        return 100 * (lv^2);
+        }
+	}
 }

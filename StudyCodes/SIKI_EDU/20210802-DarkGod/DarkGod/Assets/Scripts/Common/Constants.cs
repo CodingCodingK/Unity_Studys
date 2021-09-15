@@ -34,9 +34,17 @@ public static class Constants
     // 常规UI点击音效
     public const string UIClickBtn = "uiClickBtn";
     
-    
     #endregion
-    
-    
-    
+
+    #region 屏幕标准宽高
+
+    public const int ScreenStandardWidth = 1334;
+    public const int ScreenStandardHeight = 750;
+
+    // TODO 20210915
+    public const int ScreenOPDis = 90;
+
+    #endregion
+
+
 }

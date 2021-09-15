@@ -6,9 +6,12 @@
     功能：UI界面基类
 *****************************************************/
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Common;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class WindowBase : MonoBehaviour
@@ -95,6 +98,41 @@ public class WindowBase : MonoBehaviour
     {
         SetText(tf.GetComponent<Text>(),num);
     }
+
+    protected T GetOrAddComponent<T>(GameObject go) where T : Component
+    {
+        T t = go.GetComponent<T>();
+        if (t == null)
+        {
+            t = go.AddComponent<T>();
+        }
+
+        return t;
+    }
+    
+    
+    #endregion
+
+    #region Click Event
+    
+    protected void OnClickDown(GameObject go,Action<PointerEventData> action)
+    {
+        PEListener listener = GetOrAddComponent<PEListener>(go);
+        listener.onClickDown = action;
+    }
+    
+    protected void OnClickUp(GameObject go,Action<PointerEventData> action)
+    {
+        PEListener listener = GetOrAddComponent<PEListener>(go);
+        listener.onClickUp = action;
+    }
+    
+    protected void OnDrag(GameObject go,Action<PointerEventData> action)
+    {
+        PEListener listener = GetOrAddComponent<PEListener>(go);
+        listener.onClickDrag = action;
+    }
+
     #endregion
     
 }

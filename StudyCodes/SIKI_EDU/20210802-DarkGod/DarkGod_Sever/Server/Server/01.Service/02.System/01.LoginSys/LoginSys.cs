@@ -103,4 +103,11 @@ public class LoginSys : Singleton<LoginSys>
         msgPack.session.SendMsg(msg);
     }
 
+	/// <summary>
+	/// 帐号登出时，清空本地缓存中该账号记录 
+	/// </summary>
+	public void ClearOfflineData(ServerSession session)
+    {
+	    cacheSvc.AcctOffline(session);
+    }
 }
