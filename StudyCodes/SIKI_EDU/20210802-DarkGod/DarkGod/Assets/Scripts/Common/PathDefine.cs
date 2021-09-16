@@ -15,7 +15,13 @@ public class PathDefine
     #region Configs
 
     public const string RDNameConfig = "ResCfgs/rdname";
+    public const string MapConfig = "ResCfgs/map";
+    
+    #endregion
+    
+    #region Player
 
+    public const string AsnCityPlayerPrefab = "PrefabPlayer/AssassinCity";
 
     #endregion
 }

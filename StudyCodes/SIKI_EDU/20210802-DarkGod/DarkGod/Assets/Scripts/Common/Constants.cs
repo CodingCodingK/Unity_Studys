@@ -17,6 +17,8 @@ public static class Constants
     public const string SceneLogin = "SceneLogin";
     
     public const string SceneMainCity = "SceneMainCity";
+    
+    public const int MapID_MainCity = 10000;
 
     #endregion
 
@@ -42,15 +44,21 @@ public static class Constants
     public const int ScreenStandardWidth = 1334;
     public const int ScreenStandardHeight = 750;
 
-    // 摇杆点标准操作最大距离
+    /// 摇杆点标准操作最大距离
     public const int ScreenOPDis = 70;
 
     #endregion
 
     #region 角色属性类
 
+    // 移动速度相关
     public const int PlayerMoveSpeed = 8;
     public const int MonsterMoveSpeed = 4;
+    /// 运动平滑 最大加速度(单位秒)
+    public const float AccelerSpeed = 4;
+    // 混合参数
+    public const int BlendIdle = 0;
+    public const int BlendWalk = 1;
 
     #endregion
 }

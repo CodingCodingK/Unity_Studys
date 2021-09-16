@@ -14,6 +14,7 @@ using PEProtocol;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using LogType = PEProtocol.LogType;
+using MyHelper;
 
 public class ResSvc : GameRootMonoSingleton<ResSvc>
 {
@@ -24,10 +25,18 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
     /// </summary>
     private Dictionary<string, AudioClip> audioDic = new Dictionary<string, AudioClip>();
     
+    /// <summary>
+    /// Prefab暂存池
+    /// </summary>
+    private Dictionary<string, GameObject> prefabDic = new Dictionary<string, GameObject>();
+    
+    
     public void InitSvc()
     {
         Debug.Log("ResSvc Init Completed.");
-        InitRDNameConfig();
+        InitRDNameConfig(PathDefine.RDNameConfig);
+        InitMapCfg(PathDefine.MapConfig);
+
     }
 
     public void AsyncLoadScene(string sceneName,Action afterAll)
@@ -124,7 +133,30 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
         return au;
     }
 
+    public GameObject LoadPrefab(string path, bool isCache = false)
+    {
+        GameObject go = null;
+        if (!prefabDic.TryGetValue(path,out go))
+        {
+            go = Resources.Load<GameObject>(path);
+            if (isCache)
+            {
+                prefabDic[path] = go;
+            }
+        }
+        
+        // 再实例化一下
+        if (go != null)
+        {
+            go = Instantiate(go);
+        }
+
+        return go;
+    }
+
     #region Configs
+
+    #region 随机名字
 
     private List<string> surnameList = new List<string>();
     private List<string> manList = new List<string>();
@@ -133,12 +165,12 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
     /// <summary>
     /// 读取随机名字配置文件
     /// </summary>
-    private void InitRDNameConfig()
+    private void InitRDNameConfig(string path)
     {
-        TextAsset xml = Resources.Load<TextAsset>(PathDefine.RDNameConfig);
+        TextAsset xml = Resources.Load<TextAsset>(path);
         if (!xml)
         {
-            PECommon.Log("xml file:"+PathDefine.RDNameConfig + "not exist",LogType.Error);
+            PECommon.Log("xml file:"+ path + "not exist",LogType.Error);
         }
         else
         {
@@ -183,6 +215,79 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
             : womanList[PETools.RDInt(0, womanList.Count - 1)];
         return surname + givenName;
     }
+
+    #endregion
+
+    #region 地图
+
+    private Dictionary<int, MapCfg> mapCfgDataDic = new Dictionary<int, MapCfg>();
+    
+    public void InitMapCfg(string path)
+    {
+        TextAsset xml = Resources.Load<TextAsset>(path);
+        if (!xml)
+        {
+            PECommon.Log("xml file:" + path + "not exist",LogType.Error);
+        }
+        else
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.LoadXml(xml.text);
+
+            XmlNodeList nodList = doc.SelectSingleNode("root").ChildNodes;
+            for (int i = 0; i < nodList.Count; i++)
+            {
+                XmlElement ele = nodList[i] as XmlElement;
+                var eleID = ele.GetAttributeNode("ID");
+                if (eleID == null)
+                {
+                    continue;
+                }
+
+                int id = Convert.ToInt32(eleID.InnerText);
+                MapCfg dto = new MapCfg
+                {
+                    ID = id,
+                };
+
+                foreach (XmlElement e in nodList[i].ChildNodes)
+                {
+                    switch (e.Name)
+                    {
+                        case "mapName":
+                            dto.mapName = e.InnerText;
+                            break;
+                        case "sceneName":
+                            dto.sceneName = e.InnerText;
+                            break;
+                        case "mainCamPos":
+                            dto.mainCamPos = MapperHelper.ConvertToVector3(e.InnerText);
+                            break;
+                        case "mainCamRote":
+                            dto.mainCamRote = MapperHelper.ConvertToVector3(e.InnerText);
+                            break;
+                        case "playerBornPos":
+                            dto.playerBornPos = MapperHelper.ConvertToVector3(e.InnerText);
+                            break;
+                        case "playerBornRote":
+                            dto.playerBornRote = MapperHelper.ConvertToVector3(e.InnerText);
+                            break;
+                    }
+                }
+
+                mapCfgDataDic.Add(id,dto);
+            }
+        }
+    }
+
+    public MapCfg GetMapCfgData(int id)
+    {
+        return mapCfgDataDic[id];
+    }
+
+    #endregion
+    
+    
 
     #endregion
 }

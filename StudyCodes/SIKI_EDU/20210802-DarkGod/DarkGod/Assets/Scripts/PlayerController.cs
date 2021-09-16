@@ -24,6 +24,8 @@ public class PlayerController : MonoBehaviour
     public CharacterController ctrl;
     
     private Vector2 dir = Vector2.zero;
+    private float targetBlend;
+    private float currentBlend;
 
     public Vector2 Dir
     {
@@ -62,10 +64,23 @@ public class PlayerController : MonoBehaviour
         float v = Input.GetAxis("Vertical");
 
         Vector2 _dir = new Vector2(h, v).normalized;
+        if (_dir != Vector2.zero)
+        {
+            SetBlend(Constants.BlendWalk);
+        }
+        else
+        {
+            SetBlend(Constants.BlendIdle);
+        }
+        
         Dir = _dir;
         
-
         #endregion
+        
+        if (currentBlend != targetBlend)
+        {
+            UpdateMixBlend();
+        }
 
         if (isMove)
         {
@@ -98,4 +113,37 @@ public class PlayerController : MonoBehaviour
             camTrans.position = transform.position - camOffset;
         }
     }
+
+    private void SetBlend(float blend)
+    {
+        targetBlend = blend;
+    }
+    
+    private void UpdateMixBlend(float blend)
+    {
+        ani.SetFloat("Blend",blend);
+    }
+
+    /// <summary>
+    /// 平滑处理角色状态变换
+    /// </summary>
+    private void UpdateMixBlend()
+    {
+        // blender的变化控制在规定的加速度最大值之内
+        if (Mathf.Abs(currentBlend - targetBlend) < Constants.AccelerSpeed * Time.deltaTime)
+        {
+            currentBlend = targetBlend;
+        }
+        else if (currentBlend > targetBlend)
+        {
+            currentBlend -= Constants.AccelerSpeed * Time.deltaTime;
+        }
+        else
+        {
+            currentBlend += Constants.AccelerSpeed * Time.deltaTime;
+        }
+
+        UpdateMixBlend(currentBlend);
+    }
+
 }

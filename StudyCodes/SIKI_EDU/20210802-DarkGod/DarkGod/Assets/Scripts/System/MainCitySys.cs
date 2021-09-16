@@ -14,6 +14,11 @@ public class MainCitySys : SystemBase
 {
     public static MainCitySys Instance;
     
+    /// <summary>
+    /// 地图配置文件
+    /// </summary>
+    private MapCfg map;
+    
     public override void InitSys()
     {
         base.InitSys();
@@ -27,7 +32,9 @@ public class MainCitySys : SystemBase
     /// </summary>
     public void EnterMainCity()
     {
-        resSvc.AsyncLoadScene(Constants.SceneMainCity,OpenMainCityWindow);
+        map = resSvc.GetMapCfgData(Constants.MapID_MainCity);
+        
+        resSvc.AsyncLoadScene(map.sceneName,OpenMainCityWindow);
         audioSvc.PlayBGMusic(Constants.BGMainCity);
         
         // TODO 设置人物摄像机
@@ -35,11 +42,27 @@ public class MainCitySys : SystemBase
     
     private void OpenMainCityWindow()
     {
-        // TODO 加载主角
-        
+        // 加载主角
+        LoadPlayer(map);
+        // 加载相机
+        LoadCamera(map);
         // 加载主城场景UI
         var mainCityWindow = gameRootResources.mainCityWindow;
         mainCityWindow.SetWindowState(true);
     }
+
+    private void LoadPlayer(MapCfg map)
+    {
+        GameObject player = resSvc.LoadPrefab(PathDefine.AsnCityPlayerPrefab,true);
+        player.transform.position = map.playerBornPos;
+        player.transform.localEulerAngles = map.playerBornRote;
+        player.transform.localScale = new Vector3(1.5f,1.5f,1.5f);
+    } 
+    
+    private void LoadCamera(MapCfg map)
+    {
+        Camera.main.transform.position = map.mainCamPos;
+        Camera.main.transform.localEulerAngles = map.mainCamRote;
+    } 
     
 }

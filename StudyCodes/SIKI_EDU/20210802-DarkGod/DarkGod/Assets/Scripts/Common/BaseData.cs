@@ -1,0 +1,28 @@
+/****************************************************
+    文件：Contents.cs
+    作者：YAN
+    邮箱：2470939431@qq.com
+    日期：2021/8/12 22:43:0
+    功能：配置数据类
+*****************************************************/
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+
+public class BaseData<T>
+{
+    public int ID;
+}
+
+public class MapCfg : BaseData<MapCfg>
+{
+    public string mapName;
+    public string sceneName;
+    public Vector3 mainCamPos;
+    public Vector3 mainCamRote;
+    public Vector3 playerBornPos;
+    public Vector3 playerBornRote;
+    
+}
