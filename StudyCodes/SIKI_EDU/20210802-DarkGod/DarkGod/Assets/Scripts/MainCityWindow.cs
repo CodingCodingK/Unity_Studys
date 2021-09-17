@@ -160,6 +160,7 @@ public class MainCityWindow : WindowBase
             SetActive(imgDirPoint,false);
             imgDirPoint.transform.localPosition = Vector3.zero;
             // TODO 方向信息传递
+            MainCitySys.Instance.SetMoveDir(Vector3.zero);
         });
         
         OnDrag(imgDirBg.gameObject,(PointerEventData data) =>
@@ -177,6 +178,7 @@ public class MainCityWindow : WindowBase
                 imgDirPoint.transform.position = data.position;
             }
             // TODO 方向信息传递
+            MainCitySys.Instance.SetMoveDir(dir.normalized);
         });
     }
 

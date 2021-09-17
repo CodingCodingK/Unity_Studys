@@ -9,6 +9,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Xml;
 using PEProtocol;
 using UnityEngine;
@@ -38,34 +39,37 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
         InitMapCfg(PathDefine.MapConfig);
 
     }
-
+    
+    private Action sceneBPMethod = null;
     public void AsyncLoadScene(string sceneName,Action afterAll)
     {
-        
         StartCoroutine(StartLoading(sceneName,afterAll));
-
         
-        // var callback = SceneManager.LoadSceneAsync(sceneName);
-        // prgCallBack = () =>
-        // {
-        //     var progress = callback.progress;
-        //     loadingWindow.SetProgress(progress);
-        //     if (progress >= 0.9f)
-        //     {
-        //         loadingWindow.gameObject.SetActive(false);
-        //         Debug.Log("SetProgress");
-        //         LoginSys.Instance().OpenLoginWindow();
-        //         prgCallBack = null;
+        // GameRootResources.Instance().loadingWindow.SetWindowState();
+        //
+        // AsyncOperation sceneAsync = SceneManager.LoadSceneAsync(sceneName);
+        // //sceneAsync.allowSceneActivation = true;
+        // prgCB = () => {
+        //     float val = sceneAsync.progress;
+        //     GameRootResources.Instance().loadingWindow.SetProgress(val);
+        //     if (val >= 0.9) {
+        //         if (afterAll != null) {
+        //             afterAll();
+        //         }
+        //         prgCB = null;
+        //         sceneAsync = null;
+        //         GameRootResources.Instance().loadingWindow.SetWindowState(false);
         //     }
         // };
     }
 
     private void Update()
     {
-        // if (prgCallBack != null)
-        // {
-        //     prgCallBack();
-        // }
+        if (sceneBPMethod != null)
+        {
+            sceneBPMethod();
+            sceneBPMethod = null;
+        }
     }
     
     /// <summary>
@@ -80,8 +84,13 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
         
         int displayProgress = 0;
         int toProgress = 0;
+        // 卸载当前场景
+        
         AsyncOperation op = SceneManager.LoadSceneAsync(sceneName); 
+        
+        // 不让场景自动跳转，progress也最多只能到90%
         op.allowSceneActivation = false;
+        
         while (op.progress < 0.9f)
         {
             toProgress = (int)(op.progress * 100);
@@ -106,10 +115,10 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
         op.allowSceneActivation = true;
         
         loadingWindow.SetWindowState(false);
-        if (afterAll != null)
-        {
-            afterAll();
-        }
+        
+        // 赋值回调函数
+        sceneBPMethod = afterAll;
+        
     }
 
     /// <summary>
@@ -135,24 +144,33 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
 
     public GameObject LoadPrefab(string path, bool isCache = false)
     {
-        GameObject go = null;
-        if (!prefabDic.TryGetValue(path,out go))
+        GameObject prefab = null;
+        if (!prefabDic.TryGetValue(path,out prefab))
         {
-            go = Resources.Load<GameObject>(path);
+            prefab = Resources.Load<GameObject>(path);
             if (isCache)
             {
-                prefabDic[path] = go;
+                prefabDic[path] = prefab;
             }
         }
         
         // 再实例化一下
-        if (go != null)
-        {
-            go = Instantiate(go);
-        }
+        // GameObject go = null;
+        // if (prefab != null)
+        // {
+        //     go = Instantiate(prefab);
+        // }
 
-        return go;
+        return Instantiate(prefab);
     }
+    
+    public GameObject GetPrefab(string path)
+    {
+        GameObject prefab = null;
+        prefabDic.TryGetValue(path, out prefab);
+        return prefab;
+    }
+    
 
     #region Configs
 

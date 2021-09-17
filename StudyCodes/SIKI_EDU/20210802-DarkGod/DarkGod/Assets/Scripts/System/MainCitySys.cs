@@ -8,7 +8,10 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using PEProtocol;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainCitySys : SystemBase
 {
@@ -18,6 +21,11 @@ public class MainCitySys : SystemBase
     /// 地图配置文件
     /// </summary>
     private MapCfg map;
+    
+    /// <summary>
+    /// 主角控制器
+    /// </summary>
+    private PlayerController playerCtrl;
     
     public override void InitSys()
     {
@@ -42,6 +50,7 @@ public class MainCitySys : SystemBase
     
     private void OpenMainCityWindow()
     {
+        PECommon.Log("Enter MainCity...");
         // 加载主角
         LoadPlayer(map);
         // 加载相机
@@ -54,15 +63,33 @@ public class MainCitySys : SystemBase
     private void LoadPlayer(MapCfg map)
     {
         GameObject player = resSvc.LoadPrefab(PathDefine.AsnCityPlayerPrefab,true);
-        player.transform.position = map.playerBornPos;
+        //player.transform.position = map.playerBornPos;TODO why cant use this?
+        player.transform.localPosition = map.playerBornPos;
         player.transform.localEulerAngles = map.playerBornRote;
         player.transform.localScale = new Vector3(1.5f,1.5f,1.5f);
+        Debug.Log(player.transform.parent);
+        playerCtrl = player.GetComponent<PlayerController>();
+        
+        
     } 
     
     private void LoadCamera(MapCfg map)
     {
-        Camera.main.transform.position = map.mainCamPos;
+        Camera.main.transform.localPosition = map.mainCamPos;
         Camera.main.transform.localEulerAngles = map.mainCamRote;
+        Debug.Log(Camera.main.transform.parent);
+        
+        playerCtrl.Init();
     } 
+    
+    public void SetMoveDir(Vector2 dir) {
+        if (dir == Vector2.zero) {
+            playerCtrl.SetBlend(Constants.BlendIdle);
+        }
+        else {
+            playerCtrl.SetBlend(Constants.BlendWalk);
+        }
+        playerCtrl.Dir = dir;
+    }
     
 }

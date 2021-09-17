@@ -365,58 +365,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9599464, guid: ba26e03b723d2b54391d01cbbe3dcbc1, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: cc698b533e2174f4d90e97a646c0c458, type: 2}
-    - target: {fileID: 9599464, guid: ba26e03b723d2b54391d01cbbe3dcbc1, type: 3}
-      propertyPath: m_CullingMode
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba26e03b723d2b54391d01cbbe3dcbc1, type: 3}
---- !u!1 &1503187342 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 199576, guid: ba26e03b723d2b54391d01cbbe3dcbc1, type: 3}
-  m_PrefabInstance: {fileID: 1503187341}
-  m_PrefabAsset: {fileID: 0}
---- !u!143 &1503187343
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1503187342}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Height: 1.8
-  m_Radius: 0.4
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.9, z: 0}
---- !u!114 &1503187344
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1503187342}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61bba74ec212e794cb8fec078de55e64, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ani: {fileID: 1503187346}
-  ctrl: {fileID: 1503187343}
---- !u!95 &1503187346 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 9599464, guid: ba26e03b723d2b54391d01cbbe3dcbc1, type: 3}
-  m_PrefabInstance: {fileID: 1503187341}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2081413691
 GameObject:
   m_ObjectHideFlags: 0
