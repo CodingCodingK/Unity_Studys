@@ -36,6 +36,7 @@ public static class Constants
     // 常规UI点击音效
     public const string UIClickBtn = "uiClickBtn";
     public const string UIExtenBtn = "uiExtenBtn";
+    public const string UIOpenPage = "uiOpenPage";
     
     #endregion
 

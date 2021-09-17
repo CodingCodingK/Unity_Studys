@@ -27,6 +27,11 @@ public class MainCitySys : SystemBase
     /// </summary>
     private PlayerController playerCtrl;
     
+    /// <summary>
+    /// 主角展示相机
+    /// </summary>
+    private Transform charCameraTrans;
+    
     public override void InitSys()
     {
         base.InitSys();
@@ -45,7 +50,11 @@ public class MainCitySys : SystemBase
         resSvc.AsyncLoadScene(map.sceneName,OpenMainCityWindow);
         audioSvc.PlayBGMusic(Constants.BGMainCity);
         
-        // TODO 设置人物摄像机
+        // 设置人物摄像机
+        if (charCameraTrans != null)
+        {
+            charCameraTrans.gameObject.SetActive(false);
+        }
     }
     
     private void OpenMainCityWindow()
@@ -67,21 +76,21 @@ public class MainCitySys : SystemBase
         player.transform.localPosition = map.playerBornPos;
         player.transform.localEulerAngles = map.playerBornRote;
         player.transform.localScale = new Vector3(1.5f,1.5f,1.5f);
-        Debug.Log(player.transform.parent);
+        
         playerCtrl = player.GetComponent<PlayerController>();
-        
-        
     } 
     
     private void LoadCamera(MapCfg map)
     {
         Camera.main.transform.localPosition = map.mainCamPos;
         Camera.main.transform.localEulerAngles = map.mainCamRote;
-        Debug.Log(Camera.main.transform.parent);
         
         playerCtrl.Init();
     } 
     
+    /// <summary>
+    /// 控制角色移动
+    /// </summary>
     public void SetMoveDir(Vector2 dir) {
         if (dir == Vector2.zero) {
             playerCtrl.SetBlend(Constants.BlendIdle);
@@ -90,6 +99,46 @@ public class MainCitySys : SystemBase
             playerCtrl.SetBlend(Constants.BlendWalk);
         }
         playerCtrl.Dir = dir;
+    }
+
+    private float startRotateY = 0f;
+    public void SetStartRotateY()
+    {
+        startRotateY = playerCtrl.transform.localEulerAngles.y;
+    }
+    
+    /// <summary>
+    /// 控制角色旋转
+    /// </summary>
+    public void SetPlayerRotateY(float y)
+    {
+        playerCtrl.transform.localEulerAngles = new Vector3(0, startRotateY+y, 0);
+    }
+    
+
+    public void OpenInfoWindow()
+    {
+        if (charCameraTrans == null)
+        {
+            charCameraTrans = GameObject.FindGameObjectWithTag("charCamera").transform;
+        }
+        
+        // 设置人物展示相机相对位置
+        charCameraTrans.localPosition = playerCtrl.transform.position + playerCtrl.transform.forward * 2.8f + new Vector3(0,1.2f,0);
+        charCameraTrans.localEulerAngles = new Vector3(0, 180 + playerCtrl.transform.localEulerAngles.y, 0);
+        charCameraTrans.localScale = Vector3.one;
+        charCameraTrans.gameObject.SetActive(true);
+        
+        gameRootResources.infoWindow.SetWindowState();
+    }
+
+    public void CloseInfoWindow()
+    {
+        if (charCameraTrans!=null)
+        {
+            charCameraTrans.gameObject.SetActive(false);
+            gameRootResources.infoWindow.SetWindowState(false);
+        }
     }
     
 }

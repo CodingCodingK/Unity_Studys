@@ -24,6 +24,8 @@ public class GameRootResources : GameRootMonoSingleton<GameRootResources>
     public CreateWindow createWindow;
         
     public MainCityWindow mainCityWindow;
+    
+    public InfoWindow infoWindow;
         
         
     public void ShowTips(string tip)

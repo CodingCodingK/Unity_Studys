@@ -123,7 +123,7 @@ public class MainCityWindow : WindowBase
 
     #endregion
 
-    #region Click Event
+    #region Click Events
     
     public void ClickMenuButton()
     {
@@ -141,6 +141,16 @@ public class MainCityWindow : WindowBase
 
         menuAni.Play(clip.name);
     }
+
+    public void ClickHeadBtn()
+    {
+        MainCitySys.Instance.OpenInfoWindow();
+        audioSvc.PlayUIAudio(Constants.UIOpenPage);
+        
+    }
+    
+    
+    
     
     /// <summary>
     /// 托盘事件

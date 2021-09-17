@@ -3720,7 +3720,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7572359356099808847}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7572359355294870450}
+        m_TargetAssemblyTypeName: MainCityWindow, Assembly-CSharp
+        m_MethodName: ClickHeadBtn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7572359356182691961
 GameObject:
   m_ObjectHideFlags: 0

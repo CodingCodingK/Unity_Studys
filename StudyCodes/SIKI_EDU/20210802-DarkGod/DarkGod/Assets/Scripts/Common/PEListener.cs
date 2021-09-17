@@ -14,7 +14,7 @@ namespace Common
         {
             if (eventData!=null)
             {
-                onClickDown(eventData);
+                onClickDown?.Invoke(eventData);
             }
         }
 
@@ -22,14 +22,17 @@ namespace Common
         {
             if (eventData!=null)
             {
-                onClickUp(eventData);
+                onClickUp?.Invoke(eventData);
             }
             
         }
 
         public void OnDrag(PointerEventData eventData)
         {
-            onClickDrag?.Invoke(eventData);
+            if (eventData!=null)
+            {
+                onClickDrag?.Invoke(eventData);
+            }
         }
     }
 }
