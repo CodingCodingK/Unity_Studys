@@ -31,12 +31,18 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
     /// </summary>
     private Dictionary<string, GameObject> prefabDic = new Dictionary<string, GameObject>();
     
+    /// <summary>
+    /// Sprite暂存池
+    /// </summary>
+    private Dictionary<string, Sprite> spriteDic = new Dictionary<string, Sprite>();
+    
     
     public void InitSvc()
     {
         Debug.Log("ResSvc Init Completed.");
         InitRDNameConfig(PathDefine.RDNameConfig);
         InitMapCfg(PathDefine.MapConfig);
+        InitAutoGuideCfg(PathDefine.AutoGuideConfig);
 
     }
     
@@ -170,6 +176,21 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
         prefabDic.TryGetValue(path, out prefab);
         return prefab;
     }
+
+    public Sprite LoadSprite(string path,bool cache = false)
+    {
+        Sprite sp = null;
+        if (!spriteDic.TryGetValue(path,out sp))
+        {
+            sp = Resources.Load<Sprite>(path);
+            if (cache)
+            {
+                spriteDic.Add(path,sp);
+            }
+        }
+
+        return sp;
+    }
     
 
     #region Configs
@@ -236,9 +257,11 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
 
     #endregion
 
-    #region 地图
+    #region 配置数据
 
     private Dictionary<int, MapCfg> mapCfgDataDic = new Dictionary<int, MapCfg>();
+    
+    private Dictionary<int, AutoGuideCfg> autoGuideCfgDataDic = new Dictionary<int, AutoGuideCfg>();
     
     public void InitMapCfg(string path)
     {
@@ -297,12 +320,73 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
             }
         }
     }
-
+    
     public MapCfg GetMapCfgData(int id)
     {
         return mapCfgDataDic[id];
     }
 
+    public void InitAutoGuideCfg(string path)
+    {
+        TextAsset xml = Resources.Load<TextAsset>(path);
+        if (!xml)
+        {
+            PECommon.Log("xml file:" + path + "not exist",LogType.Error);
+        }
+        else
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.LoadXml(xml.text);
+
+            XmlNodeList nodList = doc.SelectSingleNode("root").ChildNodes;
+            for (int i = 0; i < nodList.Count; i++)
+            {
+                XmlElement ele = nodList[i] as XmlElement;
+                var eleID = ele.GetAttributeNode("ID");
+                if (eleID == null)
+                {
+                    continue;
+                }
+
+                int id = Convert.ToInt32(eleID.InnerText);
+                AutoGuideCfg dto = new AutoGuideCfg
+                {
+                    ID = id,
+                };
+
+                foreach (XmlElement e in nodList[i].ChildNodes)
+                {
+                    switch (e.Name)
+                    {
+                        case "npcID":
+                            dto.npcID = Convert.ToInt32(e.InnerText);
+                            break;
+                        case "dilogArr":
+                            dto.dilogArr = e.InnerText;
+                            break;
+                        case "actID":
+                            dto.actID = Convert.ToInt32(e.InnerText);
+                            break;
+                        case "coin":
+                            dto.coin = Convert.ToInt32(e.InnerText);
+                            break;
+                        case "exp":
+                            dto.exp = Convert.ToInt32(e.InnerText);
+                            break;
+                       
+                    }
+                }
+
+                autoGuideCfgDataDic.Add(id,dto);
+            }
+        }
+    }
+    
+    public AutoGuideCfg GetAutoGuideData(int id)
+    {
+        return autoGuideCfgDataDic[id];
+    }
+    
     #endregion
     
     

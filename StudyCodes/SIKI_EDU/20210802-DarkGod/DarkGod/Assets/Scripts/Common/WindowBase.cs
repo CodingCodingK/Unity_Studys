@@ -109,7 +109,12 @@ public class WindowBase : MonoBehaviour
 
         return t;
     }
-    
+
+    protected void SetSprite(Image img,string path)
+    {
+        Sprite sp = resSvc.LoadSprite(path, true);
+        img.sprite = sp;
+    }
     
     #endregion
 

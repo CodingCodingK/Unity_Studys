@@ -6,11 +6,13 @@
     功能：主城业务系统
 *****************************************************/
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using PEProtocol;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.SceneManagement;
 
 public class MainCitySys : SystemBase
@@ -31,6 +33,11 @@ public class MainCitySys : SystemBase
     /// 主角展示相机
     /// </summary>
     private Transform charCameraTrans;
+
+    private AutoGuideCfg curtTaskData;
+    private Transform[] npcPosTrans;
+    private NavMeshAgent nav;
+    private bool isNavGuiding;
     
     public override void InitSys()
     {
@@ -49,6 +56,12 @@ public class MainCitySys : SystemBase
         
         resSvc.AsyncLoadScene(map.sceneName,OpenMainCityWindow);
         audioSvc.PlayBGMusic(Constants.BGMainCity);
+
+        GameObject mainMapGO = GameObject.FindGameObjectWithTag("MapRoot");
+        MainCityMap mainMap = mainMapGO.GetComponent<MainCityMap>();
+        npcPosTrans = mainMap.NpcPosTrans;
+        
+        
         
         // 设置人物摄像机
         if (charCameraTrans != null)
@@ -78,6 +91,7 @@ public class MainCitySys : SystemBase
         player.transform.localScale = new Vector3(1.5f,1.5f,1.5f);
         
         playerCtrl = player.GetComponent<PlayerController>();
+        nav = player.GetComponent<NavMeshAgent>();
     } 
     
     private void LoadCamera(MapCfg map)
@@ -140,5 +154,56 @@ public class MainCitySys : SystemBase
             gameRootResources.infoWindow.SetWindowState(false);
         }
     }
-    
+
+    public void RunTask(AutoGuideCfg cfg)
+    {
+        if (cfg != null)
+        {
+            curtTaskData = cfg;
+        }
+        
+        // 解析任务数据
+        if (curtTaskData.npcID != -1)
+        {
+            float dis = Vector3.Distance(playerCtrl.transform.position,npcPosTrans[curtTaskData.npcID].position);
+            // 判定距离小于0.5算找到
+            if (dis < 0.5f )
+            {
+                isNavGuiding = false;
+                nav.isStopped = true;
+                playerCtrl.SetBlend(Constants.BlendIdle);
+                nav.enabled = false;
+                
+                OpenGuideWindow();
+            }
+            else
+            {
+                isNavGuiding = true;
+                
+                nav.enabled = true;
+                nav.speed = Constants.PlayerMoveSpeed;
+                nav.SetDestination(npcPosTrans[curtTaskData.npcID].position);
+                playerCtrl.SetBlend(Constants.BlendWalk);
+            }
+        }
+        else
+        {
+            // -1的情况，是没有实际NPC，直接出对话框
+            OpenGuideWindow();
+        }
+    }
+
+    private void Update()
+    {
+        if (isNavGuiding)
+        {
+            playerCtrl.SetCam();
+        }
+    }
+
+    private void OpenGuideWindow()
+    {
+        // TODO
+    }
+
 }

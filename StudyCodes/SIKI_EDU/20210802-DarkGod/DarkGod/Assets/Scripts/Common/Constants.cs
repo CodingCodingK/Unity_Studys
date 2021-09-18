@@ -62,4 +62,13 @@ public static class Constants
     public const int BlendWalk = 1;
 
     #endregion
+    
+    #region 自动导航
+    public const int NPCWiseMan = 0;
+    public const int NPCGeneral = 1;
+    public const int NPCArtisan = 2;
+    public const int NPCTrader = 3;
+
+    #endregion
+    
 }

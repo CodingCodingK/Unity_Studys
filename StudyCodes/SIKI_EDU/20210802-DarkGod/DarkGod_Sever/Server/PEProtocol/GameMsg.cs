@@ -98,7 +98,12 @@ namespace PEProtocol
         /// </summary>
         public int critical { get; set; }
 
-    }
+		/// <summary>
+		/// 当前自动引导任务ID
+		/// </summary>
+		public int guideid { get; set; }
+
+	}
 
     /// <summary>
     /// Command协议常数

@@ -11,11 +11,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+/// 配置数据类
 public class BaseData<T>
 {
     public int ID;
 }
 
+
+/// 地图配置
 public class MapCfg : BaseData<MapCfg>
 {
     public string mapName;
@@ -25,4 +28,16 @@ public class MapCfg : BaseData<MapCfg>
     public Vector3 playerBornPos;
     public Vector3 playerBornRote;
     
+}
+
+
+/// 自动引导任务配置
+public class AutoGuideCfg : BaseData<AutoGuideCfg>
+{
+    // 触发人物目标NPC索引号
+    public int npcID;
+    public string dilogArr;
+    public int actID;
+    public int coin;
+    public int exp;
 }

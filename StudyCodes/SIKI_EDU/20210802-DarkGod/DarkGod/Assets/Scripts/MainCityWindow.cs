@@ -37,6 +37,7 @@ public class MainCityWindow : WindowBase
     public Text txtLevel;
     public Text txtName;
     public Text txtExpPrg;
+    public Button btnGuide;
     
     /// <summary>
     /// 经验进度条
@@ -57,6 +58,8 @@ public class MainCityWindow : WindowBase
     /// 摇杆范围 自适应用
     /// </summary>
     private float pointDis;
+    
+    private AutoGuideCfg curtTaskData;
     
     
     #endregion
@@ -119,12 +122,50 @@ public class MainCityWindow : WindowBase
             }
         }
         
+        // 设置自动任务图标
+        curtTaskData = resSvc.GetAutoGuideData(pd.guideid);
+        if (curtTaskData != null)
+        {
+            SetGuideBtnIcon(curtTaskData.npcID);
+        }
+        else
+        {
+            SetGuideBtnIcon(-1);
+        }
+
+    }
+
+    private void SetGuideBtnIcon(int npcID)
+    {
+        string spPath = "";
+        Image img = btnGuide.GetComponent<Image>();
+        
+        switch (npcID)
+        {
+            case Constants.NPCWiseMan:
+                spPath = PathDefine.WiseManHead;
+                break;
+            case Constants.NPCGeneral:
+                spPath = PathDefine.GeneralHead;
+                break;
+            case Constants.NPCArtisan:
+                spPath = PathDefine.ArtisanHead;
+                break;
+            case Constants.NPCTrader:
+                spPath = PathDefine.TraderHead;
+                break;
+        }
+
+        SetSprite(img, spPath);
     }
 
     #endregion
 
     #region Click Events
     
+    /// <summary>
+    /// 右下角扩展栏 按钮
+    /// </summary>
     public void ClickMenuButton()
     {
         audioSvc.PlayUIAudio(Constants.UIExtenBtn);
@@ -142,16 +183,16 @@ public class MainCityWindow : WindowBase
         menuAni.Play(clip.name);
     }
 
+    /// <summary>
+    /// 头像详细信息显示 按钮
+    /// </summary>
     public void ClickHeadBtn()
     {
         MainCitySys.Instance.OpenInfoWindow();
         audioSvc.PlayUIAudio(Constants.UIOpenPage);
         
     }
-    
-    
-    
-    
+
     /// <summary>
     /// 托盘事件
     /// </summary>
@@ -192,6 +233,26 @@ public class MainCityWindow : WindowBase
         });
     }
 
+    /// <summary>
+    /// 自动引导 按钮
+    /// </summary>
+    public void ClickAutoGuideBtn()
+    {
+        audioSvc.PlayUIAudio(Constants.UIOpenPage);
+
+        if (curtTaskData != null)
+        {
+            MainCitySys.Instance.RunTask(curtTaskData);
+        }
+        else
+        {
+            GameRootResources.Instance().ShowTips("更多引导任务，正在开发中...");
+        }
+        
+    }
+    
+    
+    
     #endregion
     
     

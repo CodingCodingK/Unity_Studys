@@ -14,8 +14,8 @@ using UnityEngine.UI;
 
 public class InfoWindow : WindowBase
 {
-    #region UI Define
-
+    #region Info UI Define
+    
     public Text txtInfo;
     public Text txtExp;
     public Image imgExpPrg;
@@ -26,19 +26,30 @@ public class InfoWindow : WindowBase
     public Text txtHp;
     public Text txtAtk;
     public Text txtDef;
-    public Button btnDetail;
-
     public RawImage imgChar;
     private Vector2 startPos;
     
     #endregion
     
-    
+    #region DetailInfo UI Define
+
+    public Transform transDetailInfo;
+    public Text txtDetailHp;
+    public Text txtDetailAd;
+    public Text txtDetailAp;
+    public Text txtDetailAddef;
+    public Text txtDetailApdef;
+    public Text txtDetailDodge;
+    public Text txtDetailPierce;
+    public Text txtDetailCritical;
+
+    #endregion
     
     
     protected override void InitWindow()
     {
         base.InitWindow();
+        SetActive(transDetailInfo,false);
         RegTouchEvents();
         RefreshUI();
     }
@@ -60,7 +71,15 @@ public class InfoWindow : WindowBase
         SetText(txtAtk,$"{pd.ad + pd.ap}");
         SetText(txtDef,$"{pd.addef + pd.apdef}");
         
-        // TODO Detail
+        // Detail Info
+        SetText(txtDetailHp,pd.hp);
+        SetText(txtDetailAd,pd.ad);
+        SetText(txtDetailAp,pd.ap);
+        SetText(txtDetailAddef,pd.addef);
+        SetText(txtDetailApdef,pd.apdef);
+        SetText(txtDetailDodge,pd.dodge+"%");
+        SetText(txtDetailPierce,pd.pierce+"%");
+        SetText(txtDetailCritical,pd.critical+"%");
 
     }
 
@@ -85,6 +104,18 @@ public class InfoWindow : WindowBase
     {
         audioSvc.PlayUIAudio(Constants.UIClickBtn);
         MainCitySys.Instance.CloseInfoWindow();
+    }
+    
+    public void ClickDetailBtn()
+    {
+        audioSvc.PlayUIAudio(Constants.UIClickBtn);
+        SetActive(transDetailInfo,true);
+    }
+    
+    public void ClickCloseDetailBtn()
+    {
+        audioSvc.PlayUIAudio(Constants.UIClickBtn);
+        SetActive(transDetailInfo,false);
     }
     
     #endregion

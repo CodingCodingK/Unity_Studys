@@ -106,7 +106,10 @@ public class PlayerController : MonoBehaviour
         ctrl.Move(transform.forward * Time.deltaTime * Constants.PlayerMoveSpeed);
     }
     
-    private void SetCam()
+    /// <summary>
+    /// 更新主摄像机，跟随主角
+    /// </summary>
+    public void SetCam()
     {
         if (camTrans != null)
         {
