@@ -56,12 +56,6 @@ public class MainCitySys : SystemBase
         
         resSvc.AsyncLoadScene(map.sceneName,OpenMainCityWindow);
         audioSvc.PlayBGMusic(Constants.BGMainCity);
-
-        GameObject mainMapGO = GameObject.FindGameObjectWithTag("MapRoot");
-        MainCityMap mainMap = mainMapGO.GetComponent<MainCityMap>();
-        npcPosTrans = mainMap.NpcPosTrans;
-        
-        
         
         // 设置人物摄像机
         if (charCameraTrans != null)
@@ -90,6 +84,9 @@ public class MainCitySys : SystemBase
         player.transform.localEulerAngles = map.playerBornRote;
         player.transform.localScale = new Vector3(1.5f,1.5f,1.5f);
         
+        GameObject mainMapGO = GameObject.FindGameObjectWithTag("MapRoot");
+        MainCityMap mainMap = mainMapGO.GetComponent<MainCityMap>();
+        npcPosTrans = mainMap.NpcPosTrans;
         playerCtrl = player.GetComponent<PlayerController>();
         nav = player.GetComponent<NavMeshAgent>();
     } 
@@ -105,7 +102,9 @@ public class MainCitySys : SystemBase
     /// <summary>
     /// 控制角色移动
     /// </summary>
-    public void SetMoveDir(Vector2 dir) {
+    public void SetMoveDir(Vector2 dir)
+    {
+        StopNavTask();
         if (dir == Vector2.zero) {
             playerCtrl.SetBlend(Constants.BlendIdle);
         }
@@ -132,6 +131,7 @@ public class MainCitySys : SystemBase
 
     public void OpenInfoWindow()
     {
+        StopNavTask();
         if (charCameraTrans == null)
         {
             charCameraTrans = GameObject.FindGameObjectWithTag("charCamera").transform;
@@ -155,8 +155,12 @@ public class MainCitySys : SystemBase
         }
     }
 
+    /// <summary>
+    /// NavMeshAgent自动引导
+    /// </summary>
     public void RunTask(AutoGuideCfg cfg)
     {
+        nav.enabled = true;
         if (cfg != null)
         {
             curtTaskData = cfg;
@@ -165,22 +169,15 @@ public class MainCitySys : SystemBase
         // 解析任务数据
         if (curtTaskData.npcID != -1)
         {
-            float dis = Vector3.Distance(playerCtrl.transform.position,npcPosTrans[curtTaskData.npcID].position);
-            // 判定距离小于0.5算找到
-            if (dis < 0.5f )
+            if (IsArrivedNavPos())
             {
-                isNavGuiding = false;
-                nav.isStopped = true;
-                playerCtrl.SetBlend(Constants.BlendIdle);
-                nav.enabled = false;
                 
-                OpenGuideWindow();
             }
             else
             {
                 isNavGuiding = true;
-                
                 nav.enabled = true;
+                nav.isStopped = false;
                 nav.speed = Constants.PlayerMoveSpeed;
                 nav.SetDestination(npcPosTrans[curtTaskData.npcID].position);
                 playerCtrl.SetBlend(Constants.BlendWalk);
@@ -197,13 +194,41 @@ public class MainCitySys : SystemBase
     {
         if (isNavGuiding)
         {
+            IsArrivedNavPos();
             playerCtrl.SetCam();
+        }
+        
+    }
+    
+    public void StopNavTask()
+    {
+        if (isNavGuiding)
+        {
+            isNavGuiding = false;
+            nav.isStopped = true;
+            nav.enabled = false;
+            playerCtrl.SetBlend(Constants.BlendIdle);
         }
     }
 
+    private bool IsArrivedNavPos()
+    {
+        float dis = Vector3.Distance(playerCtrl.transform.position,npcPosTrans[curtTaskData.npcID].position);
+        // 判定距离小于0.5算找到
+        if (dis < 0.5f )
+        {
+            StopNavTask();
+            
+            OpenGuideWindow();
+            return true;
+        }
+
+        return false;
+    }
+    
     private void OpenGuideWindow()
     {
         // TODO
+        Debug.Log("Open GuideWindow");
     }
-
 }
