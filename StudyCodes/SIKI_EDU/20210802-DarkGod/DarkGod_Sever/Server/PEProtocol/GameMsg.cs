@@ -19,16 +19,22 @@ namespace PEProtocol
         public RspLogin rspLogin;
         public ReqRename reqRename;
         public RspRename rspRename;
-        #endregion
+		#endregion
 
-    }
+		#region 主城相关
+		public ReqGuide reqGuide;
+		public RspGuide rspGuide;
 
-    #region 登陆相关
+		#endregion
 
-    /// <summary>
-    /// 登录请求
-    /// </summary>
-    [Serializable]
+	}
+
+	#region 登陆相关
+
+	/// <summary>
+	/// 登录请求
+	/// </summary>
+	[Serializable]
     public class ReqLogin
     {
         public string acct { get; set; }
@@ -61,13 +67,39 @@ namespace PEProtocol
     {
         public string name { get; set; }
     }
-    #endregion
+	#endregion
+
+	#region 主城相关
 
 
-    /// <summary>
-    /// 用户信息
-    /// </summary>
-    [Serializable]
+	/// <summary>
+	/// 引导请求
+	/// </summary>
+	[Serializable]
+	public class ReqGuide
+	{
+		public int guideid { get; set; }
+	}
+
+	/// <summary>
+	/// 引导回应
+	/// </summary>
+	[Serializable]
+	public class RspGuide
+	{
+		public int guideid { get; set; }
+		public int coin { get; set; }
+		public int lv { get; set; }
+		public int exp { get; set; }
+	}
+
+	#endregion
+
+
+	/// <summary>
+	/// 用户信息
+	/// </summary>
+	[Serializable]
     public class PlayerData
     {
         public int id { get; set; }
@@ -113,9 +145,14 @@ namespace PEProtocol
         None = 0,
 
         /// <summary>
-        /// 更新数据库出错
+        /// 服务端数据异常
         /// </summary>
-        UpdateDBError,
+        ServerDataError,
+
+		/// <summary>
+		/// 更新数据库出错
+		/// </summary>
+		UpdateDBError,
 
         // 登录相关
 
@@ -147,6 +184,10 @@ namespace PEProtocol
         RspLogin=102,
         ReqRename=103,
         RspRename=104,
+
+		// 主城相关
+		ReqGuide = 200,
+		RspGuide = 201,
     }
 
     /// <summary>

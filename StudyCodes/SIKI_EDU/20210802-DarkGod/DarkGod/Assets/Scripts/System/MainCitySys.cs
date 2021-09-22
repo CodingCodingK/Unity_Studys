@@ -46,7 +46,18 @@ public class MainCitySys : SystemBase
         Instance = this;
         Debug.Log("Init MainCitySys.");
     }
-
+    
+    private void Update()
+    {
+        // nav
+        if (isNavGuiding)
+        {
+            IsArrivedNavPos();
+            playerCtrl.SetCam();
+        }
+        
+    }
+    
     /// <summary>
     /// 进入主城业务
     /// </summary>
@@ -155,6 +166,8 @@ public class MainCitySys : SystemBase
         }
     }
 
+    #region Guide
+
     /// <summary>
     /// NavMeshAgent自动引导
     /// </summary>
@@ -190,15 +203,7 @@ public class MainCitySys : SystemBase
         }
     }
 
-    private void Update()
-    {
-        if (isNavGuiding)
-        {
-            IsArrivedNavPos();
-            playerCtrl.SetCam();
-        }
-        
-    }
+
     
     public void StopNavTask()
     {
@@ -229,6 +234,16 @@ public class MainCitySys : SystemBase
     private void OpenGuideWindow()
     {
         // TODO
-        Debug.Log("Open GuideWindow");
+        gameRootResources.guideWindow.SetWindowState();
+        
     }
+
+    public AutoGuideCfg GetCurTaskData()
+    {
+        return curtTaskData;
+    }
+
+    #endregion
+
+   
 }

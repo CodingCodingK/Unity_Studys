@@ -21,10 +21,13 @@ public class ServerRoot : Singleton<ServerRoot>
 
 		// 服务层
 		NetSvc.Instance().Init();
+		CfgSvc.Instance().Init();
 
-        // 业务系统层
-        LoginSys.Instance().Init();
-    }
+		// 业务系统层
+		LoginSys.Instance().Init();
+        GuideSys.Instance().Init();
+
+	}
 
     public void Update()
     {
