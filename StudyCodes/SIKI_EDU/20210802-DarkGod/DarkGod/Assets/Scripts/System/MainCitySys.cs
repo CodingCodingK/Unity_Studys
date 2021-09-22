@@ -242,7 +242,40 @@ public class MainCitySys : SystemBase
     {
         return curtTaskData;
     }
+    
+    /// <summary>
+    /// 引导任务完成后执行，更新游戏内文本 
+    /// </summary>
+    public void RspGuide(GameMsg msg)
+    {
+        RspGuide rsp = msg.rspGuide;
+        var txt = Constants.ColoredTxt("任务奖励金币: +" + curtTaskData.coin + ",经验: +" + curtTaskData.exp, TxtColor.Blue);
+        gameRootResources.ShowTips(txt);
+        switch (curtTaskData.actID)
+        {
+            // 与智者对话
+            case 0:
+                break;
+            // 进入副本
+            case 1:
+                break;
+            // 进入强化界面
+            case 2:
+                break;
+            // 进入体力购买
+            case 3:
+                break;
+            // 进入金币铸造
+            case 4:
+                break;
+            // 进入世界聊天
+            case 5:
+                break;
+        }
 
+        GameRoot.Instance().SetPlayerDataByGuide(rsp);
+        gameRootResources.mainCityWindow.RefreshUI();
+    }
     #endregion
 
    

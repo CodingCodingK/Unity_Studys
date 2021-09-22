@@ -45,7 +45,7 @@ public class GuideSys : Singleton<GuideSys>
 
 			// 更新玩家数据
 			pd.coin += gc.coin;
-			CalcExp(pd,gc.exp);
+			pd = CalcExp(pd,gc.exp);
 
 			if (!cacheSvc.UpdatePlayerData(pd))
 			{
@@ -70,7 +70,7 @@ public class GuideSys : Singleton<GuideSys>
 		pack.session.SendMsg(msg);
 	}
 
-	private void CalcExp(PlayerData pd, int addExp)
+	private PlayerData CalcExp(PlayerData pd, int addExp)
 	{
 		int curtLv = pd.level;
 		int curtExp = pd.exp;
@@ -88,8 +88,9 @@ public class GuideSys : Singleton<GuideSys>
 			{
 				pd.level = curtLv;
 				pd.exp = curtExp + addRestExp;
-				break;
-			}
+                return pd;
+
+            }
 
 		}
 

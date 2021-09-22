@@ -93,7 +93,7 @@ public class GuideWindow : WindowBase
         audioSvc.PlayUIAudio(Constants.UIClickBtn);
         
         index += 1;
-        if (dialogArr.Length >= index)
+        if (dialogArr.Length <= index)
         {
             // 返回服务端完成任务
             GameMsg msg = new GameMsg()

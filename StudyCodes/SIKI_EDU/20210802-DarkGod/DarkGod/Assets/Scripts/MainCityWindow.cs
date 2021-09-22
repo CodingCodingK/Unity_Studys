@@ -81,7 +81,7 @@ public class MainCityWindow : WindowBase
     /// <summary>
     /// 根据数据库取得的 PlayerData 更新 UI
     /// </summary>
-    private void RefreshUI()
+    public void RefreshUI()
     {
         PlayerData pd = GameRoot.Instance().PlayerData;
         SetText(txtFight,PECommon.GetFight(pd));
@@ -153,6 +153,9 @@ public class MainCityWindow : WindowBase
                 break;
             case Constants.NPCTrader:
                 spPath = PathDefine.TraderHead;
+                break;
+            default:
+                spPath = PathDefine.TaskHead;
                 break;
         }
 

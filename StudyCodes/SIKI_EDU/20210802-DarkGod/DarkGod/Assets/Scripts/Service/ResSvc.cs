@@ -384,7 +384,8 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
     
     public AutoGuideCfg GetAutoGuideData(int id)
     {
-        return autoGuideCfgDataDic[id];
+        autoGuideCfgDataDic.TryGetValue(id, out AutoGuideCfg cfg);
+        return cfg;
     }
     
     #endregion

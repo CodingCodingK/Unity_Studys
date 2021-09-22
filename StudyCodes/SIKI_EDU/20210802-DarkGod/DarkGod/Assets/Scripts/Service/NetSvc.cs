@@ -110,6 +110,10 @@ public class NetSvc : GameRootMonoSingleton<NetSvc>
                 case ErrorCode.WrongPass :
                     GameRootResources.Instance().ShowTips("输入账户名或密码错误！");
                     break;
+                case ErrorCode.ServerDataError :
+                    PECommon.Log("服务端数据异常",LogType.Error);
+                    GameRootResources.Instance().ShowTips("服务端数据异常！");
+                    break;
                 case ErrorCode.UpdateDBError :
                     PECommon.Log("数据库更新异常",LogType.Error);
                     GameRootResources.Instance().ShowTips("网络不稳定！");
@@ -126,6 +130,9 @@ public class NetSvc : GameRootMonoSingleton<NetSvc>
                 break;
             case CMD.RspRename:
                 LoginSys.Instance.RspRename(msg);
+                break;
+            case CMD.RspGuide:
+                MainCitySys.Instance.RspGuide(msg);
                 break;
         }
     }

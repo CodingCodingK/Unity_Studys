@@ -10,8 +10,48 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum  TxtColor
+{
+    Red,
+    Green,
+    Blue,
+    Yellow,
+}
+
 public static class Constants
 {
+    #region 颜色类
+
+    private const string ColorRed = "<color=#FF0000FF>";
+    private const string ColorGreen = "<color=#00FF00FF>";
+    private const string ColorBlue = "<color=#00B4FFFF>";
+    private const string ColorYellow = "<color=#FFFF00FF>";
+    private const string ColorEnd = "</color>";
+
+    public static string ColoredTxt(string str,TxtColor c)
+    {
+        string result = str;
+        switch (c)
+        {
+            case TxtColor.Red:
+                result = ColorRed + str + ColorEnd;
+                break;
+            case TxtColor.Green:
+                result = ColorGreen + str + ColorEnd;
+                break;
+            case TxtColor.Blue:
+                result = ColorBlue + str + ColorEnd;
+                break;
+            case TxtColor.Yellow:
+                result = ColorYellow + str + ColorEnd;
+                break;
+        }
+
+        return result;
+    }
+    
+    #endregion
+    
     #region 场景名称
 
     public const string SceneLogin = "SceneLogin";

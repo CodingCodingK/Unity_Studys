@@ -84,6 +84,14 @@ public class GameRoot : GameRootMonoSingleton<GameRoot>
         PlayerData.name = name;
     }
     
+    public void SetPlayerDataByGuide(RspGuide rsp)
+    {
+        PlayerData.level = rsp.lv;
+        PlayerData.coin = rsp.coin;
+        PlayerData.exp = rsp.exp;
+        PlayerData.guideid = rsp.guideid;
+    }
+    
     #endregion
     
     
