@@ -38,7 +38,7 @@ public class StrongWindow : WindowBase
         {
             Image img = posBtnTrans.GetChild(i).GetComponent<Image>();
             
-            OnClick(img.gameObject,(obj)=>
+            OnClick(img.gameObject,(object obj)=>
             {
                 audioSvc.PlayUIAudio(Constants.UIClickBtn);
                 ClickPosItem((int)obj);
@@ -59,14 +59,14 @@ public class StrongWindow : WindowBase
             if (i == curtIndex)
             {
                 SetSprite(imgs[i],PathDefine.ItemArrorBG);
-                trans.localPosition = new Vector3(150, trans.position.y, trans.position.z);
-                trans.GetComponent<RectTransform>().sizeDelta = new Vector2(250f/220f *188.1739f, 95f/85f * 59.11288f);
+                trans.localPosition = new Vector3(11f, trans.localPosition.y, 0f);
+                trans.GetComponent<RectTransform>().sizeDelta = new Vector2(222f,86f);
             }
             else
             {
                 SetSprite(imgs[i],PathDefine.ItemPlatBG);
-                trans.localPosition = new Vector3(140, trans.position.y, trans.position.z);
-                trans.GetComponent<RectTransform>().sizeDelta = new Vector2(188.1739f, 59.11288f);
+                trans.localPosition = new Vector3(-1f, trans.localPosition.y, 0f);
+                trans.GetComponent<RectTransform>().sizeDelta = new Vector2(188f, 60f);
             }
             
         }

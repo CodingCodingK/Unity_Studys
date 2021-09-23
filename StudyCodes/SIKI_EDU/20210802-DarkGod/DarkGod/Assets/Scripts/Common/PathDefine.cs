@@ -17,6 +17,7 @@ public class PathDefine
     public const string RDNameConfig = "ResCfgs/rdname";
     public const string MapConfig = "ResCfgs/map";
     public const string AutoGuideConfig = "ResCfgs/guide";
+    public const string StrongConfig = "ResCfgs/strong";
     
     #endregion
     

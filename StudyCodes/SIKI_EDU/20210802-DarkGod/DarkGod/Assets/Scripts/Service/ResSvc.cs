@@ -43,7 +43,8 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
         InitRDNameConfig(PathDefine.RDNameConfig);
         InitMapCfg(PathDefine.MapConfig);
         InitAutoGuideCfg(PathDefine.AutoGuideConfig);
-
+        InitStrongCfg(PathDefine.StrongConfig);
+        
     }
     
     private Action sceneBPMethod = null;
@@ -259,10 +260,11 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
 
     #region 配置数据
 
+    #region 地图配置
+
     private Dictionary<int, MapCfg> mapCfgDataDic = new Dictionary<int, MapCfg>();
     
-    private Dictionary<int, AutoGuideCfg> autoGuideCfgDataDic = new Dictionary<int, AutoGuideCfg>();
-    
+     
     public void InitMapCfg(string path)
     {
         TextAsset xml = Resources.Load<TextAsset>(path);
@@ -326,6 +328,12 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
         return mapCfgDataDic[id];
     }
 
+    #endregion
+
+    #region 引导任务配置
+
+    private Dictionary<int, AutoGuideCfg> autoGuideCfgDataDic = new Dictionary<int, AutoGuideCfg>();
+
     public void InitAutoGuideCfg(string path)
     {
         TextAsset xml = Resources.Load<TextAsset>(path);
@@ -387,6 +395,103 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
         autoGuideCfgDataDic.TryGetValue(id, out AutoGuideCfg cfg);
         return cfg;
     }
+
+    #endregion
+
+    #region 强化阶段配置
+
+    private Dictionary<int, Dictionary<int,StrongCfg>> strongCfgDataDic = new Dictionary<int, Dictionary<int,StrongCfg>>();
+
+    public void InitStrongCfg(string path)
+    {
+        TextAsset xml = Resources.Load<TextAsset>(path);
+        if (!xml)
+        {
+            PECommon.Log("xml file:" + path + "not exist",LogType.Error);
+        }
+        else
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.LoadXml(xml.text);
+
+            XmlNodeList nodList = doc.SelectSingleNode("root").ChildNodes;
+            for (int i = 0; i < nodList.Count; i++)
+            {
+                XmlElement ele = nodList[i] as XmlElement;
+                var eleID = ele.GetAttributeNode("ID");
+                if (eleID == null)
+                {
+                    continue;
+                }
+
+                int id = Convert.ToInt32(eleID.InnerText);
+                StrongCfg dto = new StrongCfg
+                {
+                    ID = id,
+                };
+
+                foreach (XmlElement e in nodList[i].ChildNodes)
+                {
+                    switch (e.Name)
+                    {
+                        case "pos":
+                            dto.pos = Convert.ToInt32(e.InnerText);
+                            break;
+                        case "startlv":
+                            dto.startlv = Convert.ToInt32(e.InnerText);
+                            break;
+                        case "addhp":
+                            dto.addhp = Convert.ToInt32(e.InnerText);
+                            break;
+                        case "addhurt":
+                            dto.addhurt = Convert.ToInt32(e.InnerText);
+                            break;
+                        case "adddef":
+                            dto.adddef = Convert.ToInt32(e.InnerText);
+                            break;
+                        case "minlv":
+                            dto.minlv = Convert.ToInt32(e.InnerText);
+                            break;
+                        case "coin":
+                            dto.coin = Convert.ToInt32(e.InnerText);
+                            break;
+                        case "crystal":
+                            dto.crystal = Convert.ToInt32(e.InnerText);
+                            break;
+                    }
+                }
+
+                Dictionary<int, StrongCfg> dic = null;
+                if (strongCfgDataDic.TryGetValue(dto.pos,out dic))
+                {
+                    dic.Add(dto.startlv,dto);
+                }
+                else
+                {
+                    dic = new Dictionary<int, StrongCfg>();
+                    dic.Add(dto.startlv,dto);
+                    strongCfgDataDic.Add(dto.pos,dic);
+                }
+                
+            }
+        }
+    }
+    
+    public StrongCfg GetStrongData(int pos,int startlv)
+    {
+        Dictionary<int, StrongCfg> dic = null;
+        if (!strongCfgDataDic.TryGetValue(pos, out dic))
+        {
+            
+            if (dic.ContainsKey(startlv))
+            {
+                return dic[startlv];
+            }
+        }
+        
+        return null;
+    }
+    #endregion
     
     #endregion
     

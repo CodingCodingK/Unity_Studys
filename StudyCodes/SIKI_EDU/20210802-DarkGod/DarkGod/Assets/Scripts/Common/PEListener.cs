@@ -40,9 +40,9 @@ namespace Common
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            if (eventData!=null)
+            if (args!=null)
             {
-                onClick?.Invoke(eventData);
+                onClick?.Invoke(args);
             }
         }
     }
