@@ -4,11 +4,14 @@ using System;
 
 namespace Common
 {
-    public class PEListener : MonoBehaviour,IPointerDownHandler,IPointerUpHandler,IDragHandler
+    public class PEListener : MonoBehaviour,IPointerDownHandler,IPointerUpHandler,IDragHandler,IPointerClickHandler
     {
         public Action<PointerEventData> onClickDown;
         public Action<PointerEventData> onClickUp;
         public Action<PointerEventData> onClickDrag;
+        public Action<object> onClick;
+
+        public object args;
         
         public void OnPointerDown(PointerEventData eventData)
         {
@@ -32,6 +35,14 @@ namespace Common
             if (eventData!=null)
             {
                 onClickDrag?.Invoke(eventData);
+            }
+        }
+
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            if (eventData!=null)
+            {
+                onClick?.Invoke(eventData);
             }
         }
     }

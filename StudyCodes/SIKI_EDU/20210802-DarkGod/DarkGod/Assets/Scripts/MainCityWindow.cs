@@ -254,7 +254,15 @@ public class MainCityWindow : WindowBase
         
     }
     
-    
+    /// <summary>
+    /// 头像详细信息显示 按钮
+    /// </summary>
+    public void ClickStrongBtn()
+    {
+        MainCitySys.Instance.OpenStrongWindow();
+        audioSvc.PlayUIAudio(Constants.UIOpenPage);
+        
+    }
     
     #endregion
     

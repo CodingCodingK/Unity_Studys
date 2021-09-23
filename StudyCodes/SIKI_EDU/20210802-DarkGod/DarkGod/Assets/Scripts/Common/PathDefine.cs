@@ -20,6 +20,8 @@ public class PathDefine
     
     #endregion
     
+    
+    
     #region Player
 
     public const string AsnCityPlayerPrefab = "PrefabPlayer/AssassinCity";
@@ -40,6 +42,13 @@ public class PathDefine
     public const string GeneralIcon = "ResImages/npc1";
     public const string ArtisanIcon = "ResImages/npc2";
     public const string TraderIcon = "ResImages/npc3";
+
+    #endregion
+    
+    #region 强化升级
+
+    public const string ItemArrorBG = "ResImages/btnstrong";
+    public const string ItemPlatBG = "ResImages/charbg3";
 
     #endregion
 }

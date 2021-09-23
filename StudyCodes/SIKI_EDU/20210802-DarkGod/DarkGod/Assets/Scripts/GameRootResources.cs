@@ -28,6 +28,8 @@ public class GameRootResources : GameRootMonoSingleton<GameRootResources>
     public InfoWindow infoWindow;
 
     public GuideWindow guideWindow;
+    
+    public StrongWindow strongWindow;
         
     public void ShowTips(string tip)
     {

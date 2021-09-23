@@ -138,6 +138,12 @@ public class WindowBase : MonoBehaviour
         listener.onClickDrag = action;
     }
 
+    protected void OnClick(GameObject go,Action<object> obj,object args)
+    {
+        PEListener listener = GetOrAddComponent<PEListener>(go);
+        listener.onClick = obj;
+        listener.args = args;
+    }
     #endregion
     
 }

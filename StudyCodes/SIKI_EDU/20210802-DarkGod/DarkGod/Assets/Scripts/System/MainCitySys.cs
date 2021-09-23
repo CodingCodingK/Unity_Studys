@@ -203,8 +203,6 @@ public class MainCitySys : SystemBase
         }
     }
 
-
-    
     public void StopNavTask()
     {
         if (isNavGuiding)
@@ -276,7 +274,16 @@ public class MainCitySys : SystemBase
         GameRoot.Instance().SetPlayerDataByGuide(rsp);
         gameRootResources.mainCityWindow.RefreshUI();
     }
+    
     #endregion
 
+    #region Strong
+
+    public void OpenStrongWindow()
+    {
+        gameRootResources.strongWindow.SetWindowState();
+    } 
+
+    #endregion
    
 }
