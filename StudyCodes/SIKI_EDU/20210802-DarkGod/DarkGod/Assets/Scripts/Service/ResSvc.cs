@@ -437,8 +437,8 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
                         case "pos":
                             dto.pos = Convert.ToInt32(e.InnerText);
                             break;
-                        case "startlv":
-                            dto.startlv = Convert.ToInt32(e.InnerText);
+                        case "starlv":
+                            dto.starlv = Convert.ToInt32(e.InnerText);
                             break;
                         case "addhp":
                             dto.addhp = Convert.ToInt32(e.InnerText);
@@ -464,12 +464,12 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
                 Dictionary<int, StrongCfg> dic = null;
                 if (strongCfgDataDic.TryGetValue(dto.pos,out dic))
                 {
-                    dic.Add(dto.startlv,dto);
+                    dic.Add(dto.starlv,dto);
                 }
                 else
                 {
                     dic = new Dictionary<int, StrongCfg>();
-                    dic.Add(dto.startlv,dto);
+                    dic.Add(dto.starlv,dto);
                     strongCfgDataDic.Add(dto.pos,dic);
                 }
                 

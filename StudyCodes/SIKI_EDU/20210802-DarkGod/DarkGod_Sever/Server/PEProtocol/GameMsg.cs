@@ -135,7 +135,12 @@ namespace PEProtocol
 		/// </summary>
 		public int guideid { get; set; }
 
-	}
+		/// <summary>
+		/// 不写成属性，手动映射，强化程度
+		/// </summary>
+		public int[] strongArr;
+
+    }
 
     /// <summary>
     /// Command协议常数

@@ -46,7 +46,7 @@ public class AutoGuideCfg : BaseData<AutoGuideCfg>
 public class StrongCfg : BaseData<StrongCfg>
 {
     public int pos;
-    public int startlv;
+    public int starlv;
     public int addhp;
     public int addhurt;
     public int adddef;

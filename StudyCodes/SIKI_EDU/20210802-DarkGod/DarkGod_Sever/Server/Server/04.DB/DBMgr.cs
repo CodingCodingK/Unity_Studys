@@ -44,7 +44,8 @@ public class DBMgr : Singleton<DBMgr>
 		if (acctAndPass != null && pass.Equals(acctAndPass.pass))
 		{
 			// 帐号密码正确，查询填充具体数据
-			playerData = cmd.Query<PlayerData>()?.FirstOrDefault();
+			playerData = cmd.QueryPlayerData()?.FirstOrDefault();
+
 		}
 		else if (acctAndPass != null && !pass.Equals(acctAndPass.pass))
 		{
@@ -71,6 +72,7 @@ public class DBMgr : Singleton<DBMgr>
                 pierce = 5,
                 critical = 2,
 				guideid = 1001,
+				strongArr = new int[6]{0,0,0,0,0,0},
             };
 			playerData.id = InsertNewAcctData(acct, pass, playerData);
 		}
@@ -82,7 +84,7 @@ public class DBMgr : Singleton<DBMgr>
 	{
 		// TODO add column
 		MySqlCommand cmd = new MySqlCommand(
-			"insert into account set acct = @acct,pass = @pass,name = @name,level = @level,exp = @exp,power = @power,coin = @coin,diamond = @diamond,hp=@hp,ad=@ad,ap=@ap,addef=@addef,apdef=@apdef,dodge=@dodge,pierce=@pierce,critical=@critical,guideid=@guideid", conn);
+			"insert into account set acct = @acct,pass = @pass,name = @name,level = @level,exp = @exp,power = @power,coin = @coin,diamond = @diamond,hp=@hp,ad=@ad,ap=@ap,addef=@addef,apdef=@apdef,dodge=@dodge,pierce=@pierce,critical=@critical,guideid=@guideid,strongArr=@strongArr", conn);
 		cmd.Parameters.AddWithValue("acct", acct);
 		cmd.Parameters.AddWithValue("pass", pass);
 		cmd.Parameters.AddWithValue("name", pd.name);
@@ -101,6 +103,8 @@ public class DBMgr : Singleton<DBMgr>
         cmd.Parameters.AddWithValue("critical", pd.critical);
         cmd.Parameters.AddWithValue("guideid", pd.guideid);
 
+        cmd.Parameters.AddWithValue("strongArr", pd.strongArr.ToStringArr());
+
         cmd.ExecuteNonQuery();
 		return (int)cmd.LastInsertedId;
 	}
@@ -112,14 +116,14 @@ public class DBMgr : Singleton<DBMgr>
         MySqlCommand cmd = new MySqlCommand("select * from account where name = @name", conn);
         cmd.Parameters.AddWithValue("name",name);
 
-        return cmd.Query<PlayerData>()?.FirstOrDefault();
+        return cmd.QueryPlayerData()?.FirstOrDefault();
 	}
 
     public void UpdatePlayerData(PlayerData pd)
     {
 		MySqlCommand cmd = new MySqlCommand(
-			"update account set name = @name,level = @level,exp = @exp,power = @power,coin = @coin,diamond = @diamond,hp=@hp,ad=@ad,ap=@ap,addef=@addef,apdef=@apdef,dodge=@dodge,pierce=@pierce,critical=@critical,guideid=@guideid where id = @id", conn);
-        cmd.SetAllParameters(pd);
+			"update account set name = @name,level = @level,exp = @exp,power = @power,coin = @coin,diamond = @diamond,hp=@hp,ad=@ad,ap=@ap,addef=@addef,apdef=@apdef,dodge=@dodge,pierce=@pierce,critical=@critical,guideid=@guideid,strongArr=@strongArr where id = @id", conn);
+        cmd.SetPlayerDataParas(pd);
         cmd.ExecuteNonQuery();
     }
 
