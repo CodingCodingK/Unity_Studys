@@ -76,7 +76,16 @@ public class NetSvc : Singleton<NetSvc>
             case CMD.ReqGuide:
 	            GuideSys.Instance().ReqGuide(msgPack);
 	            break;
-            
+            case CMD.ReqStrong:
+	            StrongSys.Instance().ReqStrong(msgPack);
+	            break;
+            case CMD.SendChat:
+	            ChatSys.Instance().SendChat(msgPack);
+	            break;
+            case CMD.ReqBuy:
+	            BuySys.Instance().ReqBuy(msgPack);
+	            break;
+
 		}
     }
 

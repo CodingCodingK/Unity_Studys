@@ -477,20 +477,42 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
         }
     }
     
-    public StrongCfg GetStrongData(int pos,int startlv)
+    public StrongCfg GetStrongData(int pos,int starlv)
     {
         Dictionary<int, StrongCfg> dic = null;
-        if (!strongCfgDataDic.TryGetValue(pos, out dic))
+        if (strongCfgDataDic.TryGetValue(pos, out dic))
         {
-            
-            if (dic.ContainsKey(startlv))
+            if (dic.ContainsKey(starlv))
             {
-                return dic[startlv];
+                return dic[starlv];
             }
         }
         
         return null;
     }
+
+    public int GetPropStrongAddVal(int pos,int startLv,int type)
+    {
+        if (strongCfgDataDic.TryGetValue(pos,out Dictionary<int,StrongCfg> list))
+        {
+            if (list.TryGetValue(startLv,out StrongCfg data))
+            {
+                switch (type)
+                {
+                    case 1:
+                        return data.addhp;
+                    case 2:
+                        return data.addhurt;
+                    case 3:
+                        return data.adddef;
+                    
+                } 
+            }
+        }
+        return 0;
+    }
+    
+    
     #endregion
     
     #endregion

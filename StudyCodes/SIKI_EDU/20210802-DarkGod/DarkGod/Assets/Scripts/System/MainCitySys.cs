@@ -282,7 +282,67 @@ public class MainCitySys : SystemBase
     public void OpenStrongWindow()
     {
         gameRootResources.strongWindow.SetWindowState();
-    } 
+    }
+
+    public void RspStrong(GameMsg msg)
+    {
+        RspStrong rsp = msg.rspStrong;
+        var FightFrom = PECommon.GetFight(GameRoot.Instance().PlayerData);
+        GameRoot.Instance().SetPlayerDataByStrong(rsp);
+        var FightTo = PECommon.GetFight(GameRoot.Instance().PlayerData);
+        var txt = Constants.ColoredTxt("升星成功，战力提升：" + (FightTo - FightFrom) , TxtColor.Blue);
+        gameRootResources.ShowTips(txt);
+        
+        gameRootResources.strongWindow.RefreshItems();
+    }
+    #endregion
+    
+    #region Chat
+
+    public void OpenChatWindow()
+    {
+        if (!gameRootResources.chatWindow.gameObject.activeSelf)
+        {
+            gameRootResources.chatWindow.SetWindowState();
+        }
+        else
+        {
+            gameRootResources.chatWindow.ClickCloseBtn();
+        }
+        
+    }
+
+    public void PushChat(GameMsg msg)
+    {
+        gameRootResources.chatWindow.AddChatMsg(msg.pushChat.name,msg.pushChat.chat);
+    }
+   
+    #endregion
+
+    #region Buy
+
+    public void OpenBuyWindow(int type)
+    {
+        gameRootResources.buyWindow.OpenBuyWindow(type);
+    }
+    
+    public void RspBuy(GameMsg msg)
+    {
+        RspBuy rsp = msg.rspBuy;
+        string txt = string.Empty;
+        switch (rsp.type)
+        {
+            case 0 :
+                txt = Constants.ColoredTxt("购买成功，目前体力：" + rsp.power ,TxtColor.Blue);
+                break;
+            case 1 :
+                txt = Constants.ColoredTxt("购买成功，目前金钱：" + rsp.coin ,TxtColor.Blue);
+                break;
+        }
+        
+        gameRootResources.ShowTips(txt);
+        GameRoot.Instance().SetPlayerDataByBuy(rsp);
+    }
 
     #endregion
    

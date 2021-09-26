@@ -30,6 +30,10 @@ public class GameRootResources : GameRootMonoSingleton<GameRootResources>
     public GuideWindow guideWindow;
     
     public StrongWindow strongWindow;
+    
+    public ChatWindow chatWindow;
+    
+    public BuyWindow buyWindow;
         
     public void ShowTips(string tip)
     {

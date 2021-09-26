@@ -24,7 +24,8 @@ public class CacheSvc : Singleton<CacheSvc>
     /// </summary>
     private Dictionary<ServerSession, PlayerData> onlineSessionDic;
 
-    public void Init()
+
+	public void Init()
     {
         onlineAcctDic = new Dictionary<string, ServerSession>();
         onlineSessionDic = new Dictionary<ServerSession, PlayerData>();
@@ -40,9 +41,18 @@ public class CacheSvc : Singleton<CacheSvc>
     }
 
     /// <summary>
-    /// 根据账号密码返回 PlayerData 账号数据，密码错误返回null，账号不存在则创建默认账号
+    /// 检测账号是否在线
     /// </summary>
-    public PlayerData GetPlayerData(string acct, string pass)
+    public List<ServerSession> GetAllOnlineClients()
+    {
+	    return onlineAcctDic.Values.ToList();
+    }
+
+
+	/// <summary>
+	/// 根据账号密码返回 PlayerData 账号数据，密码错误返回null，账号不存在则创建默认账号
+	/// </summary>
+	public PlayerData GetPlayerData(string acct, string pass)
     {
         return DBMgr.Instance().QueryPlayerData(acct, pass);
     }

@@ -57,6 +57,9 @@
     <Compile Include="01.Service\02.CfgSvc\CfgSvc.cs" />
     <Compile Include="02.System\01.LoginSys\LoginSys.cs" />
     <Compile Include="02.System\02.GuideSys\GuideSys.cs" />
+    <Compile Include="02.System\03.StrongSys\StrongSyscs.cs" />
+    <Compile Include="02.System\04.ChatSys\ChatSys.cs" />
+    <Compile Include="02.System\05.BuySys\BuySys.cs" />
     <Compile Include="03.Cache\CacheSvc.cs" />
     <Compile Include="04.DB\DBMapperHelper.cs" />
     <Compile Include="04.DB\DBMgr.cs" />

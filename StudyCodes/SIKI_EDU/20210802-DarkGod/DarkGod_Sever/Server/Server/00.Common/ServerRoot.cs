@@ -26,6 +26,9 @@ public class ServerRoot : Singleton<ServerRoot>
 		// 业务系统层
 		LoginSys.Instance().Init();
         GuideSys.Instance().Init();
+        StrongSys.Instance().Init();
+        ChatSys.Instance().Init();
+        BuySys.Instance().Init();
 
 	}
 

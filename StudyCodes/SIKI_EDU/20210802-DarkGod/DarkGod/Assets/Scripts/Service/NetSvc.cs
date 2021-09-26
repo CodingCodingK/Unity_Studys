@@ -118,6 +118,22 @@ public class NetSvc : GameRootMonoSingleton<NetSvc>
                     PECommon.Log("数据库更新异常",LogType.Error);
                     GameRootResources.Instance().ShowTips("网络不稳定！");
                     break;
+                case ErrorCode.LackLevel :
+                    PECommon.Log("作弊检测：等级不足",LogType.Error);
+                    GameRootResources.Instance().ShowTips("等级不足");
+                    break;
+                case ErrorCode.LackCoin :
+                    PECommon.Log("作弊检测：金币不足",LogType.Error);
+                    GameRootResources.Instance().ShowTips("金币不足");
+                    break;
+                case ErrorCode.LackCrystal :
+                    PECommon.Log("作弊检测：晶体不足",LogType.Error);
+                    GameRootResources.Instance().ShowTips("晶体不足");
+                    break;
+                case ErrorCode.LackDiamond :
+                    PECommon.Log("作弊检测：钻石不足",LogType.Error);
+                    GameRootResources.Instance().ShowTips("钻石不足");
+                    break;
             }
             
             return;
@@ -133,6 +149,15 @@ public class NetSvc : GameRootMonoSingleton<NetSvc>
                 break;
             case CMD.RspGuide:
                 MainCitySys.Instance.RspGuide(msg);
+                break;
+            case CMD.RspStrong:
+                MainCitySys.Instance.RspStrong(msg);
+                break;
+            case CMD.PushChat:
+                MainCitySys.Instance.PushChat(msg);
+                break;
+            case CMD.RspBuy:
+                MainCitySys.Instance.RspBuy(msg);
                 break;
         }
     }

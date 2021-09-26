@@ -80,6 +80,8 @@
      <Compile Include="Assets\Scripts\Service\NetSvc.cs" />
      <Compile Include="Assets\Scripts\UIWindow\LoginWindow.cs" />
      <Compile Include="Assets\Scripts\UIWindow\StrongWindow.cs" />
+     <Compile Include="Assets\Scripts\UIWindow\ChatWindow.cs" />
+     <Compile Include="Assets\Scripts\UIWindow\BuyWindow.cs" />
      <None Include="Assets\Compond\MakeChar\Shader\PlayerShader.shader" />
      <None Include="Assets\Resources\ResCfgs\strong.xml" />
      <None Include="Assets\Compond\MakeChar\Shader\MogoFakeLight.shader" />

@@ -24,6 +24,12 @@ namespace PEProtocol
 		#region 主城相关
 		public ReqGuide reqGuide;
 		public RspGuide rspGuide;
+		public ReqStrong reqStrong;
+		public RspStrong rspStrong;
+		public SendChat sendChat;
+		public PushChat pushChat;
+		public ReqBuy reqBuy;
+		public RspBuy rspBuy;
 
 		#endregion
 
@@ -93,6 +99,71 @@ namespace PEProtocol
 		public int exp { get; set; }
 	}
 
+	/// <summary>
+	/// 强化请求
+	/// </summary>
+	[Serializable]
+	public class ReqStrong
+	{
+		public int pos { get; set; }
+	}
+
+	/// <summary>
+	/// 强化回应
+	/// </summary>
+	[Serializable]
+	public class RspStrong
+	{
+		public int coin { get; set; }
+		public int crystal { get; set; }
+		public int hp { get; set; }
+		public int ad { get; set; }
+		public int ap { get; set; }
+		public int addef { get; set; }
+		public int apdef { get; set; }
+		public int[] strongArr;
+	}
+
+	/// <summary>
+	/// 聊天请求
+	/// </summary>
+	[Serializable]
+	public class SendChat
+	{
+		public string chat { get; set; }
+	}
+
+	/// <summary>
+	/// 推送聊天
+	/// </summary>
+	[Serializable]
+	public class PushChat
+	{
+		public string name { get; set; }
+		public string chat { get; set; }
+	}
+
+	/// <summary>
+	/// 购买请求
+	/// </summary>
+	[Serializable]
+	public class ReqBuy
+	{
+		public int type { get; set; }
+		public int cost { get; set; }
+	}
+
+	/// <summary>
+	/// 购买回应
+	/// </summary>
+	[Serializable]
+	public class RspBuy
+	{
+		public int type { get; set; }
+		public int diamond { get; set; }
+		public int coin { get; set; }
+		public int power { get; set; }
+	}
 	#endregion
 
 
@@ -109,6 +180,7 @@ namespace PEProtocol
 		public int power { get; set; }
 		public int coin { get; set; }
 		public int diamond { get; set; }
+		public int crystal { get; set; }
         public int hp { get; set; }
         public int ad { get; set; }
         public int ap { get; set; }
@@ -176,6 +248,11 @@ namespace PEProtocol
         /// </summary>
         NameExisted,
 
+		LackLevel,
+		LackCoin,
+		LackCrystal,
+		LackDiamond,
+
     }
 
     /// <summary>
@@ -193,7 +270,14 @@ namespace PEProtocol
 		// 主城相关
 		ReqGuide = 200,
 		RspGuide = 201,
-    }
+		ReqStrong = 202,
+		RspStrong = 203,
+		SendChat = 204,
+		PushChat = 205,
+		ReqBuy = 206,
+		RspBuy = 207,
+
+	}
 
     /// <summary>
     /// 端口号常数

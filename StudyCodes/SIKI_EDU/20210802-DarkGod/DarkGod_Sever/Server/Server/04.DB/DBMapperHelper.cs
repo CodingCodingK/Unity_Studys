@@ -119,6 +119,7 @@ namespace DBHelper
 					cmd.Parameters.AddWithValue(propertyInfo.Name.ToLower(), propertyInfo.GetValue(dto));
 				}
 			}
+
 		}
 
 		/// <summary>
@@ -131,16 +132,12 @@ namespace DBHelper
 				// 数据Mapper
 				if (propertyInfo.GetValue(dto) != null)
 				{
-					if (propertyInfo.Name == "strongArr")
-					{
-						cmd.Parameters.AddWithValue(dto.strongArr.ToStringArr(), propertyInfo.GetValue(dto));
-					}
-					else
-					{
-						cmd.Parameters.AddWithValue(propertyInfo.Name.ToLower(), propertyInfo.GetValue(dto));
-					}
+					cmd.Parameters.AddWithValue(propertyInfo.Name.ToLower(), propertyInfo.GetValue(dto));
 				}
 			}
+
+			// PlayerData特殊
+			cmd.Parameters.AddWithValue("strongArr", dto.strongArr.ToStringArr());
 		}
 
 

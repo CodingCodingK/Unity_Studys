@@ -63,6 +63,7 @@ public class DBMgr : Singleton<DBMgr>
 				power = 150,
 				coin = 5000,
 				diamond = 500,
+				crystal = 100,
                 hp = 2000,
                 ad = 275,
                 ap = 265,
@@ -72,7 +73,7 @@ public class DBMgr : Singleton<DBMgr>
                 pierce = 5,
                 critical = 2,
 				guideid = 1001,
-				strongArr = new int[6]{0,0,0,0,0,0},
+				strongArr = new int[6]{1,1,1,1,1,1},
             };
 			playerData.id = InsertNewAcctData(acct, pass, playerData);
 		}
@@ -84,7 +85,7 @@ public class DBMgr : Singleton<DBMgr>
 	{
 		// TODO add column
 		MySqlCommand cmd = new MySqlCommand(
-			"insert into account set acct = @acct,pass = @pass,name = @name,level = @level,exp = @exp,power = @power,coin = @coin,diamond = @diamond,hp=@hp,ad=@ad,ap=@ap,addef=@addef,apdef=@apdef,dodge=@dodge,pierce=@pierce,critical=@critical,guideid=@guideid,strongArr=@strongArr", conn);
+			"insert into account set acct = @acct,pass = @pass,name = @name,level = @level,exp = @exp,power = @power,coin = @coin,diamond = @diamond,crystal = @crystal,hp=@hp,ad=@ad,ap=@ap,addef=@addef,apdef=@apdef,dodge=@dodge,pierce=@pierce,critical=@critical,guideid=@guideid,strongArr=@strongArr", conn);
 		cmd.Parameters.AddWithValue("acct", acct);
 		cmd.Parameters.AddWithValue("pass", pass);
 		cmd.Parameters.AddWithValue("name", pd.name);
@@ -93,6 +94,7 @@ public class DBMgr : Singleton<DBMgr>
 		cmd.Parameters.AddWithValue("power", pd.power);
 		cmd.Parameters.AddWithValue("coin", pd.coin);
 		cmd.Parameters.AddWithValue("diamond", pd.diamond);
+		cmd.Parameters.AddWithValue("crystal", pd.crystal);
         cmd.Parameters.AddWithValue("hp", pd.hp);
         cmd.Parameters.AddWithValue("ad", pd.ad);
         cmd.Parameters.AddWithValue("ap", pd.ap);
@@ -122,7 +124,7 @@ public class DBMgr : Singleton<DBMgr>
     public void UpdatePlayerData(PlayerData pd)
     {
 		MySqlCommand cmd = new MySqlCommand(
-			"update account set name = @name,level = @level,exp = @exp,power = @power,coin = @coin,diamond = @diamond,hp=@hp,ad=@ad,ap=@ap,addef=@addef,apdef=@apdef,dodge=@dodge,pierce=@pierce,critical=@critical,guideid=@guideid,strongArr=@strongArr where id = @id", conn);
+			"update account set name = @name,level = @level,exp = @exp,power = @power,coin = @coin,diamond = @diamond,crystal = @crystal,hp=@hp,ad=@ad,ap=@ap,addef=@addef,apdef=@apdef,dodge=@dodge,pierce=@pierce,critical=@critical,guideid=@guideid,strongArr=@strongArr where id = @id", conn);
         cmd.SetPlayerDataParas(pd);
         cmd.ExecuteNonQuery();
     }

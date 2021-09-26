@@ -18,8 +18,11 @@ public class CfgSvc : Singleton<CfgSvc>
 	public void Init()
 	{
 		InitAutoGuideCfg();
+		InitStrongCfg();
 		PECommon.Log("CfgSvc Init Done.");
 	}
+
+	#region GuideCfg
 
 	private Dictionary<int, AutoGuideCfg> autoGuideCfgDataDic = new Dictionary<int, AutoGuideCfg>();
 
@@ -29,7 +32,7 @@ public class CfgSvc : Singleton<CfgSvc>
 
 		DirectoryInfo dir = new DirectoryInfo(System.Environment.CurrentDirectory);
 		dir = dir.Parent.Parent.Parent.Parent.Parent;
-		var path =  Path.Combine(dir.FullName, "DarkGod", "Assets", "Resources", "ResCfgs", "guide.xml");
+		var path = Path.Combine(dir.FullName, "DarkGod", "Assets", "Resources", "ResCfgs", "guide.xml");
 		doc.Load(path);
 
 		XmlNodeList nodList = doc.SelectSingleNode("root").ChildNodes;
@@ -72,9 +75,106 @@ public class CfgSvc : Singleton<CfgSvc>
 		return autoGuideCfgDataDic[id];
 	}
 
+	#endregion
+
+	#region StrongCfg
+
+	private Dictionary<int, Dictionary<int, StrongCfg>> strongCfgDataDic = new Dictionary<int, Dictionary<int, StrongCfg>>();
+
+	public void InitStrongCfg()
+	{
+		XmlDocument doc = new XmlDocument();
+
+		DirectoryInfo dir = new DirectoryInfo(System.Environment.CurrentDirectory);
+		dir = dir.Parent.Parent.Parent.Parent.Parent;
+		var path = Path.Combine(dir.FullName, "DarkGod", "Assets", "Resources", "ResCfgs", "strong.xml");
+		doc.Load(path);
+		XmlNodeList nodList = doc.SelectSingleNode("root").ChildNodes;
+
+		for (int i = 0; i < nodList.Count; i++)
+		{
+			XmlElement ele = nodList[i] as XmlElement;
+			var eleID = ele.GetAttributeNode("ID");
+			if (eleID == null)
+			{
+				continue;
+			}
+
+			int id = Convert.ToInt32(eleID.InnerText);
+			StrongCfg dto = new StrongCfg
+			{
+				ID = id,
+			};
+
+			foreach (XmlElement e in nodList[i].ChildNodes)
+			{
+				switch (e.Name)
+				{
+					case "pos":
+						dto.pos = Convert.ToInt32(e.InnerText);
+						break;
+					case "starlv":
+						dto.starlv = Convert.ToInt32(e.InnerText);
+						break;
+					case "addhp":
+						dto.addhp = Convert.ToInt32(e.InnerText);
+						break;
+					case "addhurt":
+						dto.addhurt = Convert.ToInt32(e.InnerText);
+						break;
+					case "adddef":
+						dto.adddef = Convert.ToInt32(e.InnerText);
+						break;
+					case "minlv":
+						dto.minlv = Convert.ToInt32(e.InnerText);
+						break;
+					case "coin":
+						dto.coin = Convert.ToInt32(e.InnerText);
+						break;
+					case "crystal":
+						dto.crystal = Convert.ToInt32(e.InnerText);
+						break;
+				}
+			}
+
+			Dictionary<int, StrongCfg> dic = null;
+			if (strongCfgDataDic.TryGetValue(dto.pos, out dic))
+			{
+				dic.Add(dto.starlv, dto);
+			}
+			else
+			{
+				dic = new Dictionary<int, StrongCfg>();
+				dic.Add(dto.starlv, dto);
+				strongCfgDataDic.Add(dto.pos, dic);
+			}
+		}
+	}
+
+	public StrongCfg GetStrongData(int pos, int starlv)
+	{
+		Dictionary<int, StrongCfg> dic = null;
+		if (strongCfgDataDic.TryGetValue(pos, out dic))
+		{
+			if (dic.ContainsKey(starlv))
+			{
+				return dic[starlv];
+			}
+		}
+
+		return null;
+	}
+
+	#endregion
+
+
 }
 
 
+public class BaseData<T>
+{
+	public int ID;
+}
 
 public class AutoGuideCfg : BaseData<AutoGuideCfg>
 {
@@ -82,7 +182,14 @@ public class AutoGuideCfg : BaseData<AutoGuideCfg>
 	public int exp;
 }
 
-public class BaseData<T>
+public class StrongCfg : BaseData<StrongCfg>
 {
-	public int ID;
+	public int pos;
+	public int starlv;
+	public int addhp;
+	public int addhurt;
+	public int adddef;
+	public int minlv;
+	public int coin;
+	public int crystal;
 }

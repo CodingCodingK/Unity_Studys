@@ -92,6 +92,26 @@ public class GameRoot : GameRootMonoSingleton<GameRoot>
         PlayerData.guideid = rsp.guideid;
     }
     
+    public void SetPlayerDataByStrong(RspStrong rsp)
+    {
+        PlayerData.coin = rsp.coin;
+        PlayerData.crystal = rsp.crystal;
+        PlayerData.hp = rsp.hp;
+        PlayerData.ad = rsp.ad;
+        PlayerData.ap = rsp.ap;
+        PlayerData.addef = rsp.addef;
+        PlayerData.apdef = rsp.apdef;
+        PlayerData.strongArr = rsp.strongArr;
+       
+    }
+
+    public void SetPlayerDataByBuy(RspBuy rsp)
+    {
+        PlayerData.diamond = rsp.diamond;
+        PlayerData.coin = rsp.coin;
+        PlayerData.power = rsp.power;
+    }
+    
     #endregion
     
     

@@ -261,10 +261,34 @@ public class MainCityWindow : WindowBase
     {
         MainCitySys.Instance.OpenStrongWindow();
         audioSvc.PlayUIAudio(Constants.UIOpenPage);
-        
     }
     
-    #endregion
+    /// <summary>
+    /// 聊天 按钮
+    /// </summary>
+    public void ClickChatBtn()
+    {
+        MainCitySys.Instance.OpenChatWindow();
+        audioSvc.PlayUIAudio(Constants.UIOpenPage);
+    }
     
+
+    #endregion
+
+    #region 购买
+
+    public void ClickBuyPowerBtn()
+    {
+        audioSvc.PlayUIAudio(Constants.UIOpenPage);
+        MainCitySys.Instance.OpenBuyWindow(0);
+    }
+    
+    public void ClickMKCoinBtn()
+    {
+        audioSvc.PlayUIAudio(Constants.UIOpenPage);
+        MainCitySys.Instance.OpenBuyWindow(1);
+    }
+
+    #endregion
     
 }
