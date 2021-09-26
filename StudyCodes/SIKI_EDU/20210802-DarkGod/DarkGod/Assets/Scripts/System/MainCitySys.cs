@@ -342,6 +342,7 @@ public class MainCitySys : SystemBase
         
         gameRootResources.ShowTips(txt);
         GameRoot.Instance().SetPlayerDataByBuy(rsp);
+        gameRootResources.mainCityWindow.RefreshUI();
     }
 
     #endregion

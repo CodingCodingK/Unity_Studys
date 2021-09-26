@@ -8,6 +8,7 @@
 
 
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using PEProtocol;
 using UnityEngine;
@@ -27,6 +28,7 @@ public class ChatWindow : WindowBase
     // others
     private int chatType;
     private List<string> chatList = new List<string>();
+    private bool canSend = true;
     
     #endregion
     
@@ -118,6 +120,12 @@ public class ChatWindow : WindowBase
     
     public void ClickSendBtn()
     {
+        if (!canSend)
+        {
+            GameRootResources.Instance().ShowTips("每5秒只能发送一次消息");
+            return;
+        }
+        
         audioSvc.PlayUIAudio(Constants.UIClickBtn);
         if (!string.IsNullOrEmpty(input.text))
         {
@@ -138,6 +146,8 @@ public class ChatWindow : WindowBase
                 };
                 input.text = string.Empty;
                 netSvc.SendMsg(msg);
+                canSend = false;
+                StartCoroutine(MsgTimer());
             }
         }
         else
@@ -148,6 +158,11 @@ public class ChatWindow : WindowBase
 
     
     #endregion
-   
+
+    private IEnumerator MsgTimer()
+    {
+        yield return new WaitForSeconds(5.0f);
+        canSend = true;
+    }
     
 }
