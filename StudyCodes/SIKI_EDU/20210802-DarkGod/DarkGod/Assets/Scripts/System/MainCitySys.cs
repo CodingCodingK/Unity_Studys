@@ -346,5 +346,19 @@ public class MainCitySys : SystemBase
     }
 
     #endregion
+
+    #region Power 体力自动增长
+
+    public void PushPower(GameMsg msg)
+    {
+        GameRoot.Instance().SetPlayerDataByPower(msg.pushPower);
+        if (gameRootResources.mainCityWindow.gameObject.activeSelf)
+        {
+            gameRootResources.mainCityWindow.RefreshUI();
+        }
+       
+    }
+
+    #endregion
    
 }

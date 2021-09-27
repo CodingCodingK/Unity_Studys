@@ -30,10 +30,11 @@ namespace PEProtocol
 		public PushChat pushChat;
 		public ReqBuy reqBuy;
 		public RspBuy rspBuy;
+		public PushPower pushPower;
 
 		#endregion
 
-	}
+    }
 
 	#region 登陆相关
 
@@ -164,6 +165,15 @@ namespace PEProtocol
 		public int coin { get; set; }
 		public int power { get; set; }
 	}
+
+	/// <summary>
+	/// 推送体力增涨
+	/// </summary>
+	[Serializable]
+	public class PushPower
+	{
+		public int power { get; set; }
+	}
 	#endregion
 
 
@@ -212,7 +222,12 @@ namespace PEProtocol
 		/// </summary>
 		public int[] strongArr;
 
-    }
+		/// <summary>
+		/// Int64类型,
+		/// </summary>
+		public long time { get; set; }
+
+	}
 
     /// <summary>
     /// Command协议常数
@@ -276,6 +291,8 @@ namespace PEProtocol
 		PushChat = 205,
 		ReqBuy = 206,
 		RspBuy = 207,
+		PushPower = 208,
+
 
 	}
 

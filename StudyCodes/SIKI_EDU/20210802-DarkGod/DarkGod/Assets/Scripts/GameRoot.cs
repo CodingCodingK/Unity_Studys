@@ -51,6 +51,10 @@ public class GameRoot : GameRootMonoSingleton<GameRoot>
         net.InitSvc();
         ResSvc res = GetComponent<ResSvc>();
         res.InitSvc();
+        AudioSvc au = GetComponent<AudioSvc>();
+        au.InitSvc();
+        TimerSvc ti = GetComponent<TimerSvc>();
+        ti.InitSvc();
 
         //业务系统初始化
         LoginSys login = GetComponent<LoginSys>();
@@ -112,6 +116,11 @@ public class GameRoot : GameRootMonoSingleton<GameRoot>
         PlayerData.power = rsp.power;
     }
     
+    public void SetPlayerDataByPower(PushPower push)
+    {
+        PlayerData.power = push.power;
+    }
+
     #endregion
     
     

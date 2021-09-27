@@ -41,11 +41,19 @@ public class CacheSvc : Singleton<CacheSvc>
     }
 
     /// <summary>
-    /// 检测账号是否在线
+    /// 获取所有在线帐号的Session
     /// </summary>
     public List<ServerSession> GetAllOnlineClients()
     {
 	    return onlineAcctDic.Values.ToList();
+    }
+
+    /// <summary>
+    /// 获取所有在线帐号的Session、PlayerData
+    /// </summary>
+    public Dictionary<ServerSession, PlayerData> GetAllOnlineClientsAndPD()
+    {
+	    return onlineSessionDic;
     }
 
 

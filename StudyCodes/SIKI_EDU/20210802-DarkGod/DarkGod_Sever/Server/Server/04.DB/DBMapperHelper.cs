@@ -46,6 +46,11 @@ namespace DBHelper
 					{
 						propertyInfo.SetValue(dto, reader.GetDecimal(propertyInfo.Name.ToLower()));
 					}
+					else if (propertyInfo.PropertyType == typeof(long))
+					{
+						propertyInfo.SetValue(dto, reader.GetInt64(propertyInfo.Name.ToLower()));
+
+					}
 
 				}
 
@@ -89,6 +94,11 @@ namespace DBHelper
 					else if (propertyInfo.PropertyType == typeof(decimal))
 					{
 						propertyInfo.SetValue(dto, reader.GetDecimal(propertyInfo.Name.ToLower()));
+					}
+					else if (propertyInfo.PropertyType == typeof(long))
+					{
+						propertyInfo.SetValue(dto, reader.GetInt64(propertyInfo.Name.ToLower()));
+
 					}
 				}
 

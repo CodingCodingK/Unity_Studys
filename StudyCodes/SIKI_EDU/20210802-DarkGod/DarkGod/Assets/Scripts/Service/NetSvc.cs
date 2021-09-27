@@ -159,6 +159,9 @@ public class NetSvc : GameRootMonoSingleton<NetSvc>
             case CMD.RspBuy:
                 MainCitySys.Instance.RspBuy(msg);
                 break;
+            case CMD.PushPower:
+                MainCitySys.Instance.PushPower(msg);
+                break;
         }
     }
     

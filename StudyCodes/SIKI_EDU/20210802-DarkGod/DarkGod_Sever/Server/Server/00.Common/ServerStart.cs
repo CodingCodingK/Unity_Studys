@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 /// <summary>
@@ -14,13 +15,11 @@ public class ServerStart
         ServerRoot.Instance().Init();
 
 
-
-
-
-
         while (true)
         {
             ServerRoot.Instance().Update();
+			// 降低执行频率
+			Thread.Sleep(20);
         }
     }
 }

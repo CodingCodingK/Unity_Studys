@@ -74,6 +74,7 @@ public class DBMgr : Singleton<DBMgr>
                 critical = 2,
 				guideid = 1001,
 				strongArr = new int[6]{1,1,1,1,1,1},
+				time = TimerSvc.Instance().GetNowTime(),
             };
 			playerData.id = InsertNewAcctData(acct, pass, playerData);
 		}
@@ -85,7 +86,7 @@ public class DBMgr : Singleton<DBMgr>
 	{
 		// TODO add column
 		MySqlCommand cmd = new MySqlCommand(
-			"insert into account set acct = @acct,pass = @pass,name = @name,level = @level,exp = @exp,power = @power,coin = @coin,diamond = @diamond,crystal = @crystal,hp=@hp,ad=@ad,ap=@ap,addef=@addef,apdef=@apdef,dodge=@dodge,pierce=@pierce,critical=@critical,guideid=@guideid,strongArr=@strongArr", conn);
+			"insert into account set acct = @acct,pass = @pass,name = @name,level = @level,exp = @exp,power = @power,coin = @coin,diamond = @diamond,crystal = @crystal,hp=@hp,ad=@ad,ap=@ap,addef=@addef,apdef=@apdef,dodge=@dodge,pierce=@pierce,critical=@critical,guideid=@guideid,strongArr=@strongArr,time=@time", conn);
 		cmd.Parameters.AddWithValue("acct", acct);
 		cmd.Parameters.AddWithValue("pass", pass);
 		cmd.Parameters.AddWithValue("name", pd.name);
@@ -104,6 +105,7 @@ public class DBMgr : Singleton<DBMgr>
         cmd.Parameters.AddWithValue("pierce", pd.pierce);
         cmd.Parameters.AddWithValue("critical", pd.critical);
         cmd.Parameters.AddWithValue("guideid", pd.guideid);
+        cmd.Parameters.AddWithValue("time", pd.time);
 
         cmd.Parameters.AddWithValue("strongArr", pd.strongArr.ToStringArr());
 
@@ -124,7 +126,7 @@ public class DBMgr : Singleton<DBMgr>
     public void UpdatePlayerData(PlayerData pd)
     {
 		MySqlCommand cmd = new MySqlCommand(
-			"update account set name = @name,level = @level,exp = @exp,power = @power,coin = @coin,diamond = @diamond,crystal = @crystal,hp=@hp,ad=@ad,ap=@ap,addef=@addef,apdef=@apdef,dodge=@dodge,pierce=@pierce,critical=@critical,guideid=@guideid,strongArr=@strongArr where id = @id", conn);
+			"update account set name = @name,level = @level,exp = @exp,power = @power,coin = @coin,diamond = @diamond,crystal = @crystal,hp=@hp,ad=@ad,ap=@ap,addef=@addef,apdef=@apdef,dodge=@dodge,pierce=@pierce,critical=@critical,guideid=@guideid,strongArr=@strongArr,time=@time where id = @id", conn);
         cmd.SetPlayerDataParas(pd);
         cmd.ExecuteNonQuery();
     }

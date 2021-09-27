@@ -14,10 +14,13 @@ public class LoginSys : Singleton<LoginSys>
     private LoginSys() { }
 
     private CacheSvc cacheSvc;
-    public void Init()
+    private TimerSvc timerSvc;
+	public void Init()
     {
         cacheSvc = CacheSvc.Instance();
-        PECommon.Log("LoginSys Init Done.");
+        timerSvc = TimerSvc.Instance();
+
+		PECommon.Log("LoginSys Init Done.");
     }
 
     /// <summary>
@@ -50,6 +53,19 @@ public class LoginSys : Singleton<LoginSys>
             }
             else
             {
+	            // 计算离线体力
+	            int power = pd.power;
+	            long now = timerSvc.GetNowTime();
+	            long milliseconds = now - pd.time;
+	            int addPower = (int) (milliseconds / (1000 * 60 * PECommon.PowerAddSpace)) * PECommon.PowerAddCount;
+	            if (addPower > 0)
+	            {
+		            int powerMax = PECommon.GetPowerLimit(pd.level);
+		            // 最高只能回复到上限值
+		            pd.power = pd.power + addPower > powerMax ? powerMax : pd.power + addPower;
+		            cacheSvc.UpdatePlayerData(pd);
+	            }
+
                 // 登录认证成功
                 msg.rspLogin = new RspLogin
                 {
@@ -107,6 +123,17 @@ public class LoginSys : Singleton<LoginSys>
 	/// </summary>
 	public void ClearOfflineData(ServerSession session)
     {
+		// 写入下线时间
+		PlayerData pd = cacheSvc.GetPlayerDataBySession(session);
+		if (pd!=null)
+		{
+			pd.time = timerSvc.GetNowTime();
+			if (!cacheSvc.UpdatePlayerData(pd))
+			{
+				PECommon.Log($"离线时间更新失败，PlayerID:{pd.id}",LogType.Error);
+			}
+		}
 	    cacheSvc.AcctOffline(session);
+
     }
 }

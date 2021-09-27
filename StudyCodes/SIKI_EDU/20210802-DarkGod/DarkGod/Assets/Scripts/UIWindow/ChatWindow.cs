@@ -147,7 +147,10 @@ public class ChatWindow : WindowBase
                 input.text = string.Empty;
                 netSvc.SendMsg(msg);
                 canSend = false;
-                StartCoroutine(MsgTimer());
+                timerSvc.AddTimeTask(i =>
+                {
+                    canSend = true;
+                }, 5, PETimeUnit.Second, 1);
             }
         }
         else
@@ -159,10 +162,10 @@ public class ChatWindow : WindowBase
     
     #endregion
 
-    private IEnumerator MsgTimer()
-    {
-        yield return new WaitForSeconds(5.0f);
-        canSend = true;
-    }
+    // private IEnumerator MsgTimer()
+    // {
+    //     yield return new WaitForSeconds(5.0f);
+    //     canSend = true;
+    // }
     
 }

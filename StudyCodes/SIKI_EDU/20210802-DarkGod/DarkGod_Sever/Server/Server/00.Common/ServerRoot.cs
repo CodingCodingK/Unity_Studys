@@ -22,6 +22,7 @@ public class ServerRoot : Singleton<ServerRoot>
 		// 服务层
 		NetSvc.Instance().Init();
 		CfgSvc.Instance().Init();
+		TimerSvc.Instance().Init();
 
 		// 业务系统层
 		LoginSys.Instance().Init();
@@ -29,12 +30,14 @@ public class ServerRoot : Singleton<ServerRoot>
         StrongSys.Instance().Init();
         ChatSys.Instance().Init();
         BuySys.Instance().Init();
+        PowerSys.Instance().Init();
 
 	}
 
     public void Update()
     {
         NetSvc.Instance().Update();
+		TimerSvc.Instance().Update();
     }
 
 	/// <summary>
