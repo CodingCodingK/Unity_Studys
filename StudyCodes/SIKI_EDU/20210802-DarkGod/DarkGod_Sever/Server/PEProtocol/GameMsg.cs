@@ -31,6 +31,8 @@ namespace PEProtocol
 		public ReqBuy reqBuy;
 		public RspBuy rspBuy;
 		public PushPower pushPower;
+		public ReqTask reqTask;
+		public RspTask rspTask;
 
 		#endregion
 
@@ -174,6 +176,28 @@ namespace PEProtocol
 	{
 		public int power { get; set; }
 	}
+
+	/// <summary>
+	/// 任务请求
+	/// </summary>
+	[Serializable]
+	public class ReqTask
+	{
+		public int rid;
+	}
+
+	/// <summary>
+	/// 任务回应
+	/// </summary>
+	[Serializable]
+	public class RspTask
+	{
+		public int coin;
+		public int exp;
+		public int lv;
+		public string[] taskArr;
+
+	}
 	#endregion
 
 
@@ -223,9 +247,15 @@ namespace PEProtocol
 		public int[] strongArr;
 
 		/// <summary>
-		/// Int64类型,
+		/// Int64类型,记录上次离线时间
 		/// </summary>
 		public long time { get; set; }
+
+		/// <summary>
+		/// 不写成属性，手动映射，任务程度 1|0|0#1|1|0#1|0|0
+		/// </summary>
+		public string[] taskArr;
+
 
 	}
 
@@ -292,7 +322,8 @@ namespace PEProtocol
 		ReqBuy = 206,
 		RspBuy = 207,
 		PushPower = 208,
-
+		ReqTask = 209,
+		RspTask = 210
 
 	}
 

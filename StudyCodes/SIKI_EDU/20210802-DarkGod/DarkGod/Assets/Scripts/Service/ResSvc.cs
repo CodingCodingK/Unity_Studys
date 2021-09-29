@@ -44,7 +44,8 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
         InitMapCfg(PathDefine.MapConfig);
         InitAutoGuideCfg(PathDefine.AutoGuideConfig);
         InitStrongCfg(PathDefine.StrongConfig);
-        
+        InitTaskCfg(PathDefine.TaskConfig);
+
     }
     
     private Action sceneBPMethod = null;
@@ -513,6 +514,70 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
     }
     
     
+    #endregion
+    
+    #region 任务配置
+
+    private Dictionary<int,TaskCfg> taskDataDic = new Dictionary<int,TaskCfg>();
+
+    public void InitTaskCfg(string path)
+    {
+        TextAsset xml = Resources.Load<TextAsset>(path);
+        if (!xml)
+        {
+            PECommon.Log("xml file:" + path + "not exist",LogType.Error);
+        }
+        else
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.LoadXml(xml.text);
+
+            XmlNodeList nodList = doc.SelectSingleNode("root").ChildNodes;
+            for (int i = 0; i < nodList.Count; i++)
+            {
+                XmlElement ele = nodList[i] as XmlElement;
+                var eleID = ele.GetAttributeNode("ID");
+                if (eleID == null)
+                {
+                    continue;
+                }
+
+                int id = Convert.ToInt32(eleID.InnerText);
+                TaskCfg dto = new TaskCfg
+                {
+                    ID = id,
+                };
+
+                foreach (XmlElement e in nodList[i].ChildNodes)
+                {
+                    switch (e.Name)
+                    {
+                        case "taskName":
+                            dto.taskName = Convert.ToString(e.InnerText);
+                            break;
+                        case "coin":
+                            dto.coin = Convert.ToInt32(e.InnerText);
+                            break;
+                        case "count":
+                            dto.count = Convert.ToInt32(e.InnerText);
+                            break;
+                        case "exp":
+                            dto.exp = Convert.ToInt32(e.InnerText);
+                            break;
+                    }
+                }
+                
+                taskDataDic.Add(id,dto);
+            }
+        }
+    }
+    
+    public TaskCfg GetTaskData(int id)
+    {
+        taskDataDic.TryGetValue(id, out TaskCfg cfg);
+        return cfg;
+    }
+
     #endregion
     
     #endregion

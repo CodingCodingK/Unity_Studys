@@ -19,6 +19,7 @@ public class CfgSvc : Singleton<CfgSvc>
 	{
 		InitAutoGuideCfg();
 		InitStrongCfg();
+		InitTaskCfg();
 		PECommon.Log("CfgSvc Init Done.");
 	}
 
@@ -167,7 +168,65 @@ public class CfgSvc : Singleton<CfgSvc>
 
 	#endregion
 
+	#region TaskCfg
 
+	private Dictionary<int, TaskCfg> taskCfgDataDic = new Dictionary<int, TaskCfg>();
+
+	private void InitTaskCfg()
+	{
+		XmlDocument doc = new XmlDocument();
+
+		DirectoryInfo dir = new DirectoryInfo(System.Environment.CurrentDirectory);
+		dir = dir.Parent.Parent.Parent.Parent.Parent;
+		var path = Path.Combine(dir.FullName, "DarkGod", "Assets", "Resources", "ResCfgs", "taskreward.xml");
+		doc.Load(path);
+
+		XmlNodeList nodList = doc.SelectSingleNode("root").ChildNodes;
+		for (int i = 0; i < nodList.Count; i++)
+		{
+			XmlElement ele = nodList[i] as XmlElement;
+			var eleID = ele.GetAttributeNode("ID");
+			if (eleID == null)
+			{
+				continue;
+			}
+
+			int id = Convert.ToInt32(eleID.InnerText);
+			TaskCfg dto = new TaskCfg
+			{
+				ID = id,
+			};
+
+			foreach (XmlElement e in nodList[i].ChildNodes)
+			{
+				switch (e.Name)
+				{
+					case "taskName":
+						dto.taskName = Convert.ToString(e.InnerText);
+						break;
+					case "count":
+						dto.count = Convert.ToInt32(e.InnerText);
+						break;
+					case "exp":
+						dto.exp = Convert.ToInt32(e.InnerText);
+						break;
+					case "coin":
+						dto.coin = Convert.ToInt32(e.InnerText);
+						break;
+
+				}
+			}
+
+			taskCfgDataDic.Add(id, dto);
+		}
+
+	}
+
+	public TaskCfg GetTaskData(int id)
+	{
+		return taskCfgDataDic[id];
+	}
+	#endregion
 }
 
 
@@ -192,4 +251,19 @@ public class StrongCfg : BaseData<StrongCfg>
 	public int minlv;
 	public int coin;
 	public int crystal;
+}
+
+public class TaskCfg : BaseData<TaskCfg>
+{
+	public string taskName;
+	public int count;
+	public int exp;
+	public int coin;
+}
+
+public class TaskData : BaseData<TaskData>
+{
+	// 进度
+	public int prgs;
+	public bool isTaken;
 }

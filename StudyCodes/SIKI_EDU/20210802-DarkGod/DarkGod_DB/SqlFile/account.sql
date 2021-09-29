@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50617
 File Encoding         : 65001
 
-Date: 2021-09-27 12:04:22
+Date: 2021-09-29 19:19:09
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -40,6 +40,7 @@ CREATE TABLE `account` (
   `critical` int(11) NOT NULL COMMENT '暴击概率',
   `guideid` int(11) NOT NULL COMMENT '当前自动引导任务ID',
   `strongArr` varchar(255) NOT NULL,
+  `taskArr` varchar(255) NOT NULL,
   `time` bigint(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;

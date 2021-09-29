@@ -119,6 +119,15 @@ public class WindowBase : MonoBehaviour
         img.sprite = sp;
     }
     
+    protected Transform GetTrans(GameObject go,string name)
+    {
+        return go.transform.Find(name).transform;
+    }
+    
+    protected Transform GetTrans(Transform trans,string name)
+    {
+        return trans.Find(name).transform;
+    }
     #endregion
 
     #region Click Event

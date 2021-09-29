@@ -75,6 +75,10 @@ public class DBMgr : Singleton<DBMgr>
 				guideid = 1001,
 				strongArr = new int[6]{1,1,1,1,1,1},
 				time = TimerSvc.Instance().GetNowTime(),
+				taskArr = new string[6]
+				{
+					"1|0|0","2|0|0","3|0|0","4|0|0","5|0|0","6|0|0"
+				},
             };
 			playerData.id = InsertNewAcctData(acct, pass, playerData);
 		}
@@ -86,7 +90,7 @@ public class DBMgr : Singleton<DBMgr>
 	{
 		// TODO add column
 		MySqlCommand cmd = new MySqlCommand(
-			"insert into account set acct = @acct,pass = @pass,name = @name,level = @level,exp = @exp,power = @power,coin = @coin,diamond = @diamond,crystal = @crystal,hp=@hp,ad=@ad,ap=@ap,addef=@addef,apdef=@apdef,dodge=@dodge,pierce=@pierce,critical=@critical,guideid=@guideid,strongArr=@strongArr,time=@time", conn);
+			"insert into account set acct = @acct,pass = @pass,name = @name,level = @level,exp = @exp,power = @power,coin = @coin,diamond = @diamond,crystal = @crystal,hp=@hp,ad=@ad,ap=@ap,addef=@addef,apdef=@apdef,dodge=@dodge,pierce=@pierce,critical=@critical,guideid=@guideid,strongArr=@strongArr,taskArr=@taskArr,time=@time", conn);
 		cmd.Parameters.AddWithValue("acct", acct);
 		cmd.Parameters.AddWithValue("pass", pass);
 		cmd.Parameters.AddWithValue("name", pd.name);
@@ -108,6 +112,7 @@ public class DBMgr : Singleton<DBMgr>
         cmd.Parameters.AddWithValue("time", pd.time);
 
         cmd.Parameters.AddWithValue("strongArr", pd.strongArr.ToStringArr());
+        cmd.Parameters.AddWithValue("taskArr", pd.taskArr.ToStringDB());
 
         cmd.ExecuteNonQuery();
 		return (int)cmd.LastInsertedId;
@@ -126,7 +131,7 @@ public class DBMgr : Singleton<DBMgr>
     public void UpdatePlayerData(PlayerData pd)
     {
 		MySqlCommand cmd = new MySqlCommand(
-			"update account set name = @name,level = @level,exp = @exp,power = @power,coin = @coin,diamond = @diamond,crystal = @crystal,hp=@hp,ad=@ad,ap=@ap,addef=@addef,apdef=@apdef,dodge=@dodge,pierce=@pierce,critical=@critical,guideid=@guideid,strongArr=@strongArr,time=@time where id = @id", conn);
+			"update account set name = @name,level = @level,exp = @exp,power = @power,coin = @coin,diamond = @diamond,crystal = @crystal,hp=@hp,ad=@ad,ap=@ap,addef=@addef,apdef=@apdef,dodge=@dodge,pierce=@pierce,critical=@critical,guideid=@guideid,strongArr=@strongArr,taskArr=@taskArr,time=@time where id = @id", conn);
         cmd.SetPlayerDataParas(pd);
         cmd.ExecuteNonQuery();
     }

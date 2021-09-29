@@ -85,6 +85,9 @@ public class NetSvc : Singleton<NetSvc>
             case CMD.ReqBuy:
 	            BuySys.Instance().ReqBuy(msgPack);
 	            break;
+            case CMD.ReqTask:
+	            TaskSys.Instance().ReqTask(msgPack);
+	            break;
 
 		}
     }

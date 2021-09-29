@@ -360,5 +360,15 @@ public class MainCitySys : SystemBase
     }
 
     #endregion
+
+    #region Task
+
+    public void OpenTaskWindow()
+    {
+        gameRootResources.taskWindow.SetWindowState();
+    }
+
+    #endregion
+  
    
 }

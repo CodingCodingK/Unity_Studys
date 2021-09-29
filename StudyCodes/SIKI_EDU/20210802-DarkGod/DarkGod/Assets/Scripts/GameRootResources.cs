@@ -34,6 +34,8 @@ public class GameRootResources : GameRootMonoSingleton<GameRootResources>
     public ChatWindow chatWindow;
     
     public BuyWindow buyWindow;
+    
+    public TaskWindow taskWindow;
         
     public void ShowTips(string tip)
     {

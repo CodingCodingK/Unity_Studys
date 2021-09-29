@@ -105,6 +105,7 @@ namespace DBHelper
 				// PlayerData特殊
 
 				dto.strongArr = reader.GetString("strongArr").ToIntArr();
+				dto.taskArr = reader.GetString("taskArr").ToStringArr();
 
 
 				backupList.Add(dto);
@@ -148,6 +149,7 @@ namespace DBHelper
 
 			// PlayerData特殊
 			cmd.Parameters.AddWithValue("strongArr", dto.strongArr.ToStringArr());
+			cmd.Parameters.AddWithValue("taskArr", dto.taskArr.ToStringDB());
 		}
 
 
@@ -184,5 +186,32 @@ namespace DBHelper
 			return strongArr.ToString();
 		}
 
+
+		/// <summary>
+		/// 把string的数据库用结构转换为string[]，分隔符默认#
+		/// </summary>
+		public static string[] ToStringArr(this string data, char para = '#')
+		{
+			return data.Split(para);
+		}
+
+		/// <summary>
+		/// 把string[]转换为string的数据库用结构，分隔符默认#
+		/// </summary>
+		public static string ToStringDB(this string[] stringList, char para = '#')
+		{
+			StringBuilder strongArr = new StringBuilder();
+			for (int i = 0; i < stringList.Length; i++)
+			{
+				strongArr.Append(stringList[i]);
+
+				if (i < stringList.Length - 1)
+				{
+					strongArr.Append(para);
+				}
+			}
+
+			return strongArr.ToString();
+		}
 	}
 }

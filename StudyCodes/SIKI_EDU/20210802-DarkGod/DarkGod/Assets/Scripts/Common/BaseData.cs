@@ -55,3 +55,18 @@ public class StrongCfg : BaseData<StrongCfg>
     public int crystal;
 
 }
+
+public class TaskCfg : BaseData<TaskCfg>
+{
+    public string taskName;
+    public int count;
+    public int exp;
+    public int coin;
+}
+
+public class TaskData : BaseData<TaskData>
+{
+    // 进度
+    public int prgs;
+    public bool isTaken;
+}

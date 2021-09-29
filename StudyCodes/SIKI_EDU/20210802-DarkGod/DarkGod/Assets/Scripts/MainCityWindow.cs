@@ -167,26 +167,6 @@ public class MainCityWindow : WindowBase
     #region Click Events
     
     /// <summary>
-    /// 右下角扩展栏 按钮
-    /// </summary>
-    public void ClickMenuButton()
-    {
-        audioSvc.PlayUIAudio(Constants.UIExtenBtn);
-        menuState = !menuState;
-        AnimationClip clip;
-        if (menuState)
-        {
-            clip = menuAni.GetClip("OpenMCMenu");
-        }
-        else
-        {
-            clip = menuAni.GetClip("CloseMCMenu");
-        }
-
-        menuAni.Play(clip.name);
-    }
-
-    /// <summary>
     /// 头像详细信息显示 按钮
     /// </summary>
     public void ClickHeadBtn()
@@ -272,9 +252,6 @@ public class MainCityWindow : WindowBase
         audioSvc.PlayUIAudio(Constants.UIOpenPage);
     }
     
-
-    #endregion
-
     #region 购买
 
     public void ClickBuyPowerBtn()
@@ -290,5 +267,42 @@ public class MainCityWindow : WindowBase
     }
 
     #endregion
+    
+    #region 扩展菜单按钮
+
+    /// <summary>
+    /// 右下角扩展栏 按钮
+    /// </summary>
+    public void ClickMenuButton()
+    {
+        audioSvc.PlayUIAudio(Constants.UIExtenBtn);
+        menuState = !menuState;
+        AnimationClip clip;
+        if (menuState)
+        {
+            clip = menuAni.GetClip("OpenMCMenu");
+        }
+        else
+        {
+            clip = menuAni.GetClip("CloseMCMenu");
+        }
+
+        menuAni.Play(clip.name);
+    }
+
+    /// <summary>
+    /// 任务 按钮
+    /// </summary>
+    public void ClickTaskBtn()
+    {
+        MainCitySys.Instance.OpenTaskWindow();
+        audioSvc.PlayUIAudio(Constants.UIOpenPage);
+    }
+    
+    #endregion
+   
+    
+    #endregion
+
     
 }
