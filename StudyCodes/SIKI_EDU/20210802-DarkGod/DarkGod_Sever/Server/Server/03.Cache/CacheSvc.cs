@@ -73,10 +73,26 @@ public class CacheSvc : Singleton<CacheSvc>
         return onlineSessionDic.TryGetValue(session, out PlayerData pd) ? pd : null;
     }
 
-    /// <summary>
-    /// 帐号上线，缓存数据
-    /// </summary>
-    public void AcctOnline(string acct, ServerSession session, PlayerData playerData)
+	/// <summary>
+	/// 根据 PlayerData.ID 获取已登陆的 Session 数据
+	/// </summary>
+	public ServerSession GetSessionByPlayerID(int id)
+    {
+	    foreach (var session in onlineSessionDic)
+	    {
+		    if (session.Value.id == id)
+		    {
+			    return session.Key;
+		    }
+	    }
+
+	    return null;
+    }
+
+	/// <summary>
+	/// 帐号上线，缓存数据
+	/// </summary>
+	public void AcctOnline(string acct, ServerSession session, PlayerData playerData)
     {
         onlineAcctDic.Add(acct, session);
         onlineSessionDic.Add(session, playerData);

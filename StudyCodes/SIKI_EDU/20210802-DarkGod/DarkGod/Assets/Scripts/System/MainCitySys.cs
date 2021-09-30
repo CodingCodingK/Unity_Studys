@@ -368,6 +368,27 @@ public class MainCitySys : SystemBase
         gameRootResources.taskWindow.SetWindowState();
     }
 
+    public void RspTask(GameMsg msg)
+    {
+        GameRoot.Instance().SetPlayerDataByTask(msg.rspTask);
+        if (gameRootResources.mainCityWindow.gameObject.activeSelf)
+        {
+            gameRootResources.mainCityWindow.RefreshUI();
+        }
+        if (gameRootResources.taskWindow.gameObject.activeSelf)
+        {
+            gameRootResources.taskWindow.RefreshUI();
+        }
+    }
+    
+    public void PushTaskPrgs(GameMsg msg)
+    {
+        GameRoot.Instance().SetPlayerDataByTaskPrgs(msg.pushTaskPrgs);
+        if (gameRootResources.taskWindow.gameObject.activeSelf)
+        {
+            gameRootResources.taskWindow.RefreshUI();
+        }
+    }
     #endregion
   
    

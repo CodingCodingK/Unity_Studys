@@ -57,6 +57,9 @@ public class StrongSys : Singleton<StrongSys>
 		}
 		else
 		{
+			// 任务进度更新:强化升级
+			TaskSys.Instance().CalcTaskPrgs(pd, 3);
+
 			// 验证通过，开始更新DB数据
 			pd.strongArr[data.pos] += 1;
 			pd.coin -= nextData.coin;

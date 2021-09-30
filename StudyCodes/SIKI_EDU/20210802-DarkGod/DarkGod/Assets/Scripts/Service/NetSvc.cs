@@ -114,6 +114,10 @@ public class NetSvc : GameRootMonoSingleton<NetSvc>
                     PECommon.Log("服务端数据异常",LogType.Error);
                     GameRootResources.Instance().ShowTips("服务端数据异常！");
                     break;
+                case ErrorCode.ClientDataError :
+                    PECommon.Log("客户端数据异常",LogType.Error);
+                    GameRootResources.Instance().ShowTips("客户端数据异常！");
+                    break;
                 case ErrorCode.UpdateDBError :
                     PECommon.Log("数据库更新异常",LogType.Error);
                     GameRootResources.Instance().ShowTips("网络不稳定！");
@@ -161,6 +165,13 @@ public class NetSvc : GameRootMonoSingleton<NetSvc>
                 break;
             case CMD.PushPower:
                 MainCitySys.Instance.PushPower(msg);
+                // MainCitySys.Instance.PushTaskPrgs(msg); TODO 如果想并包，两次请求操作合成一次，可以这样
+                break;
+            case CMD.RspTask:
+                MainCitySys.Instance.RspTask(msg);
+                break;
+            case CMD.PushTaskPrgs:
+                MainCitySys.Instance.PushTaskPrgs(msg);
                 break;
         }
     }

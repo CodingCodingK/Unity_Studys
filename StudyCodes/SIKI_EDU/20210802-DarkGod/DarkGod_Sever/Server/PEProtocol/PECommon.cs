@@ -53,10 +53,35 @@ namespace PEProtocol
 	        return 100 * (lv^2);
         }
 
-		
+        public static PlayerData CalcExp(PlayerData pd, int addExp)
+        {
+	        int curtLv = pd.level;
+	        int curtExp = pd.exp;
+	        int addRestExp = addExp;
+	        while (true)
+	        {
+		        int upNeedExp = PECommon.GetExpMaxValByLv(curtLv) - curtExp;
+		        if (addRestExp >= upNeedExp)
+		        {
+			        curtLv += 1;
+			        curtExp = 0;
+			        addRestExp = upNeedExp;
+		        }
+		        else
+		        {
+			        pd.level = curtLv;
+			        pd.exp = curtExp + addRestExp;
+			        return pd;
+
+		        }
+
+	        }
+
+        }
+
 		/// 体力增加单位时间（分钟）
 		public const int PowerAddSpace = 5;
 		/// 体力增加单位数量
 		public const int PowerAddCount = 2;
-	}
+    }
 }

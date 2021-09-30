@@ -14,11 +14,13 @@ public class GuideSys : Singleton<GuideSys>
 
 	private CacheSvc cacheSvc;
 	private CfgSvc cfgSvc;
+	private TaskSys taskSys;
 
 	public void Init()
 	{
 		cacheSvc = CacheSvc.Instance();
 		cfgSvc = CfgSvc.Instance();
+		taskSys = TaskSys.Instance();
 		PECommon.Log("GuideSys Init Done.");
 	}
 
@@ -40,12 +42,18 @@ public class GuideSys : Singleton<GuideSys>
 		// 数据验证
 		if (pd.guideid == data.guideid)
 		{
+			// 任务进度更新:智者点拨
+			if (pd.guideid == 1001)
+			{
+				taskSys.CalcTaskPrgs(pd,1);
+			}
+
 			// 更新引导ID
 			pd.guideid += 1;
 
 			// 更新玩家数据
 			pd.coin += gc.coin;
-			pd = CalcExp(pd,gc.exp);
+			pd = PECommon.CalcExp(pd,gc.exp);
 
 			if (!cacheSvc.UpdatePlayerData(pd))
 			{
@@ -70,29 +78,5 @@ public class GuideSys : Singleton<GuideSys>
 		pack.session.SendMsg(msg);
 	}
 
-	private PlayerData CalcExp(PlayerData pd, int addExp)
-	{
-		int curtLv = pd.level;
-		int curtExp = pd.exp;
-		int addRestExp = addExp;
-		while (true)
-		{
-			int upNeedExp = PECommon.GetExpMaxValByLv(curtLv) - curtExp;
-			if (addRestExp >= upNeedExp)
-			{
-				curtLv += 1;
-				curtExp = 0;
-				addRestExp = upNeedExp;
-			}
-			else
-			{
-				pd.level = curtLv;
-				pd.exp = curtExp + addRestExp;
-                return pd;
-
-            }
-
-		}
-
-	}
+	
 }

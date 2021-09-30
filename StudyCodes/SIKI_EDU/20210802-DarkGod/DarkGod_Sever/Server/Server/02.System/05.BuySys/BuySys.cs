@@ -47,9 +47,13 @@ public class BuySys : Singleton<BuySys>
 			switch (data.type)
 			{
 				case 0:
+					// 任务进度更新:购买体力
+					TaskSys.Instance().CalcTaskPrgs(pd, 4);
 					pd.power += 100;
 					break;
 				case 1:
+					// 任务进度更新:铸造金币
+					TaskSys.Instance().CalcTaskPrgs(pd, 5);
 					pd.coin += 1000;
 					break;
 			}

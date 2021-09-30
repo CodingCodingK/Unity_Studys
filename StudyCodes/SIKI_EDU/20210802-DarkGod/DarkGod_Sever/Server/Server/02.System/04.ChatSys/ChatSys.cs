@@ -37,6 +37,9 @@ public class ChatSys : Singleton<ChatSys>
 			}
 		};
 
+		// 任务进度更新:能言善辩
+		TaskSys.Instance().CalcTaskPrgs(pd, 6);
+
 		// 广播所有在线客户端
 		var onlineClients = cacheSvc.GetAllOnlineClients();
 		// 网络优化

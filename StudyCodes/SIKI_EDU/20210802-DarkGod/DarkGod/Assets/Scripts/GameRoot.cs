@@ -121,6 +121,18 @@ public class GameRoot : GameRootMonoSingleton<GameRoot>
         PlayerData.power = push.power;
     }
 
+    public void SetPlayerDataByTask(RspTask rsp)
+    {
+        PlayerData.coin = rsp.coin;
+        PlayerData.level = rsp.lv;
+        PlayerData.exp = rsp.exp;
+        PlayerData.taskArr = rsp.taskArr;
+    }
+    
+    public void SetPlayerDataByTaskPrgs(PushTaskPrgs rsp)
+    {
+        PlayerData.taskArr = rsp.taskArr;
+    }
     #endregion
     
     

@@ -33,6 +33,7 @@ namespace PEProtocol
 		public PushPower pushPower;
 		public ReqTask reqTask;
 		public RspTask rspTask;
+		public PushTaskPrgs pushTaskPrgs;
 
 		#endregion
 
@@ -198,6 +199,16 @@ namespace PEProtocol
 		public string[] taskArr;
 
 	}
+
+	/// <summary>
+	/// 推送任务进度
+	/// </summary>
+	[Serializable]
+	public class PushTaskPrgs
+	{
+		public string[] taskArr;
+	}
+
 	#endregion
 
 
@@ -270,6 +281,7 @@ namespace PEProtocol
         /// 服务端数据异常
         /// </summary>
         ServerDataError,
+        ClientDataError,
 
 		/// <summary>
 		/// 更新数据库出错
@@ -298,7 +310,9 @@ namespace PEProtocol
 		LackCrystal,
 		LackDiamond,
 
-    }
+		TaskError,
+
+	}
 
     /// <summary>
     /// Command协议常数
@@ -323,9 +337,10 @@ namespace PEProtocol
 		RspBuy = 207,
 		PushPower = 208,
 		ReqTask = 209,
-		RspTask = 210
+		RspTask = 210,
+		PushTaskPrgs = 211,
 
-	}
+    }
 
     /// <summary>
     /// 端口号常数

@@ -48,10 +48,10 @@ public class WindowBase : MonoBehaviour
     
     protected virtual void ClearWindow()
     {
-        resSvc = null;
-        audioSvc = null;
-        netSvc = null;
-        timerSvc = null;
+        // resSvc = null;
+        // audioSvc = null;
+        // netSvc = null;
+        // timerSvc = null;
     }
 
     #region Tool Functions

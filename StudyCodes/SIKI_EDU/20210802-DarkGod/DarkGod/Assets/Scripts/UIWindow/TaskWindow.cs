@@ -37,7 +37,7 @@ public class TaskWindow : WindowBase
         RefreshUI();
     }
 
-    private void RefreshUI()
+    public void RefreshUI()
     {
         pd = GameRoot.Instance().PlayerData;
         taskList.Clear();
@@ -80,7 +80,7 @@ public class TaskWindow : WindowBase
             go.transform.SetParent(scrollerTrans);
             go.name = "taskItem_" + i;
             TaskData td = taskList[i];
-            TaskCfg tcfg = resSvc.GetTaskData(i);
+            TaskCfg tcfg = resSvc.GetTaskData(td.ID);
             SetText(GetTrans(go, "txtName"),tcfg.taskName);
             SetText(GetTrans(go, "txtExp"),tcfg.exp);
             SetText(GetTrans(go, "txtCoin"),tcfg.coin);
@@ -92,7 +92,7 @@ public class TaskWindow : WindowBase
             Button btnTake = GetTrans(go, "btnTake").GetComponent<Button>();
             btnTake.onClick.AddListener(() =>
             {
-                ClickTakeButton(i);
+                ClickTakeButton(go.name);
             });
 
             var transComp = GetTrans(go, "iconCompleted");
@@ -124,12 +124,17 @@ public class TaskWindow : WindowBase
         
     }
 
-    private void ClickTakeButton(int index)
+    private void ClickTakeButton(string name)
     {
+        audioSvc.PlayUIAudio(Constants.UIClickBtn);
+        
+        var index = int.Parse(name.Substring(9));
+        Debug.Log("index:"+name + "sd:"+index);
         var task = taskList[index];
         var taskCfg = resSvc.GetTaskData(task.ID);
         GameMsg msg = new GameMsg()
         {
+            cmd = (int)CMD.ReqTask,
             reqTask = new ReqTask()
             {
                 rid = task.ID,
