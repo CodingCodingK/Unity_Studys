@@ -300,8 +300,17 @@ public class MainCityWindow : WindowBase
     }
     
     #endregion
-   
     
+    /// <summary>
+    /// 副本 按钮
+    /// </summary>
+    public void ClickDGBtn()
+    {
+        MainCitySys.Instance.EnterDG();
+        audioSvc.PlayUIAudio(Constants.UIOpenPage);
+    }
+
+
     #endregion
 
     

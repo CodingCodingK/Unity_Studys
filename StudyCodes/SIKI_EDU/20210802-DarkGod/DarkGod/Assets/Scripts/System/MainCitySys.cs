@@ -390,6 +390,14 @@ public class MainCitySys : SystemBase
         }
     }
     #endregion
-  
-   
+
+    #region 副本
+
+    public void EnterDG()
+    {
+        StopNavTask();
+        DungeonSys.Instance.EnterDG();
+    }
+
+    #endregion
 }

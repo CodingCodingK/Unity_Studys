@@ -267,8 +267,12 @@ namespace PEProtocol
 		/// </summary>
 		public string[] taskArr;
 
+        /// <summary>
+        /// 副本进度,默认10001
+        /// </summary>
+        public int dg { get; set; }
 
-	}
+    }
 
     /// <summary>
     /// Command协议常数

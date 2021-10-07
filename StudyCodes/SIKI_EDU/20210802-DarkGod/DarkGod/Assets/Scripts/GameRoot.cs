@@ -61,6 +61,8 @@ public class GameRoot : GameRootMonoSingleton<GameRoot>
         login.InitSys();
         MainCitySys mainCity = GetComponent<MainCitySys>();
         mainCity.InitSys();
+        DungeonSys dg = GetComponent<DungeonSys>();
+        dg.InitSys();
         
         //进入登陆场景并加载相应UI
         login.EnterLogin();
