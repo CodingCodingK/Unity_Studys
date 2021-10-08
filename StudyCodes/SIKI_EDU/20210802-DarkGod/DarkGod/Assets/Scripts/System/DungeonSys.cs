@@ -35,4 +35,14 @@ public class DungeonSys : SystemBase
     {
         gameRootResources.dungeonWindow.SetWindowState();
     }
+
+    public void RspDungeon(GameMsg msg)
+    {
+        GameRoot.Instance().SetPlayerDataByDungeon(msg.rspDungeon);
+        gameRootResources.dungeonWindow.SetWindowState(false);
+        gameRootResources.mainCityWindow.SetWindowState(false);
+        // TODO 加载战斗场景
+        BattleSys.Instance.StartBattle(msg.rspDungeon.dgId);
+        
+    }
 }

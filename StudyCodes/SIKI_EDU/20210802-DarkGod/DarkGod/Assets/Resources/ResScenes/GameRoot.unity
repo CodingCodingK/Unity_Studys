@@ -750,7 +750,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 77442919}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 276669754}
+        m_TargetAssemblyTypeName: DungeonWindow, Assembly-CSharp
+        m_MethodName: ClickTaskBtn
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10005
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &77442919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1215,7 +1227,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 189149250}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 276669754}
+        m_TargetAssemblyTypeName: DungeonWindow, Assembly-CSharp
+        m_MethodName: ClickTaskBtn
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10004
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &189149250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1672,7 +1696,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 260569289}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 276669754}
+        m_TargetAssemblyTypeName: DungeonWindow, Assembly-CSharp
+        m_MethodName: ClickTaskBtn
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10002
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &260569289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3314,6 +3350,7 @@ GameObject:
   - component: {fileID: 529463054}
   - component: {fileID: 529463055}
   - component: {fileID: 529463056}
+  - component: {fileID: 529463057}
   m_Layer: 0
   m_Name: GameRoot
   m_TagString: Untagged
@@ -3466,6 +3503,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 93124d894aca481093c1275414920d6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &529463057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529463045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abe7a8283b4a4c2ca2848d8016d4cd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &546053529
@@ -6074,7 +6123,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1083080568}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 276669754}
+        m_TargetAssemblyTypeName: DungeonWindow, Assembly-CSharp
+        m_MethodName: ClickTaskBtn
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10006
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1083080568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8791,7 +8852,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1549381799}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 276669754}
+        m_TargetAssemblyTypeName: DungeonWindow, Assembly-CSharp
+        m_MethodName: ClickTaskBtn
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10003
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1549381799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9696,7 +9769,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1899745043}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 276669754}
+        m_TargetAssemblyTypeName: DungeonWindow, Assembly-CSharp
+        m_MethodName: ClickTaskBtn
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10001
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1899745043
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -88,6 +88,9 @@ public class NetSvc : Singleton<NetSvc>
             case CMD.ReqTask:
 	            TaskSys.Instance().ReqTask(msgPack);
 	            break;
+            case CMD.ReqDungeon:
+	            DungeonSys.Instance().ReqDungeon(msgPack);
+	            break;
 
 		}
     }

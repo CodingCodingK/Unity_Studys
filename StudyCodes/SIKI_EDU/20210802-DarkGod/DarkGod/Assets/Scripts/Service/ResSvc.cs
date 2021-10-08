@@ -304,6 +304,9 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
                         case "sceneName":
                             dto.sceneName = e.InnerText;
                             break;
+                        case "power":
+                            dto.power = Int32.Parse(e.InnerText);
+                            break;
                         case "mainCamPos":
                             dto.mainCamPos = MapperHelper.ConvertToVector3(e.InnerText);
                             break;

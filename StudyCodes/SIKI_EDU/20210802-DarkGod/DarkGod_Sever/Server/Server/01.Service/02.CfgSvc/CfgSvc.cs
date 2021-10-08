@@ -17,11 +17,70 @@ public class CfgSvc : Singleton<CfgSvc>
 
 	public void Init()
 	{
+		InitMapCfg();
 		InitAutoGuideCfg();
 		InitStrongCfg();
 		InitTaskCfg();
 		PECommon.Log("CfgSvc Init Done.");
 	}
+
+	#region MapCfg
+
+	private Dictionary<int, MapCfg> mapCfgDataDic = new Dictionary<int, MapCfg>();
+
+	private void InitMapCfg()
+	{
+		XmlDocument doc = new XmlDocument();
+
+		DirectoryInfo dir = new DirectoryInfo(System.Environment.CurrentDirectory);
+		dir = dir.Parent.Parent.Parent.Parent.Parent;
+		var path = Path.Combine(dir.FullName, "DarkGod", "Assets", "Resources", "ResCfgs", "map.xml");
+		doc.Load(path);
+
+		XmlNodeList nodList = doc.SelectSingleNode("root").ChildNodes;
+		for (int i = 0; i < nodList.Count; i++)
+		{
+			XmlElement ele = nodList[i] as XmlElement;
+			var eleID = ele.GetAttributeNode("ID");
+			if (eleID == null)
+			{
+				continue;
+			}
+
+			int id = Convert.ToInt32(eleID.InnerText);
+			MapCfg dto = new MapCfg
+			{
+				ID = id,
+			};
+
+			foreach (XmlElement e in nodList[i].ChildNodes)
+			{
+				switch (e.Name)
+				{
+					case "power":
+						dto.power = Convert.ToInt32(e.InnerText);
+						break;
+					case "sceneName":
+						dto.sceneName = e.InnerText;
+						break;
+					case "mapName":
+						dto.mapName = e.InnerText;
+						break;
+
+				}
+			}
+
+			mapCfgDataDic.Add(id, dto);
+		}
+
+	}
+
+	public MapCfg GetMapData(int id)
+	{
+		return mapCfgDataDic[id];
+	}
+
+	#endregion
 
 	#region GuideCfg
 
@@ -233,6 +292,18 @@ public class CfgSvc : Singleton<CfgSvc>
 public class BaseData<T>
 {
 	public int ID;
+}
+
+/// 地图配置
+public class MapCfg : BaseData<MapCfg>
+{
+	public string mapName;
+	public string sceneName;
+	public int power;
+	//public Vector3 mainCamPos;
+	//public Vector3 mainCamRote;
+	//public Vector3 playerBornPos;
+	//public Vector3 playerBornRote;
 }
 
 public class AutoGuideCfg : BaseData<AutoGuideCfg>

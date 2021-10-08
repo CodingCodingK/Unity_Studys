@@ -32,6 +32,7 @@ public class ServerRoot : Singleton<ServerRoot>
         BuySys.Instance().Init();
         PowerSys.Instance().Init();
         TaskSys.Instance().Init();
+        DungeonSys.Instance().Init();
 
 	}
 

@@ -37,6 +37,12 @@ namespace PEProtocol
 
 		#endregion
 
+		#region 副本战斗相关
+
+		public ReqDungeon reqDungeon;
+		public RspDungeon rspDungeon;
+
+		#endregion
     }
 
 	#region 登陆相关
@@ -211,6 +217,27 @@ namespace PEProtocol
 
 	#endregion
 
+	#region 副本战斗相关
+
+	/// <summary>
+	/// 副本请求
+	/// </summary>
+	[Serializable]
+	public class ReqDungeon
+	{
+		public int dgId;
+	}
+
+	/// <summary>
+	/// 副本回应
+	/// </summary>
+	[Serializable]
+	public class RspDungeon
+	{
+		public int dgId;
+		public int power;
+	}
+	#endregion
 
 	/// <summary>
 	/// 用户信息
@@ -313,10 +340,11 @@ namespace PEProtocol
 		LackCoin,
 		LackCrystal,
 		LackDiamond,
+		LackPower,
 
 		TaskError,
 
-	}
+    }
 
     /// <summary>
     /// Command协议常数
@@ -344,7 +372,10 @@ namespace PEProtocol
 		RspTask = 210,
 		PushTaskPrgs = 211,
 
-    }
+		ReqDungeon = 301,
+		RspDungeon = 302,
+
+	}
 
     /// <summary>
     /// 端口号常数

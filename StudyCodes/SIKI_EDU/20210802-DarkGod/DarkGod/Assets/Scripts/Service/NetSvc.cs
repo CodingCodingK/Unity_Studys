@@ -138,6 +138,10 @@ public class NetSvc : GameRootMonoSingleton<NetSvc>
                     PECommon.Log("作弊检测：钻石不足",LogType.Error);
                     GameRootResources.Instance().ShowTips("钻石不足");
                     break;
+                case ErrorCode.LackPower :
+                    PECommon.Log("作弊检测：体力不足",LogType.Error);
+                    GameRootResources.Instance().ShowTips("体力不足");
+                    break;
             }
             
             return;
@@ -172,6 +176,9 @@ public class NetSvc : GameRootMonoSingleton<NetSvc>
                 break;
             case CMD.PushTaskPrgs:
                 MainCitySys.Instance.PushTaskPrgs(msg);
+                break;
+            case CMD.RspDungeon:
+                DungeonSys.Instance.RspDungeon(msg);
                 break;
         }
     }

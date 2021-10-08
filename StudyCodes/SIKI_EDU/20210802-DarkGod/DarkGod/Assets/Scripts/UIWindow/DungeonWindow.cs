@@ -68,6 +68,30 @@ public class DungeonWindow : WindowBase
         SetWindowState(false);
     }
     
+    public void ClickTaskBtn(int dgId)
+    {
+        audioSvc.PlayUIAudio(Constants.UIClickBtn);
+        var costPower = resSvc.GetMapCfgData(dgId).power;
+
+        if (costPower > pd.power)
+        {
+            GameRootResources.Instance().ShowTips("体力不足！");
+        }
+        else
+        {
+            // TODO 副本
+            netSvc.SendMsg(new GameMsg()
+            {
+                cmd = (int)CMD.ReqDungeon,
+                reqDungeon = new ReqDungeon()
+                {
+                    dgId = dgId,
+                }
+            });
+            
+        }
+    }
+
     #endregion
     
     

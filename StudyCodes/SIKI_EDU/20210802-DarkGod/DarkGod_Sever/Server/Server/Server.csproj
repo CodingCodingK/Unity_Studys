@@ -64,6 +64,7 @@
     <Compile Include="02.System\05.BuySys\BuySys.cs" />
     <Compile Include="02.System\06.PowerSys\PowerSys.cs" />
     <Compile Include="02.System\07.TaskSys\TaskSys.cs" />
+    <Compile Include="02.System\08.DungeonSys\DungeonSys.cs" />
     <Compile Include="03.Cache\CacheSvc.cs" />
     <Compile Include="04.DB\DBMapperHelper.cs" />
     <Compile Include="04.DB\DBMgr.cs" />
@@ -79,8 +80,6 @@
       <Name>PEProtocol</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="02.System\08.DungeonSys\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

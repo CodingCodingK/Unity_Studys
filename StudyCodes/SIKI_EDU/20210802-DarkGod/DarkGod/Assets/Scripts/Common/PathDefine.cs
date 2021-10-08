@@ -22,6 +22,8 @@ public class PathDefine
     
     #region Player
     public const string AsnCityPlayerPrefab = "PrefabPlayer/AssassinCity";
+    public const string AsnBattlePlayerPrefab = "PrefabPlayer/AssassinBattle";
+    
     #endregion
     
     #region 自动导航

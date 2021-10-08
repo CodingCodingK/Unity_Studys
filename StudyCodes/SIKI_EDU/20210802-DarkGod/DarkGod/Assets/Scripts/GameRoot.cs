@@ -63,6 +63,8 @@ public class GameRoot : GameRootMonoSingleton<GameRoot>
         mainCity.InitSys();
         DungeonSys dg = GetComponent<DungeonSys>();
         dg.InitSys();
+        BattleSys battle = GetComponent<BattleSys>();
+        battle.InitSys();
         
         //进入登陆场景并加载相应UI
         login.EnterLogin();
@@ -134,6 +136,11 @@ public class GameRoot : GameRootMonoSingleton<GameRoot>
     public void SetPlayerDataByTaskPrgs(PushTaskPrgs rsp)
     {
         PlayerData.taskArr = rsp.taskArr;
+    }
+    
+    public void SetPlayerDataByDungeon(RspDungeon rsp)
+    {
+        PlayerData.power = rsp.power;
     }
     #endregion
     

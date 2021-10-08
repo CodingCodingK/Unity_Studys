@@ -70,6 +70,9 @@ public static class Constants
     // 主城bgm
     public const string BGMainCity = "bgMainCity";
     
+    // 主城bgm
+    public const string BGHuangYe = "bgHuangYe";
+    
     // 登录按钮音效
     public const string UILoginBtn = "uiLoginBtn";
     
