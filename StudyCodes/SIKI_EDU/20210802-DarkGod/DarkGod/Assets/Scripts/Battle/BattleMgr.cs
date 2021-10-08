@@ -56,6 +56,10 @@ public class BattleMgr: SystemBase
 
     private void LoadPlayer(MapCfg mapData)
     {
-        // GameObject player = resSvc.LoadPrefab();
+         GameObject player = resSvc.LoadPrefab(PathDefine.AsnBattlePlayerPrefab);
+
+         player.transform.position = mapData.playerBornPos;
+         player.transform.localEulerAngles = mapData.playerBornRote;
+         player.transform.localScale = Vector3.one;
     }
 }
