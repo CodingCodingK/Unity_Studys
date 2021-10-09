@@ -4074,6 +4074,7 @@ MonoBehaviour:
   buyWindow: {fileID: 151569639}
   taskWindow: {fileID: 2046676134}
   dungeonWindow: {fileID: 276669754}
+  playerCtrlWindow: {fileID: 2200758380078157116}
 --- !u!114 &529463051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4156,6 +4157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abe7a8283b4a4c2ca2848d8016d4cd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  battleMgr: {fileID: 0}
 --- !u!1 &546053529
 GameObject:
   m_ObjectHideFlags: 0
@@ -13591,6 +13593,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2200758381006258703}
+  - component: {fileID: 2200758380078157116}
   m_Layer: 0
   m_Name: PlayerCtrlWindow
   m_TagString: Untagged
@@ -13598,6 +13601,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &2200758380078157116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2200758380078157115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ff476fe9d97400fbdc0a751b5d26e30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imgTouch: {fileID: 2200758381457292971}
+  imgDirBg: {fileID: 2200758381272553275}
+  imgDirPoint: {fileID: 2200758380564746448}
+  txtLevel: {fileID: 239954221}
+  txtName: {fileID: 2200758381001170100}
+  txtExpPrg: {fileID: 2200758380231883249}
+  expPrgTrans: {fileID: 2200758381494140090}
 --- !u!224 &2200758380078449746
 RectTransform:
   m_ObjectHideFlags: 0

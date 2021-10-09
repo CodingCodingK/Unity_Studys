@@ -3,7 +3,7 @@
     作者：YAN
     邮箱：2470939431@qq.com
     日期：2021/9/15 22:34:38
-    功能：角色控制器
+    功能：表现实体角色控制器
 *****************************************************/
 
 using System;
@@ -13,14 +13,13 @@ using System.ComponentModel.Design.Serialization;
 using System.Net.Sockets;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : Controller
 {
     /// <summary>
     /// Main Camera的引用
     /// </summary>
     private Transform camTrans;
     private Vector3 camOffset;
-    public Animator ani;
     public CharacterController ctrl;
     
     private Vector2 dir = Vector2.zero;
@@ -117,7 +116,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void SetBlend(float blend)
+    public override void SetBlend(float blend)
     {
         targetBlend = blend;
     }

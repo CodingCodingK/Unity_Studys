@@ -1,0 +1,4 @@
+public class EntityPlayer : EntityBase
+{
+    
+}

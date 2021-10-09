@@ -120,7 +120,7 @@ public class MainCitySys : SystemBase
             playerCtrl.SetBlend(Constants.BlendIdle);
         }
         else {
-            playerCtrl.SetBlend(Constants.BlendWalk);
+            playerCtrl.SetBlend(Constants.BlendMove);
         }
         playerCtrl.Dir = dir;
     }
@@ -193,7 +193,7 @@ public class MainCitySys : SystemBase
                 nav.isStopped = false;
                 nav.speed = Constants.PlayerMoveSpeed;
                 nav.SetDestination(npcPosTrans[curtTaskData.npcID].position);
-                playerCtrl.SetBlend(Constants.BlendWalk);
+                playerCtrl.SetBlend(Constants.BlendMove);
             }
         }
         else

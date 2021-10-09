@@ -58,9 +58,10 @@
      <Compile Include="Assets\Scenes\aaa.cs" />
      <Compile Include="Assets\Scripts\UIWindow\CreateWindow.cs" />
      <Compile Include="Assets\Scripts\MainCityMap.cs" />
-     <Compile Include="Assets\Scripts\Battle\StateMgr.cs" />
+     <Compile Include="Assets\Scripts\Battle\Manager\StateMgr.cs" />
      <Compile Include="Assets\Scripts\UIWindow\LoadingWindow.cs" />
      <Compile Include="Assets\Scripts\Service\AudioSvc.cs" />
+     <Compile Include="Assets\Scripts\Battle\Entity\EntityPlayer.cs" />
      <Compile Include="Assets\MyLibrary\SingletonLibrary\Scripts\MonoSingleton.cs" />
      <Compile Include="Assets\Scripts\GameRootResources.cs" />
      <Compile Include="Assets\Scripts\UIWindow\ChatWindow.cs" />
@@ -71,27 +72,33 @@
      <Compile Include="Assets\Scripts\Common\Constants.cs" />
      <Compile Include="Assets\Scripts\Common\LoopDragonAni.cs" />
      <Compile Include="Assets\Scripts\System\BattleSys.cs" />
-     <Compile Include="Assets\Scripts\Battle\MapMgr.cs" />
+     <Compile Include="Assets\Scripts\Battle\Entity\EntityBase.cs" />
+     <Compile Include="Assets\Scripts\Battle\Manager\MapMgr.cs" />
+     <Compile Include="Assets\Scripts\Battle\FSM\StateIdle.cs" />
      <Compile Include="Assets\Scripts\Common\MapperHelper.cs" />
+     <Compile Include="Assets\Scripts\Battle\FSM\StateMove.cs" />
      <Compile Include="Assets\Scripts\UIWindow\BuyWindow.cs" />
      <Compile Include="Assets\Scripts\UIWindow\TaskWindow.cs" />
      <Compile Include="Assets\Scripts\System\DungeonSys.cs" />
+     <Compile Include="Assets\Scripts\Battle\Controller\Controller.cs" />
      <Compile Include="Assets\Scripts\MainCityWindow.cs" />
-     <Compile Include="Assets\Scripts\Battle\SkillMgr.cs" />
+     <Compile Include="Assets\Scripts\Battle\Manager\SkillMgr.cs" />
      <Compile Include="Assets\Scripts\System\MainCitySys.cs" />
      <Compile Include="Assets\Scripts\Service\TimerSvc.cs" />
      <Compile Include="Assets\Scripts\System\LoginSys.cs" />
+     <Compile Include="Assets\Scripts\Battle\FSM\IState.cs" />
      <Compile Include="Assets\Scripts\Common\BaseData.cs" />
      <Compile Include="Assets\Scripts\Common\SystemBase.cs" />
      <Compile Include="Assets\Scripts\Service\PETimer.cs" />
      <Compile Include="Assets\Scripts\Service\ResSvc.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Net\ClientSession.cs" />
+     <Compile Include="Assets\Scripts\UIWindow\PlayerCtrlWindow.cs" />
      <Compile Include="Assets\Scripts\UIWindow\GuideWindow.cs" />
      <Compile Include="Assets\Scripts\Service\NetSvc.cs" />
      <Compile Include="Assets\Scripts\UIWindow\LoginWindow.cs" />
      <Compile Include="Assets\Scripts\UIWindow\StrongWindow.cs" />
-     <Compile Include="Assets\Scripts\Battle\BattleMgr.cs" />
+     <Compile Include="Assets\Scripts\Battle\Manager\BattleMgr.cs" />
      <None Include="Assets\Compond\MakeChar\Shader\PlayerShader.shader" />
      <None Include="Assets\Resources\ResCfgs\strong.xml" />
      <None Include="Assets\Compond\MakeChar\Shader\MogoFakeLight.shader" />
@@ -104,34 +111,34 @@
      <None Include="Assets\Resources\ResCfgs\taskreward.xml" />
      <None Include="Assets\Resources\ResCfgs\rdname.xml" />
  <Reference Include="Unity.Timeline.Editor">
- <HintPath>D:/github/Unity/StudyCodes/SIKI_EDU/20210802-DarkGod/DarkGod/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+ <HintPath>E:/My Github/Unity/StudyCodes/SIKI_EDU/20210802-DarkGod/DarkGod/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VSCode.Editor">
- <HintPath>D:/github/Unity/StudyCodes/SIKI_EDU/20210802-DarkGod/DarkGod/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+ <HintPath>E:/My Github/Unity/StudyCodes/SIKI_EDU/20210802-DarkGod/DarkGod/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>D:/github/Unity/StudyCodes/SIKI_EDU/20210802-DarkGod/DarkGod/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>E:/My Github/Unity/StudyCodes/SIKI_EDU/20210802-DarkGod/DarkGod/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>D:/github/Unity/StudyCodes/SIKI_EDU/20210802-DarkGod/DarkGod/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ <HintPath>E:/My Github/Unity/StudyCodes/SIKI_EDU/20210802-DarkGod/DarkGod/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline">
- <HintPath>D:/github/Unity/StudyCodes/SIKI_EDU/20210802-DarkGod/DarkGod/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+ <HintPath>E:/My Github/Unity/StudyCodes/SIKI_EDU/20210802-DarkGod/DarkGod/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Rider.Editor">
- <HintPath>D:/github/Unity/StudyCodes/SIKI_EDU/20210802-DarkGod/DarkGod/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+ <HintPath>E:/My Github/Unity/StudyCodes/SIKI_EDU/20210802-DarkGod/DarkGod/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.2D.Sprite.Editor">
- <HintPath>D:/github/Unity/StudyCodes/SIKI_EDU/20210802-DarkGod/DarkGod/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+ <HintPath>E:/My Github/Unity/StudyCodes/SIKI_EDU/20210802-DarkGod/DarkGod/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VisualStudio.Editor">
- <HintPath>D:/github/Unity/StudyCodes/SIKI_EDU/20210802-DarkGod/DarkGod/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
+ <HintPath>E:/My Github/Unity/StudyCodes/SIKI_EDU/20210802-DarkGod/DarkGod/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>D:/github/Unity/StudyCodes/SIKI_EDU/20210802-DarkGod/DarkGod/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>E:/My Github/Unity/StudyCodes/SIKI_EDU/20210802-DarkGod/DarkGod/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
- <HintPath>D:/github/Unity/StudyCodes/SIKI_EDU/20210802-DarkGod/DarkGod/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ <HintPath>E:/My Github/Unity/StudyCodes/SIKI_EDU/20210802-DarkGod/DarkGod/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.14f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -323,10 +330,10 @@
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.14f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
  </Reference>
  <Reference Include="PEProtocol">
- <HintPath>D:/github/Unity/StudyCodes/SIKI_EDU/20210802-DarkGod/DarkGod/Assets/Scripts/Net/PEProtocol.dll</HintPath>
+ <HintPath>E:/My Github/Unity/StudyCodes/SIKI_EDU/20210802-DarkGod/DarkGod/Assets/Scripts/Net/PEProtocol.dll</HintPath>
  </Reference>
  <Reference Include="PESocket">
- <HintPath>D:/github/Unity/StudyCodes/SIKI_EDU/20210802-DarkGod/DarkGod/Assets/Scripts/Net/PESocket.dll</HintPath>
+ <HintPath>E:/My Github/Unity/StudyCodes/SIKI_EDU/20210802-DarkGod/DarkGod/Assets/Scripts/Net/PESocket.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.14f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>

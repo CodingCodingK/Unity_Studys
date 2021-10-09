@@ -102,7 +102,7 @@ public static class Constants
     public const float AccelerSpeed = 4;
     // 混合参数
     public const int BlendIdle = 0;
-    public const int BlendWalk = 1;
+    public const int BlendMove = 1;
 
     #endregion
     

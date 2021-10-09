@@ -17,6 +17,7 @@ using UnityEngine.SceneManagement;
 public class BattleSys : SystemBase
 {
     public static BattleSys Instance;
+    public BattleMgr battleMgr;
     
     public override void InitSys()
     {
@@ -34,10 +35,24 @@ public class BattleSys : SystemBase
         };
         go.transform.SetParent(GameRoot.Instance().transform);
 
-        var battleMgr = go.AddComponent<BattleMgr>();
+        battleMgr = go.AddComponent<BattleMgr>();
         battleMgr.Init(mapId);
-        
+        SetPlayerCtrlWindowState();
+    }
+
+    public void SetPlayerCtrlWindowState(bool isActive = true)
+    {
+        gameRootResources.playerCtrlWindow.SetWindowState(isActive);
+    }
+
+    public void SetMoveDir(Vector2 dir)
+    {
+        battleMgr.SetSelfPlayerMoveDir(dir);
     }
     
-  
+    public void ReqReleaseSkill(int index)
+    {
+        battleMgr.ReqReleaseSkill(index);
+    }
+
 }
