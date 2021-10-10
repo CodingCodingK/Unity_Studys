@@ -71,3 +71,11 @@ public class TaskData : BaseData<TaskData>
     public int prgs;
     public bool isTaken;
 }
+
+public class SkillCfg : BaseData<SkillCfg>
+{
+    public string skillName;
+    public int skillTime;
+    public int aniAction;
+    public string fx;
+}

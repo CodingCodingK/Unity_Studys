@@ -16,11 +16,29 @@ using UnityEngine.SceneManagement;
 
 public class SkillMgr: MonoBehaviour
 {
-    
+    private ResSvc resSvc;
+    private TimerSvc timerSvc;
     public void Init()
     {
-        
+        resSvc = ResSvc.Instance();
+        timerSvc = TimerSvc.Instance();
         Debug.Log("Init SkillMgr.");
+    }
+
+    /// <summary>
+    /// 技能效果表现
+    /// </summary>
+    public void AttackEffect(EntityBase entity,int skillID)
+    {
+        SkillCfg skillData = resSvc.GetSkillCfgData(skillID);
+        entity.SetAction(skillData.aniAction);
+        entity.SetFX(skillData.fx,skillData.skillTime);
+        
+        timerSvc.AddTimeTask(i =>
+        {
+            entity.Idle();
+            
+        }, skillData.skillTime);
     }
 
 }

@@ -18,11 +18,13 @@ public class PathDefine
     public const string AutoGuideConfig = "ResCfgs/guide";
     public const string StrongConfig = "ResCfgs/strong";
     public const string TaskConfig = "ResCfgs/taskreward";
+    public const string SkillConfig = "ResCfgs/skill";
     #endregion
     
     #region Player
     public const string AsnCityPlayerPrefab = "PrefabPlayer/AssassinCity";
     public const string AsnBattlePlayerPrefab = "PrefabPlayer/AssassinBattle";
+    public const string AsnBattlePlayerTest = "PrefabPlayer/AssassinCity_Cube";
     
     #endregion
     

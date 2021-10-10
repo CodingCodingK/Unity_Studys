@@ -114,4 +114,11 @@ public static class Constants
 
     #endregion
     
+    #region 技能类
+
+    // Action参数
+    public const int ActionDefault = -1;
+
+    #endregion
+
 }

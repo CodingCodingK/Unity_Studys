@@ -45,6 +45,7 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
         InitAutoGuideCfg(PathDefine.AutoGuideConfig);
         InitStrongCfg(PathDefine.StrongConfig);
         InitTaskCfg(PathDefine.TaskConfig);
+        InitSkillCfg(PathDefine.SkillConfig);
 
     }
     
@@ -579,6 +580,70 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
     {
         taskDataDic.TryGetValue(id, out TaskCfg cfg);
         return cfg;
+    }
+
+    #endregion
+    
+    #region 地图配置
+
+    private Dictionary<int, SkillCfg> skillCfgDataDic = new Dictionary<int, SkillCfg>();
+    
+     
+    public void InitSkillCfg(string path)
+    {
+        TextAsset xml = Resources.Load<TextAsset>(path);
+        if (!xml)
+        {
+            PECommon.Log("xml file:" + path + "not exist",LogType.Error);
+        }
+        else
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.LoadXml(xml.text);
+
+            XmlNodeList nodList = doc.SelectSingleNode("root").ChildNodes;
+            for (int i = 0; i < nodList.Count; i++)
+            {
+                XmlElement ele = nodList[i] as XmlElement;
+                var eleID = ele.GetAttributeNode("ID");
+                if (eleID == null)
+                {
+                    continue;
+                }
+
+                int id = Convert.ToInt32(eleID.InnerText);
+                SkillCfg dto = new SkillCfg
+                {
+                    ID = id,
+                };
+
+                foreach (XmlElement e in nodList[i].ChildNodes)
+                {
+                    switch (e.Name)
+                    {
+                        case "skillName":
+                            dto.skillName = e.InnerText;
+                            break;
+                        case "skillTime":
+                            dto.skillTime = Int32.Parse(e.InnerText);
+                            break;
+                        case "aniAction":
+                            dto.aniAction = Int32.Parse(e.InnerText);
+                            break;
+                        case "fx":
+                            dto.fx = e.InnerText;
+                            break;
+                    }
+                }
+
+                skillCfgDataDic.Add(id,dto);
+            }
+        }
+    }
+    
+    public SkillCfg GetSkillCfgData(int id)
+    {
+        return skillCfgDataDic[id];
     }
 
     #endregion

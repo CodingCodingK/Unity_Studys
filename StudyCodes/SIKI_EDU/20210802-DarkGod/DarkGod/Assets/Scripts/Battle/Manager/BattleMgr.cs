@@ -57,9 +57,9 @@ public class BattleMgr: SystemBase
 
     private void LoadPlayer(MapCfg mapData)
     {
-         GameObject player = resSvc.LoadPrefab(PathDefine.AsnBattlePlayerPrefab);
+         GameObject player = resSvc.LoadPrefab(PathDefine.AsnBattlePlayerPrefab,true);
          // 初始位置
-         player.transform.position = mapData.playerBornPos;
+         player.transform.localPosition = mapData.playerBornPos;
          player.transform.localEulerAngles = mapData.playerBornRote;
          player.transform.localScale = Vector3.one;
          // 初始化
@@ -70,8 +70,11 @@ public class BattleMgr: SystemBase
          {
              stateMgr = stateMgr,
              controller = playerCtrl,
-         };
-
+             skillMgr = skillMgr,
+         }
+             
+             ;
+         entityPlayer.Idle();
          
         
     }
@@ -84,9 +87,13 @@ public class BattleMgr: SystemBase
         if (dir == Vector2.zero)
         {
             entityPlayer.Idle();
+            // 可以放到Idle状态的Enter中
+            entityPlayer.SetDir(Vector2.zero);
         }
         else
-        {
+        {     
+            // 不可以放到Move状态的Enter中,因为不是来回进入此状态,而方向会随时变化
+            entityPlayer.SetDir(dir);
             entityPlayer.Move();
         }
     }
@@ -122,7 +129,7 @@ public class BattleMgr: SystemBase
     
     private void ReleaseSkill1()
     {
-        
+        entityPlayer.Attack(101);
     }
 
     private void ReleaseSkill2()

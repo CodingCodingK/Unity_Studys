@@ -25,11 +25,12 @@ public class StateMgr: MonoBehaviour
     {
         fsmDic.Add(AniState.Idle,new StateIdle());
         fsmDic.Add(AniState.Move,new StateMove());
+        fsmDic.Add(AniState.Attack,new StateAttack());
         
         Debug.Log("Init StateMgr.");
     }
 
-    public void ChangeStatus(EntityBase entity,AniState targetState)
+    public void ChangeStatus(EntityBase entity,AniState targetState,params object[] args)
     {
         if (entity.curtAniState == targetState)
         {
@@ -40,10 +41,11 @@ public class StateMgr: MonoBehaviour
         {
             if (entity.curtAniState != AniState.None)
             {
-                fsmDic[entity.curtAniState].Exit(entity);
+                fsmDic[entity.curtAniState].Exit(entity,args);
             }
-            fsmDic[targetState].Enter(entity);
-            fsmDic[targetState].Process(entity);
+            Debug.Log("??????to " + fsmDic[targetState]);
+            fsmDic[targetState].Enter(entity,args);
+            fsmDic[targetState].Process(entity,args);
         }
     }
 
