@@ -71,9 +71,9 @@ public class BattleMgr: SystemBase
              stateMgr = stateMgr,
              controller = playerCtrl,
              skillMgr = skillMgr,
-         }
-             
-             ;
+             battleMgr = Instance,
+         };
+         
          entityPlayer.Idle();
          
         
@@ -83,6 +83,11 @@ public class BattleMgr: SystemBase
 
     public void SetSelfPlayerMoveDir(Vector2 dir)
     {
+        if (!entityPlayer.canControl)
+        {
+            return;
+        }
+        
         // 设置玩家移动
         if (dir == Vector2.zero)
         {
@@ -141,7 +146,11 @@ public class BattleMgr: SystemBase
     {
         
     }
-    
+
+    public Vector2 GetDirInput()
+    {
+        return BattleSys.Instance.GetDirInput();
+    }
     #endregion
    
 }

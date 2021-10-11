@@ -58,7 +58,7 @@ public abstract class Controller : MonoBehaviour
         
     }
 
-    public void SetSkillMove(bool move,float skillSpeed = 0f)
+    public void SetSkillMoveState(bool move,float skillSpeed = 0f)
     {
         skillMove = move;
         skillMoveSpeed = skillSpeed;

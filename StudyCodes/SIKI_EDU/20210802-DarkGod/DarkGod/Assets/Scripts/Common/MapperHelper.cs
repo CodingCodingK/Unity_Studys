@@ -149,6 +149,14 @@ namespace MyHelper
 
             return Vector3.zero;
         }
+
+        public static List<int> ConvertToIntList(string str,char separator = '|')
+        {
+            return str.Split(separator).Select(o =>
+            {
+                return Int32.Parse(o);
+            }).ToList();
+        } 
         
     }
 }

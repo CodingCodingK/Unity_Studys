@@ -19,6 +19,9 @@ public class PathDefine
     public const string StrongConfig = "ResCfgs/strong";
     public const string TaskConfig = "ResCfgs/taskreward";
     public const string SkillConfig = "ResCfgs/skill";
+    public const string SkillMoveConfig = "ResCfgs/skillmove";
+    public const string MonsterConfig = "ResCfgs/monster";
+    
     #endregion
     
     #region Player

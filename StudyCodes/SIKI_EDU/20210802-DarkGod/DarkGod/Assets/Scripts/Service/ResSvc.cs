@@ -41,11 +41,13 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
     {
         Debug.Log("ResSvc Init Completed.");
         InitRDNameConfig(PathDefine.RDNameConfig);
+        InitMonsterCfg(PathDefine.MonsterConfig);
         InitMapCfg(PathDefine.MapConfig);
         InitAutoGuideCfg(PathDefine.AutoGuideConfig);
         InitStrongCfg(PathDefine.StrongConfig);
         InitTaskCfg(PathDefine.TaskConfig);
         InitSkillCfg(PathDefine.SkillConfig);
+        InitSkillMoveCfg(PathDefine.SkillMoveConfig);
 
     }
     
@@ -278,7 +280,7 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
         {
             XmlDocument doc = new XmlDocument();
             doc.LoadXml(xml.text);
-
+            
             XmlNodeList nodList = doc.SelectSingleNode("root").ChildNodes;
             for (int i = 0; i < nodList.Count; i++)
             {
@@ -293,6 +295,7 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
                 MapCfg dto = new MapCfg
                 {
                     ID = id,
+                    monsterList = new List<MonsterData>(),
                 };
 
                 foreach (XmlElement e in nodList[i].ChildNodes)
@@ -320,6 +323,43 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
                         case "playerBornRote":
                             dto.playerBornRote = MapperHelper.ConvertToVector3(e.InnerText);
                             break;
+                        case "monsterLst":
+                        {
+                            var waveList = e.InnerText.Split('#');
+                            for (int index = 0;index< waveList.Length;index++)
+                            {
+                                if (index==0)
+                                {
+                                    continue;
+                                }
+
+                                var monsterList = waveList[index].Split('|');
+                                for (var index2 = 0; index2 < monsterList.Length; index2++)
+                                {
+                                    var monster = monsterList[index2];
+                                    if (index2 == 0)
+                                    {
+                                        continue;
+                                    }
+
+                                    var dataString = monster.Split(',');
+                                    MonsterData data = new MonsterData()
+                                    {
+                                        ID = int.Parse(dataString[0]),
+                                        mWave = index,
+                                        mIndex = index2,
+                                        mCfg = GetMonsterCfgData(id),
+                                        mBornPos = new Vector3(float.Parse(dataString[1]), float.Parse(dataString[2]),
+                                            float.Parse(dataString[3])),
+                                        mBornRote = new Vector3(0, float.Parse(dataString[4]), 0),
+                                    };
+                                    dto.monsterList.Add(data);
+                                }
+                            }
+
+
+                        } break;
+                           
                     }
                 }
 
@@ -584,7 +624,7 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
 
     #endregion
     
-    #region 地图配置
+    #region 技能配置
 
     private Dictionary<int, SkillCfg> skillCfgDataDic = new Dictionary<int, SkillCfg>();
     
@@ -633,6 +673,10 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
                         case "fx":
                             dto.fx = e.InnerText;
                             break;
+                        case "skillMoveLst":
+                            dto.skillMoveLst = MapperHelper.ConvertToIntList(e.InnerText);
+                            break;
+                        
                     }
                 }
 
@@ -644,6 +688,121 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
     public SkillCfg GetSkillCfgData(int id)
     {
         return skillCfgDataDic[id];
+    }
+
+    
+    private Dictionary<int, SkillMoveCfg> SkillMoveCfgDataDic = new Dictionary<int, SkillMoveCfg>();
+    
+     
+    public void InitSkillMoveCfg(string path)
+    {
+        TextAsset xml = Resources.Load<TextAsset>(path);
+        if (!xml)
+        {
+            PECommon.Log("xml file:" + path + "not exist",LogType.Error);
+        }
+        else
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.LoadXml(xml.text);
+
+            XmlNodeList nodList = doc.SelectSingleNode("root").ChildNodes;
+            for (int i = 0; i < nodList.Count; i++)
+            {
+                XmlElement ele = nodList[i] as XmlElement;
+                var eleID = ele.GetAttributeNode("ID");
+                if (eleID == null)
+                {
+                    continue;
+                }
+
+                int id = Convert.ToInt32(eleID.InnerText);
+                SkillMoveCfg dto = new SkillMoveCfg
+                {
+                    ID = id,
+                };
+
+                foreach (XmlElement e in nodList[i].ChildNodes)
+                {
+                    switch (e.Name)
+                    {
+                        case "delayTime":
+                            dto.delayTime = Int32.Parse(e.InnerText);
+                            break;
+                        case "moveDis":
+                            dto.moveDis = float.Parse(e.InnerText);
+                            break;
+                        case "moveTime":
+                            dto.moveTime = Int32.Parse(e.InnerText);
+                            break;
+                    }
+                }
+
+                SkillMoveCfgDataDic.Add(id,dto);
+            }
+        }
+    }
+    
+    public SkillMoveCfg GetSkillMoveCfgData(int id)
+    {
+        return SkillMoveCfgDataDic[id];
+    }
+    
+    #endregion
+
+    #region Monster
+    
+    private Dictionary<int, MonsterCfg> MonsterCfgDataDic = new Dictionary<int, MonsterCfg>();
+    
+    public void InitMonsterCfg(string path)
+    {
+        TextAsset xml = Resources.Load<TextAsset>(path);
+        if (!xml)
+        {
+            PECommon.Log("xml file:" + path + "not exist",LogType.Error);
+        }
+        else
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.LoadXml(xml.text);
+
+            XmlNodeList nodList = doc.SelectSingleNode("root").ChildNodes;
+            for (int i = 0; i < nodList.Count; i++)
+            {
+                XmlElement ele = nodList[i] as XmlElement;
+                var eleID = ele.GetAttributeNode("ID");
+                if (eleID == null)
+                {
+                    continue;
+                }
+
+                int id = Convert.ToInt32(eleID.InnerText);
+                MonsterCfg dto = new MonsterCfg
+                {
+                    ID = id,
+                };
+
+                foreach (XmlElement e in nodList[i].ChildNodes)
+                {
+                    switch (e.Name)
+                    {
+                        case "mName":
+                            dto.mName = e.InnerText;
+                            break;
+                        case "resPath":
+                            dto.resPath = e.InnerText;
+                            break;
+                    }
+                }
+
+                MonsterCfgDataDic.Add(id,dto);
+            }
+        }
+    }
+    
+    public MonsterCfg GetMonsterCfgData(int id)
+    {
+        return MonsterCfgDataDic[id];
     }
 
     #endregion

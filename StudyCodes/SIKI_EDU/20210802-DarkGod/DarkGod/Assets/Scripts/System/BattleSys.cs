@@ -55,4 +55,9 @@ public class BattleSys : SystemBase
         battleMgr.ReqReleaseSkill(index);
     }
 
+    public Vector2 GetDirInput()
+    {
+        return gameRootResources.playerCtrlWindow.curtDir;
+    }
+
 }

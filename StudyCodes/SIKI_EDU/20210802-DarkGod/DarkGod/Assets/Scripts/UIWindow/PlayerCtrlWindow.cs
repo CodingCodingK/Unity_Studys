@@ -52,6 +52,8 @@ public class PlayerCtrlWindow : WindowBase
     /// 摇杆范围 自适应用
     /// </summary>
     private float pointDis;
+
+    public Vector2 curtDir;
     
     
     #endregion
@@ -125,7 +127,8 @@ public class PlayerCtrlWindow : WindowBase
             SetActive(imgDirPoint,false);
             imgDirPoint.transform.localPosition = Vector3.zero;
             // TODO 方向信息传递
-            BattleSys.Instance.SetMoveDir(Vector2.zero);
+            curtDir = Vector2.zero;
+            BattleSys.Instance.SetMoveDir(curtDir);
         });
         
         OnDrag(imgDirBg.gameObject,(PointerEventData data) =>
@@ -143,7 +146,9 @@ public class PlayerCtrlWindow : WindowBase
                 imgDirPoint.transform.position = data.position;
             }
             // TODO 方向信息传递
-            BattleSys.Instance.SetMoveDir(dir.normalized);
+            curtDir = dir.normalized;
+            BattleSys.Instance.SetMoveDir(curtDir);
+            
         });
     }
     

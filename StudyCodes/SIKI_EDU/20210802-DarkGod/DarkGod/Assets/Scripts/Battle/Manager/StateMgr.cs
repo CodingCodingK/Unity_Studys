@@ -43,7 +43,6 @@ public class StateMgr: MonoBehaviour
             {
                 fsmDic[entity.curtAniState].Exit(entity,args);
             }
-            Debug.Log("??????to " + fsmDic[targetState]);
             fsmDic[targetState].Enter(entity,args);
             fsmDic[targetState].Process(entity,args);
         }

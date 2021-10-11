@@ -28,7 +28,7 @@ public class MapCfg : BaseData<MapCfg>
     public Vector3 mainCamRote;
     public Vector3 playerBornPos;
     public Vector3 playerBornRote;
-    
+    public List<MonsterData> monsterList;
 }
 
 
@@ -78,4 +78,36 @@ public class SkillCfg : BaseData<SkillCfg>
     public int skillTime;
     public int aniAction;
     public string fx;
+    /// skillmove配置表对应的ID
+    public List<int> skillMoveLst;
+}
+
+public class SkillMoveCfg : BaseData<SkillMoveCfg>
+{
+    public int delayTime;
+    public int moveTime;
+    public float moveDis;
+   
+}
+
+public class MonsterCfg : BaseData<MonsterCfg>
+{
+    public string mName;
+    public string resPath;
+}
+
+/// <summary>
+/// 怪物模型
+/// </summary>
+public class MonsterData : BaseData<MonsterData>
+{
+    /// 出现批次
+    public int mWave;
+    /// 个体编号
+    public int mIndex;
+    /// 模型信息
+    public MonsterCfg mCfg;
+
+    public Vector3 mBornPos;
+    public Vector3 mBornRote;
 }

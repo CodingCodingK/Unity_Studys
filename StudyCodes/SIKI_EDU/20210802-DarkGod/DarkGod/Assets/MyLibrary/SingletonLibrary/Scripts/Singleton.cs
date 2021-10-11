@@ -28,7 +28,7 @@ public abstract class Singleton<T> where T : Singleton<T>
 {
     protected Singleton()
     {
-
+        
     }
 
     private static T _instance = null;

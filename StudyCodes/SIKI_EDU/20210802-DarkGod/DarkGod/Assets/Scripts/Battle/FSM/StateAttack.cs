@@ -15,5 +15,7 @@ public class StateAttack : IState
     {
         // 技能表现重置
         entity.SetAction(Constants.ActionDefault);
+        // 允许移动
+        entity.canControl = true;
     }
 }
