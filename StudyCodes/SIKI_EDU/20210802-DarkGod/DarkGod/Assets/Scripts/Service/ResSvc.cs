@@ -348,7 +348,7 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
                                         ID = int.Parse(dataString[0]),
                                         mWave = index,
                                         mIndex = index2,
-                                        mCfg = GetMonsterCfgData(id),
+                                        mCfg = GetMonsterCfgData(int.Parse(dataString[0])),
                                         mBornPos = new Vector3(float.Parse(dataString[1]), float.Parse(dataString[2]),
                                             float.Parse(dataString[3])),
                                         mBornRote = new Vector3(0, float.Parse(dataString[4]), 0),

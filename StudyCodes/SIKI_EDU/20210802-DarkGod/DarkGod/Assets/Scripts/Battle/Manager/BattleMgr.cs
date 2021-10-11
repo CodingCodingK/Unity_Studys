@@ -22,6 +22,7 @@ public class BattleMgr: SystemBase
     private SkillMgr skillMgr;
     private MapMgr mapMgr;
     private EntityPlayer entityPlayer;
+    private MapCfg mapCfg;
     
     public void Init(int mapId)
     {
@@ -34,20 +35,20 @@ public class BattleMgr: SystemBase
         skillMgr.Init();
         
         // 加载地图及场景
-        MapCfg mapData = resSvc.GetMapCfgData(mapId);
-        resSvc.AsyncLoadScene(mapData.sceneName, () =>
+        mapCfg = resSvc.GetMapCfgData(mapId);
+        resSvc.AsyncLoadScene(mapCfg.sceneName, () =>
         {
             GameObject map = GameObject.FindGameObjectWithTag("MapRoot");
             mapMgr = map.GetComponent<MapMgr>();
-            mapMgr.Init();
+            mapMgr.Init(Instance);
             
             // 初始化地图预制体信息
             map.transform.localPosition = Vector3.zero;
             map.transform.localScale = Vector3.one;
-            Camera.main.transform.position = mapData.mainCamPos;
-            Camera.main.transform.localEulerAngles = mapData.mainCamRote;
+            Camera.main.transform.position = mapCfg.mainCamPos;
+            Camera.main.transform.localEulerAngles = mapCfg.mainCamRote;
 
-            LoadPlayer(mapData);
+            LoadPlayer(mapCfg);
             
             audioSvc.PlayBGMusic(Constants.BGHuangYe);
         });
@@ -77,6 +78,37 @@ public class BattleMgr: SystemBase
          entityPlayer.Idle();
          
         
+    }
+
+    public void LoadMonsterByWaveID(int wave)
+    {
+        for (var i = 0; i < mapCfg.monsterList.Count; i++)
+        {
+            var md = mapCfg.monsterList[i];
+            if (md.mWave == wave)
+            {
+                var monster = resSvc.LoadPrefab(md.mCfg.resPath, true);
+                // 初始位置
+                monster.transform.localPosition = md.mBornPos;
+                monster.transform.localEulerAngles = md.mBornRote;
+                monster.transform.localScale = Vector3.one;
+                // 初始化
+                monster.name = "m" + md.mWave + "_" + md.mIndex;
+                MonsterController mc = monster.GetComponent<MonsterController>();
+                mc.Init();
+                // 给其持有
+                EntityMonster em = new EntityMonster()
+                {
+                    battleMgr = Instance,
+                    controller = mc,
+                    stateMgr = stateMgr,
+                    skillMgr = skillMgr,
+                };
+                
+                monster.SetActive(false);
+                
+            }
+        }
     }
 
     #region Control
@@ -152,5 +184,5 @@ public class BattleMgr: SystemBase
         return BattleSys.Instance.GetDirInput();
     }
     #endregion
-   
+
 }

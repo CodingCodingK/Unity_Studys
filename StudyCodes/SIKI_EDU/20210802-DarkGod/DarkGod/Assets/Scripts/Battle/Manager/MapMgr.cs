@@ -16,8 +16,16 @@ using UnityEngine.SceneManagement;
 
 public class MapMgr: MonoBehaviour
 {
-    public void Init()
+    private int waveIndex = 1;
+    private BattleMgr battleMgr;
+    
+    public void Init(BattleMgr battle)
     {
+        battleMgr = battle;
+        
+        // 实例第一批怪物
+        battleMgr.LoadMonsterByWaveID(waveIndex);
+        
         
         Debug.Log("Init MapMgr.");
     }

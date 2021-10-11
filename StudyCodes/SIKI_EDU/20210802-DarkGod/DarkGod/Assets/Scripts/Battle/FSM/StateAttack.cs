@@ -7,7 +7,7 @@ public class StateAttack : IState
 
     public void Process(EntityBase entity,params object[] args)
     {
-        //entity.SetBlend(Constants.BlendIdle);
+        entity.AttackDamage((int)args[0]);
         entity.AttackEffect((int)args[0]);
     }
 

@@ -49,6 +49,14 @@ public class SkillMgr: MonoBehaviour
             
         }, skillData.skillTime);
     }
+    
+    /// <summary>
+    /// 技能伤害计算
+    /// </summary>
+    public void AttackDamage(EntityBase entity,int skillID)
+    {
+        
+    }
 
     /// <summary>
     /// 设置技能位移 适配多段位移、技能位移延迟

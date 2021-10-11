@@ -9,7 +9,8 @@ using UnityEngine.UIElements;
 public abstract class Controller : MonoBehaviour
 {
     public Animator ani;
-
+    public CharacterController ctrl;
+    
     protected bool isMove = false;
     private Vector2 dir = Vector2.zero;
     public Vector2 Dir

@@ -20,8 +20,7 @@ public class PlayerController : Controller
     /// </summary>
     private Transform camTrans;
     private Vector3 camOffset;
-    public CharacterController ctrl;
-    
+
     private float targetBlend;
     private float currentBlend;
     
