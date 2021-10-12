@@ -23,6 +23,8 @@ public class BattleMgr: SystemBase
     private MapMgr mapMgr;
     private EntityPlayer entityPlayer;
     private MapCfg mapCfg;
+
+    private Dictionary<string, EntityMonster> monsterDic = new Dictionary<string, EntityMonster>();
     
     public void Init(int mapId)
     {
@@ -64,6 +66,18 @@ public class BattleMgr: SystemBase
          player.transform.localEulerAngles = mapData.playerBornRote;
          player.transform.localScale = Vector3.one;
          // 初始化
+         PlayerData pd = GameRoot.Instance().PlayerData;
+         BattleProps props = new BattleProps()
+         {
+             hp = pd.hp,
+             ad = pd.ad,
+             ap = pd.ap,
+             addef = pd.addef,
+             apdef = pd.apdef,
+             dodge = pd.dodge,
+             pierce = pd.pierce,
+             critical = pd.critical,
+         };
          PlayerController playerCtrl = player.GetComponent<PlayerController>();
          playerCtrl.Init();
          // 给其持有
@@ -74,9 +88,11 @@ public class BattleMgr: SystemBase
              skillMgr = skillMgr,
              battleMgr = Instance,
          };
+         entityPlayer.SetBattleProps(props);
          
          entityPlayer.Idle();
-         
+         // 激活第一批怪物
+         ActiveCurrentBatchMonsters();
         
     }
 
@@ -104,9 +120,11 @@ public class BattleMgr: SystemBase
                     stateMgr = stateMgr,
                     skillMgr = skillMgr,
                 };
+                em.md = md;
+                em.SetBattleProps(md.mCfg.props);
                 
                 monster.SetActive(false);
-                
+                monsterDic.Add(monster.name, em);
             }
         }
     }
@@ -183,6 +201,32 @@ public class BattleMgr: SystemBase
     {
         return BattleSys.Instance.GetDirInput();
     }
+    #endregion
+
+    #region Entity
+
+    public List<EntityMonster> GetEntityMonsters()
+    {
+        List<EntityMonster> monsterList = new List<EntityMonster>();
+        foreach (var item in monsterDic)
+        {
+            monsterList.Add(item.Value);
+        }
+
+        return monsterList;
+    }
+
+    public void ActiveCurrentBatchMonsters()
+    {
+        TimerSvc.Instance().AddTimeTask(i =>
+        {
+            foreach (var monster in monsterDic)
+            {
+                monster.Value.controller.gameObject.SetActive(true);
+            }
+        },500);
+    }
+
     #endregion
 
 }

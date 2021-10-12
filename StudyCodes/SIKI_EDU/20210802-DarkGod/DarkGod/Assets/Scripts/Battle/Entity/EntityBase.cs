@@ -11,6 +11,45 @@ public class EntityBase
 
     public bool canControl = true;
 
+   
+    private BattleProps _props;
+    
+    /// <summary>
+    /// 战斗状态
+    /// </summary>
+    public BattleProps Props
+    {
+        get
+        {
+            return _props;
+        }
+        protected set
+        {
+            _props = value;
+        }
+    }
+    
+    private int _hp;
+    public int HP
+    {
+        get
+        {
+            return _hp;
+        }
+        set
+        {
+            // TODO 更新UI层
+            
+            _hp = value;
+        }
+    }
+
+    public virtual void SetBattleProps(BattleProps bps)
+    {
+        Props = bps;
+        HP = _props.hp;
+    }
+
     public void Move()
     {
         stateMgr.ChangeStatus(this,AniState.Move);
@@ -67,18 +106,28 @@ public class EntityBase
         }
     }
 
-    public virtual void AttackEffect(int skillID)
+    public virtual void SkillAttack(int skillID)
     {
-        skillMgr.AttackEffect(this,skillID);
+        skillMgr.SkillAttack(this,skillID);
     }
     
-    public virtual void AttackDamage(int skillID)
-    {
-        skillMgr.AttackDamage(this,skillID);
-    }
+    // public virtual void AttackDamage(int skillID)
+    // {
+    //     skillMgr.AttackDamage(this,skillID);
+    // }
 
     public virtual Vector2 GetDirInput()
     {
         return Vector2.zero;
+    }
+    
+    public virtual Vector3 GetPos()
+    {
+        return controller.transform.position;
+    }
+    
+    public virtual Transform GetTrans()
+    {
+        return controller.transform;
     }
 }

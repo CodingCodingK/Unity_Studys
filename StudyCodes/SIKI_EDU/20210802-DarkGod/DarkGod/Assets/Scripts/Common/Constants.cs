@@ -10,12 +10,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum  TxtColor
+public enum TxtColor
 {
     Red,
     Green,
     Blue,
     Yellow,
+}
+
+public enum DamageType
+{
+    None,
+    AD = 1,
+    AP = 2,
 }
 
 public static class Constants

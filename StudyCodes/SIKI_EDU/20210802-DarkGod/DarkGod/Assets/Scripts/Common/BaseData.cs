@@ -78,8 +78,13 @@ public class SkillCfg : BaseData<SkillCfg>
     public int skillTime;
     public int aniAction;
     public string fx;
-    /// skillmove配置表对应的ID
+    public DamageType dmgType;
+    /// skillmove配置表对应的ID List
     public List<int> skillMoveLst;
+    /// skillaction配置表对应的ID List
+    public List<int> skillActionLst;
+    /// skillaction配置表对应的list的每一段伤害值
+    public List<int> skillDamageLst;
 }
 
 public class SkillMoveCfg : BaseData<SkillMoveCfg>
@@ -90,10 +95,19 @@ public class SkillMoveCfg : BaseData<SkillMoveCfg>
    
 }
 
+public class SkillActionCfg : BaseData<SkillActionCfg>
+{
+    public int delayTime;
+    public float radius;
+    public float angle;
+   
+}
+
 public class MonsterCfg : BaseData<MonsterCfg>
 {
     public string mName;
     public string resPath;
+    public BattleProps props;
 }
 
 /// <summary>
@@ -107,7 +121,21 @@ public class MonsterData : BaseData<MonsterData>
     public int mIndex;
     /// 模型信息
     public MonsterCfg mCfg;
+    public int mLevel;
 
     public Vector3 mBornPos;
     public Vector3 mBornRote;
 }
+
+public class BattleProps
+{
+    public int hp;
+    public int ad;
+    public int ap;
+    public int addef;
+    public int apdef;
+    public int dodge;
+    public int pierce;
+    public int critical;
+}
+

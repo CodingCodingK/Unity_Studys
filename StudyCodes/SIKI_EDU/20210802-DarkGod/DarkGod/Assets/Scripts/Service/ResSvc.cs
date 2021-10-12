@@ -48,6 +48,7 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
         InitTaskCfg(PathDefine.TaskConfig);
         InitSkillCfg(PathDefine.SkillConfig);
         InitSkillMoveCfg(PathDefine.SkillMoveConfig);
+        InitSkillActionCfg(PathDefine.SkillActionConfig);
 
     }
     
@@ -352,6 +353,7 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
                                         mBornPos = new Vector3(float.Parse(dataString[1]), float.Parse(dataString[2]),
                                             float.Parse(dataString[3])),
                                         mBornRote = new Vector3(0, float.Parse(dataString[4]), 0),
+                                        mLevel = int.Parse(dataString[5]),
                                     };
                                     dto.monsterList.Add(data);
                                 }
@@ -655,6 +657,9 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
                 SkillCfg dto = new SkillCfg
                 {
                     ID = id,
+                    skillMoveLst = new List<int>(),
+                    skillActionLst = new List<int>(),
+                    skillDamageLst = new List<int>(),
                 };
 
                 foreach (XmlElement e in nodList[i].ChildNodes)
@@ -675,6 +680,15 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
                             break;
                         case "skillMoveLst":
                             dto.skillMoveLst = MapperHelper.ConvertToIntList(e.InnerText);
+                            break;
+                        case "skillActionLst":
+                            dto.skillActionLst = MapperHelper.ConvertToIntList(e.InnerText);
+                            break;
+                        case "skillDamageLst":
+                            dto.skillDamageLst = MapperHelper.ConvertToIntList(e.InnerText);
+                            break;
+                        case "dmgType":
+                            dto.dmgType = Int32.Parse(e.InnerText).Equals("1") ? DamageType.AD : DamageType.AP ;
                             break;
                         
                     }
@@ -748,6 +762,63 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
         return SkillMoveCfgDataDic[id];
     }
     
+    private Dictionary<int, SkillActionCfg> SkillActionCfgDataDic = new Dictionary<int, SkillActionCfg>();
+    
+     
+    public void InitSkillActionCfg(string path)
+    {
+        TextAsset xml = Resources.Load<TextAsset>(path);
+        if (!xml)
+        {
+            PECommon.Log("xml file:" + path + "not exist",LogType.Error);
+        }
+        else
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.LoadXml(xml.text);
+
+            XmlNodeList nodList = doc.SelectSingleNode("root").ChildNodes;
+            for (int i = 0; i < nodList.Count; i++)
+            {
+                XmlElement ele = nodList[i] as XmlElement;
+                var eleID = ele.GetAttributeNode("ID");
+                if (eleID == null)
+                {
+                    continue;
+                }
+
+                int id = Convert.ToInt32(eleID.InnerText);
+                SkillActionCfg dto = new SkillActionCfg
+                {
+                    ID = id,
+                };
+
+                foreach (XmlElement e in nodList[i].ChildNodes)
+                {
+                    switch (e.Name)
+                    {
+                        case "delayTime":
+                            dto.delayTime = Int32.Parse(e.InnerText);
+                            break;
+                        case "moveDis":
+                            dto.angle = float.Parse(e.InnerText);
+                            break;
+                        case "moveTime":
+                            dto.radius = float.Parse(e.InnerText);
+                            break;
+                    }
+                }
+
+                SkillActionCfgDataDic.Add(id,dto);
+            }
+        }
+    }
+    
+    public SkillActionCfg GetSkillActionCfgData(int id)
+    {
+        return SkillActionCfgDataDic[id];
+    }
+    
     #endregion
 
     #region Monster
@@ -780,6 +851,7 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
                 MonsterCfg dto = new MonsterCfg
                 {
                     ID = id,
+                    props = new BattleProps(),
                 };
 
                 foreach (XmlElement e in nodList[i].ChildNodes)
@@ -791,6 +863,30 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
                             break;
                         case "resPath":
                             dto.resPath = e.InnerText;
+                            break;
+                        case "hp":
+                            dto.props.hp = Int32.Parse(e.InnerText);
+                            break;
+                        case "ad":
+                            dto.props.ad = Int32.Parse(e.InnerText);
+                            break;
+                        case "ap":
+                            dto.props.ap = Int32.Parse(e.InnerText);
+                            break;
+                        case "addef":
+                            dto.props.addef = Int32.Parse(e.InnerText);
+                            break;
+                        case "apdef":
+                            dto.props.apdef = Int32.Parse(e.InnerText);
+                            break;
+                        case "dodge":
+                            dto.props.dodge = Int32.Parse(e.InnerText);
+                            break;
+                        case "pierce":
+                            dto.props.pierce = Int32.Parse(e.InnerText);
+                            break;
+                        case "critical":
+                            dto.props.critical = Int32.Parse(e.InnerText);
                             break;
                     }
                 }
