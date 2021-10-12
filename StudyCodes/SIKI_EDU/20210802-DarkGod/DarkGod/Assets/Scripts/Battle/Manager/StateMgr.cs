@@ -23,9 +23,12 @@ public class StateMgr: MonoBehaviour
     
     public void Init()
     {
+        fsmDic.Add(AniState.Born,new StateBorn());
         fsmDic.Add(AniState.Idle,new StateIdle());
         fsmDic.Add(AniState.Move,new StateMove());
         fsmDic.Add(AniState.Attack,new StateAttack());
+        fsmDic.Add(AniState.Hit,new StateHit());
+        fsmDic.Add(AniState.Die,new StateDie());
         
         Debug.Log("Init StateMgr.");
     }

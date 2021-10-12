@@ -55,6 +55,11 @@ public class EntityBase
         stateMgr.ChangeStatus(this,AniState.Move);
     }
     
+    public void Born()
+    {
+        stateMgr.ChangeStatus(this,AniState.Born);
+    }
+    
     public void Idle()
     {
         stateMgr.ChangeStatus(this,AniState.Idle);
@@ -63,6 +68,16 @@ public class EntityBase
     public void Attack(int skillID)
     {
         stateMgr.ChangeStatus(this,AniState.Attack,skillID);
+    }
+    
+    public void Hit()
+    {
+        stateMgr.ChangeStatus(this,AniState.Hit);
+    }
+    
+    public void Die()
+    {
+        stateMgr.ChangeStatus(this,AniState.Die);
     }
     
     public virtual void SetBlend(float blend)

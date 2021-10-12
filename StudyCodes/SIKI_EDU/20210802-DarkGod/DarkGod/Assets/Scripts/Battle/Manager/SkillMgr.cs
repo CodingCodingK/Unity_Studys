@@ -67,16 +67,19 @@ public class SkillMgr: MonoBehaviour
         int sum = 0;
         for (var index = 0; index < skillActionLst.Count; index++)
         {
+            int tmpIndex = index;
             var actionId = skillActionLst[index];
             var action = resSvc.GetSkillActionCfgData(actionId);
             sum += action.delayTime;
             if (sum > 0)
             {
-                timerSvc.AddTimeTask(i => { SkillAction(entity, skillData, index); }, sum);
+                Debug.Log("Index1:" + tmpIndex);
+                timerSvc.AddTimeTask(i => { SkillAction(entity, skillData, tmpIndex); }, sum);
             }
             else
             {
-                SkillAction(entity, skillData, index);
+                Debug.Log("Index2:" + tmpIndex);
+                SkillAction(entity, skillData, tmpIndex);
             }
         }
     }
@@ -88,6 +91,11 @@ public class SkillMgr: MonoBehaviour
     {
         // 获取所有怪物实体，遍历运算
         var monsterList = caster.battleMgr.GetEntityMonsters();
+        if (skill.skillActionLst.Count <= index)
+        {
+            Debug.Log("Index:" + index + ",skillActionLst:" + skill.skillActionLst.Count + ",data:" + skill.skillActionLst);
+            return;
+        }
         var action = resSvc.GetSkillActionCfgData(skill.skillActionLst[index]);
         var damage = skill.skillDamageLst[index];
 
@@ -161,6 +169,25 @@ public class SkillMgr: MonoBehaviour
         
         // 最终伤害
         dmgSum = dmgSum >= 0 ? dmgSum : 0;
+        if (dmgSum == 0)
+        {
+            return;
+        }
+        
+        Debug.Log("Damage:" + dmgSum + ",Hp:" + target.HP);
+
+        if (target.HP < dmgSum)
+        {
+            target.HP = 0;
+            // TODO 目标死亡处理
+            target.Die();
+        }
+        else
+        {
+            target.HP -= dmgSum;
+            target.Hit();
+        }
+        
     }
     
     /// <summary>

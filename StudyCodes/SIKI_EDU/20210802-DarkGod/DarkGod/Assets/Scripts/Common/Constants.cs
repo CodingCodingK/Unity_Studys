@@ -125,6 +125,11 @@ public static class Constants
 
     // Action参数
     public const int ActionDefault = -1;
+    public const int ActionBorn = 0;
+    public const int ActionDie = 100;
+    public const int ActionHit = 101;
+    
+    public const int DieAniTime = 5000;
 
     #endregion
 

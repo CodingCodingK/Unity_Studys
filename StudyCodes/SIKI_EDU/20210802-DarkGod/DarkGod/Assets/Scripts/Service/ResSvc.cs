@@ -800,10 +800,10 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
                         case "delayTime":
                             dto.delayTime = Int32.Parse(e.InnerText);
                             break;
-                        case "moveDis":
+                        case "angle":
                             dto.angle = float.Parse(e.InnerText);
                             break;
-                        case "moveTime":
+                        case "radius":
                             dto.radius = float.Parse(e.InnerText);
                             break;
                     }

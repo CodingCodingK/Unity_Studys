@@ -223,6 +223,12 @@ public class BattleMgr: SystemBase
             foreach (var monster in monsterDic)
             {
                 monster.Value.controller.gameObject.SetActive(true);
+                monster.Value.Born();
+                // 出生后1秒进入Idle状态
+                TimerSvc.Instance().AddTimeTask(o =>
+                {
+                    monster.Value.Idle();
+                }, 1000);
             }
         },500);
     }
