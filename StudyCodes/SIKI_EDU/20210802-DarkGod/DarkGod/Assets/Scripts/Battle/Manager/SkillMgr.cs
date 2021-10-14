@@ -184,6 +184,7 @@ public class SkillMgr: MonoBehaviour
             target.HP = 0;
             // TODO 目标死亡处理
             target.Die();
+            BattleMgr.Instance.RemoveMonster(target.Name);
         }
         else
         {

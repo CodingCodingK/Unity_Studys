@@ -672,6 +672,9 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
                         case "skillTime":
                             dto.skillTime = Int32.Parse(e.InnerText);
                             break;
+                        case "cdTime":
+                            dto.cdTime = Int32.Parse(e.InnerText);
+                            break;
                         case "aniAction":
                             dto.aniAction = Int32.Parse(e.InnerText);
                             break;

@@ -76,6 +76,7 @@ public class SkillCfg : BaseData<SkillCfg>
 {
     public string skillName;
     public int skillTime;
+    public int cdTime;
     public int aniAction;
     public string fx;
     public DamageType dmgType;

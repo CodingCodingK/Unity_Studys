@@ -125,21 +125,21 @@ public class EntityBase
 
     public virtual void SetDodge()
     {
-        GameRootResources.Instance().dynamicWindow.SetDodge(controller.gameObject.name);
+        GameRootResources.Instance().dynamicWindow.SetDodge(Name);
     }
     
     public virtual void SetCritical(int num)
     {
-        GameRootResources.Instance().dynamicWindow.SetCritical(controller.gameObject.name,num);
+        GameRootResources.Instance().dynamicWindow.SetCritical(Name,num);
     }
     
     public virtual void SetHurt(int num)
     {
-        GameRootResources.Instance().dynamicWindow.SetHurt(controller.gameObject.name,num);
+        GameRootResources.Instance().dynamicWindow.SetHurt(Name,num);
     }
     public virtual void SetHpVal(int oldVal,int newVal)
     {
-        GameRootResources.Instance().dynamicWindow.SetHpVal(controller.gameObject.name,oldVal,newVal);
+        GameRootResources.Instance().dynamicWindow.SetHpVal(Name,oldVal,newVal);
     }
 
     public virtual void SkillAttack(int skillID)
@@ -165,5 +165,10 @@ public class EntityBase
     public virtual Transform GetTrans()
     {
         return controller.transform;
+    }
+
+    public AnimationClip[] GetAniClips()
+    {
+        return controller.ani.runtimeAnimatorController.animationClips;
     }
 }

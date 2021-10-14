@@ -92,6 +92,15 @@ public class DynamicWindow : WindowBase
             itemDic.Add(mName,ieh);
         }
     }
+    
+    public void RemoveHpItemInfo(string mName)
+    {
+        if(itemDic.TryGetValue(mName,out ItemEntityHp item))
+        {
+            Destroy(item.gameObject);
+            itemDic.Remove(mName);
+        }
+    }
 
     public void SetDodge(string key)
     {
@@ -119,9 +128,12 @@ public class DynamicWindow : WindowBase
     
     public void SetHpVal(string key,int oldVal,int newVal)
     {
-        if (itemDic.TryGetValue(key, out var item))
+        if (!string.IsNullOrEmpty(key))
         {
-            item.SetHpVal(oldVal,newVal);
+            if (itemDic.TryGetValue(key, out var item))
+            {
+                item.SetHpVal(oldVal,newVal);
+            } 
         }
     }
 

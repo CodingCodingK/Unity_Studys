@@ -10,6 +10,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Timers;
 using PEProtocol;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -88,9 +89,17 @@ public class BattleMgr: SystemBase
              skillMgr = skillMgr,
              battleMgr = Instance,
          };
+         entityPlayer.Name = "AssassinBattle";
          entityPlayer.SetBattleProps(props);
          
          entityPlayer.Idle();
+
+         // 动画组件有问题,特殊处理
+         TimerSvc.Instance().AddTimeTask(i =>
+         {
+             entityPlayer.controller.ani.applyRootMotion = true;
+         }, 1000);
+         
          // 激活第一批怪物
          ActiveCurrentBatchMonsters();
         
@@ -191,12 +200,12 @@ public class BattleMgr: SystemBase
 
     private void ReleaseSkill2()
     {
-        
+        entityPlayer.Attack(102);
     }
     
     private void ReleaseSkill3()
     {
-        
+        entityPlayer.Attack(103);
     }
 
     public Vector2 GetDirInput()
@@ -216,6 +225,15 @@ public class BattleMgr: SystemBase
         }
 
         return monsterList;
+    }
+
+    public void RemoveMonster(string key)
+    {
+        if (monsterDic.TryGetValue(key,out var entityMonster))
+        {
+            monsterDic.Remove(key);
+            gameRootResources.dynamicWindow.RemoveHpItemInfo(key);
+        }
     }
 
     public void ActiveCurrentBatchMonsters()

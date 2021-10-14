@@ -30,7 +30,7 @@ public class StateHit : IState
     /// </summary>
     private float GetHitAniTIme(EntityBase entity)
     {
-        AnimationClip[] clips = entity.controller.ani.runtimeAnimatorController.animationClips;
+        AnimationClip[] clips = entity.GetAniClips();
         foreach (var clip in clips)
         {
             if (clip.name.ToLower().Contains("hit"))

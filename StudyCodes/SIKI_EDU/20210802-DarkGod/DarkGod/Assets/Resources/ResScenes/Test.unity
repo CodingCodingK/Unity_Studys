@@ -295,7 +295,7 @@ Transform:
   m_LocalScale: {x: 20, y: 0.1, z: 20}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &778104490
 GameObject:
@@ -387,7 +387,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &988206477
 GameObject:
@@ -631,6 +631,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MonsterSoldier_1
       objectReference: {fileID: 0}
+    - target: {fileID: 100058, guid: dd75dbba84a835a449ac9f4332610bea, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400058, guid: dd75dbba84a835a449ac9f4332610bea, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -751,7 +755,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 199576, guid: bb97dfbc76c0cbd43a9e76f4dcc64f72, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 499576, guid: bb97dfbc76c0cbd43a9e76f4dcc64f72, type: 3}
       propertyPath: m_RootOrder

@@ -105,9 +105,9 @@ Animation:
   m_GameObject: {fileID: 160725099}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 48870a7ca01e5d34fb2bebde50094d38, type: 2}
+  m_Animation: {fileID: 7400000, guid: 7ea8333ae7a8fbb40b5aed94328700c3, type: 2}
   m_Animations:
-  - {fileID: 7400000, guid: 48870a7ca01e5d34fb2bebde50094d38, type: 2}
+  - {fileID: 7400000, guid: 7ea8333ae7a8fbb40b5aed94328700c3, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
@@ -152,8 +152,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 667, y: 375}
-  m_SizeDelta: {x: 345.04742, y: 35.507935}
+  m_AnchoredPosition: {x: 667.5, y: 366.74}
+  m_SizeDelta: {x: 287.05145, y: 16.524727}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5269958695090427071
 CanvasRenderer:

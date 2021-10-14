@@ -35,6 +35,12 @@ public class PlayerCtrlWindow : WindowBase
     /// </summary>
     public Transform expPrgTrans;
 
+    public Image imgSk1CD;
+    public Text txtSk1CD;
+    public Image imgSk2CD;
+    public Text txtSk2CD;
+    public Image imgSk3CD;
+    public Text txtSk3CD;
     
     // others
     
@@ -54,8 +60,21 @@ public class PlayerCtrlWindow : WindowBase
     private float pointDis;
 
     public Vector2 curtDir;
+
+    private bool isSK1CD = false;
+    private float sk1CdTime;
+    private int sk1CdNum;
+    private float sk1CdCount;
     
+    private bool isSK2CD = false;
+    private float sk2CdTime;
+    private int sk2CdNum;
+    private float sk2CdCount;
     
+    private bool isSK3CD = false;
+    private float sk3CdTime;
+    private int sk3CdNum;
+    private float sk3CdCount;
     #endregion
     
     protected override void InitWindow()
@@ -64,9 +83,71 @@ public class PlayerCtrlWindow : WindowBase
         
         defaultPos = imgDirBg.transform.position;
         pointDis = Screen.height * 1.0f / Constants.ScreenStandardHeight * Constants.ScreenOPDis;
-        
+
+        sk1CdTime = resSvc.GetSkillCfgData(101).cdTime / 1000f;
+        sk2CdTime = resSvc.GetSkillCfgData(102).cdTime / 1000f;
+        sk3CdTime = resSvc.GetSkillCfgData(103).cdTime / 1000f;
         RegClickEvents();
         RefreshUI();
+    }
+
+    private void Update()
+    {
+        float delta = Time.deltaTime;
+        
+        if (isSK1CD)
+        {
+            sk1CdCount += delta;
+            sk1CdNum = (int)(sk1CdTime - sk1CdCount);
+            if (sk1CdCount >= sk1CdTime)
+            {
+                isSK1CD = false;
+                SetActive(imgSk1CD,false);
+                //SetActive(txtSk1CD,false);
+                
+            }
+            else
+            {
+                imgSk1CD.fillAmount = 1 - sk1CdCount / sk1CdTime;
+                SetText(txtSk1CD,sk1CdNum);
+            }
+        }
+        
+        if (isSK2CD)
+        {
+            sk2CdCount += delta;
+            sk2CdNum = (int)(sk2CdTime - sk2CdCount);
+            if (sk2CdCount >= sk2CdTime)
+            {
+                isSK2CD = false;
+                SetActive(imgSk2CD,false);
+                //SetActive(txtSk1CD,false);
+                
+            }
+            else
+            {
+                imgSk2CD.fillAmount = 1 - sk2CdCount / sk2CdTime;
+                SetText(txtSk2CD,sk2CdNum);
+            }
+        }
+        
+        if (isSK3CD)
+        {
+            sk3CdCount += delta;
+            sk3CdNum = (int)(sk3CdTime - sk3CdCount);
+            if (sk3CdCount >= sk3CdTime)
+            {
+                isSK3CD = false;
+                SetActive(imgSk3CD,false);
+                //SetActive(txtSk1CD,false);
+                
+            }
+            else
+            {
+                imgSk3CD.fillAmount = 1 - sk3CdCount / sk3CdTime;
+                SetText(txtSk3CD,sk3CdNum);
+            }
+        }
     }
 
     private void RefreshUI()
@@ -165,17 +246,51 @@ public class PlayerCtrlWindow : WindowBase
     
     public void ClickSkill1()
     {
-        BattleSys.Instance.ReqReleaseSkill(1);
+        if (isSK1CD == false)
+        {
+            BattleSys.Instance.ReqReleaseSkill(1);
+            isSK1CD = true;
+            //SetActive(txtSk1CD);
+            SetActive(imgSk1CD);
+            imgSk1CD.fillAmount = 1;
+            sk1CdCount = 0;
+            sk1CdNum = (int) sk1CdTime;
+            SetText(txtSk1CD,sk1CdNum);
+            
+        }
+        
     }
 
     public void ClickSkill2()
     {
-        BattleSys.Instance.ReqReleaseSkill(2);
+        if (isSK2CD == false)
+        {
+            BattleSys.Instance.ReqReleaseSkill(2);
+            isSK2CD = true;
+            //SetActive(txtSk1CD);
+            SetActive(imgSk2CD);
+            imgSk2CD.fillAmount = 1;
+            sk2CdCount = 0;
+            sk2CdNum = (int) sk2CdTime;
+            SetText(txtSk2CD,sk2CdNum);
+            
+        }
     }
     
     public void ClickSkill3()
     {
-        BattleSys.Instance.ReqReleaseSkill(3);
+        if (isSK3CD == false)
+        {
+            BattleSys.Instance.ReqReleaseSkill(3);
+            isSK3CD = true;
+            //SetActive(txtSk1CD);
+            SetActive(imgSk3CD);
+            imgSk3CD.fillAmount = 1;
+            sk3CdCount = 0;
+            sk3CdNum = (int) sk3CdTime;
+            SetText(txtSk3CD,sk3CdNum);
+            
+        }
     }
     
     #endregion

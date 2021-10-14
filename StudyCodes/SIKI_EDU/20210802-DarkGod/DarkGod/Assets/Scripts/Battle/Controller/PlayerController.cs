@@ -26,6 +26,13 @@ public class PlayerController : Controller
     
     // 技能
     public GameObject daggerAtk1fx;
+    public GameObject daggerAtk2fx;
+    public GameObject daggerAtk3fx;
+    public GameObject daggerAtk4fx;
+    public GameObject daggerAtk5fx;
+    public GameObject daggerSkill1fx;
+    public GameObject daggerSkill2fx;
+    public GameObject daggerSkill3fx;
 
     public override void Init()
     {
@@ -39,7 +46,34 @@ public class PlayerController : Controller
         {
             fxDic.Add(daggerAtk1fx.name,daggerAtk1fx);
         }
-        
+        if (daggerAtk2fx != null)
+        {
+            fxDic.Add(daggerAtk2fx.name,daggerAtk2fx);
+        }
+        if (daggerAtk3fx != null)
+        {
+            fxDic.Add(daggerAtk3fx.name,daggerAtk3fx);
+        }
+        if (daggerAtk4fx != null)
+        {
+            fxDic.Add(daggerAtk4fx.name,daggerAtk4fx);
+        }
+        if (daggerAtk5fx != null)
+        {
+            fxDic.Add(daggerAtk5fx.name,daggerAtk5fx);
+        }
+        if (daggerSkill1fx != null)
+        {
+            fxDic.Add(daggerSkill1fx.name,daggerSkill1fx);
+        }
+        if (daggerSkill2fx != null)
+        {
+            fxDic.Add(daggerSkill2fx.name,daggerSkill2fx);
+        }
+        if (daggerSkill3fx != null)
+        {
+            fxDic.Add(daggerSkill3fx.name,daggerSkill3fx);
+        }
     }
     
     private void Update()
