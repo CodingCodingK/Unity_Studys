@@ -5227,6 +5227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tipsAni: {fileID: 1253823789}
   txtTips: {fileID: 1253823791}
+  hpItemRoot: {fileID: 2127230941}
 --- !u!1 &751143021
 GameObject:
   m_ObjectHideFlags: 0

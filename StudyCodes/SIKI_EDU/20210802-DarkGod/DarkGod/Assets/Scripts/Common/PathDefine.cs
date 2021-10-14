@@ -70,6 +70,6 @@ public class PathDefine
     #region Player
 
     public const string TaskItemPrefab = "PrefabUI/ItemTask";
-
+    public const string ItemEntityHpPrefab = "PrefabUI/itemEntityHp";
     #endregion
 }

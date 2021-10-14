@@ -83,6 +83,7 @@
      <Compile Include="Assets\Scripts\Common\MapperHelper.cs" />
      <Compile Include="Assets\Scripts\Battle\FSM\StateMove.cs" />
      <Compile Include="Assets\Scripts\UIWindow\BuyWindow.cs" />
+     <Compile Include="Assets\Scripts\UIWindow\ItemEntityHp.cs" />
      <Compile Include="Assets\Scripts\UIWindow\TaskWindow.cs" />
      <Compile Include="Assets\Scripts\System\DungeonSys.cs" />
      <Compile Include="Assets\Scripts\Battle\Controller\Controller.cs" />
@@ -106,7 +107,6 @@
      <Compile Include="Assets\Scripts\UIWindow\LoginWindow.cs" />
      <Compile Include="Assets\Scripts\UIWindow\StrongWindow.cs" />
      <Compile Include="Assets\Scripts\Battle\Manager\BattleMgr.cs" />
-     <Compile Include="Assets\Scripts\UIWindow\ItemEntityHp.cs" />
      <None Include="Assets\Resources\ResCfgs\skillmove.xml" />
      <None Include="Assets\Compond\MakeChar\Shader\PlayerShader.shader" />
      <None Include="Assets\Resources\ResCfgs\strong.xml" />

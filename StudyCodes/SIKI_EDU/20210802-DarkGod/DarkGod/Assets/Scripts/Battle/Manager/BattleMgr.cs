@@ -122,9 +122,11 @@ public class BattleMgr: SystemBase
                 };
                 em.md = md;
                 em.SetBattleProps(md.mCfg.props);
+                em.Name = monster.name;
                 
                 monster.SetActive(false);
                 monsterDic.Add(monster.name, em);
+                gameRootResources.dynamicWindow.AddHpItemInfo(monster.name,mc.hpRoot,em.md.mCfg.props.hp);
             }
         }
     }

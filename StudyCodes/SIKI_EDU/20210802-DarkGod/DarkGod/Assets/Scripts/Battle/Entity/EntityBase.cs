@@ -9,6 +9,8 @@ public class EntityBase
     public BattleMgr battleMgr;
     public Controller controller;
 
+    public string Name;
+
     public bool canControl = true;
 
    
@@ -38,8 +40,8 @@ public class EntityBase
         }
         set
         {
-            // TODO 更新UI层
-            
+            // 更新UI层
+            SetHpVal(_hp,value);
             _hp = value;
         }
     }
@@ -119,6 +121,25 @@ public class EntityBase
         {
             controller.SetSkillMoveState(move,skillSpeed);
         }
+    }
+
+    public virtual void SetDodge()
+    {
+        GameRootResources.Instance().dynamicWindow.SetDodge(controller.gameObject.name);
+    }
+    
+    public virtual void SetCritical(int num)
+    {
+        GameRootResources.Instance().dynamicWindow.SetCritical(controller.gameObject.name,num);
+    }
+    
+    public virtual void SetHurt(int num)
+    {
+        GameRootResources.Instance().dynamicWindow.SetHurt(controller.gameObject.name,num);
+    }
+    public virtual void SetHpVal(int oldVal,int newVal)
+    {
+        GameRootResources.Instance().dynamicWindow.SetHpVal(controller.gameObject.name,oldVal,newVal);
     }
 
     public virtual void SkillAttack(int skillID)

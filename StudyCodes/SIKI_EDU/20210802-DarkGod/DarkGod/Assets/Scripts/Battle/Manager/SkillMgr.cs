@@ -141,6 +141,7 @@ public class SkillMgr: MonoBehaviour
             if (dodgeNum <= target.Props.dodge)
             {
                 // TODO UI显示闪避
+                target.SetDodge();
                 return;
             }
             // 计算属性加成（人物固有伤害+技能额外伤害）
@@ -153,6 +154,7 @@ public class SkillMgr: MonoBehaviour
                 // 暴击伤害 = 2倍
                 var criticalRate = 2;
                 dmgSum = dmgSum * criticalRate;
+                target.SetCritical(dmgSum);
             }
 
             // 计算穿甲
@@ -176,6 +178,7 @@ public class SkillMgr: MonoBehaviour
         
         Debug.Log("Damage:" + dmgSum + ",Hp:" + target.HP);
 
+        target.SetHurt(dmgSum);
         if (target.HP < dmgSum)
         {
             target.HP = 0;

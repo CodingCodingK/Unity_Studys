@@ -16,8 +16,11 @@ public class DynamicWindow : WindowBase
 {
     public Animation tipsAni;
     public Text txtTips;
+    public Transform hpItemRoot;
+    
     private bool isTipsShow = false;
     private Queue<string> tipsPool = new Queue<string>();
+    private Dictionary<string, ItemEntityHp> itemDic = new Dictionary<string, ItemEntityHp>();
 
     protected override void InitWindow()
     {
@@ -37,6 +40,8 @@ public class DynamicWindow : WindowBase
             
         }
     }
+
+    #region Tips相关
 
     public void AddTips(string tip)
     {
@@ -70,4 +75,55 @@ public class DynamicWindow : WindowBase
             action();
         }
     }
+    
+    #endregion
+
+    #region ItemEntityHP相关
+
+    public void AddHpItemInfo(string mName,Transform trans,int hp)
+    {
+        if(!itemDic.TryGetValue(mName,out ItemEntityHp item))
+        {
+            GameObject go = resSvc.LoadPrefab(PathDefine.ItemEntityHpPrefab,true);
+            go.transform.SetParent(hpItemRoot);
+            go.transform.localPosition = new Vector3(-1000, 0, 0);
+            ItemEntityHp ieh = go.GetComponent<ItemEntityHp>();
+            ieh.SetItemInfo(trans,hp);
+            itemDic.Add(mName,ieh);
+        }
+    }
+
+    public void SetDodge(string key)
+    {
+        if (itemDic.TryGetValue(key, out var item))
+        {
+            item.SetDodge();
+        }
+    }
+    
+    public void SetCritical(string key,int critical)
+    {
+        if (itemDic.TryGetValue(key, out var item))
+        {
+            item.SetCritical(critical);
+        }
+    }
+    
+    public void SetHurt(string key,int hurt)
+    {
+        if (itemDic.TryGetValue(key, out var item))
+        {
+            item.SetHurt(hurt);
+        }
+    }
+    
+    public void SetHpVal(string key,int oldVal,int newVal)
+    {
+        if (itemDic.TryGetValue(key, out var item))
+        {
+            item.SetHpVal(oldVal,newVal);
+        }
+    }
+
+    #endregion
 }

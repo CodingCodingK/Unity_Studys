@@ -131,6 +131,8 @@ public static class Constants
     
     public const int DieAniTime = 5000;
 
+    /// 血条平滑 最大加速度(单位秒)
+    public const float AccelerHpSpeed = 0.2f;
     #endregion
 
 }
