@@ -79,6 +79,7 @@ public class SkillCfg : BaseData<SkillCfg>
     public int cdTime;
     public int aniAction;
     public string fx;
+    public bool isCombo;
     public DamageType dmgType;
     /// skillmove配置表对应的ID List
     public List<int> skillMoveLst;

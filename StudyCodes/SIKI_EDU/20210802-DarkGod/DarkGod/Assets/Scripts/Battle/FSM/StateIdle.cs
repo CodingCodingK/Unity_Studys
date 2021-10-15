@@ -11,17 +11,25 @@ public class StateIdle : IState
 
     public void Process(EntityBase entity,params object[] args)
     {
-        entity.SetBlend(Constants.BlendIdle);
-        var dir = entity.GetDirInput();
-        if (dir != Vector2.zero)
+        if (entity.nextSkillID != 0)
         {
-            entity.SetDir(dir);
-            entity.Move();
+            entity.Attack(entity.nextSkillID);
         }
         else
         {
-            entity.Idle();
+            var dir = entity.GetDirInput();
+            if (dir != Vector2.zero)
+            {
+                entity.SetDir(dir);
+                entity.Move();
+            }
+            else
+            {
+                entity.SetBlend(Constants.BlendIdle);
+            }
         }
+        
+       
     }
 
     public void Exit(EntityBase entity,params object[] args)

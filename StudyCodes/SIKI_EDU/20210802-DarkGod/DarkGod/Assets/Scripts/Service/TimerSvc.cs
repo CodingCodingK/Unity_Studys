@@ -37,8 +37,11 @@ public class TimerSvc : GameRootMonoSingleton<TimerSvc>
     {
         return pt.AddTimeTask(callback,delay,timeUnit,count);
     }
-    
-    
+
+    public double GeyNowTime()
+    {
+        return pt.GetMillisecondsTime();
+    }
     
     
 }

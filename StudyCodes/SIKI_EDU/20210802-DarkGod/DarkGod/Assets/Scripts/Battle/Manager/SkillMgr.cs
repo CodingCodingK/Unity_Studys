@@ -38,6 +38,22 @@ public class SkillMgr: MonoBehaviour
     private void AttackEffect(EntityBase entity,int skillID)
     {
         SkillCfg skillData = resSvc.GetSkillCfgData(skillID);
+
+        // 释放技能时移动
+        if (entity.GetDirInput() == Vector2.zero)
+        {
+            // TODO 搜索最近怪物
+            Vector2 dir = entity.CalcTargetDir();
+            if (dir != Vector2.zero)
+            {
+                entity.SetAtkRotation(dir);
+            }
+        }
+        else
+        {
+            entity.SetAtkRotation(entity.GetDirInput(),true);
+        }
+        
         // 设置技能 动作编号
         entity.SetAction(skillData.aniAction);
         // 设置技能特效 特效名、特效开启持续时间

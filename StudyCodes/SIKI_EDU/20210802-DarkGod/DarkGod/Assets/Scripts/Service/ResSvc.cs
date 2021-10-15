@@ -681,6 +681,9 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
                         case "fx":
                             dto.fx = e.InnerText;
                             break;
+                        case "isCombo":
+                            dto.isCombo = e.InnerText.Equals("1");
+                            break;
                         case "skillMoveLst":
                             dto.skillMoveLst = MapperHelper.ConvertToIntList(e.InnerText);
                             break;

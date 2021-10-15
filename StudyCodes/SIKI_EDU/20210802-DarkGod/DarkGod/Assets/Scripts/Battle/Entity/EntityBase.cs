@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 /// 逻辑实体基类
@@ -46,6 +47,10 @@ public class EntityBase
         }
     }
 
+    public Queue<int> comboQue = new Queue<int>();
+    public int nextSkillID;
+    public SkillCfg curtSkillCfg;
+
     public virtual void SetBattleProps(BattleProps bps)
     {
         Props = bps;
@@ -80,6 +85,11 @@ public class EntityBase
     public void Die()
     {
         stateMgr.ChangeStatus(this,AniState.Die);
+    }
+
+    public virtual void TickAILogic()
+    {
+        
     }
     
     public virtual void SetBlend(float blend)
@@ -120,6 +130,22 @@ public class EntityBase
         if (controller!=null)
         {
             controller.SetSkillMoveState(move,skillSpeed);
+        }
+    }
+
+    public virtual void SetAtkRotation(Vector2 dir,bool offset = false)
+    {
+        if (controller!=null)
+        {
+            if (offset)
+            {
+                controller.SetAtkRotation(dir);
+            }
+            else
+            {
+                controller.SetAtkRotationLocal(dir);
+            }
+            
         }
     }
 
@@ -170,5 +196,30 @@ public class EntityBase
     public AnimationClip[] GetAniClips()
     {
         return controller.ani.runtimeAnimatorController.animationClips;
+    }
+
+    public virtual Vector2 CalcTargetDir()
+    {
+        return Vector2.zero;
+    }
+
+    public void ExitCurtSkill()
+    {
+        canControl = true;
+
+        // 连招数据更新
+        if (curtSkillCfg.isCombo)
+        {
+            if (comboQue.Count > 0)
+            {
+                nextSkillID = comboQue.Dequeue();
+            }
+            else
+            {
+                nextSkillID = 0;
+            }
+        }
+        
+        SetAction(Constants.ActionDefault);
     }
 }

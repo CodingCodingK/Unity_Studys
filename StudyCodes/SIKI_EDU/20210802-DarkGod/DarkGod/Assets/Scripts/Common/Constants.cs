@@ -133,6 +133,10 @@ public static class Constants
 
     /// 血条平滑 最大加速度(单位秒)
     public const float AccelerHpSpeed = 0.2f;
+    
+    /// 普攻连招有效时间(单位毫秒)
+    public const int ComboSpace = 500;
+    
     #endregion
 
 }

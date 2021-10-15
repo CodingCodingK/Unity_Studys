@@ -8,6 +8,11 @@ using UnityEngine.UIElements;
 /// </summary>
 public abstract class Controller : MonoBehaviour
 {
+    /// <summary>
+    /// Main Camera的引用
+    /// </summary>
+    protected Transform camTrans;
+    
     public Animator ani;
     public CharacterController ctrl;
     public Transform hpRoot;
@@ -64,6 +69,20 @@ public abstract class Controller : MonoBehaviour
     {
         skillMove = move;
         skillMoveSpeed = skillSpeed;
+    }
+    
+    public virtual void SetAtkRotationLocal(Vector2 atkDir)
+    {
+        float angle = Vector2.SignedAngle(atkDir, new Vector2(0, 1));
+        Vector3 eulerAngles = new Vector3(0, angle, 0);
+        transform.localEulerAngles = eulerAngles;
+    }
+    
+    public virtual void SetAtkRotation(Vector2 camDir)
+    {
+        float angle = Vector2.SignedAngle(camDir, new Vector2(0, 1)) + camTrans.eulerAngles.y;
+        Vector3 eulerAngles = new Vector3(0, angle, 0);
+        transform.localEulerAngles = eulerAngles;
     }
 }
 

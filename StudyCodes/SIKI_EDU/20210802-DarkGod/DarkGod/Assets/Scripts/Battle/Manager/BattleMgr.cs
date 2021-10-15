@@ -22,7 +22,7 @@ public class BattleMgr: SystemBase
     private StateMgr stateMgr;
     private SkillMgr skillMgr;
     private MapMgr mapMgr;
-    private EntityPlayer entityPlayer;
+    public EntityPlayer entityPlayer;
     private MapCfg mapCfg;
 
     private Dictionary<string, EntityMonster> monsterDic = new Dictionary<string, EntityMonster>();
@@ -188,8 +188,40 @@ public class BattleMgr: SystemBase
         }
     }
 
+    private int[] comboArr = new[] {111, 112, 113, 114, 115};
+    public int comboIndex = 0;
+    public double lastAtkTime = -1;
     private void ReleaseNormalAtk()
     {
+        if (entityPlayer.curtAniState == AniState.Attack)
+        {
+            double nowAtkTime = TimerSvc.Instance().GeyNowTime();
+            // 在500ms内进行第二次攻击，存数据
+            if (nowAtkTime - lastAtkTime < Constants.ComboSpace && lastAtkTime != -1)
+            {
+                if (comboIndex < comboArr.Length - 1)
+                {
+                    comboIndex++;
+                    entityPlayer.comboQue.Enqueue(comboArr[comboIndex]);
+                    lastAtkTime = nowAtkTime; 
+                }
+                else
+                {
+                    // 此处是上次攻击状态已打出5下，但是还未回归到Idle状态的一小段时间内。
+                    comboIndex = 0;
+                    lastAtkTime = 0;
+                }
+
+            }
+        }
+        else if (entityPlayer.curtAniState == AniState.Idle || entityPlayer.curtAniState == AniState.Move)
+        {
+            // 重置普攻
+            lastAtkTime = TimerSvc.Instance().GeyNowTime();
+            comboIndex = 0;
+            entityPlayer.Attack(comboArr[comboIndex]);
+        }
+        
         
     }
     

@@ -15,10 +15,6 @@ using UnityEngine;
 
 public class PlayerController : Controller
 {
-    /// <summary>
-    /// Main Camera的引用
-    /// </summary>
-    private Transform camTrans;
     private Vector3 camOffset;
 
     private float targetBlend;
@@ -126,6 +122,8 @@ public class PlayerController : Controller
 
     private void SetDir()
     {
+        // Dir = 从托盘上计算出来的偏转角度（中点到用户指触点）
+        
         float angle = Vector2.SignedAngle(Dir, new Vector2(0, 1)) + camTrans.eulerAngles.y;
         Vector3 eulerAngles = new Vector3(0, angle, 0);
         transform.localEulerAngles = eulerAngles;

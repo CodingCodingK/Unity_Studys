@@ -3,6 +3,7 @@ public class StateAttack : IState
     public void Enter(EntityBase entity,params object[] args)
     {
         entity.curtAniState = AniState.Attack;
+        entity.curtSkillCfg = ResSvc.Instance().GetSkillCfgData((int)args[0]);
     }
 
     public void Process(EntityBase entity,params object[] args)
@@ -12,9 +13,6 @@ public class StateAttack : IState
 
     public void Exit(EntityBase entity,params object[] args)
     {
-        // 技能表现重置
-        entity.SetAction(Constants.ActionDefault);
-        // 允许移动
-        entity.canControl = true;
+        entity.ExitCurtSkill();
     }
 }
