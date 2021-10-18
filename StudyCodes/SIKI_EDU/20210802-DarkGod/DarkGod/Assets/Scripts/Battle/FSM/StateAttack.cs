@@ -8,6 +8,10 @@ public class StateAttack : IState
 
     public void Process(EntityBase entity,params object[] args)
     {
+        if (entity.entityType == EntityType.Player)
+        {
+            entity.canSkill = false;
+        }
         entity.SkillAttack((int)args[0]);
     }
 

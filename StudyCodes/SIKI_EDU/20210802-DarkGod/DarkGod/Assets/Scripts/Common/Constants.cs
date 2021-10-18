@@ -25,6 +25,21 @@ public enum DamageType
     AP = 2,
 }
 
+public enum EntityType
+{
+    None,
+    Player,
+    Monster,
+}
+
+public enum EntityState
+{
+    None,
+    /// 霸体状态：不可控制，可受伤害
+    BaTiState,
+    
+}
+
 public static class Constants
 {
     #region 颜色类
@@ -88,6 +103,9 @@ public static class Constants
     public const string UIExtenBtn = "uiExtenBtn";
     public const string UIOpenPage = "uiOpenPage";
     
+    // 战斗音效
+    public const string AssHit = "assassin_Hit";
+    
     #endregion
 
     #region 屏幕标准宽高
@@ -104,7 +122,7 @@ public static class Constants
 
     // 移动速度相关
     public const int PlayerMoveSpeed = 8;
-    public const int MonsterMoveSpeed = 4;
+    public const int MonsterMoveSpeed = 3;
     /// 运动平滑 最大加速度(单位秒)
     public const float AccelerSpeed = 4;
     // 混合参数

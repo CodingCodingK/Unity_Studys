@@ -684,6 +684,12 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
                         case "isCombo":
                             dto.isCombo = e.InnerText.Equals("1");
                             break;
+                        case "isCollide":
+                            dto.isCollide = e.InnerText.Equals("1");
+                            break;
+                        case "isBreak":
+                            dto.isBreak = e.InnerText.Equals("1");
+                            break;
                         case "skillMoveLst":
                             dto.skillMoveLst = MapperHelper.ConvertToIntList(e.InnerText);
                             break;
@@ -869,6 +875,12 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
                             break;
                         case "resPath":
                             dto.resPath = e.InnerText;
+                            break;
+                        case "skillID":
+                            dto.skillID = Int32.Parse(e.InnerText);
+                            break;
+                        case "atkDis":
+                            dto.atkDis = float.Parse(e.InnerText);
                             break;
                         case "hp":
                             dto.props.hp = Int32.Parse(e.InnerText);

@@ -44,4 +44,11 @@ public class AudioSvc : GameRootMonoSingleton<AudioSvc>
         uiAudio.Play();
     }
     
+    public void PlayCustomClip(string name, AudioSource audioSource)
+    {
+        AudioClip playerClip = ResSvc.Instance().LoadAudio("ResAudio/" + name);
+        audioSource.clip = playerClip;
+        audioSource.Play();
+    }
+    
 }

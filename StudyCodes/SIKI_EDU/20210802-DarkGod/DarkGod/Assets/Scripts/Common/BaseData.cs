@@ -80,6 +80,8 @@ public class SkillCfg : BaseData<SkillCfg>
     public int aniAction;
     public string fx;
     public bool isCombo;
+    public bool isCollide;
+    public bool isBreak;
     public DamageType dmgType;
     /// skillmove配置表对应的ID List
     public List<int> skillMoveLst;
@@ -109,6 +111,8 @@ public class MonsterCfg : BaseData<MonsterCfg>
 {
     public string mName;
     public string resPath;
+    public int skillID;
+    public float atkDis;
     public BattleProps props;
 }
 

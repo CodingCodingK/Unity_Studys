@@ -59,6 +59,15 @@ public class BattleMgr: SystemBase
         Debug.Log("Init BattleMgr.");
     }
 
+    private void Update()
+    {
+        foreach (var item in monsterDic)
+        {
+            EntityMonster em = item.Value;
+            em.TickAILogic();
+        }
+    }
+
     private void LoadPlayer(MapCfg mapData)
     {
          GameObject player = resSvc.LoadPrefab(PathDefine.AsnBattlePlayerPrefab,true);
@@ -283,6 +292,11 @@ public class BattleMgr: SystemBase
                 }, 1000);
             }
         },500);
+    }
+
+    public bool CanRlsSkill()
+    {
+        return entityPlayer.canSkill;
     }
 
     #endregion

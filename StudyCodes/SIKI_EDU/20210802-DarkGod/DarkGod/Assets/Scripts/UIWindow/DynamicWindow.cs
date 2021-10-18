@@ -17,6 +17,8 @@ public class DynamicWindow : WindowBase
     public Animation tipsAni;
     public Text txtTips;
     public Transform hpItemRoot;
+
+    public Animation selfDodgeAni;
     
     private bool isTipsShow = false;
     private Queue<string> tipsPool = new Queue<string>();
@@ -135,6 +137,16 @@ public class DynamicWindow : WindowBase
                 item.SetHpVal(oldVal,newVal);
             } 
         }
+    }
+
+    #endregion
+
+    #region 主角Tips
+
+    public void SetSelfDodge()
+    {
+        selfDodgeAni.Stop();
+        selfDodgeAni.Play();
     }
 
     #endregion

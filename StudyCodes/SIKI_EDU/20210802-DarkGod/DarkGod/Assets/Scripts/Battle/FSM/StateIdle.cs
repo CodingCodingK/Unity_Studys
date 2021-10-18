@@ -17,6 +17,11 @@ public class StateIdle : IState
         }
         else
         {
+            if (entity.entityType == EntityType.Player)
+            {
+                entity.canSkill = true;
+            }
+            
             var dir = entity.GetDirInput();
             if (dir != Vector2.zero)
             {
@@ -28,8 +33,7 @@ public class StateIdle : IState
                 entity.SetBlend(Constants.BlendIdle);
             }
         }
-        
-       
+
     }
 
     public void Exit(EntityBase entity,params object[] args)

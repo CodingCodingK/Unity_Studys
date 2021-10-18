@@ -11,9 +11,17 @@ public class EntityBase
     public Controller controller;
 
     public string Name;
+    public EntityType entityType = EntityType.None;
+    public EntityState entityState = EntityState.None;
 
     public bool canControl = true;
+    public bool canSkill = true;
 
+    /// 技能位移的回调ID
+    public List<int> skMoveCBLst = new List<int>();
+    
+    /// 技能伤害的回调ID
+    public List<int> skActionCBLst = new List<int>();
    
     private BattleProps _props;
     
@@ -197,6 +205,11 @@ public class EntityBase
     {
         return controller.ani.runtimeAnimatorController.animationClips;
     }
+    public AudioSource GetAudioSource()
+    {
+        return controller.GetComponent<AudioSource>();
+    }
+    
 
     public virtual Vector2 CalcTargetDir()
     {
@@ -206,6 +219,7 @@ public class EntityBase
     public void ExitCurtSkill()
     {
         canControl = true;
+        entityState = EntityState.None;
 
         // 连招数据更新
         if (curtSkillCfg.isCombo)
@@ -221,5 +235,23 @@ public class EntityBase
         }
         
         SetAction(Constants.ActionDefault);
+    }
+
+    public void RemoveMoveCB(int tid)
+    {
+        int index = -1;
+        for (int i = 0; i < skMoveCBLst.Count; i++)
+        {
+            if (skMoveCBLst[i] == tid)
+            {
+                index = i;
+                break;
+            }
+        }
+
+        if (index != -1)
+        {
+            skMoveCBLst.RemoveAt(index);
+        }
     }
 }

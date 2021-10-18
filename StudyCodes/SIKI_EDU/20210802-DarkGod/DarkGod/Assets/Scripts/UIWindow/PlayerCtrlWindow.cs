@@ -29,6 +29,9 @@ public class PlayerCtrlWindow : WindowBase
     public Text txtLevel;
     public Text txtName;
     public Text txtExpPrg;
+
+    public Text txtSelfHp;
+    public Image imgSelfHp;
     
     /// <summary>
     /// 经验进度条
@@ -75,6 +78,8 @@ public class PlayerCtrlWindow : WindowBase
     private float sk3CdTime;
     private int sk3CdNum;
     private float sk3CdCount;
+
+    private int hpMax;
     #endregion
     
     protected override void InitWindow()
@@ -83,6 +88,11 @@ public class PlayerCtrlWindow : WindowBase
         
         defaultPos = imgDirBg.transform.position;
         pointDis = Screen.height * 1.0f / Constants.ScreenStandardHeight * Constants.ScreenOPDis;
+
+        hpMax = GameRoot.Instance().PlayerData.hp;
+        SetText(txtSelfHp,hpMax + "/" + hpMax);
+        imgSelfHp.fillAmount = 1;
+        
 
         sk1CdTime = resSvc.GetSkillCfgData(101).cdTime / 1000f;
         sk2CdTime = resSvc.GetSkillCfgData(102).cdTime / 1000f;
@@ -191,6 +201,18 @@ public class PlayerCtrlWindow : WindowBase
         
     }
 
+    public void SetSelfHpBarVal(int curtHp)
+    {
+        SetText(txtSelfHp,curtHp + "/" + hpMax);
+        imgSelfHp.fillAmount = curtHp * 1.0f / hpMax;
+    }
+
+    public bool GetCanSkill()
+    {
+        return BattleMgr.Instance.CanRlsSkill();
+    }
+    
+
     #region Click Events
 
     private void RegClickEvents()
@@ -246,7 +268,7 @@ public class PlayerCtrlWindow : WindowBase
     
     public void ClickSkill1()
     {
-        if (isSK1CD == false)
+        if (isSK1CD == false && GetCanSkill())
         {
             BattleSys.Instance.ReqReleaseSkill(1);
             isSK1CD = true;
@@ -263,7 +285,7 @@ public class PlayerCtrlWindow : WindowBase
 
     public void ClickSkill2()
     {
-        if (isSK2CD == false)
+        if (isSK2CD == false && GetCanSkill())
         {
             BattleSys.Instance.ReqReleaseSkill(2);
             isSK2CD = true;
@@ -279,7 +301,7 @@ public class PlayerCtrlWindow : WindowBase
     
     public void ClickSkill3()
     {
-        if (isSK3CD == false)
+        if (isSK3CD == false && GetCanSkill())
         {
             BattleSys.Instance.ReqReleaseSkill(3);
             isSK3CD = true;
@@ -292,7 +314,7 @@ public class PlayerCtrlWindow : WindowBase
             
         }
     }
-    
+
     #endregion
    
     

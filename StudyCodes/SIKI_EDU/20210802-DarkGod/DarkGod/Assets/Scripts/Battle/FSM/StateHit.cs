@@ -9,10 +9,21 @@ public class StateHit : IState
 
     public void Process(EntityBase entity, params object[] args)
     {
+        if (entity.entityType == EntityType.Player)
+        {
+            entity.canSkill = false;
+        }
+        
         entity.SetDir(Vector2.zero);
         entity.SetAction(Constants.ActionHit);
+
+        if (entity.entityType == EntityType.Player)
+        {
+            var charAudioSource = entity.GetAudioSource();
+            AudioSvc.Instance().PlayCustomClip(Constants.AssHit,charAudioSource);
+        }
         
-         // 出生后1秒进入Idle状态
+         // 受伤后1秒进入Idle状态
          TimerSvc.Instance().AddTimeTask(o =>
          {
              entity.SetAction(Constants.ActionDefault);

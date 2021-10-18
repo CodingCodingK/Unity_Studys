@@ -3,6 +3,12 @@ using UnityEngine;
 
 public class EntityPlayer : EntityBase
 {
+
+    public EntityPlayer()
+    {
+        entityType = EntityType.Player;
+    }
+    
     public override Vector2 GetDirInput()
     {
         return battleMgr.GetDirInput();
@@ -47,5 +53,15 @@ public class EntityPlayer : EntityBase
         }
 
         return closedMonster;
+    }
+
+    public override void SetHpVal(int oldVal, int newVal)
+    {
+        GameRootResources.Instance().playerCtrlWindow.SetSelfHpBarVal(newVal);
+    }
+
+    public override void SetDodge()
+    {
+        GameRootResources.Instance().dynamicWindow.SetSelfDodge();
     }
 }

@@ -39,21 +39,34 @@ public class SkillMgr: MonoBehaviour
     {
         SkillCfg skillData = resSvc.GetSkillCfgData(skillID);
 
-        // 释放技能时移动
-        if (entity.GetDirInput() == Vector2.zero)
+        if (!skillData.isCollide)
         {
-            // TODO 搜索最近怪物
-            Vector2 dir = entity.CalcTargetDir();
-            if (dir != Vector2.zero)
+            // 忽略玩家与怪物之间的碰撞
+            Physics.IgnoreLayerCollision(9,10);
+            timerSvc.AddTimeTask(i =>
             {
-                entity.SetAtkRotation(dir);
+                Physics.IgnoreLayerCollision(9,10,false);
+            },skillData.skillTime);
+        }
+
+        // 释放技能时移动
+        if (entity.entityType == EntityType.Player)
+        {
+            if (entity.GetDirInput() == Vector2.zero)
+            {
+                // TODO 搜索最近怪物
+                Vector2 dir = entity.CalcTargetDir();
+                if (dir != Vector2.zero)
+                {
+                    entity.SetAtkRotation(dir);
+                }
+            }
+            else
+            {
+                entity.SetAtkRotation(entity.GetDirInput(),true);
             }
         }
-        else
-        {
-            entity.SetAtkRotation(entity.GetDirInput(),true);
-        }
-        
+
         // 设置技能 动作编号
         entity.SetAction(skillData.aniAction);
         // 设置技能特效 特效名、特效开启持续时间
@@ -64,6 +77,11 @@ public class SkillMgr: MonoBehaviour
 
         entity.canControl = false;
         entity.SetDir(Vector2.zero);
+
+        if (!skillData.isBreak)
+        {
+            entity.entityState = EntityState.BaTiState;
+        }
         
         // 技能时间结束后 设置状态归零 
         timerSvc.AddTimeTask(i =>
@@ -90,7 +108,8 @@ public class SkillMgr: MonoBehaviour
             if (sum > 0)
             {
                 Debug.Log("Index1:" + tmpIndex);
-                timerSvc.AddTimeTask(i => { SkillAction(entity, skillData, tmpIndex); }, sum);
+                int moveId = timerSvc.AddTimeTask(i => { SkillAction(entity, skillData, tmpIndex); }, sum);
+                
             }
             else
             {
@@ -114,16 +133,31 @@ public class SkillMgr: MonoBehaviour
         }
         var action = resSvc.GetSkillActionCfgData(skill.skillActionLst[index]);
         var damage = skill.skillDamageLst[index];
-
-        foreach (var monster in monsterList)
+        
+        
+        if (caster.entityType == EntityType.Monster)
         {
+            var targetPlayer = caster.battleMgr.entityPlayer;
             // 判断距离、角度
-            if (InRange(caster.GetPos(),monster.GetPos(),action.radius) && InAngle(caster.GetTrans(),monster.GetPos(),action.angle))
+            if (InRange(caster.GetPos(),targetPlayer.GetPos(),action.radius) && InAngle(caster.GetTrans(),targetPlayer.GetPos(),action.angle))
             {
                 // 计算伤害
-                CalcDamage(caster,monster,skill,damage);
+                CalcDamage(caster,targetPlayer,skill,damage);
             }
         }
+        else if (caster.entityType == EntityType.Player)
+        {
+            foreach (var monster in monsterList)
+            {
+                // 判断距离、角度
+                if (InRange(caster.GetPos(),monster.GetPos(),action.radius) && InAngle(caster.GetTrans(),monster.GetPos(),action.angle))
+                {
+                    // 计算伤害
+                    CalcDamage(caster,monster,skill,damage);
+                }
+            }
+        }
+       
     }
 
     private bool InRange(Vector3 from,Vector3 to,float range)
@@ -205,7 +239,10 @@ public class SkillMgr: MonoBehaviour
         else
         {
             target.HP -= dmgSum;
-            target.Hit();
+            if (target.entityState != EntityState.BaTiState)
+            {
+                target.Hit();
+            }
         }
         
     }
@@ -225,11 +262,12 @@ public class SkillMgr: MonoBehaviour
             sum += skillMoveData.delayTime;
             if (sum > 0)
             {
-                timerSvc.AddTimeTask(i =>
+                int moveId = timerSvc.AddTimeTask(i =>
                 {
                     entity.SetSkillMoveState(true,speed);
-
+                    entity.RemoveMoveCB(i);
                 },sum);
+                entity.skMoveCBLst.Add(moveId);
             }
             else
             {
@@ -237,11 +275,12 @@ public class SkillMgr: MonoBehaviour
             }
 
             sum += skillMoveData.moveTime;
-            timerSvc.AddTimeTask(i =>
+            int stopId = timerSvc.AddTimeTask(i =>
             {
                 entity.SetSkillMoveState(false);
-            
+                entity.RemoveMoveCB(i);
             },  sum);
+            entity.skMoveCBLst.Add(stopId);
         }
 
     }
