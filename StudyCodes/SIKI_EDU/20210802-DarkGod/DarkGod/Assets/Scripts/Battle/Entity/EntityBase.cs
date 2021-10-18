@@ -254,4 +254,22 @@ public class EntityBase
             skMoveCBLst.RemoveAt(index);
         }
     }
+    
+    public void RemoveActionCB(int tid)
+    {
+        int index = -1;
+        for (int i = 0; i < skActionCBLst.Count; i++)
+        {
+            if (skActionCBLst[i] == tid)
+            {
+                index = i;
+                break;
+            }
+        }
+
+        if (index != -1)
+        {
+            skActionCBLst.RemoveAt(index);
+        }
+    }
 }

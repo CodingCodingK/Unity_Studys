@@ -42,6 +42,9 @@ public class TimerSvc : GameRootMonoSingleton<TimerSvc>
     {
         return pt.GetMillisecondsTime();
     }
-    
-    
+
+    public void DelTask(int tid)
+    {
+        pt.DeleteTimeTask(tid);
+    }
 }

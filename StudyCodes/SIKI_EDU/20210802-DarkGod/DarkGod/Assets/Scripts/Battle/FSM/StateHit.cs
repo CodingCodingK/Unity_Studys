@@ -5,6 +5,16 @@ public class StateHit : IState
     public void Enter(EntityBase entity, params object[] args)
     {
         entity.curtAniState = AniState.Hit;
+
+        foreach (var move in entity.skMoveCBLst)
+        {
+            TimerSvc.Instance().DelTask(move);
+        }
+        
+        foreach (var action in entity.skActionCBLst)
+        {
+            TimerSvc.Instance().DelTask(action);
+        }
     }
 
     public void Process(EntityBase entity, params object[] args)

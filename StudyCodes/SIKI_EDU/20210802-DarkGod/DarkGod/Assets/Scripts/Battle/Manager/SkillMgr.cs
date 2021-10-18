@@ -28,6 +28,9 @@ public class SkillMgr: MonoBehaviour
     
     public void SkillAttack(EntityBase entity,int skillID)
     {
+        entity.skMoveCBLst.Clear();
+        entity.skActionCBLst.Clear();
+        
         AttackDamage(entity,skillID);
         AttackEffect(entity,skillID);
     }
@@ -108,8 +111,12 @@ public class SkillMgr: MonoBehaviour
             if (sum > 0)
             {
                 Debug.Log("Index1:" + tmpIndex);
-                int moveId = timerSvc.AddTimeTask(i => { SkillAction(entity, skillData, tmpIndex); }, sum);
-                
+                int actId = timerSvc.AddTimeTask(i =>
+                {
+                    SkillAction(entity, skillData, tmpIndex); 
+                    entity.RemoveActionCB(i);
+                }, sum);
+                entity.skActionCBLst.Add(actId);
             }
             else
             {
