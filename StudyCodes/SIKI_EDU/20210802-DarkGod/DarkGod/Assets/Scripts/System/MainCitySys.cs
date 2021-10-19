@@ -85,6 +85,8 @@ public class MainCitySys : SystemBase
         // 加载主城场景UI
         var mainCityWindow = gameRootResources.mainCityWindow;
         mainCityWindow.SetWindowState(true);
+
+        GameRoot.Instance().gameObject.GetComponent<AudioListener>().enabled = false;
     }
 
     private void LoadPlayer(MapCfg map)

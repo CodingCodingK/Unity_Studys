@@ -45,6 +45,10 @@ public class PlayerCtrlWindow : WindowBase
     public Image imgSk3CD;
     public Text txtSk3CD;
     
+    public Transform transBossHpBar;
+    public Image imgBoosHpRed;
+    public Image imgBossHpYellow;
+    
     // others
     
     /// <summary>
@@ -92,8 +96,9 @@ public class PlayerCtrlWindow : WindowBase
         hpMax = GameRoot.Instance().PlayerData.hp;
         SetText(txtSelfHp,hpMax + "/" + hpMax);
         imgSelfHp.fillAmount = 1;
-        
 
+        SetBossHpBarState(false);
+        
         sk1CdTime = resSvc.GetSkillCfgData(101).cdTime / 1000f;
         sk2CdTime = resSvc.GetSkillCfgData(102).cdTime / 1000f;
         sk3CdTime = resSvc.GetSkillCfgData(103).cdTime / 1000f;
@@ -211,6 +216,13 @@ public class PlayerCtrlWindow : WindowBase
     {
         return BattleMgr.Instance.CanRlsSkill();
     }
+
+    public void SetBossHpBarState(bool state, float prg = 1)
+    {
+        SetActive(transBossHpBar,state);
+        imgBoosHpRed.fillAmount = prg;
+        imgBossHpYellow.fillAmount = prg;
+    }
     
 
     #region Click Events
@@ -316,6 +328,6 @@ public class PlayerCtrlWindow : WindowBase
     }
 
     #endregion
-   
-    
+
+
 }

@@ -58,6 +58,7 @@ public class EntityBase
     public Queue<int> comboQue = new Queue<int>();
     public int nextSkillID;
     public SkillCfg curtSkillCfg;
+    public int skEndCB = -1;
 
     public virtual void SetBattleProps(BattleProps bps)
     {
@@ -233,7 +234,8 @@ public class EntityBase
                 nextSkillID = 0;
             }
         }
-        
+
+        curtSkillCfg = null;
         SetAction(Constants.ActionDefault);
     }
 
@@ -270,6 +272,53 @@ public class EntityBase
         if (index != -1)
         {
             skActionCBLst.RemoveAt(index);
+        }
+    }
+
+    /// <summary>
+    /// 当前是否可以被中断
+    /// </summary>
+    public virtual bool GetBreakState()
+    {
+        return true;
+    }
+
+    /// <summary>
+    /// 去除技能回调，取消回调后续动画播放与伤害计算。
+    /// </summary>
+    public void RemoveSkillCB()
+    { 
+        SetDir(Vector2.zero);
+        SetSkillMoveState(false);
+        
+        foreach (var move in skMoveCBLst)
+        {
+            TimerSvc.Instance().DelTask(move);
+        }
+                
+        foreach (var action in skActionCBLst)
+        {
+            TimerSvc.Instance().DelTask(action);
+        }
+                
+        // 攻击被中断，删除定时回调的Idle
+        if (skEndCB != -1)
+        {
+            TimerSvc.Instance().DelTask(skEndCB);
+            skEndCB = -1;
+        }
+                
+        // 被击，清空连招
+        if (nextSkillID != 0 || comboQue.Count > 0)
+        {
+            nextSkillID = 0;
+            comboQue.Clear();
+        
+            battleMgr.lastAtkTime = 0;
+            battleMgr.comboIndex = 0;
+        
+            skMoveCBLst.Clear();
+            skActionCBLst.Clear();
         }
     }
 }

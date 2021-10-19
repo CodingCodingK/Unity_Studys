@@ -40,6 +40,13 @@ public enum EntityState
     
 }
 
+public enum MonsterType
+{
+    None,
+    Normal = 1,
+    Boss = 2,
+}
+
 public static class Constants
 {
     #region 颜色类

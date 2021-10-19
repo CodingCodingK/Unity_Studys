@@ -3,6 +3,7 @@ public class StateDie : IState
     public void Enter(EntityBase entity, params object[] args)
     {
         entity.curtAniState = AniState.Die;
+        entity.RemoveSkillCB();
     }
 
     public void Process(EntityBase entity, params object[] args)

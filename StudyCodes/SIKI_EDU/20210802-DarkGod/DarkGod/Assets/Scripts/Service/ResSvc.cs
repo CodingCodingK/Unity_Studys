@@ -879,6 +879,20 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
                         case "skillID":
                             dto.skillID = Int32.Parse(e.InnerText);
                             break;
+                        case "isStop":
+                            dto.isStop = Int32.Parse(e.InnerText) == 1;
+                            break;
+                        case "mType":
+                            if (Int32.Parse(e.InnerText) == 1)
+                            {
+                                dto.mType = MonsterType.Normal;
+                            }
+                            else if (Int32.Parse(e.InnerText) == 2)
+                            {
+                                dto.mType = MonsterType.Boss;
+                            }
+                            
+                            break;
                         case "atkDis":
                             dto.atkDis = float.Parse(e.InnerText);
                             break;

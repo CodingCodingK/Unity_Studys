@@ -111,6 +111,9 @@ public class MonsterCfg : BaseData<MonsterCfg>
 {
     public string mName;
     public string resPath;
+    /// 1：普通怪物 2：boss怪物
+    public MonsterType mType;
+    public bool isStop;
     public int skillID;
     public float atkDis;
     public BattleProps props;

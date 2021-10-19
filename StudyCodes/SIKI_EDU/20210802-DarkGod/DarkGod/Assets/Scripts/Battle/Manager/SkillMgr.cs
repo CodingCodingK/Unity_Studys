@@ -87,10 +87,9 @@ public class SkillMgr: MonoBehaviour
         }
         
         // 技能时间结束后 设置状态归零 
-        timerSvc.AddTimeTask(i =>
+        entity.skEndCB = timerSvc.AddTimeTask(i =>
         {
             entity.Idle();
-            
         }, skillData.skillTime);
     }
 
@@ -246,7 +245,7 @@ public class SkillMgr: MonoBehaviour
         else
         {
             target.HP -= dmgSum;
-            if (target.entityState != EntityState.BaTiState)
+            if (target.entityState != EntityState.BaTiState && target.GetBreakState())
             {
                 target.Hit();
             }

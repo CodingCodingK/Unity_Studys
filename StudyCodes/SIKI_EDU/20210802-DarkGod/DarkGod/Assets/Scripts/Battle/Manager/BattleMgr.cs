@@ -26,6 +26,7 @@ public class BattleMgr: SystemBase
     private MapCfg mapCfg;
 
     private Dictionary<string, EntityMonster> monsterDic = new Dictionary<string, EntityMonster>();
+    public bool triggerCheck;
     
     public void Init(int mapId)
     {
@@ -65,6 +66,19 @@ public class BattleMgr: SystemBase
         {
             EntityMonster em = item.Value;
             em.TickAILogic();
+        }
+        
+        // 检测当前批次怪物是否全部死亡
+        if (triggerCheck && monsterDic.Count == 0)
+        {
+            var isAllClear = mapMgr.SetNextTriggerOn();
+            triggerCheck = false;
+            
+            if (isAllClear)
+            {
+                // TODO 战斗结算
+                
+            }
         }
     }
 
@@ -144,7 +158,16 @@ public class BattleMgr: SystemBase
                 
                 monster.SetActive(false);
                 monsterDic.Add(monster.name, em);
-                gameRootResources.dynamicWindow.AddHpItemInfo(monster.name,mc.hpRoot,em.md.mCfg.props.hp);
+                
+                if (md.mCfg.mType == MonsterType.Normal)
+                {
+                    gameRootResources.dynamicWindow.AddHpItemInfo(monster.name,mc.hpRoot,em.md.mCfg.props.hp);
+                }
+                else if (md.mCfg.mType == MonsterType.Boss)
+                {
+                    // Boss血条显示
+                    gameRootResources.playerCtrlWindow.SetBossHpBarState(true);
+                }
             }
         }
     }
@@ -157,20 +180,24 @@ public class BattleMgr: SystemBase
         {
             return;
         }
-        
-        // 设置玩家移动
-        if (dir == Vector2.zero)
+
+        if (entityPlayer.curtAniState == AniState.Idle || entityPlayer.curtAniState == AniState.Move)
         {
-            entityPlayer.Idle();
-            // 可以放到Idle状态的Enter中
-            entityPlayer.SetDir(Vector2.zero);
+            // 设置玩家移动
+            if (dir == Vector2.zero)
+            {
+                entityPlayer.Idle();
+                // 可以放到Idle状态的Enter中
+                entityPlayer.SetDir(Vector2.zero);
+            }
+            else
+            {     
+                // 不可以放到Move状态的Enter中,因为不是来回进入此状态,而方向会随时变化
+                entityPlayer.SetDir(dir);
+                entityPlayer.Move();
+            } 
         }
-        else
-        {     
-            // 不可以放到Move状态的Enter中,因为不是来回进入此状态,而方向会随时变化
-            entityPlayer.SetDir(dir);
-            entityPlayer.Move();
-        }
+
     }
 
     #endregion

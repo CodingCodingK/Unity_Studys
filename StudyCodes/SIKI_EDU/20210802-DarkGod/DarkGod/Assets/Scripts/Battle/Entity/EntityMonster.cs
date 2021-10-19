@@ -127,4 +127,24 @@ public class EntityMonster : EntityBase
             }
         }
     }
+    
+    public override bool GetBreakState()
+    {
+        if (md.mCfg.isStop)
+        {
+            // 如果怪物是可以被打断的，就判断目前技能是否能被打断
+            if (curtSkillCfg != null && curtAniState == AniState.Attack)
+            {
+                return curtSkillCfg.isBreak;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        else
+        {
+            return false;
+        }
+    }
 }

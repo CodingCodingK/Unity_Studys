@@ -243,6 +243,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 199719185872334108, guid: 27c218ae828bcf3489f337ea4eebb747, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 199727136444457214, guid: 27c218ae828bcf3489f337ea4eebb747, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27c218ae828bcf3489f337ea4eebb747, type: 3}
 --- !u!1 &1713669306 stripped
@@ -262,6 +270,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5872278ecdd4ce69e806457a83b02dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerArr: []
+--- !u!1 &1713669308 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1986553909874128, guid: 27c218ae828bcf3489f337ea4eebb747, type: 3}
+  m_PrefabInstance: {fileID: 1713669305}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1713669309 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1568722264195668, guid: 27c218ae828bcf3489f337ea4eebb747, type: 3}
+  m_PrefabInstance: {fileID: 1713669305}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1713669310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713669308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 529edce5538842ffae40b8a8b2bf0027, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mapMgr: {fileID: 1713669307}
+  triggerWave: 3
+--- !u!114 &1713669311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713669309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 529edce5538842ffae40b8a8b2bf0027, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mapMgr: {fileID: 1713669307}
+  triggerWave: 2
 --- !u!1 &2128402808
 GameObject:
   m_ObjectHideFlags: 0
