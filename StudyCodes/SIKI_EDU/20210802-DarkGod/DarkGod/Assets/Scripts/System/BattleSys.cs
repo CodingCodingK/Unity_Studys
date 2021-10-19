@@ -39,6 +39,12 @@ public class BattleSys : SystemBase
         battleMgr.Init(mapId);
         SetPlayerCtrlWindowState();
     }
+    
+    public void EndBattle(bool isWin,int restHp)
+    {
+        gameRootResources.playerCtrlWindow.SetWindowState(false);
+        gameRootResources.dynamicWindow.RemoveAllHpItemInfo();
+    }
 
     public void SetPlayerCtrlWindowState(bool isActive = true)
     {

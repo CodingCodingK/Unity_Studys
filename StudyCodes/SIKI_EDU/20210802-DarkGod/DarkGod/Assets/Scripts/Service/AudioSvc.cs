@@ -50,5 +50,13 @@ public class AudioSvc : GameRootMonoSingleton<AudioSvc>
         audioSource.clip = playerClip;
         audioSource.Play();
     }
+
+    public void StopBGM()
+    {
+        if (bgAudio != null)
+        {
+            bgAudio.Stop();
+        }
+    }
     
 }

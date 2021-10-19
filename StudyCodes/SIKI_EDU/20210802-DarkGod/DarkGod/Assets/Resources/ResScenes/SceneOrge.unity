@@ -270,7 +270,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5872278ecdd4ce69e806457a83b02dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerArr: []
+  triggerArr:
+  - {fileID: 1713669311}
+  - {fileID: 1713669310}
 --- !u!1 &1713669308 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1986553909874128, guid: 27c218ae828bcf3489f337ea4eebb747, type: 3}

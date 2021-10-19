@@ -71,15 +71,22 @@ public class BattleMgr: SystemBase
         // 检测当前批次怪物是否全部死亡
         if (triggerCheck && monsterDic.Count == 0)
         {
-            var isAllClear = mapMgr.SetNextTriggerOn();
+            var isAllClear = ! mapMgr.SetNextTriggerOn();
             triggerCheck = false;
             
             if (isAllClear)
             {
                 // TODO 战斗结算
-                
+                EndBattle(true,entityPlayer.HP);
+                BattleSys.Instance.EndBattle(true,entityPlayer.HP);
             }
         }
+    }
+
+    public void EndBattle(bool isWin,int restHp)
+    {
+        audioSvc.StopBGM();
+        
     }
 
     private void LoadPlayer(MapCfg mapData)

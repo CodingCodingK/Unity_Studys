@@ -163,6 +163,10 @@ public class PlayerCtrlWindow : WindowBase
                 SetText(txtSk3CD,sk3CdNum);
             }
         }
+        
+        // Boss Hp Bar
+        UpdateMixBlend();
+        imgBossHpYellow.fillAmount = curtPrg;
     }
 
     private void RefreshUI()
@@ -217,13 +221,48 @@ public class PlayerCtrlWindow : WindowBase
         return BattleMgr.Instance.CanRlsSkill();
     }
 
+    #region Boss Hp Bar
+
+    private float curtPrg = 1f;
+    private float targetPrg = 1f;
+    
     public void SetBossHpBarState(bool state, float prg = 1)
     {
         SetActive(transBossHpBar,state);
         imgBoosHpRed.fillAmount = prg;
         imgBossHpYellow.fillAmount = prg;
     }
-    
+
+    public void SetBossHpBarVal(int oldVal,int newVal,int sumVal)
+    {
+        curtPrg = oldVal * 1f / sumVal;
+        targetPrg = newVal * 1f / sumVal;
+        imgBoosHpRed.fillAmount = targetPrg;
+    }
+
+    /// <summary>
+    /// 平滑处理血条跟随
+    /// </summary>
+    private void UpdateMixBlend()
+    {
+        // 变化控制在规定的加速度最大值之内
+        if (Mathf.Abs(curtPrg - targetPrg) < Constants.AccelerHpSpeed * Time.deltaTime)
+        {
+            curtPrg = targetPrg;
+        }
+        else if (curtPrg > targetPrg)
+        {
+            curtPrg -= Constants.AccelerHpSpeed * Time.deltaTime;
+        }
+        else
+        {
+            curtPrg += Constants.AccelerHpSpeed * Time.deltaTime;
+        }
+        
+    }
+
+    #endregion
+   
 
     #region Click Events
 

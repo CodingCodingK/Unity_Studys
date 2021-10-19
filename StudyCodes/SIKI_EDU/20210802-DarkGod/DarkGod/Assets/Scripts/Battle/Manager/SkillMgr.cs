@@ -109,17 +109,19 @@ public class SkillMgr: MonoBehaviour
             sum += action.delayTime;
             if (sum > 0)
             {
-                Debug.Log("Index1:" + tmpIndex);
+                
                 int actId = timerSvc.AddTimeTask(i =>
                 {
-                    SkillAction(entity, skillData, tmpIndex); 
-                    entity.RemoveActionCB(i);
+                    if (entity != null)
+                    {
+                        SkillAction(entity, skillData, tmpIndex); 
+                        entity.RemoveActionCB(i);
+                    }
                 }, sum);
                 entity.skActionCBLst.Add(actId);
             }
             else
             {
-                Debug.Log("Index2:" + tmpIndex);
                 SkillAction(entity, skillData, tmpIndex);
             }
         }
@@ -139,11 +141,15 @@ public class SkillMgr: MonoBehaviour
         }
         var action = resSvc.GetSkillActionCfgData(skill.skillActionLst[index]);
         var damage = skill.skillDamageLst[index];
-        
-        
+
         if (caster.entityType == EntityType.Monster)
         {
             var targetPlayer = caster.battleMgr.entityPlayer;
+            if (targetPlayer == null)
+            {
+                return;
+            }
+            
             // 判断距离、角度
             if (InRange(caster.GetPos(),targetPlayer.GetPos(),action.radius) && InAngle(caster.GetTrans(),targetPlayer.GetPos(),action.angle))
             {
@@ -240,7 +246,16 @@ public class SkillMgr: MonoBehaviour
             target.HP = 0;
             // TODO 目标死亡处理
             target.Die();
-            BattleMgr.Instance.RemoveMonster(target.Name);
+            if (target.entityType == EntityType.Monster)
+            {
+                BattleMgr.Instance.RemoveMonster(target.Name);
+            }
+            else if (target.entityType == EntityType.Player)
+            {
+                target.battleMgr.entityPlayer = null;
+                target.battleMgr.EndBattle(false,0);
+            }
+            
         }
         else
         {

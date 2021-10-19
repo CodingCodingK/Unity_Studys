@@ -103,6 +103,14 @@ public class DynamicWindow : WindowBase
             itemDic.Remove(mName);
         }
     }
+    
+    public void RemoveAllHpItemInfo()
+    {
+        foreach (var item in itemDic)
+        {
+            Destroy(item.Value.gameObject);
+        }
+    }
 
     public void SetDodge(string key)
     {

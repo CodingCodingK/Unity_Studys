@@ -26,6 +26,7 @@ public class MapMgr: MonoBehaviour
         
         // 实例第一批怪物
         battleMgr.LoadMonsterByWaveID(waveIndex);
+        battleMgr.triggerCheck = true;
 
         Debug.Log("Init MapMgr.");
     }
@@ -48,7 +49,7 @@ public class MapMgr: MonoBehaviour
         {
             if (trigger.triggerWave == waveIndex)
             {
-                BoxCollider collider = trigger.GetComponent<BoxCollider>();
+                BoxCollider collider = trigger.gameObject.GetComponent<BoxCollider>();
                 collider.isTrigger = true;
                 return true;
             }
