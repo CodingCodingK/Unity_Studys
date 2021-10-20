@@ -81,9 +81,12 @@ public class DungeonSys : Singleton<DungeonSys>
 		if (data.win)
 		{
 			if (data.costTime > 0 && data.restHp > 0)
-			{
+            {
+                // 更新任务进度
+                TaskSys.Instance().CalcTaskPrgs(pd,2);
+
 				// 根据副本id获取相应奖励
-				MapCfg rd = cfgSvc.GetMapData(data.dgId);
+                MapCfg rd = cfgSvc.GetMapData(data.dgId);
 				pd.coin += rd.coin;
 				pd.crystal += rd.crystal;
 				PECommon.CalcExp(pd, rd.exp);

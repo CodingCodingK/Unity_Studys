@@ -373,6 +373,11 @@ public class PlayerCtrlWindow : WindowBase
         }
     }
 
+    public void ClickTest()
+    {
+        BattleMgr.Instance.EndBattle(true,200);
+    }
+
     #endregion
 
 

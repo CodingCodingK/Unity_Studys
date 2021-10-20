@@ -24,8 +24,13 @@ public class BattleEndWindow: WindowBase
     public Text txtTime;
     public Text txtRestHp;
     public Text txtReward;
-    
-    
+    public Animation ani;
+    public Transform[] itemsTrans;
+
+    private int dgId;
+    private int costTime;
+    private int restHp;
+
     // others
     private FBEndType endType = FBEndType.None;
 
@@ -50,7 +55,35 @@ public class BattleEndWindow: WindowBase
         }
         else if (endType.Equals(FBEndType.Win))
         {
+            SetActive(rewardTrans,false);
+            SetActive(btnExit.gameObject,false);
+            SetActive(btnClose.gameObject,false);
+
+            MapCfg cfg = resSvc.GetMapCfgData(dgId);
+            int min = costTime / 60;
+            int sec = costTime % 60;
+            int coin = cfg.coin;
+            int exp = cfg.exp;
+            int crystal = cfg.crystal;
             
+           
+            SetText(txtTime,min + ":" + sec);
+            SetText(txtRestHp,restHp);
+            SetText(txtReward,Constants.ColoredTxt(coin + "金币 ",TxtColor.Yellow) 
+                              + Constants.ColoredTxt(exp + "经验 ",TxtColor.Green) 
+                              + Constants.ColoredTxt(crystal + "水晶",TxtColor.Blue));
+            
+            timerSvc.AddTimeTask(i =>
+            {
+                SetActive(rewardTrans);
+                foreach (var item in itemsTrans)
+                {
+                    item.gameObject.SetActive(true);
+                }
+                SetActive(btnSure.gameObject,true);
+                ani.Play();
+                // 省略UI动画对应的音乐
+            },1000);
         }
         else if (endType.Equals(FBEndType.Lose))
         {
@@ -63,6 +96,13 @@ public class BattleEndWindow: WindowBase
     public void SetWindowType(FBEndType type)
     {
         endType = type;
+    }
+
+    public void SetBattleEndData(int dgId,int costTime,int restHp)
+    {
+        this.dgId = dgId;
+        this.costTime = costTime;
+        this.restHp = restHp;
     }
     
     #region Click Events
@@ -90,7 +130,10 @@ public class BattleEndWindow: WindowBase
     public void ClickSureBtn()
     {
         audioSvc.PlayUIAudio(Constants.UIClickBtn);
-        // TODO 进入主城，销毁战斗，打开副本界面
+        // 进入主城，销毁战斗，打开副本界面
+        MainCitySys.Instance.EnterMainCity();
+        BattleSys.Instance.DestroyBattle();
+        DungeonSys.Instance.EnterDG();
     }
     
     #endregion

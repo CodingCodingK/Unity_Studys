@@ -110,6 +110,8 @@ public class DynamicWindow : WindowBase
         {
             Destroy(item.Value.gameObject);
         }
+        
+        itemDic.Clear();
     }
 
     public void SetDodge(string key)

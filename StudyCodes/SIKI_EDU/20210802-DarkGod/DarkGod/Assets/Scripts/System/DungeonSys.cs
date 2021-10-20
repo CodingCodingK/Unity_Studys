@@ -46,8 +46,4 @@ public class DungeonSys : SystemBase
         
     }
     
-    public void RspDungeonEnd(GameMsg msg)
-    {
-        
-    }
 }

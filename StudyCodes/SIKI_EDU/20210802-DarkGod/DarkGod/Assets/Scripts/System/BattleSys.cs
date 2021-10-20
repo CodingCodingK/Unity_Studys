@@ -10,6 +10,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Xml.Schema;
 using PEProtocol;
 using UnityEditor.Animations;
 using UnityEngine;
@@ -69,6 +70,7 @@ public class BattleSys : SystemBase
                     costTime = (int)((endTime - startTime) / 1000),
                 },
             };
+            netSvc.SendMsg(msg);
         }
         else
         {
@@ -108,6 +110,15 @@ public class BattleSys : SystemBase
     public Vector2 GetDirInput()
     {
         return gameRootResources.playerCtrlWindow.curtDir;
+    }
+    
+    public void RspDungeonEnd(GameMsg msg)
+    {
+        var data = msg.rspDungeonEnd;
+        GameRoot.Instance().SetPlayerDataByDungeonEnd(data);
+        
+        gameRootResources.battleEndWindow.SetBattleEndData(data.dgId,data.costTime,data.restHp);
+        SetBattleEndWindowState(FBEndType.Win);
     }
 
 }

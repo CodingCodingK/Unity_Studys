@@ -312,6 +312,15 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
                         case "power":
                             dto.power = Int32.Parse(e.InnerText);
                             break;
+                        case "coin":
+                            dto.coin = Int32.Parse(e.InnerText);
+                            break;
+                        case "exp":
+                            dto.exp = Int32.Parse(e.InnerText);
+                            break;
+                        case "crystal":
+                            dto.crystal = Int32.Parse(e.InnerText);
+                            break;
                         case "mainCamPos":
                             dto.mainCamPos = MapperHelper.ConvertToVector3(e.InnerText);
                             break;

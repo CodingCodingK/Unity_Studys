@@ -142,10 +142,16 @@ public class GameRoot : GameRootMonoSingleton<GameRoot>
     {
         PlayerData.power = rsp.power;
     }
+    
+    public void SetPlayerDataByDungeonEnd(RspDungeonEnd rsp)
+    {
+        PlayerData.coin = rsp.coin;
+        PlayerData.level = rsp.lv;
+        PlayerData.exp = rsp.exp;
+        PlayerData.crystal = rsp.crystal;
+        PlayerData.dg = rsp.dg;
+    }
+    
     #endregion
-    
-    
-    
-    
     
 }
