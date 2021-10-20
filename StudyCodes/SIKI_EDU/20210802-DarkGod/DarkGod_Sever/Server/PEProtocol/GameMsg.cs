@@ -41,6 +41,8 @@ namespace PEProtocol
 
 		public ReqDungeon reqDungeon;
 		public RspDungeon rspDungeon;
+		public ReqDungeonEnd reqDungeonEnd;
+		public RspDungeonEnd rspDungeonEnd;
 
 		#endregion
     }
@@ -237,6 +239,42 @@ namespace PEProtocol
 		public int dgId;
 		public int power;
 	}
+
+	/// <summary>
+	/// 副本结束请求
+	/// </summary>
+	[Serializable]
+	public class ReqDungeonEnd
+	{
+		public bool win;
+		public int dgId;
+		public int restHp;
+		public int costTime;
+	}
+
+	/// <summary>
+	/// 副本结束回应
+	/// </summary>
+	[Serializable]
+	public class RspDungeonEnd
+	{
+		public bool win;
+		public int dgId;
+		public int restHp;
+		public int costTime;
+
+		// 副本奖励
+		public int coin;
+		public int lv;
+		public int exp;
+		public int crystal;
+		/// <summary>
+		/// 副本进度
+		/// </summary>
+		public int dg;
+	}
+
+
 	#endregion
 
 	/// <summary>
@@ -374,6 +412,9 @@ namespace PEProtocol
 
 		ReqDungeon = 301,
 		RspDungeon = 302,
+
+		ReqDungeonEnd = 303,
+		RspDungeonEnd = 304,
 
 	}
 

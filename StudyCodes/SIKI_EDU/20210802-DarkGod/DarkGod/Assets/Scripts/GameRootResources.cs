@@ -40,6 +40,8 @@ public class GameRootResources : GameRootMonoSingleton<GameRootResources>
     public DungeonWindow dungeonWindow;
 
     public PlayerCtrlWindow playerCtrlWindow;
+    
+    public BattleEndWindow battleEndWindow;
         
     public void ShowTips(string tip)
     {

@@ -64,4 +64,62 @@ public class DungeonSys : Singleton<DungeonSys>
 		pack.session.SendMsg(msg);
 	}
 
+	/// <summary>
+	/// 处理 请求消息
+	/// </summary>
+	public void ReqDungeonEnd(MsgPack pack)
+	{
+		ReqDungeonEnd data = pack.msg.reqDungeonEnd;
+		PlayerData pd = cacheSvc.GetPlayerDataBySession(pack.session);
+
+		GameMsg msg = new GameMsg()
+		{
+			cmd = (int)CMD.RspDungeonEnd,
+		};
+
+		// 校验战斗是否合法
+		if (data.win)
+		{
+			if (data.costTime > 0 && data.restHp > 0)
+			{
+				// 根据副本id获取相应奖励
+				MapCfg rd = cfgSvc.GetMapData(data.dgId);
+				pd.coin += rd.coin;
+				pd.crystal += rd.crystal;
+				PECommon.CalcExp(pd, rd.exp);
+
+				if (pd.dg == data.dgId)
+				{
+					pd.dg++;
+				}
+
+				if (cacheSvc.UpdatePlayerData(pd))
+				{
+					msg.rspDungeonEnd = new RspDungeonEnd()
+					{
+						win = data.win,
+						dgId = data.dgId,
+						costTime = data.costTime,
+						restHp = data.restHp,
+						coin = pd.coin,
+						lv=pd.level,
+						crystal = pd.crystal,
+						dg = pd.dg
+					};
+				}
+				else
+				{
+					msg.err = (int)ErrorCode.UpdateDBError;
+				}
+				
+			}
+		}
+		else
+		{
+			msg.err = (int) ErrorCode.ClientDataError;
+		}
+
+		pack.session.SendMsg(msg);
+	}
+
 }

@@ -60,6 +60,15 @@ public class CfgSvc : Singleton<CfgSvc>
 					case "power":
 						dto.power = Convert.ToInt32(e.InnerText);
 						break;
+					case "coin":
+						dto.coin = Convert.ToInt32(e.InnerText);
+						break;
+					case "crystal":
+						dto.crystal = Convert.ToInt32(e.InnerText);
+						break;
+					case "exp":
+						dto.exp = Convert.ToInt32(e.InnerText);
+						break;
 					case "sceneName":
 						dto.sceneName = e.InnerText;
 						break;
@@ -300,6 +309,10 @@ public class MapCfg : BaseData<MapCfg>
 	public string mapName;
 	public string sceneName;
 	public int power;
+
+	public int coin;
+	public int exp;
+	public int crystal;
 	//public Vector3 mainCamPos;
 	//public Vector3 mainCamRote;
 	//public Vector3 playerBornPos;

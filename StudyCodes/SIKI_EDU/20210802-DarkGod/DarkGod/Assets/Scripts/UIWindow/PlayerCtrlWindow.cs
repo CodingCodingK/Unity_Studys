@@ -312,6 +312,13 @@ public class PlayerCtrlWindow : WindowBase
         SetWindowState(false);
     }
     
+    public void ClickHeadBtn()
+    {
+        audioSvc.PlayUIAudio(Constants.UIClickBtn);
+        BattleSys.Instance.battleMgr.isPauseGame = true;
+        BattleSys.Instance.SetBattleEndWindowState(FBEndType.Pause);
+    }
+    
     public void ClickNormalAtk()
     {
         BattleSys.Instance.ReqReleaseSkill(0);

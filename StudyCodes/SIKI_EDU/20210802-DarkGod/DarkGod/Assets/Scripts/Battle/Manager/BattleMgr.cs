@@ -27,8 +27,9 @@ public class BattleMgr: SystemBase
 
     private Dictionary<string, EntityMonster> monsterDic = new Dictionary<string, EntityMonster>();
     public bool triggerCheck;
+    public bool isPauseGame;
     
-    public void Init(int mapId)
+    public void Init(int mapId,Action cb = null)
     {
         base.InitSys();
         Instance = this;
@@ -55,6 +56,11 @@ public class BattleMgr: SystemBase
             LoadPlayer(mapCfg);
             
             audioSvc.PlayBGMusic(Constants.BGHuangYe);
+
+            if (cb!=null)
+            {
+                cb();
+            }
         });
 
         Debug.Log("Init BattleMgr.");
@@ -86,6 +92,8 @@ public class BattleMgr: SystemBase
     public void EndBattle(bool isWin,int restHp)
     {
         audioSvc.StopBGM();
+        isPauseGame = true;
+        BattleSys.Instance.EndBattle(isWin,restHp);
         
     }
 
@@ -132,6 +140,8 @@ public class BattleMgr: SystemBase
          
          // 激活第一批怪物
          ActiveCurrentBatchMonsters();
+
+     
         
     }
 

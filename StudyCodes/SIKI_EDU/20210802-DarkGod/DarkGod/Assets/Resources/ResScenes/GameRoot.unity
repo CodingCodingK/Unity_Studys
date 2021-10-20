@@ -1367,7 +1367,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &110099872
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1896,6 +1896,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 219971405}
+  - component: {fileID: 219971406}
   m_Layer: 0
   m_Name: BattleEndWindow
   m_TagString: Untagged
@@ -1926,6 +1927,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &219971406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 219971404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0887c0b845424cc4bc44d507e10e250b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rewardTrans: {fileID: 417276782}
+  btnClose: {fileID: 110099873}
+  btnExit: {fileID: 235238846}
+  btnSure: {fileID: 625465901}
+  txtTime: {fileID: 312955081}
+  txtRestHp: {fileID: 778125023}
+  txtReward: {fileID: 289715939}
 --- !u!1 &222107569
 GameObject:
   m_ObjectHideFlags: 0
@@ -2245,7 +2265,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &235238845
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5097,6 +5117,7 @@ MonoBehaviour:
   taskWindow: {fileID: 2046676134}
   dungeonWindow: {fileID: 276669754}
   playerCtrlWindow: {fileID: 2200758380078157116}
+  battleEndWindow: {fileID: 219971406}
 --- !u!114 &529463051
 MonoBehaviour:
   m_ObjectHideFlags: 0

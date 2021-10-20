@@ -91,6 +91,9 @@ public class NetSvc : Singleton<NetSvc>
             case CMD.ReqDungeon:
 	            DungeonSys.Instance().ReqDungeon(msgPack);
 	            break;
+            case CMD.ReqDungeonEnd:
+	            DungeonSys.Instance().ReqDungeonEnd(msgPack);
+	            break;
 
 		}
     }

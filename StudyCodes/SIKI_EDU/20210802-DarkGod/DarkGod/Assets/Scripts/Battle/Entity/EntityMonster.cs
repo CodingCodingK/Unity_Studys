@@ -45,6 +45,12 @@ public class EntityMonster : EntityBase
         {
             return;
         }
+
+        if (battleMgr.isPauseGame)
+        {
+            Idle();
+            return;
+        }
         
         float delta = Time.deltaTime;
         checkCountTime += delta;

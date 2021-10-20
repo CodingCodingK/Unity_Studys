@@ -180,6 +180,9 @@ public class NetSvc : GameRootMonoSingleton<NetSvc>
             case CMD.RspDungeon:
                 DungeonSys.Instance.RspDungeon(msg);
                 break;
+            case CMD.RspDungeonEnd:
+                DungeonSys.Instance.RspDungeonEnd(msg);
+                break;
         }
     }
     
