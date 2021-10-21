@@ -178,7 +178,7 @@ public class BattleMgr: SystemBase
                 
                 if (md.mCfg.mType == MonsterType.Normal)
                 {
-                    gameRootResources.dynamicWindow.AddHpItemInfo(monster.name,mc.hpRoot,em.md.mCfg.props.hp);
+                    gameRootResources.dynamicWindow.AddHpItemInfo(monster.name,mc.hpRoot,em.Props.hp);
                 }
                 else if (md.mCfg.mType == MonsterType.Boss)
                 {

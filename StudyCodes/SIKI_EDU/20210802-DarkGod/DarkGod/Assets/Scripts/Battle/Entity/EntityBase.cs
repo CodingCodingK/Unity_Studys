@@ -106,7 +106,6 @@ public class EntityBase
         if (controller!=null)
         {
             controller.SetBlend(blend);
-            Debug.Log("!!! "+ blend);
         }
     }
     

@@ -136,7 +136,6 @@ public class SkillMgr: MonoBehaviour
         var monsterList = caster.battleMgr.GetEntityMonsters();
         if (skill.skillActionLst.Count <= index)
         {
-            Debug.Log("Index:" + index + ",skillActionLst:" + skill.skillActionLst.Count + ",data:" + skill.skillActionLst);
             return;
         }
         var action = resSvc.GetSkillActionCfgData(skill.skillActionLst[index]);
@@ -237,8 +236,6 @@ public class SkillMgr: MonoBehaviour
         {
             return;
         }
-        
-        Debug.Log("Damage:" + dmgSum + ",Hp:" + target.HP);
 
         target.SetHurt(dmgSum);
         if (target.HP < dmgSum)
